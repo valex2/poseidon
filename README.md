@@ -7,6 +7,8 @@ Reach out to Vassili -- valex@stanford.edu
 
 PWM code -- credit to Ryota
 
+relevant: https://bluerobotics.com/learn/thruster-usage-guide/
+
 DO NOT RUN THRUSTERS AT FULL POWER FOR THE TIME BEING - 20 to 30% max
 
 DO NOT RUN FOR MORE THAN 10 SECONDS WHILE OUTSIDE OF WATER

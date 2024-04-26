@@ -1,3 +1,4 @@
+
 #include <Servo.h>
 Servo servo[8];
 byte servoPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
@@ -5,6 +6,8 @@ void setup() {
   Serial.begin(9600);
   config_servo();
   delay(7000); // delay to allow the ESC to recognize the stopped signal
+
+  pinMode(2, OUTPUT);
 }
 void loop() {
   Serial.println("Enter servoNum and PWM signal value 1100 to 1900 (Ex: 7 1100)");
@@ -32,5 +35,7 @@ void set_servo(int servoNum, int val) {
   if (servoNum == -1) {
     return;
   }
-  servo[servoNum].writeMicroseconds(val); // Send signal to ESC
+  Serial.println("Set");
+
+  servo[servoNum-2].writeMicroseconds(val); // Send signal to ESC
 }

@@ -6,7 +6,9 @@ Notion linked here: https://www.notion.so/Electrical-Team-Outline-0ae5ed46050849
 Reach out to Vassili -- valex@stanford.edu
 
 PWM code -- credit to Ryota
+
 DO NOT RUN THRUSTERS AT FULL POWER FOR THE TIME BEING - 20 to 30% max
+
 DO NOT RUN FOR MORE THAN 10 SECONDS WHILE OUTSIDE OF WATER
 
 -- writiing to the thrusters:

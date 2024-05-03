@@ -1,0 +1,1630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>/Users/Vassilis/Desktop/Robosub/Robosub Power/EE156_2_Layer.kicad_sch</source>
+    <date>2024 May 03, Friday 02:32:00</date>
+    <tool>Eeschema 7.0.2-0</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Test sheet</title>
+        <company>blame- steven.clark@stanford.edu</company>
+        <rev>0.1</rev>
+        <date/>
+        <source>EE156_2_Layer.kicad_sch</source>
+        <comment number="1" value="Stanford, CA 94305-9505"/>
+        <comment number="2" value="350 Jane Stanford Way"/>
+        <comment number="3" value="Electrical Engineering Department"/>
+        <comment number="4" value="EE 156 / Stanford University"/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C1">
+      <value>0.1u</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">CC0805KRX7R9BB104</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874</field>
+        <field name="Supplier 1 S/N">311-1140-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="CC0805KRX7R9BB104"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874"/>
+      <property name="Supplier 1 S/N" value="311-1140-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9bfcf183-a3e8-4424-992a-f08edeabc1cd</tstamps>
+    </comp>
+    <comp ref="C2">
+      <value>0.1u</value>
+      <footprint>Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">CC0805KRX7R9BB104</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874</field>
+        <field name="Supplier 1 S/N">311-1140-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="CC0805KRX7R9BB104"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874"/>
+      <property name="Supplier 1 S/N" value="311-1140-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>262aa6be-ff0a-432d-ad38-564efc117d25</tstamps>
+    </comp>
+    <comp ref="C3">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder</footprint>
+      <datasheet>https://www.knowlescapacitors.com/getattachment/e7984308-bd6c-4e1d-824e-8ae6037a2b25/StackiCap</datasheet>
+      <fields>
+        <field name="MFR">Knowles Syfer</field>
+        <field name="MFR S/N">1812Y2000105KSTWS2</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/knowles-syfer/1812Y2000105KSTWS2/18879756</field>
+        <field name="Supplier 1 S/N">1608-1812Y2000105KSTWS2CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MFR" value="Knowles Syfer"/>
+      <property name="MFR S/N" value="1812Y2000105KSTWS2"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/knowles-syfer/1812Y2000105KSTWS2/18879756"/>
+      <property name="Supplier 1 S/N" value="1608-1812Y2000105KSTWS2CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>830eb7a1-93e7-47f8-b1a3-90ef6e22bd1b</tstamps>
+    </comp>
+    <comp ref="C4">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder</footprint>
+      <datasheet>https://www.knowlescapacitors.com/getattachment/e7984308-bd6c-4e1d-824e-8ae6037a2b25/StackiCap</datasheet>
+      <fields>
+        <field name="MFR">Knowles Syfer</field>
+        <field name="MFR S/N">1812Y2000105KSTWS2</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/knowles-syfer/1812Y2000105KSTWS2/18879756</field>
+        <field name="Supplier 1 S/N">1608-1812Y2000105KSTWS2CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MFR" value="Knowles Syfer"/>
+      <property name="MFR S/N" value="1812Y2000105KSTWS2"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/knowles-syfer/1812Y2000105KSTWS2/18879756"/>
+      <property name="Supplier 1 S/N" value="1608-1812Y2000105KSTWS2CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>e1340b81-57ef-43b0-a008-8e00b435e7e8</tstamps>
+    </comp>
+    <comp ref="C5">
+      <value>1u (electrolytic)</value>
+      <footprint>Robosub Lib:UCB1V0R1MCL1GS</footprint>
+      <fields>
+        <field name="MFR">Nichicon</field>
+        <field name="MFR S/N">UCB1V0R1MCL1GS</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/nichicon/UCB1V0R1MCL1GS/3974069</field>
+        <field name="Supplier 1 S/N">493-9956-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MFR" value="Nichicon"/>
+      <property name="MFR S/N" value="UCB1V0R1MCL1GS"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/nichicon/UCB1V0R1MCL1GS/3974069"/>
+      <property name="Supplier 1 S/N" value="493-9956-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f68e52b8-15f4-4a27-bca2-ca1737c7c6bb</tstamps>
+    </comp>
+    <comp ref="C6">
+      <value>1u (electrolytic)</value>
+      <footprint>Robosub Lib:UCB1V0R1MCL1GS</footprint>
+      <fields>
+        <field name="MFR">Nichicon</field>
+        <field name="MFR S/N">UCB1V0R1MCL1GS</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/nichicon/UCB1V0R1MCL1GS/3974069</field>
+        <field name="Supplier 1 S/N">493-9956-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="MFR" value="Nichicon"/>
+      <property name="MFR S/N" value="UCB1V0R1MCL1GS"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/nichicon/UCB1V0R1MCL1GS/3974069"/>
+      <property name="Supplier 1 S/N" value="493-9956-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2f2a8e69-e36c-4010-8ec5-5ad30224695f</tstamps>
+    </comp>
+    <comp ref="CR1">
+      <value>SBRT15U50SP5-13</value>
+      <footprint>SBRT15U50SP5_13:POWERDI5_DIO</footprint>
+      <datasheet>https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/513/SBRT15U50SP5.pdf</datasheet>
+      <fields>
+        <field name="MFR">Diodes Incorporated</field>
+        <field name="MFR S/N">SBRT15U50SP5-13</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/diodes-incorporated/SBRT15U50SP5-13/4567773</field>
+        <field name="Supplier 1 S/N">SBRT15U50SP5-13DICT-ND</field>
+      </fields>
+      <libsource lib="SBRT15U50SP5_13" part="SBRT15U50SP5-13" description=""/>
+      <property name="MFR" value="Diodes Incorporated"/>
+      <property name="MFR S/N" value="SBRT15U50SP5-13"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/diodes-incorporated/SBRT15U50SP5-13/4567773"/>
+      <property name="Supplier 1 S/N" value="SBRT15U50SP5-13DICT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_keywords" value="SBRT15U50SP5-13"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c2e6b29e-a431-4d21-87d7-4c3a50b305ea</tstamps>
+    </comp>
+    <comp ref="D1">
+      <value>1SMA5931BT3</value>
+      <footprint>Diode_SMD:D_SMA</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/1sma5913bt3-d.pdf</datasheet>
+      <fields>
+        <field name="MFR">onsemi</field>
+        <field name="MFR S/N">SZ1SMA5931BT3G</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/onsemi/SZ1SMA5931BT3G/8538966</field>
+        <field name="Supplier 1 S/N">SZ1SMA5931BT3GOSCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="D_Zener" description="Zener diode"/>
+      <property name="MFR" value="onsemi"/>
+      <property name="MFR S/N" value="SZ1SMA5931BT3G"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/onsemi/SZ1SMA5931BT3G/8538966"/>
+      <property name="Supplier 1 S/N" value="SZ1SMA5931BT3GOSCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Zener diode"/>
+      <property name="ki_keywords" value="diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9b543c7f-5f9c-4e7f-8a26-df336f920163</tstamps>
+    </comp>
+    <comp ref="D2">
+      <value>IR26-21C_L110_TR8</value>
+      <footprint>LED_SMD:LED_1206_3216Metric</footprint>
+      <datasheet>http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf</datasheet>
+      <fields>
+        <field name="MFR">Everlight Electronics Co Ltd</field>
+        <field name="MFR S/N">IR26-21C/L110/TR8</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848</field>
+        <field name="Supplier 1 S/N">1080-1357-1-ND</field>
+      </fields>
+      <libsource lib="LED" part="IR26-21C_L110_TR8" description="940nm, 20 deg, Infrared LED, 1206"/>
+      <property name="MFR" value="Everlight Electronics Co Ltd"/>
+      <property name="MFR S/N" value="IR26-21C/L110/TR8"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848"/>
+      <property name="Supplier 1 S/N" value="1080-1357-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="940nm, 20 deg, Infrared LED, 1206"/>
+      <property name="ki_keywords" value="IR LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c79365ee-24ab-421f-a7a1-9d1ecd942398</tstamps>
+    </comp>
+    <comp ref="D3">
+      <value>IR26-21C_L110_TR8</value>
+      <footprint>LED_SMD:LED_1206_3216Metric</footprint>
+      <datasheet>http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf</datasheet>
+      <fields>
+        <field name="MFR">Everlight Electronics Co Ltd</field>
+        <field name="MFR S/N">IR26-21C/L110/TR8</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848</field>
+        <field name="Supplier 1 S/N">1080-1357-1-ND</field>
+      </fields>
+      <libsource lib="LED" part="IR26-21C_L110_TR8" description="940nm, 20 deg, Infrared LED, 1206"/>
+      <property name="MFR" value="Everlight Electronics Co Ltd"/>
+      <property name="MFR S/N" value="IR26-21C/L110/TR8"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848"/>
+      <property name="Supplier 1 S/N" value="1080-1357-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="940nm, 20 deg, Infrared LED, 1206"/>
+      <property name="ki_keywords" value="IR LED"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>898829cf-83da-4224-b1de-8baac9e6c59d</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="MFR" value=""/>
+      <property name="MFR S/N" value=""/>
+      <property name="Supplier 1" value=""/>
+      <property name="Supplier 1 S/N" value=""/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ac50b009-a064-44a7-b91b-88217102d599</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="MFR" value=""/>
+      <property name="MFR S/N" value=""/>
+      <property name="Supplier 1" value=""/>
+      <property name="Supplier 1 S/N" value=""/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8816af87-872c-4991-bac4-335c6dd35842</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="MFR" value=""/>
+      <property name="MFR S/N" value=""/>
+      <property name="Supplier 1" value=""/>
+      <property name="Supplier 1 S/N" value=""/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>adbf6a05-a3e0-45eb-8758-72a9dabde39d</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="MFR" value=""/>
+      <property name="MFR S/N" value=""/>
+      <property name="Supplier 1" value=""/>
+      <property name="Supplier 1 S/N" value=""/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>336b16a4-7725-4895-b9d1-f2d920848523</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>490d2b66-d847-4192-86b5-3890581b89e8</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b77bf9ff-b5f9-4929-aa48-5f4b1cfe1b91</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>306b6c82-7e20-499d-8e91-f454afeb5f97</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>439d3ad0-ac91-4872-a3cb-a5a52c662e03</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>216606b8-f5c0-408a-9a1f-fa4e7a5a8f53</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d023d745-9d37-4f0b-b2da-e691fff955ae</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6a9a3d4b-b398-42f8-b0c2-2fc4cdf4001c</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>26f9db2c-c5e7-401c-839c-3ef1b6931512</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ae8652cf-1028-438e-b932-8ea749e84641</tstamps>
+    </comp>
+    <comp ref="J10">
+      <value>1135333</value>
+      <footprint>1135333_1:PHOENIX_1135333</footprint>
+      <datasheet>https://www.phoenixcontact.com/en-us/products/printed-circuit-board-terminal-spt-thr-25-2-v-50-p20-r32-1135333?type=pdf</datasheet>
+      <fields>
+        <field name="MFR">Pheonix Contact</field>
+        <field name="MFR S/N">SPT-THR 2,5/ 2-V-5,0 P20 R32</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877</field>
+        <field name="Supplier 1 S/N">277-1135333CT-ND</field>
+      </fields>
+      <libsource lib="1135333" part="1135333" description=""/>
+      <property name="MFR" value="Pheonix Contact"/>
+      <property name="MFR S/N" value="SPT-THR 2,5/ 2-V-5,0 P20 R32"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877"/>
+      <property name="Supplier 1 S/N" value="277-1135333CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>09ed83ba-61d8-45a9-8112-7a277312a5ed</tstamps>
+    </comp>
+    <comp ref="J14">
+      <value>Conn_01x04</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x04" description="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="MFR" value=""/>
+      <property name="MFR S/N" value=""/>
+      <property name="Supplier 1" value=""/>
+      <property name="Supplier 1 S/N" value=""/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>617dbc40-a628-448f-895b-57c23736f08e</tstamps>
+    </comp>
+    <comp ref="JP4">
+      <value>SolderJumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <libsource lib="Jumper" part="SolderJumper_2_Open" description="Solder Jumper, 2-pole, open"/>
+      <property name="MFR" value=""/>
+      <property name="MFR S/N" value=""/>
+      <property name="Supplier 1" value=""/>
+      <property name="Supplier 1 S/N" value=""/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Solder Jumper, 2-pole, open"/>
+      <property name="ki_keywords" value="solder jumper SPST"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>27cbe8e5-8918-48be-a046-b60ad7074ba6</tstamps>
+    </comp>
+    <comp ref="JP5">
+      <value>SolderJumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <libsource lib="Jumper" part="SolderJumper_2_Open" description="Solder Jumper, 2-pole, open"/>
+      <property name="MFR" value=""/>
+      <property name="MFR S/N" value=""/>
+      <property name="Supplier 1" value=""/>
+      <property name="Supplier 1 S/N" value=""/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Solder Jumper, 2-pole, open"/>
+      <property name="ki_keywords" value="solder jumper SPST"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>71d06bf9-b0bb-40dd-92b6-2ed50ebd51b6</tstamps>
+    </comp>
+    <comp ref="L1">
+      <value>74477420</value>
+      <footprint>Robosub Lib:IND_5848-WE-PD2_WRE</footprint>
+      <datasheet>https://www.we-online.com/components/products/datasheet/74477420.pdf</datasheet>
+      <fields>
+        <field name="MFR">Würth Elektronik</field>
+        <field name="MFR S/N">74477420</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/würth-elektronik/74477420/1638683</field>
+        <field name="Supplier 1 S/N">732-1278-1-ND</field>
+      </fields>
+      <libsource lib="74477420" part="74477420" description=""/>
+      <property name="MFR" value="Würth Elektronik"/>
+      <property name="MFR S/N" value="74477420"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/würth-elektronik/74477420/1638683"/>
+      <property name="Supplier 1 S/N" value="732-1278-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_keywords" value="74477420"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>efe41f20-6adc-401d-8d7d-78782c7c12ce</tstamps>
+    </comp>
+    <comp ref="R1">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">RC0805FR-0710KL</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535</field>
+        <field name="Supplier 1 S/N">311-10.0KCRCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="RC0805FR-0710KL"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535"/>
+      <property name="Supplier 1 S/N" value="311-10.0KCRCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>46271aa8-7c0b-4bd9-a163-642689edb668</tstamps>
+    </comp>
+    <comp ref="R2">
+      <value>3k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">TE Connectivity Passive Product</field>
+        <field name="MFR S/N">CRG0805F3K0</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CRG0805F3K0/2380900</field>
+        <field name="Supplier 1 S/N">A126368CT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="TE Connectivity Passive Product"/>
+      <property name="MFR S/N" value="CRG0805F3K0"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CRG0805F3K0/2380900"/>
+      <property name="Supplier 1 S/N" value="A126368CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>36b80ad7-a248-47d6-b3ad-9b7b41c71bf1</tstamps>
+    </comp>
+    <comp ref="R3">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">RC0805FR-0710KL</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535</field>
+        <field name="Supplier 1 S/N">311-10.0KCRCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="RC0805FR-0710KL"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535"/>
+      <property name="Supplier 1 S/N" value="311-10.0KCRCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f52deb5f-790d-4c40-91fa-d54bd486017a</tstamps>
+    </comp>
+    <comp ref="R4">
+      <value>10k</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">RC0805FR-0710KL</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535</field>
+        <field name="Supplier 1 S/N">311-10.0KCRCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="RC0805FR-0710KL"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535"/>
+      <property name="Supplier 1 S/N" value="311-10.0KCRCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>ad97d2a0-7cdf-49eb-878b-5ba0ca1574d8</tstamps>
+    </comp>
+    <comp ref="R5">
+      <value>10</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">RC0805FR-0710RL</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710RL/727534</field>
+        <field name="Supplier 1 S/N">311-10.0CRCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="RC0805FR-0710RL"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710RL/727534"/>
+      <property name="Supplier 1 S/N" value="311-10.0CRCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5b85cfe9-dd17-49b9-b834-f30cc5a17199</tstamps>
+    </comp>
+    <comp ref="R6">
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">RC0805FR-07100RL</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543</field>
+        <field name="Supplier 1 S/N">311-100CRCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="RC0805FR-07100RL"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543"/>
+      <property name="Supplier 1 S/N" value="311-100CRCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6bde09fb-b61f-4a46-8235-dea4068ceeb5</tstamps>
+    </comp>
+    <comp ref="R7">
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">RC0805FR-07100RL</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543</field>
+        <field name="Supplier 1 S/N">311-100CRCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="RC0805FR-07100RL"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543"/>
+      <property name="Supplier 1 S/N" value="311-100CRCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8be3e2a5-1e65-42c4-8331-8c69e2992c80</tstamps>
+    </comp>
+    <comp ref="R8">
+      <value>100</value>
+      <footprint>Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder</footprint>
+      <fields>
+        <field name="MFR">YAGEO</field>
+        <field name="MFR S/N">RC0805FR-07100RL</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543</field>
+        <field name="Supplier 1 S/N">311-100CRCT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="YAGEO"/>
+      <property name="MFR S/N" value="RC0805FR-07100RL"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543"/>
+      <property name="Supplier 1 S/N" value="311-100CRCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0e5cf9ed-d4a3-4c13-a3d8-07adf5218376</tstamps>
+    </comp>
+    <comp ref="R9">
+      <value>0 (100A)</value>
+      <footprint>Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder</footprint>
+      <datasheet>https://www.bourns.com/docs/product-datasheets/css2h-2512.pdf</datasheet>
+      <fields>
+        <field name="MFR">Bourns Inc.</field>
+        <field name="MFR S/N">CSS2H-2512C-000E</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/bourns-inc./CSS2H-2512C-000E/16357993?utm_adgroup=&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Pmax_Shopping_Product_Silicon%20Valley%20Category%20Awareness&amp;utm_term=&amp;utm_content=&amp;utm_id=go_cmp-20773039395_adg-_ad-__dev-c_ext-_prd-16357993_sig-Cj0KCQjw0MexBhD3ARIsAEI3WHINDK5g5q8j-TQ9Vup2iYGKWoEq-ecb_L6aosVGmVwaQhBSKO6nmgsaAonSEALw_wcB&amp;gad_source=1&amp;gclid=Cj0KCQjw0MexBhD3ARIsAEI3WHINDK5g5q8j-TQ9Vup2iYGKWoEq-ecb_L6aosVGmVwaQhBSKO6nmgsaAonSEALw_wcB</field>
+        <field name="Supplier 1 S/N">118-CSS2H-2512C-000ECT-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="Bourns Inc."/>
+      <property name="MFR S/N" value="CSS2H-2512C-000E"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/bourns-inc./CSS2H-2512C-000E/16357993?utm_adgroup=&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Pmax_Shopping_Product_Silicon%20Valley%20Category%20Awareness&amp;utm_term=&amp;utm_content=&amp;utm_id=go_cmp-20773039395_adg-_ad-__dev-c_ext-_prd-16357993_sig-Cj0KCQjw0MexBhD3ARIsAEI3WHINDK5g5q8j-TQ9Vup2iYGKWoEq-ecb_L6aosVGmVwaQhBSKO6nmgsaAonSEALw_wcB&amp;gad_source=1&amp;gclid=Cj0KCQjw0MexBhD3ARIsAEI3WHINDK5g5q8j-TQ9Vup2iYGKWoEq-ecb_L6aosVGmVwaQhBSKO6nmgsaAonSEALw_wcB"/>
+      <property name="Supplier 1 S/N" value="118-CSS2H-2512C-000ECT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>04a32991-17ea-4264-ba12-b475ef7cc1ea</tstamps>
+    </comp>
+    <comp ref="U1">
+      <value>INA300AIDSQT</value>
+      <footprint>Robosub Lib:SON40P200X200X80-11N</footprint>
+      <datasheet>https://www.ti.com/lit/ds/symlink/ina300.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1712034455478&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Fina300</datasheet>
+      <fields>
+        <field name="MFR">Texas Instruments</field>
+        <field name="MFR S/N">INA300AIDSQT</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/texas-instruments/INA300AIDSQT/4759519</field>
+        <field name="Supplier 1 S/N">296-37474-1-ND</field>
+      </fields>
+      <libsource lib="INA300AIDSQT" part="INA300AIDSQT" description=""/>
+      <property name="MFR" value="Texas Instruments"/>
+      <property name="MFR S/N" value="INA300AIDSQT"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/texas-instruments/INA300AIDSQT/4759519"/>
+      <property name="Supplier 1 S/N" value="296-37474-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6b00413b-2a07-4a1c-b65b-2c064090ac66</tstamps>
+    </comp>
+    <comp ref="U2">
+      <value>SN74LVC1G97DBVR</value>
+      <footprint>Robosub Lib:SOT95P280X145-6N</footprint>
+      <datasheet>https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&amp;gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc1g97</datasheet>
+      <fields>
+        <field name="MFR">Texas Instruments</field>
+        <field name="MFR S/N">SN74LVC1G97DBVR</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC1G97DBVR/571196</field>
+        <field name="Supplier 1 S/N">296-15581-1-ND</field>
+      </fields>
+      <libsource lib="SN74LVC1G97DBVR" part="SN74LVC1G97DBVR" description=""/>
+      <property name="MFR" value="Texas Instruments"/>
+      <property name="MFR S/N" value="SN74LVC1G97DBVR"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC1G97DBVR/571196"/>
+      <property name="Supplier 1 S/N" value="296-15581-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>81484296-27dd-4a46-93f1-da3bbc439788</tstamps>
+    </comp>
+    <comp ref="U3">
+      <value>AUIR3241STR</value>
+      <footprint>Robosub Lib:SOIC127P600X175-8N_AUIR3241STR</footprint>
+      <datasheet>https://www.infineon.com/dgdl/Infineon-AUIR3241STR-DS-v01_01-EN.pdf?fileId=5546d4625ee5d4cd015eebed858a5b82</datasheet>
+      <fields>
+        <field name="MFR">Infineon Technologies</field>
+        <field name="MFR S/N">AUIR3241STR</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/infineon-technologies/auir3241str/7428056</field>
+        <field name="Supplier 1 S/N">AUIR3241SCT-ND</field>
+      </fields>
+      <libsource lib="AUIR3241STR" part="AUIR3241STR" description=""/>
+      <property name="MFR" value="Infineon Technologies"/>
+      <property name="MFR S/N" value="AUIR3241STR"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/infineon-technologies/auir3241str/7428056"/>
+      <property name="Supplier 1 S/N" value="AUIR3241SCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2ad2d918-1807-4d94-8d70-b8ca2e6d2c43</tstamps>
+    </comp>
+    <comp ref="U4">
+      <value>BSC0702LSATMA1</value>
+      <footprint>Robosub Lib:BSC0702LSATMA1</footprint>
+      <datasheet>BSC0702LSATMA1</datasheet>
+      <fields>
+        <field name="MFR">Infineon Technologies</field>
+        <field name="MFR S/N">BSC0702LSATMA1</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/infineon-technologies/BSC0702LSATMA1/7323968?s=N4IgTCBcDaIEIGUDCAGA7CsAZBBBAKgLK4CMIAugL5A</field>
+        <field name="Supplier 1 S/N">448-BSC0702LSATMA1CT-ND</field>
+      </fields>
+      <libsource lib="" part="BSC0702LSATMA1_1" description=""/>
+      <property name="MFR" value="Infineon Technologies"/>
+      <property name="MFR S/N" value="BSC0702LSATMA1"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/infineon-technologies/BSC0702LSATMA1/7323968?s=N4IgTCBcDaIEIGUDCAGA7CsAZBBBAKgLK4CMIAugL5A"/>
+      <property name="Supplier 1 S/N" value="448-BSC0702LSATMA1CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_keywords" value="BSC0702LSATMA1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>f043d75e-ede6-4e83-abe6-a2e3624af086</tstamps>
+    </comp>
+    <comp ref="U5">
+      <value>BSC0702LSATMA1</value>
+      <footprint>Robosub Lib:BSC0702LSATMA1</footprint>
+      <datasheet>BSC0702LSATMA1</datasheet>
+      <fields>
+        <field name="MFR">Infineon Technologies</field>
+        <field name="MFR S/N">BSC0702LSATMA1</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/infineon-technologies/BSC0702LSATMA1/7323968?s=N4IgTCBcDaIEIGUDCAGA7CsAZBBBAKgLK4CMIAugL5A</field>
+        <field name="Supplier 1 S/N">448-BSC0702LSATMA1CT-ND</field>
+      </fields>
+      <libsource lib="" part="BSC0702LSATMA1_2" description=""/>
+      <property name="MFR" value="Infineon Technologies"/>
+      <property name="MFR S/N" value="BSC0702LSATMA1"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/infineon-technologies/BSC0702LSATMA1/7323968?s=N4IgTCBcDaIEIGUDCAGA7CsAZBBBAKgLK4CMIAugL5A"/>
+      <property name="Supplier 1 S/N" value="448-BSC0702LSATMA1CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_keywords" value="BSC0702LSATMA1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c7f9f894-a893-43ed-8d0b-f68595a56dac</tstamps>
+    </comp>
+    <comp ref="U6">
+      <value>BSC0702LSATMA1</value>
+      <footprint>Robosub Lib:BSC0702LSATMA1</footprint>
+      <datasheet>BSC0702LSATMA1</datasheet>
+      <fields>
+        <field name="MFR">Infineon Technologies</field>
+        <field name="MFR S/N">BSC0702LSATMA1</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/infineon-technologies/BSC0702LSATMA1/7323968?s=N4IgTCBcDaIEIGUDCAGA7CsAZBBBAKgLK4CMIAugL5A</field>
+        <field name="Supplier 1 S/N">448-BSC0702LSATMA1CT-ND</field>
+      </fields>
+      <libsource lib="BSC0702LSATMA1" part="BSC0702LSATMA1" description=""/>
+      <property name="MFR" value="Infineon Technologies"/>
+      <property name="MFR S/N" value="BSC0702LSATMA1"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/infineon-technologies/BSC0702LSATMA1/7323968?s=N4IgTCBcDaIEIGUDCAGA7CsAZBBBAKgLK4CMIAugL5A"/>
+      <property name="Supplier 1 S/N" value="448-BSC0702LSATMA1CT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_keywords" value="BSC0702LSATMA1"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>c20d9593-ffc5-44f1-aca9-158bf685763e</tstamps>
+    </comp>
+    <comp ref="U7">
+      <value>NVTR01P02LT1G</value>
+      <footprint>Robosub Lib:SOT-23-3_1P4X3P040_ONS</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/ntr1p02lt1-d.pdf</datasheet>
+      <fields>
+        <field name="MFR">onsemi</field>
+        <field name="MFR S/N">NVTR01P02LT1G</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/onsemi/NVTR01P02LT1G/3062562?s=N4IgTCBcDaIHIDUAqAlADARgAprAGSQwHEQBdAXyA</field>
+        <field name="Supplier 1 S/N">NVTR01P02LT1GOSCT-ND</field>
+      </fields>
+      <libsource lib="Robosub Symbols" part="NVTR01P02LT1G" description=""/>
+      <property name="MFR" value="onsemi"/>
+      <property name="MFR S/N" value="NVTR01P02LT1G"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/onsemi/NVTR01P02LT1G/3062562?s=N4IgTCBcDaIHIDUAqAlADARgAprAGSQwHEQBdAXyA"/>
+      <property name="Supplier 1 S/N" value="NVTR01P02LT1GOSCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_keywords" value="NVTR01P02LT1G"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6b4d29b8-103d-4571-a387-0f4233411b02</tstamps>
+    </comp>
+    <comp ref="U8">
+      <value>NVTR01P02LT1G</value>
+      <footprint>Robosub Lib:SOT-23-3_1P4X3P040_ONS</footprint>
+      <datasheet>https://www.onsemi.com/pdf/datasheet/ntr1p02lt1-d.pdf</datasheet>
+      <fields>
+        <field name="MFR">onsemi</field>
+        <field name="MFR S/N">NVTR01P02LT1G</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/onsemi/NVTR01P02LT1G/3062562?s=N4IgTCBcDaIHIDUAqAlADARgAprAGSQwHEQBdAXyA</field>
+        <field name="Supplier 1 S/N">NVTR01P02LT1GOSCT-ND</field>
+      </fields>
+      <libsource lib="Robosub Symbols" part="NVTR01P02LT1G" description=""/>
+      <property name="MFR" value="onsemi"/>
+      <property name="MFR S/N" value="NVTR01P02LT1G"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/onsemi/NVTR01P02LT1G/3062562?s=N4IgTCBcDaIHIDUAqAlADARgAprAGSQwHEQBdAXyA"/>
+      <property name="Supplier 1 S/N" value="NVTR01P02LT1GOSCT-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_keywords" value="NVTR01P02LT1G"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1c69ccdc-00ce-4998-adb9-a161d15faf5e</tstamps>
+    </comp>
+    <comp ref="WSLP59312L000FEA_1">
+      <value>2mOhm</value>
+      <footprint>WSLP59312L000FEA:RES_WSLP5931_.002OHM_VIS</footprint>
+      <datasheet>https://www.vishay.com/docs/30176/wslp3921-wslp5931.pdf</datasheet>
+      <fields>
+        <field name="MFR">Vishay Dale</field>
+        <field name="MFR S/N">WSLP59312L000FEA</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/vishay-dale/WSLP59312L000FEA/5215934?s=N4IgTCBcDaIO4GcA2AHArATgMwEYxIAYiAzAUwEMQBdAXyA</field>
+        <field name="Supplier 1 S/N">541-10013-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="Vishay Dale"/>
+      <property name="MFR S/N" value="WSLP59312L000FEA"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/vishay-dale/WSLP59312L000FEA/5215934?s=N4IgTCBcDaIO4GcA2AHArATgMwEYxIAYiAzAUwEMQBdAXyA"/>
+      <property name="Supplier 1 S/N" value="541-10013-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>5d5a602c-e2e5-4275-a123-e82eb1cd00aa</tstamps>
+    </comp>
+    <comp ref="WSLP59312L000FEA_2">
+      <value>2mOhm</value>
+      <footprint>WSLP59312L000FEA:RES_WSLP5931_.002OHM_VIS</footprint>
+      <datasheet>https://www.vishay.com/docs/30176/wslp3921-wslp5931.pdf</datasheet>
+      <fields>
+        <field name="MFR">Vishay Dale</field>
+        <field name="MFR S/N">WSLP59312L000FEA</field>
+        <field name="Supplier 1">https://www.digikey.com/en/products/detail/vishay-dale/WSLP59312L000FEA/5215934?s=N4IgTCBcDaIO4GcA2AHArATgMwEYxIAYiAzAUwEMQBdAXyA</field>
+        <field name="Supplier 1 S/N">541-10013-1-ND</field>
+      </fields>
+      <libsource lib="Device" part="R_US" description="Resistor, US symbol"/>
+      <property name="MFR" value="Vishay Dale"/>
+      <property name="MFR S/N" value="WSLP59312L000FEA"/>
+      <property name="Supplier 1" value="https://www.digikey.com/en/products/detail/vishay-dale/WSLP59312L000FEA/5215934?s=N4IgTCBcDaIO4GcA2AHArATgMwEYxIAYiAzAUwEMQBdAXyA"/>
+      <property name="Supplier 1 S/N" value="541-10013-1-ND"/>
+      <property name="Supplier 2" value=""/>
+      <property name="Supplier 2 S/N" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="EE156_2_Layer.kicad_sch"/>
+      <property name="ki_description" value="Resistor, US symbol"/>
+      <property name="ki_keywords" value="R res resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>0a2fefea-5408-448c-9cd3-f98dffeea42f</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="" part="BSC0702LSATMA1_1">
+      <docs>BSC0702LSATMA1</docs>
+      <footprints>
+        <fp>PG-TDSON-8-7</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BSC0702LSATMA1</field>
+        <field name="Footprint">PG-TDSON-8-7</field>
+        <field name="Datasheet">BSC0702LSATMA1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="S" type="unspecified"/>
+        <pin num="2" name="S" type="unspecified"/>
+        <pin num="3" name="S" type="unspecified"/>
+        <pin num="4" name="G" type="unspecified"/>
+        <pin num="5" name="D" type="unspecified"/>
+        <pin num="6" name="D" type="unspecified"/>
+        <pin num="7" name="D" type="unspecified"/>
+        <pin num="8" name="D" type="unspecified"/>
+        <pin num="9" name="D" type="unspecified"/>
+        <pin num="10" name="D" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="" part="BSC0702LSATMA1_2">
+      <docs>BSC0702LSATMA1</docs>
+      <footprints>
+        <fp>PG-TDSON-8-7</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BSC0702LSATMA1</field>
+        <field name="Footprint">PG-TDSON-8-7</field>
+        <field name="Datasheet">BSC0702LSATMA1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="S" type="unspecified"/>
+        <pin num="2" name="S" type="unspecified"/>
+        <pin num="3" name="S" type="unspecified"/>
+        <pin num="4" name="G" type="unspecified"/>
+        <pin num="5" name="D" type="unspecified"/>
+        <pin num="6" name="D" type="unspecified"/>
+        <pin num="7" name="D" type="unspecified"/>
+        <pin num="8" name="D" type="unspecified"/>
+        <pin num="9" name="D" type="unspecified"/>
+        <pin num="10" name="D" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="1135333" part="1135333">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">1135333</field>
+        <field name="Footprint">1135333:PHOENIX_1135333</field>
+        <field name="MF">Phoenix Contact</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">19.35mm</field>
+        <field name="Package">None</field>
+        <field name="Price">None</field>
+        <field name="Check_prices">https://www.snapeda.com/parts/1135333/Phoenix+Contact/view-part/?ref=eda</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="PARTREV">13.01.2022</field>
+        <field name="SnapEDA_Link">https://www.snapeda.com/parts/1135333/Phoenix+Contact/view-part/?ref=snap</field>
+        <field name="MP">1135333</field>
+        <field name="Purchase-URL">https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=10781979&amp;manufacturer=Phoenix Contact&amp;part_name=1135333&amp;search_term=None</field>
+        <field name="Description">
+SCOTCHKOTE 328 3LITER KIT PART B
+</field>
+        <field name="Availability">In Stock</field>
+        <field name="MANUFACTURER">Phoenix Contact</field>
+      </fields>
+      <pins>
+        <pin num="1_1" name="1_1" type="passive"/>
+        <pin num="1_2" name="1_2" type="passive"/>
+        <pin num="2_1" name="2_1" type="passive"/>
+        <pin num="2_2" name="2_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="74477420" part="74477420">
+      <docs>74477420</docs>
+      <footprints>
+        <fp>IND_5848-WE-PD2_WRE</fp>
+        <fp>IND_5848-WE-PD2_WRE-M</fp>
+        <fp>IND_5848-WE-PD2_WRE-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">L</field>
+        <field name="Value">74477420</field>
+        <field name="Footprint">IND_5848-WE-PD2_WRE</field>
+        <field name="Datasheet">74477420</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="AUIR3241STR" part="AUIR3241STR">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AUIR3241STR</field>
+        <field name="Footprint">AUIR3241STR:SOIC127P600X175-8N_AUIR3241STR</field>
+        <field name="PARTREV">1.0</field>
+        <field name="STANDARD">IPC 7351B</field>
+        <field name="MANUFACTURER">Infineon Technologies</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">1.75 mm</field>
+        <field name="SNAPEDA_PACKAGE_ID">81501</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN" type="input"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="RS" type="input"/>
+        <pin num="4" name="SW" type="output"/>
+        <pin num="5" name="SOURCE" type="passive"/>
+        <pin num="6" name="GATE" type="passive"/>
+        <pin num="7" name="VCC" type="power_in"/>
+        <pin num="8" name="OUT" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="BSC0702LSATMA1" part="BSC0702LSATMA1">
+      <docs>BSC0702LSATMA1</docs>
+      <footprints>
+        <fp>PG-TDSON-8-7</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">BSC0702LSATMA1</field>
+        <field name="Footprint">PG-TDSON-8-7</field>
+        <field name="Datasheet">BSC0702LSATMA1</field>
+      </fields>
+      <pins>
+        <pin num="1" name="S" type="unspecified"/>
+        <pin num="2" name="S" type="unspecified"/>
+        <pin num="3" name="S" type="unspecified"/>
+        <pin num="4" name="G" type="unspecified"/>
+        <pin num="5" name="D" type="unspecified"/>
+        <pin num="6" name="D" type="unspecified"/>
+        <pin num="7" name="D" type="unspecified"/>
+        <pin num="8" name="D" type="unspecified"/>
+        <pin num="9" name="D" type="unspecified"/>
+        <pin num="10" name="D" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x04">
+      <description>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x04</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="D_Zener">
+      <description>Zener diode</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>TO-???*</fp>
+        <fp>*_Diode_*</fp>
+        <fp>*SingleDiode*</fp>
+        <fp>D_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">D_Zener</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R_US">
+      <description>Resistor, US symbol</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_US</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="" type="passive"/>
+        <pin num="2" name="" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="INA300AIDSQT" part="INA300AIDSQT">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">INA300AIDSQT</field>
+        <field name="Footprint">INA300AIDSQT:SON40P200X200X80-11N</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN+" type="input"/>
+        <pin num="2" name="IN-" type="input"/>
+        <pin num="3" name="LIMIT" type="input"/>
+        <pin num="4" name="ENABLE" type="input"/>
+        <pin num="5" name="~{ALERT}" type="output"/>
+        <pin num="6" name="LATCH" type="input"/>
+        <pin num="7" name="DELAY" type="input"/>
+        <pin num="8" name="GND" type="power_in"/>
+        <pin num="9" name="VS" type="power_in"/>
+        <pin num="10" name="HYS" type="input"/>
+        <pin num="11" name="EP" type="bidirectional"/>
+      </pins>
+    </libpart>
+    <libpart lib="Jumper" part="SolderJumper_2_Open">
+      <description>Solder Jumper, 2-pole, open</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>SolderJumper*Open*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">SolderJumper_2_Open</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="LED" part="IR26-21C_L110_TR8">
+      <description>940nm, 20 deg, Infrared LED, 1206</description>
+      <docs>http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf</docs>
+      <footprints>
+        <fp>LED*1206*3216Metric*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">IR26-21C_L110_TR8</field>
+        <field name="Footprint">LED_SMD:LED_1206_3216Metric</field>
+        <field name="Datasheet">http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
+    <libpart lib="Robosub Symbols" part="NVTR01P02LT1G">
+      <docs>NVTR01P02LT1G</docs>
+      <footprints>
+        <fp>SOT-23-3_1P4X3P040_ONS</fp>
+        <fp>SOT-23-3_1P4X3P040_ONS-M</fp>
+        <fp>SOT-23-3_1P4X3P040_ONS-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">NVTR01P02LT1G</field>
+        <field name="Footprint">SOT-23-3_1P4X3P040_ONS</field>
+        <field name="Datasheet">NVTR01P02LT1G</field>
+      </fields>
+      <pins>
+        <pin num="1" name="GATE" type="unspecified"/>
+        <pin num="2" name="SOURCE" type="unspecified"/>
+        <pin num="3" name="DRAIN" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="SBRT15U50SP5_13" part="SBRT15U50SP5-13">
+      <docs>SBRT15U50SP5-13</docs>
+      <footprints>
+        <fp>POWERDI5_DIO</fp>
+        <fp>POWERDI5_DIO-M</fp>
+        <fp>POWERDI5_DIO-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">CR</field>
+        <field name="Value">SBRT15U50SP5-13</field>
+        <field name="Footprint">POWERDI5_DIO</field>
+        <field name="Datasheet">SBRT15U50SP5-13</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+      </pins>
+    </libpart>
+    <libpart lib="SN74LVC1G97DBVR" part="SN74LVC1G97DBVR">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">SN74LVC1G97DBVR</field>
+        <field name="Footprint">SN74LVC1G97DBVR:SOT95P280X145-6N</field>
+      </fields>
+      <pins>
+        <pin num="1" name="IN1" type="input"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="IN0" type="input"/>
+        <pin num="4" name="Y" type="output"/>
+        <pin num="5" name="VCC" type="power_in"/>
+        <pin num="6" name="IN2" type="input"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="1135333">
+      <uri>/Users/Vassilis/Desktop/Robosub/EDA/1135333/1135333.kicad_sym</uri>
+    </library>
+    <library logical="74477420">
+      <uri>/Users/Vassilis/Desktop/Robosub/EDA/74477420/74477420.kicad_sym</uri>
+    </library>
+    <library logical="AUIR3241STR">
+      <uri>/Users/Vassilis/Desktop/Robosub/EDA/AUIR3241STR/AUIR3241STR.kicad_sym</uri>
+    </library>
+    <library logical="BSC0702LSATMA1">
+      <uri>/Users/Vassilis/Desktop/Robosub/EDA/BSC0702LSATMA1/BSC0702LSATMA1.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Device">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Device.kicad_sym</uri>
+    </library>
+    <library logical="INA300AIDSQT">
+      <uri>/Users/Vassilis/Desktop/Robosub/EDA/INA300AIDSQT/INA300AIDSQT.kicad_sym</uri>
+    </library>
+    <library logical="Jumper">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Jumper.kicad_sym</uri>
+    </library>
+    <library logical="LED">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//LED.kicad_sym</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>/Applications/KiCad/KiCad.app/Contents/SharedSupport/symbols//Mechanical.kicad_sym</uri>
+    </library>
+    <library logical="Robosub Symbols">
+      <uri>/Users/Vassilis/Desktop/Robosub/Robosub Symbols.kicad_sym</uri>
+    </library>
+    <library logical="SBRT15U50SP5_13">
+      <uri>/Users/Vassilis/Desktop/Robosub/EDA/SBRT15U50SP5_13/SBRT15U50SP5_13.kicad_sym</uri>
+    </library>
+    <library logical="SN74LVC1G97DBVR">
+      <uri>/Users/Vassilis/Desktop/Robosub/EDA/SN74LVC1G97DBVR/SN74LVC1G97DBVR.kicad_sym</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+5V">
+      <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C2" pin="1" pintype="passive"/>
+      <node ref="J14" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="4" pinfunction="ENABLE" pintype="input"/>
+      <node ref="U1" pin="7" pinfunction="DELAY" pintype="input"/>
+      <node ref="U1" pin="9" pinfunction="VS" pintype="power_in"/>
+      <node ref="U2" pin="5" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U7" pin="3" pinfunction="DRAIN" pintype="unspecified"/>
+      <node ref="U8" pin="3" pinfunction="DRAIN" pintype="unspecified"/>
+    </net>
+    <net code="2" name="+BATT">
+      <node ref="J1" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J1" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J2" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J2" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="IN+" pintype="input"/>
+      <node ref="WSLP59312L000FEA_1" pin="2" pintype="passive"/>
+      <node ref="WSLP59312L000FEA_2" pin="2" pintype="passive"/>
+    </net>
+    <net code="3" name="GATE_EN">
+      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="U2" pin="4" pinfunction="Y" pintype="output"/>
+    </net>
+    <net code="4" name="GND">
+      <node ref="C1" pin="2" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
+      <node ref="C4" pin="2" pintype="passive"/>
+      <node ref="C5" pin="2" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="CR1" pin="1" pinfunction="1" pintype="unspecified"/>
+      <node ref="CR1" pin="2" pinfunction="2" pintype="unspecified"/>
+      <node ref="J1" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J1" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J10" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J10" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J2" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J2" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J3" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J3" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J4" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J4" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J5" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J5" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J6" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J6" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J7" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J7" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J8" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J8" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="J9" pin="2_1" pinfunction="2_1" pintype="passive"/>
+      <node ref="J9" pin="2_2" pinfunction="2_2" pintype="passive"/>
+      <node ref="JP4" pin="2" pinfunction="B" pintype="passive"/>
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="R5" pin="2" pintype="passive"/>
+      <node ref="R7" pin="1" pintype="passive"/>
+      <node ref="R8" pin="1" pintype="passive"/>
+      <node ref="U1" pin="10" pinfunction="HYS" pintype="input"/>
+      <node ref="U1" pin="11" pinfunction="EP" pintype="bidirectional"/>
+      <node ref="U1" pin="8" pinfunction="GND" pintype="power_in"/>
+      <node ref="U2" pin="1" pinfunction="IN1" pintype="input"/>
+      <node ref="U2" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="U3" pin="2" pinfunction="GND" pintype="power_in"/>
+    </net>
+    <net code="5" name="LATCH">
+      <node ref="J14" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="JP5" pin="1" pinfunction="A" pintype="passive"/>
+    </net>
+    <net code="6" name="Net-(D2-A)">
+      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="U7" pin="2" pinfunction="SOURCE" pintype="unspecified"/>
+    </net>
+    <net code="7" name="Net-(D2-K)">
+      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R7" pin="2" pintype="passive"/>
+    </net>
+    <net code="8" name="Net-(D3-A)">
+      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="U8" pin="2" pinfunction="SOURCE" pintype="unspecified"/>
+    </net>
+    <net code="9" name="Net-(D3-K)">
+      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R8" pin="2" pintype="passive"/>
+    </net>
+    <net code="10" name="Net-(JP4-A)">
+      <node ref="JP4" pin="1" pinfunction="A" pintype="passive"/>
+      <node ref="JP5" pin="2" pinfunction="B" pintype="passive"/>
+      <node ref="U1" pin="6" pinfunction="LATCH" pintype="input"/>
+    </net>
+    <net code="11" name="Net-(U1-LIMIT)">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="3" pinfunction="LIMIT" pintype="input"/>
+    </net>
+    <net code="12" name="Net-(U3-GATE)">
+      <node ref="R6" pin="1" pintype="passive"/>
+      <node ref="U3" pin="6" pinfunction="GATE" pintype="passive"/>
+    </net>
+    <net code="13" name="Net-(U3-IN)">
+      <node ref="R4" pin="2" pintype="passive"/>
+      <node ref="U3" pin="1" pinfunction="IN" pintype="input"/>
+    </net>
+    <net code="14" name="Net-(U3-OUT)">
+      <node ref="C3" pin="2" pintype="passive"/>
+      <node ref="U3" pin="8" pinfunction="OUT" pintype="output"/>
+    </net>
+    <net code="15" name="Net-(U3-RS)">
+      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="U3" pin="3" pinfunction="RS" pintype="input"/>
+    </net>
+    <net code="16" name="Net-(U3-SW)">
+      <node ref="L1" pin="1" pinfunction="1" pintype="unspecified"/>
+      <node ref="U3" pin="4" pinfunction="SW" pintype="output"/>
+    </net>
+    <net code="17" name="OCP_N">
+      <node ref="J14" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U1" pin="5" pinfunction="~{ALERT}" pintype="output"/>
+      <node ref="U2" pin="3" pinfunction="IN0" pintype="input"/>
+      <node ref="U7" pin="1" pinfunction="GATE" pintype="unspecified"/>
+    </net>
+    <net code="18" name="Sense(+)">
+      <node ref="C3" pin="1" pintype="passive"/>
+      <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="L1" pin="2" pinfunction="2" pintype="unspecified"/>
+      <node ref="R9" pin="1" pintype="passive"/>
+      <node ref="U1" pin="2" pinfunction="IN-" pintype="input"/>
+      <node ref="U3" pin="7" pinfunction="VCC" pintype="power_in"/>
+      <node ref="U4" pin="10" pinfunction="D" pintype="unspecified"/>
+      <node ref="U4" pin="5" pinfunction="D" pintype="unspecified"/>
+      <node ref="U4" pin="6" pinfunction="D" pintype="unspecified"/>
+      <node ref="U4" pin="7" pinfunction="D" pintype="unspecified"/>
+      <node ref="U4" pin="8" pinfunction="D" pintype="unspecified"/>
+      <node ref="U4" pin="9" pinfunction="D" pintype="unspecified"/>
+      <node ref="U5" pin="10" pinfunction="D" pintype="unspecified"/>
+      <node ref="U5" pin="5" pinfunction="D" pintype="unspecified"/>
+      <node ref="U5" pin="6" pinfunction="D" pintype="unspecified"/>
+      <node ref="U5" pin="7" pinfunction="D" pintype="unspecified"/>
+      <node ref="U5" pin="8" pinfunction="D" pintype="unspecified"/>
+      <node ref="U5" pin="9" pinfunction="D" pintype="unspecified"/>
+      <node ref="U6" pin="10" pinfunction="D" pintype="unspecified"/>
+      <node ref="U6" pin="5" pinfunction="D" pintype="unspecified"/>
+      <node ref="U6" pin="6" pinfunction="D" pintype="unspecified"/>
+      <node ref="U6" pin="7" pinfunction="D" pintype="unspecified"/>
+      <node ref="U6" pin="8" pinfunction="D" pintype="unspecified"/>
+      <node ref="U6" pin="9" pinfunction="D" pintype="unspecified"/>
+      <node ref="WSLP59312L000FEA_1" pin="1" pintype="passive"/>
+      <node ref="WSLP59312L000FEA_2" pin="1" pintype="passive"/>
+    </net>
+    <net code="19" name="THRUSTERS_GATE">
+      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
+      <node ref="R6" pin="2" pintype="passive"/>
+      <node ref="R9" pin="2" pintype="passive"/>
+      <node ref="U4" pin="4" pinfunction="G" pintype="unspecified"/>
+      <node ref="U5" pin="4" pinfunction="G" pintype="unspecified"/>
+      <node ref="U6" pin="4" pinfunction="G" pintype="unspecified"/>
+    </net>
+    <net code="20" name="THRUST_EN">
+      <node ref="J14" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U2" pin="6" pinfunction="IN2" pintype="input"/>
+      <node ref="U8" pin="1" pinfunction="GATE" pintype="unspecified"/>
+    </net>
+    <net code="21" name="V_BAT_THRUSTERS">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
+      <node ref="CR1" pin="3" pinfunction="3" pintype="unspecified"/>
+      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J10" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J10" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J3" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J3" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J4" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J4" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J5" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J5" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J6" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J6" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J7" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J7" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J8" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J8" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="J9" pin="1_1" pinfunction="1_1" pintype="passive"/>
+      <node ref="J9" pin="1_2" pinfunction="1_2" pintype="passive"/>
+      <node ref="U3" pin="5" pinfunction="SOURCE" pintype="passive"/>
+      <node ref="U4" pin="1" pinfunction="S" pintype="unspecified"/>
+      <node ref="U4" pin="2" pinfunction="S" pintype="unspecified"/>
+      <node ref="U4" pin="3" pinfunction="S" pintype="unspecified"/>
+      <node ref="U5" pin="1" pinfunction="S" pintype="unspecified"/>
+      <node ref="U5" pin="2" pinfunction="S" pintype="unspecified"/>
+      <node ref="U5" pin="3" pinfunction="S" pintype="unspecified"/>
+      <node ref="U6" pin="1" pinfunction="S" pintype="unspecified"/>
+      <node ref="U6" pin="2" pinfunction="S" pintype="unspecified"/>
+      <node ref="U6" pin="3" pinfunction="S" pintype="unspecified"/>
+    </net>
+  </nets>
+</export>

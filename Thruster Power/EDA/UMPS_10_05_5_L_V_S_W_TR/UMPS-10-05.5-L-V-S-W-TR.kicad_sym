@@ -1,0 +1,111 @@
+
+(kicad_symbol_lib (version 20211014) (generator kicad_symbol_editor)
+  (symbol "UMPS-10-05.5-L-V-S-W-TR" (pin_names (offset 1.016)) (in_bom yes) (on_board yes)
+    (property "Reference" "J" (id 0) (at -5.08 13.462 0)
+      (effects (font (size 1.27 1.27)) (justify bottom left))
+    )
+    (property "Value" "UMPS-10-05.5-L-V-S-W-TR" (id 1) (at -5.08 -16.002 0)
+      (effects (font (size 1.27 1.27)) (justify top left))
+    )
+    (property "Footprint" "UMPS-10-05.5-L-V-S-W-TR:SAMTEC_UMPS-10-05.5-L-V-S-W-TR" (id 2) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "PARTREV" "D" (id 4) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "STANDARD" "Manufacturer Recommendations" (id 5) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MAXIMUM_PACKAGE_HEIGHT" "6.2 mm" (id 6) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (property "MANUFACTURER" "Samtec" (id 7) (at 0 0 0)
+      (effects (font (size 1.27 1.27)) (justify bottom) hide)
+    )
+    (symbol "UMPS-10-05.5-L-V-S-W-TR_0_0"
+      (rectangle (start -5.08 -15.24) (end 5.08 12.7)
+        (stroke (width 0.254)) (fill (type background))
+      )
+      (pin passive line (at -10.16 10.16 0) (length 5.08)
+        (name "01"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "01"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 7.62 0) (length 5.08)
+        (name "02"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "02"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 5.08 0) (length 5.08)
+        (name "03"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "03"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 2.54 0) (length 5.08)
+        (name "04"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "04"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 0.0 0) (length 5.08)
+        (name "05"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "05"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 -2.54 0) (length 5.08)
+        (name "06"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "06"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 -5.08 0) (length 5.08)
+        (name "07"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "07"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 -7.62 0) (length 5.08)
+        (name "08"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "08"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 -10.16 0) (length 5.08)
+        (name "09"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "09"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+      (pin passive line (at -10.16 -12.7 0) (length 5.08)
+        (name "10"
+          (effects (font (size 1.016 1.016)))
+        )
+        (number "10"
+          (effects (font (size 1.016 1.016)))
+        )
+      )
+    )
+  )
+)

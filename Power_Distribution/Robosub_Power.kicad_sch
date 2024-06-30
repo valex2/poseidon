@@ -5,13 +5,14 @@
   (paper "B")
 
   (title_block
-    (title "Test sheet")
+    (title "Main")
     (rev "0.1")
-    (company "blame- steven.clark@stanford.edu")
+    (company "blame- valex@stanford.edu")
     (comment 1 "Stanford, CA 94305-9505")
     (comment 2 "350 Jane Stanford Way")
     (comment 3 "Electrical Engineering Department")
-    (comment 4 "EE 156 / Stanford University")
+    (comment 4 "Stanford Robosub 2024")
+    (comment 5 "Rev2, fixing ground loops")
   )
 
   (lib_symbols
@@ -1495,11 +1496,11 @@
         )
       )
     )
-    (symbol "Connector_Generic:Conn_01x04" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
-      (property "Reference" "J" (at 0 5.08 0)
+    (symbol "Connector:Conn_01x05_Pin" (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "J" (at 0 7.62 0)
         (effects (font (size 1.27 1.27)))
       )
-      (property "Value" "Conn_01x04" (at 0 -7.62 0)
+      (property "Value" "Conn_01x05_Pin" (at 0 -7.62 0)
         (effects (font (size 1.27 1.27)))
       )
       (property "Footprint" "" (at 0 0 0)
@@ -1508,51 +1509,98 @@
       (property "Datasheet" "~" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
+      (property "ki_locked" "" (at 0 0 0)
+        (effects (font (size 1.27 1.27)))
+      )
       (property "ki_keywords" "connector" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (property "ki_description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)" (at 0 0 0)
+      (property "ki_description" "Generic connector, single row, 01x05, script generated" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
       (property "ki_fp_filters" "Connector*:*_1x??_*" (at 0 0 0)
         (effects (font (size 1.27 1.27)) hide)
       )
-      (symbol "Conn_01x04_1_1"
-        (rectangle (start -1.27 -4.953) (end 0 -5.207)
+      (symbol "Conn_01x05_Pin_1_1"
+        (polyline
+          (pts
+            (xy 1.27 -5.08)
+            (xy 0.8636 -5.08)
+          )
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (rectangle (start -1.27 -2.413) (end 0 -2.667)
+        (polyline
+          (pts
+            (xy 1.27 -2.54)
+            (xy 0.8636 -2.54)
+          )
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (rectangle (start -1.27 0.127) (end 0 -0.127)
+        (polyline
+          (pts
+            (xy 1.27 0)
+            (xy 0.8636 0)
+          )
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (rectangle (start -1.27 2.667) (end 0 2.413)
+        (polyline
+          (pts
+            (xy 1.27 2.54)
+            (xy 0.8636 2.54)
+          )
           (stroke (width 0.1524) (type default))
           (fill (type none))
         )
-        (rectangle (start -1.27 3.81) (end 1.27 -6.35)
-          (stroke (width 0.254) (type default))
-          (fill (type background))
+        (polyline
+          (pts
+            (xy 1.27 5.08)
+            (xy 0.8636 5.08)
+          )
+          (stroke (width 0.1524) (type default))
+          (fill (type none))
         )
-        (pin passive line (at -5.08 2.54 0) (length 3.81)
+        (rectangle (start 0.8636 -4.953) (end 0 -5.207)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (rectangle (start 0.8636 -2.413) (end 0 -2.667)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (rectangle (start 0.8636 0.127) (end 0 -0.127)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (rectangle (start 0.8636 2.667) (end 0 2.413)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (rectangle (start 0.8636 5.207) (end 0 4.953)
+          (stroke (width 0.1524) (type default))
+          (fill (type outline))
+        )
+        (pin passive line (at 5.08 5.08 180) (length 3.81)
           (name "Pin_1" (effects (font (size 1.27 1.27))))
           (number "1" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 0 0) (length 3.81)
+        (pin passive line (at 5.08 2.54 180) (length 3.81)
           (name "Pin_2" (effects (font (size 1.27 1.27))))
           (number "2" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 -2.54 0) (length 3.81)
+        (pin passive line (at 5.08 0 180) (length 3.81)
           (name "Pin_3" (effects (font (size 1.27 1.27))))
           (number "3" (effects (font (size 1.27 1.27))))
         )
-        (pin passive line (at -5.08 -5.08 0) (length 3.81)
+        (pin passive line (at 5.08 -2.54 180) (length 3.81)
           (name "Pin_4" (effects (font (size 1.27 1.27))))
           (number "4" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 5.08 -5.08 180) (length 3.81)
+          (name "Pin_5" (effects (font (size 1.27 1.27))))
+          (number "5" (effects (font (size 1.27 1.27))))
         )
       )
     )
@@ -2401,6 +2449,9 @@
     )
   )
 
+  (junction (at 328.295 148.59) (diameter 0) (color 0 0 0 0)
+    (uuid 014a2fea-b5d7-451a-a1e2-e91ebb048462)
+  )
   (junction (at 65.405 45.72) (diameter 0) (color 0 0 0 0)
     (uuid 0181af08-c7fa-4077-9bbf-f81807343212)
   )
@@ -2470,6 +2521,9 @@
   (junction (at 238.76 151.765) (diameter 0) (color 0 0 0 0)
     (uuid 5bf1be24-f1e8-403a-ab0a-a245f64e9b5f)
   )
+  (junction (at 328.295 156.21) (diameter 0) (color 0 0 0 0)
+    (uuid 62dc2432-4ea4-403d-8d33-d57ebce8fe39)
+  )
   (junction (at 238.76 135.255) (diameter 0) (color 0 0 0 0)
     (uuid 63176773-e042-4f64-b7ea-7feba86a42b8)
   )
@@ -2506,6 +2560,9 @@
   (junction (at 269.24 33.02) (diameter 0) (color 0 0 0 0)
     (uuid 95fcef73-33f3-44f7-bbbb-2d1c8bfdcd1b)
   )
+  (junction (at 314.96 174.625) (diameter 0) (color 0 0 0 0)
+    (uuid 99137574-8e8d-42c1-b0b4-b72042c4b611)
+  )
   (junction (at 198.12 127.635) (diameter 0) (color 0 0 0 0)
     (uuid 9b00b468-b9d0-4638-b618-ed08cba65d54)
   )
@@ -2523,6 +2580,9 @@
   )
   (junction (at 198.12 151.765) (diameter 0) (color 0 0 0 0)
     (uuid ace5cac0-2493-46d2-818d-8068a5d3d57a)
+  )
+  (junction (at 314.96 167.005) (diameter 0) (color 0 0 0 0)
+    (uuid b02401bc-8501-4b82-bf69-e8e5a33d45c0)
   )
   (junction (at 388.62 76.835) (diameter 0) (color 0 0 0 0)
     (uuid b94eb114-9381-44b2-bd32-c57e6dc71257)
@@ -2805,7 +2865,7 @@
     (stroke (width 0) (type default))
     (uuid 42f2dca5-5a45-42f9-bd47-4529c1b5874c)
   )
-  (wire (pts (xy 114.935 190.5) (xy 122.555 190.5))
+  (wire (pts (xy 114.935 193.04) (xy 122.555 193.04))
     (stroke (width 0) (type default))
     (uuid 44129b27-467f-4291-b100-236f2e5e1b3f)
   )
@@ -2849,7 +2909,7 @@
     (stroke (width 0) (type default))
     (uuid 507770f8-e693-4a27-840b-b8cab25e4644)
   )
-  (wire (pts (xy 114.935 193.04) (xy 122.555 193.04))
+  (wire (pts (xy 114.935 195.58) (xy 122.555 195.58))
     (stroke (width 0) (type default))
     (uuid 5326e3dd-dd89-4c33-a23e-e1bece3ac703)
   )
@@ -2860,6 +2920,10 @@
   (wire (pts (xy 340.995 29.21) (xy 340.995 30.48))
     (stroke (width 0) (type default))
     (uuid 54261cd3-e557-4503-ab26-13fb855ba2a8)
+  )
+  (wire (pts (xy 314.96 167.005) (xy 321.31 167.005))
+    (stroke (width 0) (type default))
+    (uuid 588fad14-41be-403a-9a52-4c31e4d30eef)
   )
   (wire (pts (xy 388.62 75.565) (xy 388.62 76.835))
     (stroke (width 0) (type default))
@@ -2953,6 +3017,10 @@
     (stroke (width 0) (type default))
     (uuid 811012ba-6b8d-487e-9d33-7f4a413f3b19)
   )
+  (wire (pts (xy 314.96 174.625) (xy 321.31 174.625))
+    (stroke (width 0) (type default))
+    (uuid 818dc7fb-8d8f-4ce7-963d-e47d0abd375c)
+  )
   (wire (pts (xy 55.245 45.72) (xy 56.515 45.72))
     (stroke (width 0) (type default))
     (uuid 836037bc-602e-403b-a2b9-b375cf112363)
@@ -2997,7 +3065,7 @@
     (stroke (width 0) (type default))
     (uuid 8fd4d17f-b2cc-489d-a7b9-8278bf5b114a)
   )
-  (wire (pts (xy 114.935 187.96) (xy 122.555 187.96))
+  (wire (pts (xy 114.935 190.5) (xy 122.555 190.5))
     (stroke (width 0) (type default))
     (uuid 914c862c-0dda-4ef3-aed6-d8c031356fae)
   )
@@ -3113,6 +3181,14 @@
     (stroke (width 0) (type default))
     (uuid c0476563-9585-44ec-a1a3-4b673ab535de)
   )
+  (wire (pts (xy 328.295 148.59) (xy 334.645 148.59))
+    (stroke (width 0) (type default))
+    (uuid c15f4981-c3e6-4d1c-8227-33a7f1d90e0e)
+  )
+  (wire (pts (xy 114.935 187.96) (xy 138.43 187.96))
+    (stroke (width 0) (type default))
+    (uuid c4ba5699-b8a9-4dae-baba-7df4d955fa2a)
+  )
   (wire (pts (xy 264.795 33.02) (xy 264.795 47.625))
     (stroke (width 0) (type default))
     (uuid c4ec0a1a-dc27-459d-b3d7-5aa02af8bcf5)
@@ -3124,6 +3200,10 @@
   (wire (pts (xy 340.995 57.15) (xy 340.995 58.42))
     (stroke (width 0) (type default))
     (uuid cc3babd2-a466-43e7-9061-7a0492679eb6)
+  )
+  (wire (pts (xy 334.645 156.21) (xy 328.295 156.21))
+    (stroke (width 0) (type default))
+    (uuid cde61194-23de-48f0-9f64-c22868eb3a18)
   )
   (wire (pts (xy 179.705 161.29) (xy 177.165 161.29))
     (stroke (width 0) (type default))
@@ -3257,7 +3337,7 @@
     (fill (type none))
     (uuid cfdc97ff-09d4-451d-bb0a-129555fc9cdb)
   )
-  (rectangle (start 99.06 177.8) (end 141.605 200.025)
+  (rectangle (start 99.06 177.8) (end 141.605 208.28)
     (stroke (width 0) (type default))
     (fill (type none))
     (uuid e23b42ab-c00d-4969-b2fa-38263db24f1c)
@@ -5333,7 +5413,7 @@
     )
   )
 
-  (text "THRUST_EN feeds to external \"kill switch\"" (at 100.965 197.485 0)
+  (text "THRUST_EN feeds to external \"kill switch\"" (at 100.965 205.74 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 1666d104-3724-441e-9879-74820d45c4e8)
   )
@@ -5372,6 +5452,11 @@
   (text "DC/DC boost (3.3V to 11.5V) FET driver" (at 19.685 79.375 0)
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 93dd1295-6387-4d81-96b6-b52ebe2189ee)
+  )
+  (text "55Ohms\nI (forward) is 65mA, with V (forward) of 1.2 to 1.5V\nYields: 1.425V at node"
+    (at 257.175 186.055 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid ab9d55b8-3726-425f-9f19-4d77def7b410)
   )
   (text "XT60 Female connectors (to bat) \nwill be on wires for flexibility\nMultiple ports for higher amperage\nConnectors rated for 32A"
     (at 257.175 26.035 0)
@@ -5432,10 +5517,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "LATCH" (shape input) (at 122.555 193.04 0) (fields_autoplaced)
+  (global_label "LATCH" (shape input) (at 122.555 195.58 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 2c5f550f-af84-4da7-ac31-bc792cc10285)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 131.1456 193.04 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 131.1456 195.58 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -5572,10 +5657,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "OCP_N" (shape output) (at 122.555 187.96 0) (fields_autoplaced)
+  (global_label "OCP_N" (shape output) (at 122.555 190.5 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 9d4d40dc-b564-4519-8b1d-c1e80d766122)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 131.6294 187.96 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 131.6294 190.5 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -5628,10 +5713,10 @@
       (effects (font (size 1.27 1.27)) (justify right) hide)
     )
   )
-  (global_label "THRUST_EN" (shape input) (at 122.555 190.5 0) (fields_autoplaced)
+  (global_label "THRUST_EN" (shape input) (at 122.555 193.04 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid f3861f2f-3adf-4d86-8643-93dee11b945a)
-    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 135.9836 190.5 0)
+    (property "Intersheetrefs" "${INTERSHEET_REFS}" (at 135.9836 193.04 0)
       (effects (font (size 1.27 1.27)) (justify left) hide)
     )
   )
@@ -5679,9 +5764,56 @@
     (pin "1" (uuid f2fbfd2c-08c3-4a57-b3fa-72b2f7adb19c))
     (pin "2" (uuid 1e954efb-73b5-42ff-8a10-e18eb6099372))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R9") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Connector:Conn_01x05_Pin") (at 109.855 190.5 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 09cc60dd-ab50-4967-9ce7-4f6ce489b42d)
+    (property "Reference" "J11" (at 110.49 179.705 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "Conn_01x05_Pin" (at 110.49 182.245 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MFR" "" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MFR S/N" "" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 1" "" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 1 S/N" "" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 2" "" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 2 S/N" "" (at 109.855 190.5 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 6d982880-aad0-41ad-8e3d-bb2a5f1649fe))
+    (pin "2" (uuid c7f1683c-a987-4e57-9792-0b31f2347489))
+    (pin "3" (uuid c45e8fa8-5d39-44e3-a905-1ec07f5a5b8e))
+    (pin "4" (uuid 5e01fca6-2177-46cd-995b-05f9131eabad))
+    (pin "5" (uuid c9effd37-67b4-43ed-80fe-39917d9dde22))
+    (instances
+      (project "Robosub_Power"
+        (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
+          (reference "J11") (unit 1)
         )
       )
     )
@@ -5725,7 +5857,7 @@
     (pin "2_1" (uuid 275e8b77-6944-4ba7-9b9e-cc2725b3f0c6))
     (pin "2_2" (uuid a4b1b909-bf2a-4fa3-a964-f34e6e14cbdb))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J10") (unit 1)
         )
@@ -5769,7 +5901,7 @@
     (pin "1" (uuid 53067af5-3a21-4266-992e-6ae06b868641))
     (pin "2" (uuid adf177a9-d942-4c6c-b25b-d9e30ca2791d))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "WSLP59312L000FEA_2") (unit 1)
         )
@@ -5794,53 +5926,9 @@
     )
     (pin "1" (uuid 6430118c-187a-40e4-b8ec-25ee97305309))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR010") (unit 1)
-        )
-      )
-    )
-  )
-
-  (symbol (lib_id "Device:R_US") (at 314.96 178.435 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no)
-    (uuid 0e5cf9ed-d4a3-4c13-a3d8-07adf5218376)
-    (property "Reference" "R8" (at 318.135 181.61 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Value" "100" (at 318.135 178.435 0)
-      (effects (font (size 1.27 1.27)))
-    )
-    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 313.944 178.181 90)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Datasheet" "~" (at 314.96 178.435 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "MFR" "YAGEO" (at 314.96 178.435 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "MFR S/N" "RC0805FR-07100RL" (at 314.96 178.435 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Supplier 1" "https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543" (at 314.96 178.435 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Supplier 1 S/N" "311-100CRCT-ND" (at 314.96 178.435 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Supplier 2" "" (at 314.96 178.435 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (property "Supplier 2 S/N" "" (at 314.96 178.435 0)
-      (effects (font (size 1.27 1.27)) hide)
-    )
-    (pin "1" (uuid ddb208a2-b795-478d-bcbe-c34f7b63067e))
-    (pin "2" (uuid a744cbb0-bc84-424c-94c2-2641a83aa478))
-    (instances
-      (project "EE156_2_Layer"
-        (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
-          (reference "R8") (unit 1)
         )
       )
     )
@@ -5863,7 +5951,7 @@
     )
     (pin "1" (uuid 6cf13d10-1ef8-4b6d-bc6e-975f06aa88cd))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR06") (unit 1)
         )
@@ -5888,7 +5976,7 @@
     )
     (pin "1" (uuid 81bbb659-f802-4df1-bd00-cba02834d95b))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR02") (unit 1)
         )
@@ -5913,7 +6001,7 @@
     )
     (pin "1" (uuid 4b895723-05dd-43b6-8810-4def3b558b30))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR039") (unit 1)
         )
@@ -5958,7 +6046,7 @@
     (pin "2" (uuid 0d3cb14d-db3d-4e6c-ac9f-ba741995bcdd))
     (pin "3" (uuid db1bd51a-bdf8-4eed-b1ef-8659bef78f17))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U8") (unit 1)
         )
@@ -6004,7 +6092,7 @@
     (pin "2_1" (uuid 7d3d8632-ea4c-47aa-b503-bfc3e4ec4130))
     (pin "2_2" (uuid 4afb609c-0af8-4c70-bf25-fca770b29049))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J5") (unit 1)
         )
@@ -6029,7 +6117,7 @@
     )
     (pin "1" (uuid abc0d343-8e61-45ae-b455-420e5d6ea56f))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR028") (unit 1)
         )
@@ -6073,7 +6161,7 @@
     (pin "1" (uuid 69d8a43b-ff83-46c1-9fe5-476e14490094))
     (pin "2" (uuid f31838bd-fdb6-4f23-9787-ecb7d3e94a1f))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "C2") (unit 1)
         )
@@ -6119,7 +6207,7 @@
     (pin "2_1" (uuid 65fdefe5-a6ab-473b-b8e6-e724eaaf1daf))
     (pin "2_2" (uuid afd14587-174a-449e-a4dd-3730d70ced25))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J8") (unit 1)
         )
@@ -6144,7 +6232,7 @@
     )
     (pin "1" (uuid 8f05e6a0-c95d-45f9-99d8-326518d997b7))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR025") (unit 1)
         )
@@ -6188,7 +6276,7 @@
     (pin "1" (uuid 01fac607-68ed-474f-9ad3-cb524e49388a))
     (pin "2" (uuid 8df10481-00ea-4c18-a624-e4b5a67073b4))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "JP4") (unit 1)
         )
@@ -6213,7 +6301,7 @@
     )
     (pin "1" (uuid 15f5f314-679d-4df2-815a-79fe535c7673))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR011") (unit 1)
         )
@@ -6263,7 +6351,7 @@
     (pin "7" (uuid becaf6f4-a1fd-44bd-8af2-39056a86c779))
     (pin "8" (uuid 29822d42-6d53-4fa7-9c55-0fe5d52253be))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U3") (unit 1)
         )
@@ -6307,7 +6395,7 @@
     (pin "1" (uuid cf05c6a4-6c6a-4e43-a06c-fbe8a11bba76))
     (pin "2" (uuid 1eea33b9-8a1b-4240-8e33-70a43c6edd6c))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "C6") (unit 1)
         )
@@ -6353,7 +6441,7 @@
     (pin "2_1" (uuid e9806bf2-7b5b-4701-83fc-80aef5f762b7))
     (pin "2_2" (uuid 73bef40c-36d2-4eea-bc35-80274d00178d))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J3") (unit 1)
         )
@@ -6395,7 +6483,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "H4") (unit 1)
         )
@@ -6439,9 +6527,53 @@
     (pin "1" (uuid 0c7ce80a-89e8-4290-af38-924cc6514723))
     (pin "2" (uuid d9a2beed-0ea5-4219-abcd-5be04a62be7c))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R2") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R_US") (at 321.31 170.815 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 39c71eeb-a97a-4f81-ac6e-227ad5def5f3)
+    (property "Reference" "R11" (at 324.485 172.72 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "110" (at 324.485 169.545 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 320.294 170.561 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 321.31 170.815 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MFR" "Susumu" (at 321.31 170.815 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MFR S/N" "RG2012N-111-W-T1" (at 321.31 170.815 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 1" "https://www.digikey.com/en/products/detail/susumu/RG2012N-111-W-T1/600665?s=N4IgjCBcoMxaBjKAzAhgGwM4FMA0IB7KAbRADYBOMkAXXwAcAXKEAZUYCcBLAOwHMQAX3xhq0EEkhoseQiRAwKMAEwVaDZpDadeA4eAoAONeMnSc%2BIpFIAGWvuU3DAVnggmLAKo8ujAPLIALLYqJgArhzYIPhhLH4AFgC2mNEgibwsYGB2%2BImoAB6Z2UL4ALSupigYFnLWIMr2ZQ2VkJxhslakrjSCDvKRmFyYjAQc9kA" (at 321.31 170.815 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 1 S/N" "408-RG2012N-111-W-T1CT-ND" (at 321.31 170.815 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 2" "" (at 321.31 170.815 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 2 S/N" "" (at 321.31 170.815 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 5c9c618d-162b-49db-be77-be7de55f4718))
+    (pin "2" (uuid e6045830-4d92-4a86-b282-84bba0470238))
+    (instances
+      (project "Robosub_Power"
+        (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
+          (reference "R11") (unit 1)
         )
       )
     )
@@ -6464,9 +6596,34 @@
     )
     (pin "1" (uuid b55d4c04-afa2-4293-84aa-0787242972f6))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR04") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "power:GND") (at 138.43 187.96 0) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
+    (uuid 3c3c966f-0377-4c8f-8e69-25c27e743985)
+    (property "Reference" "#PWR031" (at 138.43 194.31 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Value" "GND" (at 138.43 192.405 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "" (at 138.43 187.96 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "" (at 138.43 187.96 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid ae3c8537-d825-4699-a3c8-48fb6bbbb37a))
+    (instances
+      (project "Robosub_Power"
+        (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
+          (reference "#PWR031") (unit 1)
         )
       )
     )
@@ -6510,7 +6667,7 @@
     (pin "2_1" (uuid 7277cb9c-8e8d-4f2a-987a-7e549ac53701))
     (pin "2_2" (uuid 630a9c9e-37fd-4c9b-b2a5-1173ea1f40d9))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J4") (unit 1)
         )
@@ -6554,7 +6711,7 @@
     (pin "1" (uuid c30446f8-6c00-4e08-9999-528390141d2d))
     (pin "2" (uuid 6be71307-d4ea-40ab-8a00-2e14b854d3fc))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R1") (unit 1)
         )
@@ -6600,9 +6757,53 @@
     (pin "2_1" (uuid b683a014-60bf-4326-8ee4-6e52ef57bef4))
     (pin "2_2" (uuid 0adfb960-6bbd-4193-927f-d475b1767f42))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J1") (unit 1)
+        )
+      )
+    )
+  )
+
+  (symbol (lib_id "Device:R_US") (at 334.645 152.4 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 4d58794c-6baa-4efd-9b21-ec0d984a9c22)
+    (property "Reference" "R10" (at 337.82 154.305 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Value" "110" (at 337.82 151.13 0)
+      (effects (font (size 1.27 1.27)))
+    )
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 333.629 152.146 90)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (at 334.645 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MFR" "Susumu" (at 334.645 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "MFR S/N" "RG2012N-111-W-T1" (at 334.645 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 1" "https://www.digikey.com/en/products/detail/susumu/RG2012N-111-W-T1/600665?s=N4IgjCBcoMxaBjKAzAhgGwM4FMA0IB7KAbRADYBOMkAXXwAcAXKEAZUYCcBLAOwHMQAX3xhq0EEkhoseQiRAwKMAEwVaDZpDadeA4eAoAONeMnSc%2BIpFIAGWvuU3DAVnggmLAKo8ujAPLIALLYqJgArhzYIPhhLH4AFgC2mNEgibwsYGB2%2BImoAB6Z2UL4ALSupigYFnLWIMr2ZQ2VkJxhslakrjSCDvKRmFyYjAQc9kA" (at 334.645 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 1 S/N" "408-RG2012N-111-W-T1CT-ND" (at 334.645 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 2" "" (at 334.645 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Supplier 2 S/N" "" (at 334.645 152.4 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 3c1776d6-7f02-4d0f-be86-623d243c5799))
+    (pin "2" (uuid e630a7f1-930c-4b88-8b8f-cd5a8430d380))
+    (instances
+      (project "Robosub_Power"
+        (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
+          (reference "R10") (unit 1)
         )
       )
     )
@@ -6625,7 +6826,7 @@
     )
     (pin "1" (uuid e8d60c57-7124-409b-84af-b58d1de5414b))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR032") (unit 1)
         )
@@ -6650,7 +6851,7 @@
     )
     (pin "1" (uuid a9d28322-f4bd-4ce5-b960-f8353f5f12ef))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR023") (unit 1)
         )
@@ -6675,7 +6876,7 @@
     )
     (pin "1" (uuid 1d9689ba-9cfe-420c-9165-a41ecd3f2dab))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR020") (unit 1)
         )
@@ -6719,7 +6920,7 @@
     (pin "1" (uuid 795f4185-ac67-4abd-aff0-60f705656e22))
     (pin "2" (uuid ff8ccc1d-558e-407c-8f92-a9625de6d898))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R5") (unit 1)
         )
@@ -6763,7 +6964,7 @@
     (pin "1" (uuid 2e7b514e-ce35-400f-90ae-8b4924906bcb))
     (pin "2" (uuid cf7e768e-10d9-45d4-8c96-befd4b4d1183))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "WSLP59312L000FEA_1") (unit 1)
         )
@@ -6771,47 +6972,45 @@
     )
   )
 
-  (symbol (lib_id "Connector_Generic:Conn_01x04") (at 109.855 190.5 180) (unit 1)
-    (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
-    (uuid 617dbc40-a628-448f-895b-57c23736f08e)
-    (property "Reference" "J14" (at 109.855 180.34 0)
+  (symbol (lib_id "Device:R_US") (at 314.96 170.815 180) (unit 1)
+    (in_bom yes) (on_board yes) (dnp no)
+    (uuid 622aca48-c7ae-4106-8a55-0bf79805687e)
+    (property "Reference" "R8" (at 318.135 172.72 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "Conn_01x04" (at 109.855 182.88 0)
+    (property "Value" "110" (at 318.135 169.545 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" (at 109.855 190.5 0)
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 313.944 170.561 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 109.855 190.5 0)
+    (property "Datasheet" "~" (at 314.96 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR" "" (at 109.855 190.5 0)
+    (property "MFR" "Susumu" (at 314.96 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR S/N" "" (at 109.855 190.5 0)
+    (property "MFR S/N" "RG2012N-111-W-T1" (at 314.96 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1" "" (at 109.855 190.5 0)
+    (property "Supplier 1" "https://www.digikey.com/en/products/detail/susumu/RG2012N-111-W-T1/600665?s=N4IgjCBcoMxaBjKAzAhgGwM4FMA0IB7KAbRADYBOMkAXXwAcAXKEAZUYCcBLAOwHMQAX3xhq0EEkhoseQiRAwKMAEwVaDZpDadeA4eAoAONeMnSc%2BIpFIAGWvuU3DAVnggmLAKo8ujAPLIALLYqJgArhzYIPhhLH4AFgC2mNEgibwsYGB2%2BImoAB6Z2UL4ALSupigYFnLWIMr2ZQ2VkJxhslakrjSCDvKRmFyYjAQc9kA" (at 314.96 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1 S/N" "" (at 109.855 190.5 0)
+    (property "Supplier 1 S/N" "408-RG2012N-111-W-T1CT-ND" (at 314.96 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2" "" (at 109.855 190.5 0)
+    (property "Supplier 2" "" (at 314.96 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2 S/N" "" (at 109.855 190.5 0)
+    (property "Supplier 2 S/N" "" (at 314.96 170.815 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 8305988a-3029-4c50-bdf2-0f17c238f04a))
-    (pin "2" (uuid 1e3a9425-22c6-4175-aecd-94c9c1a655f6))
-    (pin "3" (uuid ec56f7dd-e780-4fa8-9e6e-c83d26999ecd))
-    (pin "4" (uuid 44db354f-3e2c-4198-9557-337a6f668ea8))
+    (pin "1" (uuid 707a644c-d230-48ff-a1c9-da3855ab134a))
+    (pin "2" (uuid df33dc71-abe4-4725-bdb5-e1aaadfbfbed))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
-          (reference "J14") (unit 1)
+          (reference "R8") (unit 1)
         )
       )
     )
@@ -6834,7 +7033,7 @@
     )
     (pin "1" (uuid 976f6c76-322e-41d3-954d-34997137c74d))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR017") (unit 1)
         )
@@ -6859,7 +7058,7 @@
     )
     (pin "1" (uuid 9bde5415-606a-482b-82b2-6cfa32d3c21e))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR014") (unit 1)
         )
@@ -6905,7 +7104,7 @@
     (pin "2_1" (uuid fa092070-a4e6-4d9a-b319-06d31ca12204))
     (pin "2_2" (uuid 887394b2-ff04-40b4-ba6f-afbe7cd9812d))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J7") (unit 1)
         )
@@ -6958,7 +7157,7 @@
     (pin "8" (uuid e31c1f05-cfe1-41f4-843b-35bbb99af4be))
     (pin "9" (uuid 37ff405f-ddb3-4991-b44d-0e47d5714e3c))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U1") (unit 1)
         )
@@ -7003,7 +7202,7 @@
     (pin "2" (uuid 6944d3d2-d537-4032-97ac-60154f440c9a))
     (pin "3" (uuid 8eb23590-dfbc-4d0b-b484-ed6aa97efe45))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U7") (unit 1)
         )
@@ -7047,7 +7246,7 @@
     (pin "1" (uuid 752c0195-0c74-442b-b2e8-639051e9b5f3))
     (pin "2" (uuid 5d524174-606b-4241-93a8-0b4a0d0d2012))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R6") (unit 1)
         )
@@ -7072,7 +7271,7 @@
     )
     (pin "1" (uuid 4bb9ff5e-e8ab-457e-948e-361526433cdb))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR08") (unit 1)
         )
@@ -7116,7 +7315,7 @@
     (pin "1" (uuid 702f71a2-97c2-4722-8e5a-4ce198d117b6))
     (pin "2" (uuid dde6023e-1194-4be8-b932-57df5d9dfb43))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "JP5") (unit 1)
         )
@@ -7141,7 +7340,7 @@
     )
     (pin "1" (uuid caad7622-2ced-439c-83b2-b8d6e1774f75))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR019") (unit 1)
         )
@@ -7189,7 +7388,7 @@
     (pin "5" (uuid bae3dbb3-62d0-4f67-b3ba-07c89e55fe15))
     (pin "6" (uuid 68e0fbb0-3c73-47e4-bf26-d82669296190))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U2") (unit 1)
         )
@@ -7214,7 +7413,7 @@
     )
     (pin "1" (uuid 1f6b94d6-f7b9-4a1e-9299-a16feb0e15b5))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR027") (unit 1)
         )
@@ -7258,7 +7457,7 @@
     (pin "1" (uuid 330a0280-4758-42e6-9c92-004fa4a51f03))
     (pin "2" (uuid a7a91a10-045e-4112-b7d0-ce1162f135b8))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "C3") (unit 1)
         )
@@ -7300,7 +7499,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "H2") (unit 1)
         )
@@ -7308,43 +7507,43 @@
     )
   )
 
-  (symbol (lib_id "LED:IR26-21C_L110_TR8") (at 314.96 170.815 90) (unit 1)
+  (symbol (lib_id "LED:IR26-21C_L110_TR8") (at 314.96 178.435 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid 898829cf-83da-4224-b1de-8baac9e6c59d)
-    (property "Reference" "D3" (at 318.77 171.7675 90)
+    (property "Reference" "D3" (at 318.77 179.3875 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "IR26-21C_L110_TR8" (at 318.77 174.3075 90)
+    (property "Value" "IR26-21C_L110_TR8" (at 318.77 181.9275 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "LED_SMD:LED_1206_3216Metric" (at 309.88 170.815 0)
+    (property "Footprint" "LED_SMD:LED_1206_3216Metric" (at 309.88 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf" (at 314.96 170.815 0)
+    (property "Datasheet" "http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf" (at 314.96 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR" "Everlight Electronics Co Ltd" (at 314.96 170.815 0)
+    (property "MFR" "Everlight Electronics Co Ltd" (at 314.96 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR S/N" "IR26-21C/L110/TR8" (at 314.96 170.815 0)
+    (property "MFR S/N" "IR26-21C/L110/TR8" (at 314.96 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1" "https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848" (at 314.96 170.815 0)
+    (property "Supplier 1" "https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848" (at 314.96 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1 S/N" "1080-1357-1-ND" (at 314.96 170.815 0)
+    (property "Supplier 1 S/N" "1080-1357-1-ND" (at 314.96 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2" "" (at 314.96 170.815 0)
+    (property "Supplier 2" "" (at 314.96 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2 S/N" "" (at 314.96 170.815 0)
+    (property "Supplier 2 S/N" "" (at 314.96 178.435 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid e5be59dd-5ddc-445d-a2af-dedb40e13645))
     (pin "2" (uuid c840cfa7-2d04-4815-ad86-1442b58f5628))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "D3") (unit 1)
         )
@@ -7352,43 +7551,43 @@
     )
   )
 
-  (symbol (lib_id "Device:R_US") (at 328.295 160.02 180) (unit 1)
+  (symbol (lib_id "Device:R_US") (at 328.295 152.4 180) (unit 1)
     (in_bom yes) (on_board yes) (dnp no)
     (uuid 8be3e2a5-1e65-42c4-8331-8c69e2992c80)
-    (property "Reference" "R7" (at 331.47 163.195 0)
+    (property "Reference" "R7" (at 331.47 154.305 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "100" (at 331.47 160.02 0)
+    (property "Value" "110" (at 331.47 151.13 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 327.279 159.766 90)
+    (property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder" (at 327.279 152.146 90)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "~" (at 328.295 160.02 0)
+    (property "Datasheet" "~" (at 328.295 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR" "YAGEO" (at 328.295 160.02 0)
+    (property "MFR" "Susumu" (at 328.295 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR S/N" "RC0805FR-07100RL" (at 328.295 160.02 0)
+    (property "MFR S/N" "RG2012N-111-W-T1" (at 328.295 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1" "https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543" (at 328.295 160.02 0)
+    (property "Supplier 1" "https://www.digikey.com/en/products/detail/susumu/RG2012N-111-W-T1/600665?s=N4IgjCBcoMxaBjKAzAhgGwM4FMA0IB7KAbRADYBOMkAXXwAcAXKEAZUYCcBLAOwHMQAX3xhq0EEkhoseQiRAwKMAEwVaDZpDadeA4eAoAONeMnSc%2BIpFIAGWvuU3DAVnggmLAKo8ujAPLIALLYqJgArhzYIPhhLH4AFgC2mNEgibwsYGB2%2BImoAB6Z2UL4ALSupigYFnLWIMr2ZQ2VkJxhslakrjSCDvKRmFyYjAQc9kA" (at 328.295 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1 S/N" "311-100CRCT-ND" (at 328.295 160.02 0)
+    (property "Supplier 1 S/N" "408-RG2012N-111-W-T1CT-ND" (at 328.295 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2" "" (at 328.295 160.02 0)
+    (property "Supplier 2" "" (at 328.295 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2 S/N" "" (at 328.295 160.02 0)
+    (property "Supplier 2 S/N" "" (at 328.295 152.4 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 35c6b174-69d7-4c97-9472-a5d2d05cf26f))
     (pin "2" (uuid 99b6c9b5-3b59-42b3-8ef1-b34d6ef3dccf))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R7") (unit 1)
         )
@@ -7413,7 +7612,7 @@
     )
     (pin "1" (uuid 560fda7b-c2fd-4d5a-9165-d21de7b79a84))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR022") (unit 1)
         )
@@ -7438,7 +7637,7 @@
     )
     (pin "1" (uuid 51653148-922a-4d8a-9c9c-23c0beffa3a8))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR041") (unit 1)
         )
@@ -7463,7 +7662,7 @@
     )
     (pin "1" (uuid bef360f8-e2f7-4552-9fef-936820610828))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR029") (unit 1)
         )
@@ -7507,7 +7706,7 @@
     (pin "1" (uuid 3b5f78ac-23c8-448d-895c-139dbdb4a3c5))
     (pin "2" (uuid ba317876-db9e-4424-b4e3-ec3170777eb5))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "D1") (unit 1)
         )
@@ -7551,7 +7750,7 @@
     (pin "1" (uuid a8f6bef6-4b6d-4668-aab9-dd596590e335))
     (pin "2" (uuid 5c5ccd87-4dce-427e-b99e-6af82bd5c6c1))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "C1") (unit 1)
         )
@@ -7576,7 +7775,7 @@
     )
     (pin "1" (uuid 72b87119-d9d0-43c0-945d-41691d29ea17))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR012") (unit 1)
         )
@@ -7601,7 +7800,7 @@
     )
     (pin "1" (uuid c866ac0d-b7b0-41a1-9577-da2d541c1ea8))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR040") (unit 1)
         )
@@ -7626,7 +7825,7 @@
     )
     (pin "1" (uuid e0d1c713-4946-40ec-94a1-223dbb6d6591))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR01") (unit 1)
         )
@@ -7668,7 +7867,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "H1") (unit 1)
         )
@@ -7712,7 +7911,7 @@
     (pin "1" (uuid 6c1ad602-5a7e-4fc7-83a9-16d7d945d5b8))
     (pin "2" (uuid b4988e34-d072-4c7b-a94d-eff4ffd3a8ff))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R4") (unit 1)
         )
@@ -7754,7 +7953,7 @@
       (effects (font (size 1.27 1.27)) hide)
     )
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "H3") (unit 1)
         )
@@ -7800,7 +7999,7 @@
     (pin "2_1" (uuid ff41ce8a-dfe3-4413-863c-7a6dfd105ec0))
     (pin "2_2" (uuid f17b4a01-fd30-45f3-a5bb-bd943300d11d))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J9") (unit 1)
         )
@@ -7825,7 +8024,7 @@
     )
     (pin "1" (uuid 56856070-6077-4852-8d72-45fb5dc567fd))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR03") (unit 1)
         )
@@ -7850,7 +8049,7 @@
     )
     (pin "1" (uuid 1826b782-da7b-49f3-a6a6-0c90532d25bf))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR05") (unit 1)
         )
@@ -7896,7 +8095,7 @@
     (pin "2_1" (uuid 5db9a1d0-a48b-48a5-b97a-8bf973de9b14))
     (pin "2_2" (uuid 54ab1f2f-3687-4dbf-9d15-33537d0908ae))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J2") (unit 1)
         )
@@ -7921,7 +8120,7 @@
     )
     (pin "1" (uuid bc87e24b-1166-447f-89db-02817555f034))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR018") (unit 1)
         )
@@ -7973,7 +8172,7 @@
     (pin "10" (uuid 08e69cb7-0ce4-4095-b3b2-4b9f5556ae3a))
     (pin "9" (uuid 54185561-2fd2-422c-a87c-57bfc6ab1e9b))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U6") (unit 1)
         )
@@ -8018,7 +8217,7 @@
     (pin "2" (uuid f9a57fbd-3f11-4536-88da-dd0e1bf77d49))
     (pin "3" (uuid 6e66f301-8642-48d1-bfe3-44fad06f4071))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "CR1") (unit 1)
         )
@@ -8043,7 +8242,7 @@
     )
     (pin "1" (uuid 11f094f6-bab4-4f8b-84a0-a9f3ae596b69))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR09") (unit 1)
         )
@@ -8051,43 +8250,43 @@
     )
   )
 
-  (symbol (lib_id "LED:IR26-21C_L110_TR8") (at 328.295 152.4 90) (unit 1)
+  (symbol (lib_id "LED:IR26-21C_L110_TR8") (at 328.295 160.02 90) (unit 1)
     (in_bom yes) (on_board yes) (dnp no) (fields_autoplaced)
     (uuid c79365ee-24ab-421f-a7a1-9d1ecd942398)
-    (property "Reference" "D2" (at 332.105 153.3525 90)
+    (property "Reference" "D2" (at 332.105 160.9725 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Value" "IR26-21C_L110_TR8" (at 332.105 155.8925 90)
+    (property "Value" "IR26-21C_L110_TR8" (at 332.105 163.5125 90)
       (effects (font (size 1.27 1.27)) (justify right))
     )
-    (property "Footprint" "LED_SMD:LED_1206_3216Metric" (at 323.215 152.4 0)
+    (property "Footprint" "LED_SMD:LED_1206_3216Metric" (at 323.215 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Datasheet" "http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf" (at 328.295 152.4 0)
+    (property "Datasheet" "http://www.everlight.com/file/ProductFile/IR26-21C-L110-TR8.pdf" (at 328.295 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR" "Everlight Electronics Co Ltd" (at 328.295 152.4 0)
+    (property "MFR" "Everlight Electronics Co Ltd" (at 328.295 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "MFR S/N" "IR26-21C/L110/TR8" (at 328.295 152.4 0)
+    (property "MFR S/N" "IR26-21C/L110/TR8" (at 328.295 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1" "https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848" (at 328.295 152.4 0)
+    (property "Supplier 1" "https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848" (at 328.295 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 1 S/N" "1080-1357-1-ND" (at 328.295 152.4 0)
+    (property "Supplier 1 S/N" "1080-1357-1-ND" (at 328.295 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2" "" (at 328.295 152.4 0)
+    (property "Supplier 2" "" (at 328.295 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (property "Supplier 2 S/N" "" (at 328.295 152.4 0)
+    (property "Supplier 2 S/N" "" (at 328.295 160.02 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (pin "1" (uuid 54688f38-2011-475c-bf90-3fb75b2c0401))
     (pin "2" (uuid 94de6930-4ae2-4b4f-b521-6531e183283e))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "D2") (unit 1)
         )
@@ -8139,7 +8338,7 @@
     (pin "10" (uuid de252ce5-bcad-4eb6-834e-03657ca5798e))
     (pin "9" (uuid 09eacb1f-ae63-464b-a069-73b513b89728))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U5") (unit 1)
         )
@@ -8164,7 +8363,7 @@
     )
     (pin "1" (uuid 614a688c-9477-4aab-9c29-cf63346e5073))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR026") (unit 1)
         )
@@ -8210,7 +8409,7 @@
     (pin "2_1" (uuid c6296249-0afc-4975-8cbc-291a29ccd14b))
     (pin "2_2" (uuid af08598a-5d36-416d-81ad-38f10b58fbd8))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "J6") (unit 1)
         )
@@ -8235,7 +8434,7 @@
     )
     (pin "1" (uuid a8769f18-66f5-4082-84f9-c3e3b3a10cdf))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR034") (unit 1)
         )
@@ -8260,7 +8459,7 @@
     )
     (pin "1" (uuid 80a05ead-407f-41c2-81cb-46f724fa815e))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR013") (unit 1)
         )
@@ -8304,7 +8503,7 @@
     (pin "1" (uuid bae01bf1-5bdc-40bd-accc-911b4a815faa))
     (pin "2" (uuid ceb06f56-1e4d-46c6-994d-afa1ccda643c))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "C4") (unit 1)
         )
@@ -8329,7 +8528,7 @@
     )
     (pin "1" (uuid 2bce8740-80dd-495b-a7bd-14e3c976a9be))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR024") (unit 1)
         )
@@ -8354,7 +8553,7 @@
     )
     (pin "1" (uuid 53ebc614-e5a8-4775-b7cd-50c68ad1751a))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR07") (unit 1)
         )
@@ -8379,7 +8578,7 @@
     )
     (pin "1" (uuid 4e3416d8-8985-4105-902d-e138d6a33e96))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR021") (unit 1)
         )
@@ -8404,7 +8603,7 @@
     )
     (pin "1" (uuid 1df29242-f3df-4d80-b622-b38aa7440d73))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR016") (unit 1)
         )
@@ -8448,7 +8647,7 @@
     (pin "1" (uuid 144a3838-fc5b-4178-ada3-2f66f5c46bee))
     (pin "2" (uuid dcb1171b-2b70-4f58-87f4-c812ab31ff5f))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "L1") (unit 1)
         )
@@ -8500,7 +8699,7 @@
     (pin "10" (uuid a9b451f3-f9ea-4cb2-8686-fdaf185e0782))
     (pin "9" (uuid 0db551c6-6805-4ef6-90a9-f08545d38e4c))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "U4") (unit 1)
         )
@@ -8525,7 +8724,7 @@
     )
     (pin "1" (uuid 2ae18202-1334-4ee0-aa0d-1b4eb0e2b9f0))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR015") (unit 1)
         )
@@ -8569,7 +8768,7 @@
     (pin "1" (uuid 6fcc3018-e173-48da-98b9-7521830f6ec9))
     (pin "2" (uuid 87176903-46b5-42c1-9317-2eba61f6ac7b))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "R3") (unit 1)
         )
@@ -8613,7 +8812,7 @@
     (pin "1" (uuid 38ab2a01-a899-4771-b304-ae39420bb55f))
     (pin "2" (uuid 7cbd46a6-f349-4d16-a3db-bfacd4c3a3e3))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "C5") (unit 1)
         )
@@ -8638,7 +8837,7 @@
     )
     (pin "1" (uuid de923719-5d61-4544-80ee-085f26efe467))
     (instances
-      (project "EE156_2_Layer"
+      (project "Robosub_Power"
         (path "/1c59de6a-87fe-4223-8898-4b0383164a31"
           (reference "#PWR030") (unit 1)
         )

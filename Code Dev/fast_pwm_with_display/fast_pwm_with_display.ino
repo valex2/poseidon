@@ -108,9 +108,9 @@ void process_input(char *input) {
   } else if (strcmp(input, "voltage") == 0) {
     handle_voltage_command();
   } else {
-    // Handle numerical servo control
+    outerSwitch = digitalRead(10);
     int servoNum, val;
-    if (sscanf(input, "%d %d", &servoNum, &val) == 2) {
+    if ((sscanf(input, "%d %d", &servoNum, &val) == 2) && (outerSwitch == 0)) { //only assign servo number if the switch is off
       if (val >= 1100 && val <= 1900 && servoNum >= 2 && servoNum <= 9) {
         set_servo(servoNum, val);
       } else {

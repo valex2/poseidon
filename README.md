@@ -5,7 +5,7 @@ BLAME: Vassili -- valex@stanford.edu
 
 [Website](https://www.stanfordrobosub.org/)
 
-#Important notes
+# Important notes
 ## Thrusters
 DO NOT RUN THRUSTERS AT FULL POWER FOR THE TIME BEING - 20 to 30% max
 

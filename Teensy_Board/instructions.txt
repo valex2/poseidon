@@ -1,0 +1,9 @@
+Hey!
+
+Here's a folder for you to work in. Please upload your working directory into this folder so that changes are tracked as you make them.
+
+Each time you finish a worksession, please do the following:
+git status
+git add --all
+git commit -m "[a useful commit message describing what changes you made]"
+git push

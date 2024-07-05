@@ -1,8 +1,6 @@
 # poseidon
 Stanford Robosub 🏄‍♂️🐳🌊 Electrical Subsystem Repository
 
-BLAME: Vassili -- valex@stanford.edu
-
 [Website](https://www.stanfordrobosub.org/)
 
 # Important notes

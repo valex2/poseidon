@@ -16,6 +16,6 @@ Use serial library in Python, and write as follows:
 > portName.write(b"thruster_number delay_value")
 
 ### Thruster PWM Assignment
-1100 us is full reverse thrust
-1500 us is off
-1900 us is full forward thrust
+- 1100 us is full reverse thrust
+- 1500 us is off
+- 1900 us is full forward thrust

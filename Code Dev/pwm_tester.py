@@ -2,7 +2,7 @@ import serial
 import time
 
 def main():
-    portName = serial.Serial('/dev/cu.usbmodem158479401', baudrate=9600, timeout=1)
+    portName = serial.Serial('/dev/cu.usbmodem136003601', baudrate=9600, timeout=1)
     thruster_ids = [f"thruster{i}" for i in range(1, 9)]
 
     for j in range(2):

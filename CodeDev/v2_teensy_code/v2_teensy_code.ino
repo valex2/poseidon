@@ -1,15 +1,19 @@
 #include <Servo.h>
 #include <Wire.h>
 #include <SPI.h>
+#include <SD.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 #include <Adafruit_SSD1306.h>
 #include "Adafruit_MCP9808.h"
 #include "MS5837.h"
+
 // Constants and configurations
 #define KILL_SWITCH_PIN 33
 #define KILL_LIGHTS_PIN 39
 #define LEAK_DETECT_PIN 14
+// 
+
 MS5837 sensor;
 Adafruit_SSD1306 display(4);
 bool leak = false;
@@ -25,6 +29,15 @@ int bufferPosition = 0;
 int displayCounter = 0;
 int outerSwitch;
 int lightPWM;
+
+// Tempsensor1 (0x18, I2C_Bus_1)
+Adafruit_MCP9808 tempsensor1 = Adafruit_MCP9808();
+Adafruit_MCP9808 tempsensor2 = Adafruit_MCP9808();
+Adafruit_MCP9808 tempsensor3 = Adafruit_MCP9808();
+
+// SD Card
+const int SDSelect = BUILTIN_SDCARD;
+
 void setup() {
     Serial.begin(9600);
     configServo();
@@ -34,12 +47,28 @@ void setup() {
     pinMode(KILL_LIGHTS_PIN, OUTPUT);
     digitalWrite(KILL_LIGHTS_PIN, HIGH);
     pinMode(LEAK_DETECT_PIN, INPUT);
+
+    tempsensor1.begin(0x18);
+    tempsensor1.setResolution(3);
+    tempsensor1.wake();
+
+    tempsensor2.begin(0x19);
+    tempsensor2.setResolution(3);
+    tempsensor2.wake();
+
+    tempsensor3.begin(0x1A);
+    tempsensor3.setResolution(3);
+    tempsensor3.wake();
+
+    SD.begin(SDSelect);
 }
 void loop() {
     handleSerialInput();
     readLeakSensor();
     if (displayCounter >= 80) {
         updateDisplay();
+
+        logTemperatureData();
         displayCounter = 0;
     }
     displayCounter++;
@@ -63,6 +92,47 @@ void readLeakSensor() {
         floatToSurface();
         surface = false;
     }
+}
+void readTempSensors(float temps[3]) {
+    temps[0] = tempsensor1.readTempC();
+    temps[1] = tempsensor2.readTempC();
+    temps[2] = tempsensor3.readTempC();
+}
+void logTemperatureData() {
+  // Make a string for assembling the data to log:
+  String dataString = "";
+
+  // Get the current time in milliseconds since the program started
+  unsigned long currentTime = millis();
+
+  // Append the current time to the data string
+  dataString += String(currentTime) + ",";
+
+  // Array to store temperature readings from sensors
+  float temps[3];
+  readTempSensors(temps);
+
+  // Append each temperature to the data string
+  for (int i = 0; i < 3; i++) {
+    dataString += String(temps[i], 2);  // Format to 2 decimal places
+    if (i < 2) {  // Add a comma after the first two values
+      dataString += ",";
+    }
+  }
+
+  // Open the file for writing
+  File dataFile = SD.open("datalog.txt", FILE_WRITE);
+
+  // If the file is available, write to it:
+  if (dataFile) {
+    dataFile.println(dataString);
+    dataFile.close();
+    // Print to the serial port too:
+    // Serial.println(dataString);
+  } else {
+    // If the file isn't open, pop up an error:
+    // Serial.println("error opening datalog.txt");
+  }
 }
 void floatToSurface() {
     Serial.println("leak detected!! surfacing for 20 seconds");

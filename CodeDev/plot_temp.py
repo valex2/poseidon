@@ -28,9 +28,9 @@ def plot_temperature_data(file_path):
 
     # Plot the temperature data
     plt.figure(figsize=(10, 6))
-    plt.plot(time_data, temp1_data, label='Sensor 1', marker='o')
-    plt.plot(time_data, temp2_data, label='Sensor 2', marker='o')
-    plt.plot(time_data, temp3_data, label='Sensor 3', marker='o')
+    plt.plot(time_data, temp1_data, label='Ethernet/Buck Boost', marker='o')
+    plt.plot(time_data, temp2_data, label='Power Board', marker='o')
+    plt.plot(time_data, temp3_data, label='IMU/Orin', marker='o')
 
     # Adding titles and labels
     plt.title('Temperature vs Time for Each Sensor')

@@ -30,13 +30,16 @@ int displayCounter = 0;
 int outerSwitch;
 int lightPWM;
 
-// Tempsensor1 (0x18, I2C_Bus_1)
+// Tempsensors (0x18, 0x19, 0x1A, I2C_Bus_1)
 Adafruit_MCP9808 tempsensor1 = Adafruit_MCP9808();
 Adafruit_MCP9808 tempsensor2 = Adafruit_MCP9808();
 Adafruit_MCP9808 tempsensor3 = Adafruit_MCP9808();
 
 // SD Card
 const int SDSelect = BUILTIN_SDCARD;
+
+// Light PWM
+// Servo lightServo; 
 
 void setup() {
     Serial.begin(9600);
@@ -61,6 +64,7 @@ void setup() {
     tempsensor3.wake();
 
     SD.begin(SDSelect);
+
 }
 void loop() {
     handleSerialInput();

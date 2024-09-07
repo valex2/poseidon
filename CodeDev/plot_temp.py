@@ -28,16 +28,20 @@ def plot_temperature_data(file_path):
 
     # Plot the temperature data
     plt.figure(figsize=(10, 6))
+    
+    # convert time to minutes
+    time_data = [x/60 for x in time_data]
     plt.plot(time_data, temp1_data, label='Ethernet/Buck Boost', marker='o')
     plt.plot(time_data, temp2_data, label='Power Board', marker='o')
     plt.plot(time_data, temp3_data, label='IMU/Orin', marker='o')
 
     # Adding titles and labels
-    plt.title('Temperature vs Time for Each Sensor')
-    plt.xlabel('Time (seconds)')
+    plt.title('MBARI Internal Temperature Profiles')
+    plt.xlabel('Time (Minutes)')
     plt.ylabel('Temperature (°C)')
     plt.legend()
     plt.grid(True)
+    plt.savefig('MBARI_temperature_profiles.png')
     plt.show()
 
 def main():

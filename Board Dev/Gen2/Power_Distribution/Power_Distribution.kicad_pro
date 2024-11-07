@@ -49,7 +49,7 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.508
+          "min_clearance": 0.0
         }
       },
       "diff_pair_dimensions": [
@@ -187,7 +187,8 @@
         0.3048,
         0.508,
         0.635,
-        2.5
+        2.5,
+        7.5
       ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
@@ -493,7 +494,7 @@
       "plot": "",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "Power_Distribution.step",
       "svg": "",
       "vrml": ""
     },

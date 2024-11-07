@@ -1,4 +1,4 @@
-24211206293252957
+24214668119912939
 0802 cap
 0802 Cap
 Aluminium Electrolytic V-Chip SMT Capacitors, 4x5.5mm
@@ -57819,8 +57819,22 @@ heatsink
 0
 0
 0
+HighPowerRoboConnector
+CONN2_1986660-2_TEC
+
+1986660-2 
+0
+4
+4
 Imported_Footprints
 ACS711ELCTR25ABT
+ LC,8-pin SOIC
+Integrated Circuit
+0
+8
+8
+Imported_Footprints
+MyHalleffectSensor
  LC,8-pin SOIC
 Integrated Circuit
 0

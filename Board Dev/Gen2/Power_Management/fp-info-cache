@@ -1,4 +1,4 @@
-23709120502836599
+23724706936626913
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57813,6 +57813,62 @@ heatsink
 0
 0
 Imported_Footprints
+1N5242B
+
+1N5242B 
+0
+2
+2
+Imported_Footprints
+ACS772ECB200BPFFT
+PFF_2021
+Integrated Circuit
+0
+35
+35
+Imported_Footprints
+AFL-W2C8.9D
+
+1N5242B 
+0
+2
+2
+Imported_Footprints
+Allegro_MicroSystems,_LLC-CB-5-PFF-0-0-MFG
+
+
+0
+41
+6
+Imported_Footprints
+CAP_EEE-1CA100SR_PAN
+
+EEE-1CA100SR 
+0
+2
+2
+Imported_Footprints
+CONN2_1986660-2_TEC
+
+1986660-2 
+0
+4
+4
+Imported_Footprints
+LM393DT
+
+LM393DT 
+0
+8
+8
+Imported_Footprints
+LTC1255
+
+LTC1255CS8-PBF 
+0
+8
+8
+Imported_Footprints
 MC33063A
 D (R-PDSO-G8)
 Integrated Circuit
@@ -57837,6 +57893,13 @@ Imported_Footprints
 RELAY_G5V-1_OMR
 
 G5V-1 DC3 
+0
+6
+6
+Imported_Footprints
+SN74LVC
+
+SN74LVC1G373DCKR 
 0
 6
 6

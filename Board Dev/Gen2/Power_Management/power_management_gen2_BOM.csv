@@ -1,0 +1,22 @@
+Reference,Value,Qty,Supplier 1,Supplier 1 S/N,,Qty (excess)
+C1,0.1u,1,https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21B104KBCNNNC/3886661,1276-1003-1-ND,,3
+C2,10uF,1,https://www.digikey.com/en/products/detail/panasonic-electronic-components/EEE-1CA100SR/766045,PCE3878CT-ND,,3
+C6,10uF,1,https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL21A106KOQNNNE/3886754,1276-1096-1-ND,,3
+"C7,C8,C9",1u,3,https://www.digikey.com/en/products/detail/nichicon/UCB1V0R1MCL1GS/3974069,493-9956-1-ND,,5
+CR1,SBRT15U50SP5-13,1,https://www.digikey.com/en/products/detail/diodes-incorporated/SBRT15U50SP5-13/4567773,SBRT15U50SP5-13DICT-ND,,3
+"D2,D3,D4,D5,D7",LED,5,https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150080BS75000/4489912,732-4982-1-ND,,7
+"D6,D8",D_Zener,2,https://www.digikey.com/en/products/detail/onsemi/1N5242B/977596,1N5242B-ND,,4
+"H1,H3,H4,J1,J2,J5,J6,J7,J8,J9,J10,R8,R9,R11,R12",-- mixed values --,15,,,,17
+"J3,J4",1986660-2,2,https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/1986660-2/4021603,A107722-ND,,4
+K2,G5V-1 DC3,1,https://www.digikey.com/en/products/detail/omron-electronics-inc-emc-div/G5V-1-DC3/369039?_gl=1*hi6laf*_up*MQ..&gclid=Cj0KCQiA_qG5BhDTARIsAA0UHSI-anb7BHLoOrogWS5vSxTelWaEJZ_UwRAV3SPUq-DzpQMFAhe4ibYaAmOIEALw_wcB,39-G5V-1DC3-ND,,3
+"Q1,Q2,Q3",MCTL160N15Y-TP,3,https://www.digikey.com/en/products/detail/micro-commercial-co/MCTL160N15Y-TP/21097834,353-MCTL160N15Y-TPCT-ND,,5
+"R5,R6,R14,R15",100k,4,https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100KL/727544,311-100KCRCT-ND,,6
+R7,150k,1,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT150K/1760472,RMCF0805FT150KCT-ND,,3
+R10,200k,1,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0805FT200K/1760341,RMCF0805FT200KCT-ND,,3
+R13,500k,1,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNCF0805BTE500K/6240086,738-RNCF0805BTE500KCT-ND,,3
+"TH1,TH2",Thermistor_US,2,https://www.digikey.com/en/products/detail/yageo/RC0805FR-07150RL/727613,311-150CRCT-ND,,4
+U1,ACS758ECB-200U-PFF-T,1,https://www.digikey.com/en/products/detail/allegro-microsystems/ACS758ECB-200U-PFF-T/2415201?_gl=1*1ljk7ji*_up*MQ..&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk21nIx_-tUP4tcUXSovOnmLUqnIoOLB9CLbyM5WIj2G2iDMNpqSVlUaAroJEALw_wcB,620-1356-ND,,3
+U2,LM393DT,1,https://www.digikey.com/en/products/detail/rohm-semiconductor/lm393dt/1878955,LM393DTCT-ND,,3
+U3,SN74LVC1G373DCKR,1,https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC1G373DCKR/863611,296-18775-1-ND,,3
+"U4,U5",74LVC1G08,2,https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC1G08DCKR/385719,296-11602-1-ND,,4
+U6,LTC1255CS8-PBF,1,https://www.digikey.com/en/products/detail/analog-devices-inc/LTC1255CS8-PBF/889867,LTC1255CS8#PBF-ND,,3

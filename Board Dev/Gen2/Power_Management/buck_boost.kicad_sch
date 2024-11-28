@@ -7718,7 +7718,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1" ""
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/yageo/RC0805FR-07150RL/727613"
 			(at 94.996 41.91 0)
 			(effects
 				(font
@@ -7727,7 +7727,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
+		(property "Supplier 1 S/N" "311-150CRCT-ND"
 			(at 94.996 41.91 0)
 			(effects
 				(font
@@ -7842,7 +7842,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1" ""
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/yageo/RC0805FR-07150RL/727613"
 			(at 202.692 41.91 0)
 			(effects
 				(font
@@ -7851,7 +7851,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
+		(property "Supplier 1 S/N" "311-150CRCT-ND"
 			(at 202.692 41.91 0)
 			(effects
 				(font

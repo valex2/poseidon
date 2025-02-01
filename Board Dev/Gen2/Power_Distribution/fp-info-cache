@@ -1,4 +1,4 @@
-23702196489770482
+23705673419132132
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57827,12 +57827,26 @@ Integrated Circuit
 8
 8
 Imported_Footprints
+PHOENIX_1098169
+
+
+0
+4
+4
+Imported_Footprints
 PHOENIX_1719370
 
 
 0
 8
 8
+Imported_Footprints
+TE_1986660-2
+
+
+0
+4
+4
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height

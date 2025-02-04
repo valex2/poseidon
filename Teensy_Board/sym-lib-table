@@ -1,6 +1,0 @@
-(sym_lib_table
-  (version 7)
-  (lib (name "imported_footprints")(type "KiCad")(uri "${KIPRJMOD}/imported_footprints.kicad_sym")(options "")(descr ""))
-  (lib (name "teensy")(type "Legacy")(uri "${KIPRJMOD}/teensy_library/teensy.lib")(options "")(descr ""))
-  (lib (name "teensy4.0_audioshield_revd")(type "Legacy")(uri "${KIPRJMOD}/teensy4.0_audioshield_revd.lib")(options "")(descr ""))
-)

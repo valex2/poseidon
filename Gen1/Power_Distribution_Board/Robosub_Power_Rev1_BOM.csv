@@ -1,0 +1,25 @@
+#,Reference,Qty,Value,Footprint,DNP,Supplier 1,Supplier 1 S/N,MFR,MFR S/N
+1,"C1, C2",4,0.1u,Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874,311-1140-1-ND,YAGEO,CC0805KRX7R9BB104
+2,"C3, C4",4,1uF,Capacitor_SMD:C_1812_4532Metric_Pad1.57x3.40mm_HandSolder,,https://www.digikey.com/en/products/detail/knowles-syfer/1812Y2000105KSTWS2/18879756,1608-1812Y2000105KSTWS2CT-ND,Knowles Syfer,1812Y2000105KSTWS2
+3,"C5, C6",4,1u (electrolytic),Robosub Lib:UCB1V0R1MCL1GS,,https://www.digikey.com/en/products/detail/nichicon/UCB1V0R1MCL1GS/3974069,493-9956-1-ND,Nichicon,UCB1V0R1MCL1GS
+4,CR1,2,SBRT15U50SP5-13,SBRT15U50SP5_13:POWERDI5_DIO,,https://www.digikey.com/en/products/detail/diodes-incorporated/SBRT15U50SP5-13/4567773,SBRT15U50SP5-13DICT-ND,Diodes Incorporated,SBRT15U50SP5-13
+5,D1,2,1SMA5931BT3,Diode_SMD:D_SMA,,https://www.digikey.com/en/products/detail/onsemi/SZ1SMA5931BT3G/8538966,SZ1SMA5931BT3GOSCT-ND,onsemi,SZ1SMA5931BT3G
+6,"D2, D3",4,IR26-21C_L110_TR8,LED_SMD:LED_1206_3216Metric,,https://www.digikey.com/en/products/detail/everlight-electronics-co-ltd/ir26-21c-l110-tr8/2675848,1080-1357-1-ND,Everlight Electronics Co Ltd,IR26-21C/L110/TR8
+7,"H1, H2, H3, H4",8,MountingHole,MountingHole:MountingHole_3.2mm_M3,,,,,
+8,"J1, J2, J3, J4, J5, J6, J7, J8, J9, J10",14,1135333,1135333_1:PHOENIX_1135333,,https://www.digikey.com/en/products/detail/phoenix-contact/1135333/17936877,277-1135333CT-ND,Pheonix Contact,"SPT-THR 2,5/ 2-V-5,0 P20 R32"
+9,J14,2,Conn_01x04,Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical,,,,,
+10,"JP4, JP5",4,SolderJumper_2_Open,Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm,,,,,
+11,L1,2,74477420,Robosub Lib:IND_5848-WE-PD2_WRE,,https://www.digikey.com/en/products/detail/würth-elektronik/74477420/1638683,732-1278-1-ND,Würth Elektronik,74477420
+12,"R1, R3, R4",6,10k,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710KL/727535,311-10.0KCRCT-ND,YAGEO,RC0805FR-0710KL
+13,R2,2,3k,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/te-connectivity-passive-product/CRG0805F3K0/2380900,A126368CT-ND,TE Connectivity Passive Product,CRG0805F3K0
+14,R5,2,10,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/RC0805FR-0710RL/727534,311-10.0CRCT-ND,YAGEO,RC0805FR-0710RL
+15,"R6, R7, R8",6,100,Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder,,https://www.digikey.com/en/products/detail/yageo/RC0805FR-07100RL/727543,311-100CRCT-ND,YAGEO,RC0805FR-07100RL
+16,R9,2,0 (100A),Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder,,https://www.digikey.com/en/products/detail/bourns-inc./CSS2H-2512C-000E/16357993?utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=Pmax_Shopping_Product_Silicon%20Valley%20Category%20Awareness&utm_term=&utm_content=&utm_id=go_cmp-20773039395_adg-_ad-__dev-c_ext-_prd-16357993_sig-Cj0KCQjw0MexBhD3ARIsAEI3WHINDK5g5q8j-TQ9Vup2iYGKWoEq-ecb_L6aosVGmVwaQhBSKO6nmgsaAonSEALw_wcB&gad_source=1&gclid=Cj0KCQjw0MexBhD3ARIsAEI3WHINDK5g5q8j-TQ9Vup2iYGKWoEq-ecb_L6aosVGmVwaQhBSKO6nmgsaAonSEALw_wcB,118-CSS2H-2512C-000ECT-ND,Bourns Inc.,CSS2H-2512C-000E
+17,U1,2,INA300AIDSQT,Robosub Lib:SON40P200X200X80-11N,,https://www.digikey.com/en/products/detail/texas-instruments/INA300AIDSQT/4759519,296-37474-1-ND,Texas Instruments,INA300AIDSQT
+18,U2,2,SN74LVC1G97DBVR,Robosub Lib:SOT95P280X145-6N,,https://www.digikey.com/en/products/detail/texas-instruments/SN74LVC1G97DBVR/571196,296-15581-1-ND,Texas Instruments,SN74LVC1G97DBVR
+19,U3,2,AUIR3241STR,Robosub Lib:SOIC127P600X175-8N_AUIR3241STR,,https://www.digikey.com/en/products/detail/infineon-technologies/auir3241str/7428056,AUIR3241SCT-ND,Infineon Technologies,AUIR3241STR
+20,"U4, U5, U6",6,BSC0702LSATMA1,Robosub Lib:BSC0702LSATMA1,,https://www.digikey.com/en/products/detail/infineon-technologies/BSC0702LSATMA1/7323968?s=N4IgTCBcDaIEIGUDCAGA7CsAZBBBAKgLK4CMIAugL5A,448-BSC0702LSATMA1CT-ND,Infineon Technologies,BSC0702LSATMA1
+21,"U7, U8",3,NVTR01P02LT1G,Robosub Lib:SOT-23-3_1P4X3P040_ONS,,https://www.digikey.com/en/products/detail/onsemi/NVTR01P02LT1G/3062562?s=N4IgTCBcDaIHIDUAqAlADARgAprAGSQwHEQBdAXyA,NVTR01P02LT1GOSCT-ND,onsemi,NVTR01P02LT1G
+22,"WSLP59312L000FEA_1, WSLP59312L000FEA_2",4,2mOhm,WSLP59312L000FEA:RES_WSLP5931_.002OHM_VIS,,https://www.digikey.com/en/products/detail/vishay-dale/WSLP59312L000FEA/5215934?s=N4IgTCBcDaIO4GcA2AHArATgMwEYxIAYiAzAUwEMQBdAXyA,541-10013-1-ND,Vishay Dale,WSLP59312L000FEA
+23,Hall effect,1,,,,https://www.digikey.com/en/products/detail/littelfuse-inc/55140-3H-02-A/565513,55140-3H-02-A-ND,Littelfuse Inc.,55140-3H-02-A
+24,Magnet,1,,,,https://www.digikey.com/en/products/detail/littelfuse-inc/H-58-MAGNET/10269030,F12127-ND,Littelfuse Inc.,H-58-MAGNET

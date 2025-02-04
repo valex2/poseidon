@@ -1,7 +1,0 @@
-Reference,Value,Qty,Supplier 1,Supplier 1 S/N,Qty (excess)
-"C_byp1,C_byp2,C_byp3,C_byp4,C_byp5,C_byp6,C_byp7,C_byp8",0.1 µF,8,https://www.digikey.com/en/products/detail/yageo/CC0805KRX7R9BB104/302874,311-1140-1-ND,10
-"C_filter1,C_filter2,C_filter3,C_filter4,C_filter5,C_filter6,C_filter7,C_filter8",100 µF,8,https://www.digikey.com/en/products/detail/murata-electronics/GRM21BR60G107ME11L/6155750,490-13980-1-ND,10
-"IC1,IC2,IC3,IC4,IC5,IC6,IC7,IC8",ACS713ELCTR-30A-T,8,https://www.digikey.com/en/products/detail/allegro-microsystems/ACS713ELCTR-30A-T/1284597?_gl=1*148897x*_up*MQ..&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk21nIx_-tUP4tcUXSovOnmLUqnIoOLB9CLbyM5WIj2G2iDMNpqSVlUaAroJEALw_wcB,620-1193-1-ND,10
-"J1,J2",8TERM_VERT_1719370,2,https://www.digikey.com/en/products/detail/phoenix-contact/1719370/2527279,277-8616-ND,4
-"J3,J5",Conn_01x04_Socket,2,,,4
-J4,1986660-2,1,https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/1986660-2/4021603,A107722-ND,3

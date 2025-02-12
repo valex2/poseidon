@@ -13661,7 +13661,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 P/N" "CAY16-103J4LFCT-ND"
+		(property "Supplier 1 P/N" ""
 			(at 58.928 121.92 0)
 			(effects
 				(font
@@ -13706,7 +13706,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
+		(property "Supplier 1 S/N" "CAY16-103J4LFCT-ND"
 			(at 58.928 121.92 0)
 			(effects
 				(font
@@ -15096,7 +15096,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 P/N" "CAY16-103J4LFCT-ND"
+		(property "Supplier 1 P/N" ""
 			(at 51.054 121.92 0)
 			(effects
 				(font
@@ -15141,7 +15141,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
+		(property "Supplier 1 S/N" "CAY16-103J4LFCT-ND"
 			(at 51.054 121.92 0)
 			(effects
 				(font
@@ -17559,7 +17559,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 P/N" "CAY16-103J4LFCT-ND"
+		(property "Supplier 1 P/N" ""
 			(at 35.052 121.92 0)
 			(effects
 				(font
@@ -17604,7 +17604,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
+		(property "Supplier 1 S/N" "CAY16-103J4LFCT-ND"
 			(at 35.052 121.92 0)
 			(effects
 				(font
@@ -21147,7 +21147,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 P/N" "CAY16-103J4LFCT-ND"
+		(property "Supplier 1 P/N" ""
 			(at 42.926 121.92 0)
 			(effects
 				(font
@@ -21192,7 +21192,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
+		(property "Supplier 1 S/N" "CAY16-103J4LFCT-ND"
 			(at 42.926 121.92 0)
 			(effects
 				(font

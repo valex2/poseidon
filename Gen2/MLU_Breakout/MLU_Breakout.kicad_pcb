@@ -243,7 +243,7 @@
 		(descr "Mounting Hole 3.2mm, no annular, M3")
 		(tags "mounting hole 3.2mm no annular m3")
 		(property "Reference" "H3"
-			(at 0 -4.2 360)
+			(at 0 -4.2 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "65088d49-a092-4685-82f9-5284c6b6eae4")
@@ -255,7 +255,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 0 4.2 360)
+			(at 0 4.2 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b845ac6f-77ec-4b35-b657-eabb6055dbc9")
@@ -411,7 +411,7 @@
 			(uuid "463a2e52-ed9a-4d4a-9116-b92649cd93d8")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "0ee5b358-7db1-4469-bb9c-0db911be7da7")
 			(effects
@@ -2324,7 +2324,7 @@
 			(uuid "b5b26f6b-65bd-4b74-ab8a-eab243278f4c")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 2.54 360)
+			(at 0 2.54 0)
 			(layer "F.Fab")
 			(uuid "d0afd52b-6076-4a34-8a99-0fc8f158cbcd")
 			(effects
@@ -4561,7 +4561,7 @@
 		(descr "Through hole angled pin header, 1x17, 2.54mm pitch, 6mm pin length, single row")
 		(tags "Through hole angled pin header THT 1x17 2.54mm single row")
 		(property "Reference" "J10"
-			(at 1.6 -2.96 360)
+			(at 1.6 -2.96 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "c1844e23-e6ef-48e1-b885-860f1233867e")
@@ -4573,7 +4573,7 @@
 			)
 		)
 		(property "Value" "Conn_01x17_Pin"
-			(at 4.385 42.91 360)
+			(at 4.385 42.91 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "3927f9d4-13c3-42a1-9f2f-693f87144368")
@@ -8961,7 +8961,7 @@
 			)
 		)
 		(property "Value" "Jumper_3_Bridged12"
-			(at 0 1.9 360)
+			(at 0 1.9 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "b8f73a0c-e06e-4a02-b06b-71e18d843de2")
@@ -10185,7 +10185,7 @@
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R7"
-			(at 0 2 360)
+			(at 0 2 0)
 			(layer "F.SilkS")
 			(uuid "2aa86fa4-6afd-4f91-885f-85acf824ffd8")
 			(effects
@@ -10196,7 +10196,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 0 1.65 360)
+			(at 0 1.65 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "0e6b4fc6-b350-473d-b8e1-7a24538cb43d")
@@ -10430,7 +10430,7 @@
 			(uuid "a99c4501-29cb-4805-a266-3eaa85de46af")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "910e41ca-6261-4bac-a0ef-8f1e9cfe98e9")
 			(effects
@@ -11072,7 +11072,7 @@
 			)
 		)
 		(property "Value" "Jumper_3_Bridged12"
-			(at 0 1.9 360)
+			(at 0 1.9 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "6a946463-3737-4c3b-a39b-00b811446973")
@@ -11474,7 +11474,7 @@
 		(descr "Precision Thin Film Chip Resistor Array, VISHAY (see http://www.vishay.com/docs/28770/acasat.pdf)")
 		(tags "resistor array")
 		(property "Reference" "RN1"
-			(at 0 -2.8 360)
+			(at 0 -2.8 0)
 			(layer "F.SilkS")
 			(uuid "3e2e02d1-bb0e-4f40-907f-26647a003bdd")
 			(effects
@@ -11485,7 +11485,7 @@
 			)
 		)
 		(property "Value" "10kΩ"
-			(at 0 2.8 360)
+			(at 0 2.8 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "54c5a370-2b9a-4065-9976-c874ae70445c")
@@ -12601,7 +12601,7 @@
 		(descr "Mounting Hole 3.2mm, no annular, M3")
 		(tags "mounting hole 3.2mm no annular m3")
 		(property "Reference" "H1"
-			(at 0 -4.2 360)
+			(at 0 -4.2 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "f204c865-a324-4662-87d1-4e809d98a549")
@@ -12613,7 +12613,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 0 4.2 360)
+			(at 0 4.2 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "5a17012e-2ccc-43e1-b505-d4560c9a00b9")
@@ -12769,7 +12769,7 @@
 			(uuid "140e66c4-31e3-465c-b604-7c95ce6d3424")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "85908c16-271f-464b-99b1-67e1652b7404")
 			(effects
@@ -13086,7 +13086,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C1"
-			(at 0 -1.43 360)
+			(at 0 -1.43 0)
 			(layer "F.SilkS")
 			(uuid "57748057-4fa3-4c38-a40d-cdbe7acfa3cd")
 			(effects
@@ -13097,7 +13097,7 @@
 			)
 		)
 		(property "Value" "135p"
-			(at 0 1.43 360)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "fad5d6f0-7a58-4349-88c3-b71ad87b73cc")
@@ -13331,7 +13331,7 @@
 			(uuid "9073b153-8562-4df6-aa1e-8325a7839226")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "445488ec-7ec7-4d86-af39-4c9387376e32")
 			(effects
@@ -13670,7 +13670,7 @@
 		(descr "Mounting Hole 3.2mm, no annular, M3")
 		(tags "mounting hole 3.2mm no annular m3")
 		(property "Reference" "H4"
-			(at 0 -4.2 360)
+			(at 0 -4.2 0)
 			(layer "F.SilkS")
 			(hide yes)
 			(uuid "77b3a3e6-50fc-439e-87a2-8d97151198d5")
@@ -13682,7 +13682,7 @@
 			)
 		)
 		(property "Value" "MountingHole"
-			(at 0 4.2 360)
+			(at 0 4.2 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "1f6f5010-eda1-48b6-8972-a735b4f70532")
@@ -13838,7 +13838,7 @@
 			(uuid "40e7bf95-90c9-4506-9431-6b2b2fe5cd0a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "af201e86-952f-471b-bae9-e8391d55775b")
 			(effects
@@ -13863,7 +13863,7 @@
 		(descr "SMD Solder 3-pad Jumper, 1x1.5mm rounded Pads, 0.3mm gap, pads 1-2 Bridged2Bar with 2 copper strip")
 		(tags "net tie solder jumper bridged")
 		(property "Reference" "JP3"
-			(at 3.1 0 360)
+			(at 3.1 0 0)
 			(layer "F.SilkS")
 			(uuid "41a936fd-ee83-431e-9d9f-fff330c15020")
 			(effects
@@ -14572,7 +14572,7 @@
 			(uuid "3c3560e0-7890-4f39-9ef5-b4c91b03fc3a")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 3.81 360)
+			(at 0 3.81 0)
 			(layer "F.Fab")
 			(uuid "80a78787-88e2-47a1-9036-7b5f95b2251b")
 			(effects
@@ -14645,7 +14645,7 @@
 		(descr "Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C2"
-			(at 0 1.49 360)
+			(at 0 1.49 0)
 			(layer "F.SilkS")
 			(uuid "bf9bf421-f38c-4375-b4f0-963ec35db000")
 			(effects
@@ -14656,7 +14656,7 @@
 			)
 		)
 		(property "Value" "135p"
-			(at 0 1.43 360)
+			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "943aefe3-abb2-46f6-9327-241a93a3a91d")
@@ -14890,7 +14890,7 @@
 			(uuid "4f86a6d9-df12-427d-ab69-de4c606643a6")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "48957cbc-dc88-4ba6-88ce-df7f30dad6dc")
 			(effects

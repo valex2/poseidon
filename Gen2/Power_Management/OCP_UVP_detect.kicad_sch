@@ -2278,7 +2278,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "SN74LVC1G373DCKR"
+		(property "Datasheet" "https://www.ti.com/general/docs/suppproductinfo.tsp?distId=10&gotoUrl=https%3A%2F%2Fwww.ti.com%2Flit%2Fgpn%2Fsn74lvc1g373"
 			(at 163.83 92.71 0)
 			(effects
 				(font

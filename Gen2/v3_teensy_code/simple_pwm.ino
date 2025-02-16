@@ -177,7 +177,7 @@ void processInput(char* input) {
         if (sscanf(input, "%d %d", &servoNum, &val) == 2 && outerSwitch == LOW && !leak) {
             if (isValidServoCommand(servoNum, val)) {
                 setServo(servoNum, val);
-                Serial.println("Sucessfully set servo");
+                // Serial.println("Sucessfully set servo");
             } else {
                 Serial.println("Invalid command");
             }
@@ -222,7 +222,7 @@ void setServo(int servoNum, int val) {
     if (remappedServo >= 2 && remappedServo <= 9) {
         servos[remappedServo - 2].writeMicroseconds(val);
         Serial.print("Set servo ");
-        Serial.print(remappedServo);
+        Serial.print(servoNum);
         Serial.print(" to ");
         Serial.println(val);
     } else {

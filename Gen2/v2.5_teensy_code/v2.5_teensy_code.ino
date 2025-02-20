@@ -12,6 +12,7 @@
 #define KILL_SWITCH_PIN 33
 #define KILL_LIGHTS_PIN 39
 #define LEAK_DETECT_PIN 14
+#define LIGHT_PIN 37
 
 MS5837 sensor;
 Adafruit_SSD1306 display(4);
@@ -56,6 +57,9 @@ void setup() {
     digitalWrite(KILL_LIGHTS_PIN, HIGH);
     pinMode(LEAK_DETECT_PIN, INPUT);
 
+    pinMode(LIGHT_PIN, OUTPUT);  // Set light pin as output
+    digitalWrite(LIGHT_PIN, HIGH); // Start with the light off
+
     if (!tempsensor_IMU.begin(0x18)) Serial.println("Error: IMU Temp sensor not found!");
     else { tempsensor_IMU.setResolution(3); tempsensor_IMU.wake(); }
 
@@ -83,10 +87,29 @@ void loop() {
     readLeakSensor();
     
     static unsigned long lastDisplayUpdate = 0;
+    static unsigned long lastDepthTest = 0;
+    static unsigned long lastLightToggle = 0;
+    static bool lightState = false;
+
     if (millis() - lastDisplayUpdate >= 1000) {  // Update every second
         updateDisplay();
         logTemperatureData();
         lastDisplayUpdate = millis();
+    }
+
+    // Run depth test every 5 seconds
+    if (millis() - lastDepthTest >= 5000) {
+        testDepthSensor();
+        lastDepthTest = millis();
+    }
+
+    // Toggle light every 5 seconds
+    if (millis() - lastLightToggle >= 5000) {
+        lightState = !lightState;  // Toggle state
+        digitalWrite(LIGHT_PIN, lightState ? HIGH : LOW);
+        Serial.print("Light toggled: ");
+        Serial.println(lightState ? "ON" : "OFF");
+        lastLightToggle = millis();
     }
 }
 
@@ -207,13 +230,51 @@ void configServo() {
 }
 
 //--------------------------------------------------
-// Depth Sensor Configuration
+// Depth Sensor Configuration & Test
 //--------------------------------------------------
 void configDepthSensor() {
     Wire.begin();
+    Serial.println("Initializing Depth Sensor...");
+
+    // Loop until the sensor initializes successfully
+    while (!sensor.init()) {
+        Serial.println("Error: Depth sensor (MS5837) initialization failed!");
+        Serial.println("Check SDA/SCL connections.");
+        Serial.println("Retrying in 5 seconds...\n");
+        delay(5000);
+    }
+
+    Serial.println("Depth sensor (MS5837) initialized successfully!");
     sensor.setModel(MS5837::MS5837_02BA);
-    sensor.init();
     sensor.setFluidDensity(997); // kg/m^3 for freshwater
+}
+
+//--------------------------------------------------
+// Test Depth Sensor Function
+//--------------------------------------------------
+void testDepthSensor() {
+    Serial.println("Testing depth sensor...");
+
+    // Read the sensor before accessing values
+    sensor.read();
+
+    Serial.print("Pressure: ");
+    Serial.print(sensor.pressure());
+    Serial.println(" mbar");
+
+    Serial.print("Temperature: ");
+    Serial.print(sensor.temperature());
+    Serial.println(" deg C");
+
+    Serial.print("Depth: ");
+    Serial.print(sensor.depth());
+    Serial.println(" m");
+
+    Serial.print("Altitude: ");
+    Serial.print(sensor.altitude());
+    Serial.println(" m above mean sea level");
+
+    Serial.println("-------------------------------");
 }
 
 //--------------------------------------------------
@@ -270,6 +331,8 @@ void handleSerialInput() {
 void processInput(char* input) {
     if (strcmp(input, "depth") == 0) {
         handleDepthCommand();
+    } else if (strcmp(input, "test depth") == 0) {
+        testDepthSensor();  // Call test function
     } else if (strcmp(input, "voltage") == 0) {
         handleVoltageCommand();
     } else {
@@ -278,7 +341,6 @@ void processInput(char* input) {
         if (sscanf(input, "%d %d", &servoNum, &val) == 2 && outerSwitch == LOW && !leak) {
             if (isValidServoCommand(servoNum, val)) {
                 setServo(servoNum, val);
-                // Serial.println("Sucessfully set servo");
             } else {
                 Serial.println("Invalid command");
             }

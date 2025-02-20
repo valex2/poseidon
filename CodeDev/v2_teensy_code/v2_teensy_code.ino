@@ -31,8 +31,8 @@ int outerSwitch;
 int lightPWM;
 
 // Tempsensors (0x18, 0x19, 0x1A, I2C_Bus_1)
-Adafruit_MCP9808 tempsensor1 = Adafruit_MCP9808();
-Adafruit_MCP9808 tempsensor2 = Adafruit_MCP9808();
+Adafruit_MCP9808 tempsensor1 = Adafruit_MCP9808(); // this is integrated, closest to bulkhead
+Adafruit_MCP9808 tempsensor2 = Adafruit_MCP9808(); // this is integrated, closest to tube
 Adafruit_MCP9808 tempsensor3 = Adafruit_MCP9808();
 
 // SD Card
@@ -43,40 +43,56 @@ const int SDSelect = BUILTIN_SDCARD;
 
 void setup() {
     Serial.begin(9600);
+    Wire.begin();  // Initialize I2C bus
+
     configServo();
     configDepthSensor();
+    
     display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
     pinMode(KILL_SWITCH_PIN, INPUT);
     pinMode(KILL_LIGHTS_PIN, OUTPUT);
     digitalWrite(KILL_LIGHTS_PIN, HIGH);
     pinMode(LEAK_DETECT_PIN, INPUT);
 
-    tempsensor1.begin(0x18);
-    tempsensor1.setResolution(3);
-    tempsensor1.wake();
+    // Initialize temperature sensors with error handling
+    if (!tempsensor1.begin(0x18)) {
+        Serial.println("Error: tempsensor1 not found!");
+    } else {
+        tempsensor1.setResolution(3);
+        tempsensor1.wake();
+    }
 
-    tempsensor2.begin(0x19);
-    tempsensor2.setResolution(3);
-    tempsensor2.wake();
+    if (!tempsensor2.begin(0x19)) {
+        Serial.println("Error: tempsensor2 not found!");
+    } else {
+        tempsensor2.setResolution(3);
+        tempsensor2.wake();
+    }
 
-    tempsensor3.begin(0x1A);
-    tempsensor3.setResolution(3);
-    tempsensor3.wake();
+    if (!tempsensor3.begin(0x1A)) {
+        Serial.println("Error: tempsensor3 not found!");
+    } else {
+        tempsensor3.setResolution(3);
+        tempsensor3.wake();
+    }
 
-    SD.begin(SDSelect);
-
+    if (!SD.begin(SDSelect)) {
+        Serial.println("Error: SD card not detected!");
+    }
 }
+
 void loop() {
     handleSerialInput();
     readLeakSensor();
-    if (displayCounter >= 80) {
+    
+    static unsigned long lastDisplayUpdate = 0;
+    if (millis() - lastDisplayUpdate >= 1000) {  // Update every second
         updateDisplay();
-
         logTemperatureData();
-        displayCounter = 0;
+        lastDisplayUpdate = millis();
     }
-    displayCounter++;
 }
+
 void configServo() {
     for (int i = 0; i < 8; i++) {
         servos[i].attach(servoPins[i]);
@@ -132,10 +148,10 @@ void logTemperatureData() {
     dataFile.println(dataString);
     dataFile.close();
     // Print to the serial port too:
-    // Serial.println(dataString);
+    Serial.println(dataString);
   } else {
     // If the file isn't open, pop up an error:
-    // Serial.println("error opening datalog.txt");
+    Serial.println("error opening datalog.txt");
   }
 }
 void floatToSurface() {
@@ -177,7 +193,7 @@ void processInput(char* input) {
         if (sscanf(input, "%d %d", &servoNum, &val) == 2 && outerSwitch == LOW && !leak) {
             if (isValidServoCommand(servoNum, val)) {
                 setServo(servoNum, val);
-                Serial.println("Sucessfully set servo");
+                // Serial.println("Sucessfully set servo");
             } else {
                 Serial.println("Invalid command");
             }
@@ -222,7 +238,7 @@ void setServo(int servoNum, int val) {
     if (remappedServo >= 2 && remappedServo <= 9) {
         servos[remappedServo - 2].writeMicroseconds(val);
         Serial.print("Set servo ");
-        Serial.print(remappedServo);
+        Serial.print(servoNum);
         Serial.print(" to ");
         Serial.println(val);
     } else {

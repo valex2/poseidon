@@ -9,15 +9,15 @@
 #include "MS5837.h"
 
 // Constants and configurations
-#define KILL_SWITCH_PIN 33
+#define KILL_SWITCH_PIN 26
 #define KILL_LIGHTS_PIN 39
-#define LEAK_DETECT_PIN 14
+#define LEAK_DETECT_PIN 33
 #define LIGHT_PIN 37
 
 MS5837 sensor;
 Adafruit_SSD1306 display(4);
-Adafruit_BME280 bme_bulkhead;  // BME280 sensor at 0x76 (bulkhead)
-Adafruit_BME280 bme_mid;       // BME280 sensor at 0x77 (mid enclosure)
+Adafruit_BME280 bme_bulkhead;  // Bulkhead sensor (I2C addr 0x76)
+Adafruit_BME280 bme_mid;       // Mid enclosure sensor (I2C addr 0x77)
 
 bool leak = false;
 bool surface = true;
@@ -26,27 +26,31 @@ int secondWirePin = 21;
 int firstVal = 0;
 int secondVal = 0;
 Servo servos[8];
-byte servoPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
+byte servoPins[] = {0, 1, 2, 3, 4, 5, 6, 7};
 char inputBuffer[32];
 int bufferPosition = 0;
-int displayCounter = 0;
 int outerSwitch;
-int lightPWM;
 
-// MCP9808 sensors labeled accordingly
-Adafruit_MCP9808 tempsensor_IMU = Adafruit_MCP9808();  // 0x18 → IMU Temp
-Adafruit_MCP9808 tempsensor_ESC = Adafruit_MCP9808();  // 0x19 → ESC Temp
-Adafruit_MCP9808 tempsensor_Orin = Adafruit_MCP9808(); // 0x1A → Orin Temp
+bool systemError = false;  // Global error flag
+
+// MCP9808 sensors
+Adafruit_MCP9808 tempsensor_IMU = Adafruit_MCP9808();   // I2C addr 0x18
+Adafruit_MCP9808 tempsensor_ESC = Adafruit_MCP9808();   // I2C addr 0x19
+Adafruit_MCP9808 tempsensor_Orin = Adafruit_MCP9808();  // I2C addr 0x1A
 
 // SD Card
 const int SDSelect = BUILTIN_SDCARD;
+
+// Function prototypes
+void testMotors();
+bool isError();
 
 //--------------------------------------------------
 // Setup Function
 //--------------------------------------------------
 void setup() {
     Serial.begin(9600);
-    Wire.begin();  // Initialize I2C bus
+    Wire.begin();
 
     configServo();
     configDepthSensor();
@@ -57,26 +61,31 @@ void setup() {
     digitalWrite(KILL_LIGHTS_PIN, HIGH);
     pinMode(LEAK_DETECT_PIN, INPUT);
 
-    pinMode(LIGHT_PIN, OUTPUT);  // Set light pin as output
-    digitalWrite(LIGHT_PIN, HIGH); // Start with the light off
+    pinMode(LIGHT_PIN, OUTPUT);
+    // LED controlled in loop using analogWrite
 
-    if (!tempsensor_IMU.begin(0x18)) Serial.println("Error: IMU Temp sensor not found!");
+    // Initialize temperature sensors – set error flag on failure
+    if (!tempsensor_IMU.begin(0x18)) { systemError = true; } 
     else { tempsensor_IMU.setResolution(3); tempsensor_IMU.wake(); }
 
-    if (!tempsensor_ESC.begin(0x19)) Serial.println("Error: ESC Temp sensor not found!");
+    if (!tempsensor_ESC.begin(0x19)) { systemError = true; } 
     else { tempsensor_ESC.setResolution(3); tempsensor_ESC.wake(); }
 
-    if (!tempsensor_Orin.begin(0x1A)) Serial.println("Error: Orin Temp sensor not found!");
+    if (!tempsensor_Orin.begin(0x1A)) { systemError = true; } 
     else { tempsensor_Orin.setResolution(3); tempsensor_Orin.wake(); }
 
-    // Initialize both BME280 sensors
-    if (!bme_bulkhead.begin(0x76)) Serial.println("Error: Bulkhead BME280 not found!");
-    else Serial.println("Bulkhead BME280 initialized successfully!");
+    // Initialize BME280 sensors – print only on successful init
+    if (!bme_bulkhead.begin(0x76)) { systemError = true; } 
+    else { Serial.println("Bulkhead BME280 initialized successfully!"); }
 
-    if (!bme_mid.begin(0x77)) Serial.println("Error: Mid Enclosure BME280 not found!");
-    else Serial.println("Mid Enclosure BME280 initialized successfully!");
+    if (!bme_mid.begin(0x77)) { systemError = true; } 
+    else { Serial.println("Mid Enclosure BME280 initialized successfully!"); }
 
-    if (!SD.begin(SDSelect)) Serial.println("Error: SD card not detected!");
+    // Initialize SD card (set error flag if not present)
+    if (!SD.begin(SDSelect)) { systemError = true; }
+
+    // // After initialization, briefly test each motor
+    // testMotors();
 }
 
 //--------------------------------------------------
@@ -86,30 +95,42 @@ void loop() {
     handleSerialInput();
     readLeakSensor();
     
-    static unsigned long lastDisplayUpdate = 0;
-    static unsigned long lastDepthTest = 0;
-    static unsigned long lastLightToggle = 0;
-    static bool lightState = false;
-
-    if (millis() - lastDisplayUpdate >= 1000) {  // Update every second
-        updateDisplay();
-        logTemperatureData();
-        lastDisplayUpdate = millis();
+    updateDisplay();
+    logTemperatureData();
+    
+    // LED control:
+    // If there is no error, drive the LED at half brightness;
+    // if an error condition is detected, blink rapidly.
+    if (!isError()) {
+        analogWrite(LIGHT_PIN, 128); // 50% brightness
+    } else {
+        static unsigned long lastBlink = 0;
+        static bool blinkState = false;
+        if (millis() - lastBlink >= 200) {  // blink every 200 ms
+            blinkState = !blinkState;
+            lastBlink = millis();
+        }
+        analogWrite(LIGHT_PIN, blinkState ? 255 : 0);
     }
+}
 
-    // Run depth test every 5 seconds
-    if (millis() - lastDepthTest >= 5000) {
-        testDepthSensor();
-        lastDepthTest = millis();
-    }
+//--------------------------------------------------
+// Check for error conditions
+//--------------------------------------------------
+bool isError() {
+    // Error if any sensor failed init, leak detected, or kill switch active.
+    return systemError || leak || (digitalRead(KILL_SWITCH_PIN) == HIGH);
+}
 
-    // Toggle light every 5 seconds
-    if (millis() - lastLightToggle >= 5000) {
-        lightState = !lightState;  // Toggle state
-        digitalWrite(LIGHT_PIN, lightState ? HIGH : LOW);
-        Serial.print("Light toggled: ");
-        Serial.println(lightState ? "ON" : "OFF");
-        lastLightToggle = millis();
+//--------------------------------------------------
+// Test Motors Function: Cycle each motor to 1600 and back to 1500
+//--------------------------------------------------
+void testMotors() {
+    for (int i = 0; i < 8; i++) {
+        servos[i].writeMicroseconds(1600);
+        delay(200);
+        servos[i].writeMicroseconds(1500);
+        delay(200);
     }
 }
 
@@ -122,26 +143,22 @@ void readTempSensors(float temps[3]) {
     temps[2] = tempsensor_Orin.readTempC();
 }
 
-
 //--------------------------------------------------
-// SD Card Logging (includes both BME280 sensors)
+// SD Card Logging (both BME280 sensors)
 //--------------------------------------------------
 void logTemperatureData() {
     String dataString = "";
     unsigned long currentTime = millis();
     dataString += String(currentTime) + ",";
 
-    // Read MCP9808 sensors
     float temps[3];
     readTempSensors(temps);
     dataString += String(temps[0], 2) + "," + String(temps[1], 2) + "," + String(temps[2], 2);
 
-    // Read Bulkhead BME280
     float bme_bulk_Temp = bme_bulkhead.readTemperature();
-    float bme_bulk_Pressure = bme_bulkhead.readPressure() / 100.0;  // Convert to hPa
+    float bme_bulk_Pressure = bme_bulkhead.readPressure() / 100.0;
     float bme_bulk_Humidity = bme_bulkhead.readHumidity();
 
-    // Read Mid Enclosure BME280
     float bme_mid_Temp = bme_mid.readTemperature();
     float bme_mid_Pressure = bme_mid.readPressure() / 100.0;
     float bme_mid_Humidity = bme_mid.readHumidity();
@@ -153,60 +170,37 @@ void logTemperatureData() {
     if (dataFile) {
         dataFile.println(dataString);
         dataFile.close();
-        Serial.println(dataString);  // Print to serial
-    } else {
-        Serial.println("Error opening datalog.txt");
     }
 }
 
 //--------------------------------------------------
-// Display Update Function (includes both BME280 sensors)
+// Display Update Function (both BME280 sensors)
 //--------------------------------------------------
 void updateDisplay() {
     firstVal = analogRead(firstWirePin);
     secondVal = analogRead(secondWirePin);
-    double current = (firstVal * 120.0) / 1024;
     double voltage = (secondVal * 60.0) / 1024;
     sensor.read();
 
-    // Read BME280 sensor values
     float bme_bulk_Temp = bme_bulkhead.readTemperature();
-    float bme_bulk_Pressure = bme_bulkhead.readPressure() / 100.0;
-    float bme_bulk_Humidity = bme_bulkhead.readHumidity();
-
     float bme_mid_Temp = bme_mid.readTemperature();
-    float bme_mid_Pressure = bme_mid.readPressure() / 100.0;
-    float bme_mid_Humidity = bme_mid.readHumidity();
 
     outerSwitch = digitalRead(KILL_SWITCH_PIN);
-    if (outerSwitch == 1) {
-        configServo();
-        if (lightPWM == 1) {
-            digitalWrite(KILL_LIGHTS_PIN, LOW);
-            lightPWM = 0;
-        } else {
-            digitalWrite(KILL_LIGHTS_PIN, HIGH);
-            lightPWM = 1;
-        }
-    } else {
-        digitalWrite(KILL_LIGHTS_PIN, HIGH);
+    if (outerSwitch == HIGH) {
+         configServo();  // Reinitialize servos if kill switch is active
     }
 
-    String text = String(voltage) + " V, Switch: " + String(outerSwitch) + "\n" +
+    String text = String(voltage) + " V\n" +
                   "Depth: " + String(sensor.depth(), 2) + " m\n" +
-                  "MS5837 Temp: " + String(sensor.temperature(), 2) + " °C\n" +
-                  "IMU Temp: " + String(tempsensor_IMU.readTempC(), 2) + " °C\n" +
-                  "ESC Temp: " + String(tempsensor_ESC.readTempC(), 2) + " °C\n" +
-                  "Orin Temp: " + String(tempsensor_Orin.readTempC(), 2) + " °C\n" +
-                  "Bulkhead BME280: " + String(bme_bulk_Temp, 2) + " °C, " +
-                  String(bme_bulk_Pressure, 2) + " hPa, " +
-                  String(bme_bulk_Humidity, 2) + " %\n" +
-                  "Mid Enclosure BME280: " + String(bme_mid_Temp, 2) + " °C, " +
-                  String(bme_mid_Pressure, 2) + " hPa, " +
-                  String(bme_mid_Humidity, 2) + " %";
-
+                  "MS5837 Temp: " + String(sensor.temperature(), 2) + " C\n" +
+                  "IMU Temp: " + String(tempsensor_IMU.readTempC(), 2) + " C\n" +
+                  "ESC Temp: " + String(tempsensor_ESC.readTempC(), 2) + " C\n" +
+                  "Orin Temp: " + String(tempsensor_Orin.readTempC(), 2) + " C\n" +
+                  "Bulkhead: " + String(bme_bulk_Temp, 2) + " C\n" +
+                  "Mid: " + String(bme_mid_Temp, 2) + " C";
     displayText(text);
 }
+
 //--------------------------------------------------
 // OLED Display Update
 //--------------------------------------------------
@@ -233,48 +227,21 @@ void configServo() {
 // Depth Sensor Configuration & Test
 //--------------------------------------------------
 void configDepthSensor() {
-    Wire.begin();
-    Serial.println("Initializing Depth Sensor...");
-
-    // Loop until the sensor initializes successfully
+    // Loop until sensor initializes – minimal printing.
     while (!sensor.init()) {
-        Serial.println("Error: Depth sensor (MS5837) initialization failed!");
-        Serial.println("Check SDA/SCL connections.");
-        Serial.println("Retrying in 5 seconds...\n");
         delay(5000);
     }
-
     Serial.println("Depth sensor (MS5837) initialized successfully!");
     sensor.setModel(MS5837::MS5837_02BA);
-    sensor.setFluidDensity(997); // kg/m^3 for freshwater
+    sensor.setFluidDensity(997);  // Freshwater density
 }
 
 //--------------------------------------------------
-// Test Depth Sensor Function
+// Test Depth Sensor Function (triggered via serial command)
 //--------------------------------------------------
 void testDepthSensor() {
-    Serial.println("Testing depth sensor...");
-
-    // Read the sensor before accessing values
     sensor.read();
-
-    Serial.print("Pressure: ");
-    Serial.print(sensor.pressure());
-    Serial.println(" mbar");
-
-    Serial.print("Temperature: ");
-    Serial.print(sensor.temperature());
-    Serial.println(" deg C");
-
-    Serial.print("Depth: ");
-    Serial.print(sensor.depth());
-    Serial.println(" m");
-
-    Serial.print("Altitude: ");
-    Serial.print(sensor.altitude());
-    Serial.println(" m above mean sea level");
-
-    Serial.println("-------------------------------");
+    // Minimal output to reduce printing
 }
 
 //--------------------------------------------------
@@ -293,7 +260,7 @@ void readLeakSensor() {
 // Leak Handling: Float to Surface
 //--------------------------------------------------
 void floatToSurface() {
-    Serial.println("leak detected!! surfacing for 20 seconds");
+    // Adjust servos for surfacing without printing
     for (int i = 0; i < 4; i++) {
         servos[i].writeMicroseconds(1650);
     }
@@ -301,11 +268,10 @@ void floatToSurface() {
         servos[i].writeMicroseconds(1500);
     }
     for (int i = 20; i >= 0; i--) {
-        Serial.println(i);
         delay(1000);
     }
     for (int i = 0; i < 8; i++) {
-        servos[i].writeMicroseconds(1500); // neutral position
+        servos[i].writeMicroseconds(1500); // Return to neutral
     }
 }
 
@@ -329,23 +295,40 @@ void handleSerialInput() {
 // Process Serial Commands
 //--------------------------------------------------
 void processInput(char* input) {
+    // Command to test depth sensor
     if (strcmp(input, "depth") == 0) {
-        handleDepthCommand();
-    } else if (strcmp(input, "test depth") == 0) {
-        testDepthSensor();  // Call test function
-    } else if (strcmp(input, "voltage") == 0) {
-        handleVoltageCommand();
-    } else {
+        testDepthSensor();
+    }
+    // Command for voltage (minimal output)
+    else if (strcmp(input, "voltage") == 0) {
+        // (Optional: insert voltage handling if desired)
+    }
+    // Command to set all servos to a given PWM value (e.g., "all 1600")
+    else if (strncmp(input, "all", 3) == 0) {
+        int pwmVal;
+        if (sscanf(input + 3, "%d", &pwmVal) == 1 &&
+            pwmVal >= 1100 && pwmVal <= 1900 &&
+            digitalRead(KILL_SWITCH_PIN) == LOW && !leak) {
+            for (int i = 0; i < 8; i++) {
+                servos[i].writeMicroseconds(pwmVal);
+            }
+        }
+    }
+    // Command to reset all servos to off (neutral 1500)
+    else if (strcmp(input, "off") == 0) {
+        for (int i = 0; i < 8; i++) {
+            servos[i].writeMicroseconds(1500);
+        }
+    }
+    // Otherwise, check for individual servo command "servoNumber PWMValue"
+    else {
         int servoNum, val;
         outerSwitch = digitalRead(KILL_SWITCH_PIN);
-        if (sscanf(input, "%d %d", &servoNum, &val) == 2 && outerSwitch == LOW && !leak) {
+        if (sscanf(input, "%d %d", &servoNum, &val) == 2 &&
+            outerSwitch == LOW && !leak) {
             if (isValidServoCommand(servoNum, val)) {
                 setServo(servoNum, val);
-            } else {
-                Serial.println("Invalid command");
             }
-        } else {
-            Serial.println("Invalid format");
         }
     }
 }
@@ -354,33 +337,13 @@ void processInput(char* input) {
 // Validate Servo Commands
 //--------------------------------------------------
 bool isValidServoCommand(int servoNum, int val) {
-    return val >= 1100 && val <= 1900 && servoNum >= 0 && servoNum <= 7;
+    return (val >= 1100 && val <= 1900 && servoNum >= 0 && servoNum <= 7);
 }
 
 //--------------------------------------------------
-// Handle Depth Command
-//--------------------------------------------------
-void handleDepthCommand() {
-    sensor.read();
-    Serial.println(String(sensor.pressure(), 2) + " mbar " + String(sensor.temperature(), 2) + " °C " + String(sensor.depth(), 2) + " m");
-}
-
-//--------------------------------------------------
-// Handle Voltage Command
-//--------------------------------------------------
-void handleVoltageCommand() {
-    firstVal = analogRead(firstWirePin);
-    secondVal = analogRead(secondWirePin);
-    double current = (firstVal * 120.0) / 1024;
-    double voltage = (secondVal * 60.0) / 1024;
-    Serial.println(String(current, 2) + " A " + String(voltage, 2) + " V");
-}
-
-//--------------------------------------------------
-// Set Servo Position
+// Set Servo Position (with remapping)
 //--------------------------------------------------
 void setServo(int servoNum, int val) {
-    // Remap input values based on your custom mapping
     int remappedServo;
     switch (servoNum) {
         case 1: remappedServo = 2; break;
@@ -391,17 +354,9 @@ void setServo(int servoNum, int val) {
         case 4: remappedServo = 7; break;
         case 3: remappedServo = 8; break;
         case 0: remappedServo = 9; break;
-        default: 
-            Serial.println("Invalid servo number"); 
-            return;
+        default: return;
     }
     if (remappedServo >= 2 && remappedServo <= 9) {
         servos[remappedServo - 2].writeMicroseconds(val);
-        Serial.print("Set servo ");
-        Serial.print(servoNum);
-        Serial.print(" to ");
-        Serial.println(val);
-    } else {
-        Serial.println("Remapped servo number is out of range");
     }
 }

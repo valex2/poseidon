@@ -5,7 +5,9 @@
 #include "MS5837.h"
 #include "Adafruit_MCP9808.h"
 #include <Adafruit_BME280.h>
-
+////////////////////////////////////////////////////////////////////////////
+////////////////Pin Definitions/////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 // SD Card
 int sd_loop_counter = 0;
 const int chipSelect = BUILTIN_SDCARD;
@@ -24,15 +26,19 @@ Adafruit_BME280 bme1;
 Adafruit_BME280 bme2;
 
 // LED Indicators
-int indicatorLedPin = 37;
+int redIndicatorLedPin = 37;
+int greenIndicatorLedPin = 36;
 int lightPWM;
+
 // Kill Switch
 int killSwitchPin = 26;
+
 // Voltage sensing (note current sensing non-functional as of 2/23/25)
 int currentPin = 41;
 int voltagePin = 40;
 int currentVal = 0;
 int voltageVal = 0;
+
 // This flag determines operational status
 // 0. Teensy and/or power off. LED OFF
 // 1. All systems nominal. LED Solid ON
@@ -67,6 +73,7 @@ const bool sensorIssueStates[sensorIssueStepsCount] = {
     false  // LED off during step 5
 };
 int operational = NOMINAL;
+
 // Servo control
 Servo servo[8];
 byte servoPins[] = {0, 1, 2, 3, 4, 5, 6, 7};
@@ -79,6 +86,9 @@ Servo lightServo;
 int LumenPin = 8;
 int lightVal = 1100;
 
+////////////////////////////////////////////////////////////////////////////
+///////////////////////Setup////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 void setup() {
   Serial.begin(9600);
 
@@ -86,7 +96,9 @@ void setup() {
   config_depth_sensor();
   config_sd_card();
 
-  pinMode(indicatorLedPin, OUTPUT);
+  pinMode(redIndicatorLedPin, OUTPUT);
+  pinMode(greenIndicatorLedPin, OUTPUT);
+  digitalWrite(greenIndicatorLedPin, HIGH);
   pinMode(killSwitchPin, INPUT_PULLDOWN);
 
   tempsensor1.begin(0x18);
@@ -112,31 +124,6 @@ void setup() {
   // Attach the light servo
   lightServo.attach(LumenPin);
   lightServo.writeMicroseconds(1100); // turn off the light
-}
-
-String getTimestamp() {
-  unsigned long milliseconds = millis();
-  unsigned long seconds = milliseconds / 1000;
-  unsigned long minutes = seconds / 60;
-  unsigned long hours = minutes / 60;
-
-  milliseconds %= 1000;
-  seconds %= 60;
-  minutes %= 60;
-
-  // Format the timestamp
-  String timestamp = "";
-  if (hours < 10) timestamp += "0"; // Add leading zero for hours
-  timestamp += String(hours) + ":";
-  if (minutes < 10) timestamp += "0"; // Add leading zero for minutes
-  timestamp += String(minutes) + ":";
-  if (seconds < 10) timestamp += "0"; // Add leading zero for seconds
-  timestamp += String(seconds) + ".";
-  if (milliseconds < 100) timestamp += "0"; // Add leading zeros for milliseconds
-  if (milliseconds < 10) timestamp += "0";
-  timestamp += String(milliseconds);
-
-  return timestamp;
 }
 
 void config_servo() {
@@ -165,6 +152,10 @@ void config_sd_card() {
     Serial.println("Card failed, or not present");
   }
 }
+
+////////////////////////////////////////////////////////////////////////////
+///////////////////////Loop and Serial Processing///////////////////////////
+////////////////////////////////////////////////////////////////////////////
 void loop() {
   // Operational considerations
   int killSwitch = !digitalRead(killSwitchPin); // Read the value from the pin (HIGH or LOW)
@@ -174,17 +165,17 @@ void loop() {
     operational = NOMINAL;
   }
   if (operational == NOMINAL) {
-    digitalWrite(indicatorLedPin, HIGH);
+    digitalWrite(redIndicatorLedPin, HIGH);
   } else if (operational == KILLED) {
     config_servo();
     unsigned long currentMillis = millis();
     if (currentMillis - previousKillMillis >= blinkKillInterval) {
       previousKillMillis = currentMillis;
       if (lightPWM == 1) {
-          digitalWrite(indicatorLedPin, LOW);
+          digitalWrite(redIndicatorLedPin, LOW);
           lightPWM = 0;
       } else {
-          digitalWrite(indicatorLedPin, HIGH);
+          digitalWrite(redIndicatorLedPin, HIGH);
           lightPWM = 1;
       }
     }
@@ -195,7 +186,7 @@ void loop() {
     if (currentMillis - previousSensorIssueMillis >= sensorIssueDurations[sensorIssueStep]) {
       previousSensorIssueMillis = currentMillis;
       // Set LED according to the current step in the pattern.
-      digitalWrite(indicatorLedPin, sensorIssueStates[sensorIssueStep] ? HIGH : LOW);
+      digitalWrite(redIndicatorLedPin, sensorIssueStates[sensorIssueStep] ? HIGH : LOW);
       // Move to the next step (wrap around at the end of the pattern)
       sensorIssueStep = (sensorIssueStep + 1) % sensorIssueStepsCount;
     }
@@ -222,12 +213,10 @@ void loop() {
 }
 
 void process_input(char *input, bool log_sd) {
-  // Handle "transfer" command
-  if (strcmp(input, "transfer") == 0) {
+  if (strcmp(input, "transfer") == 0) { // SD Card Transfer
     transfer_sd_log();
   }
-  // Handle "delete" command
-  else if (strcmp(input, "delete") == 0) {
+  else if (strcmp(input, "delete") == 0) { // SD Card Delete
     delete_sd_log();
   }
   // Handle usual command
@@ -320,7 +309,7 @@ void process_input(char *input, bool log_sd) {
 }
 
 ////////////////////////////////////////////////////////////////////////////
-// SD Card Functions
+///////////////// SD Card Functions/////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 void transfer_sd_log(){
   if (SD.exists("datalog.txt")) {
@@ -376,6 +365,30 @@ void write_data_sd(String dataString) {
     // if the file isn't open, pop up an error:
     Serial.println("error opening datalog.txt");
   }
+}
+String getTimestamp() {
+  unsigned long milliseconds = millis();
+  unsigned long seconds = milliseconds / 1000;
+  unsigned long minutes = seconds / 60;
+  unsigned long hours = minutes / 60;
+
+  milliseconds %= 1000;
+  seconds %= 60;
+  minutes %= 60;
+
+  // Format the timestamp
+  String timestamp = "";
+  if (hours < 10) timestamp += "0"; // Add leading zero for hours
+  timestamp += String(hours) + ":";
+  if (minutes < 10) timestamp += "0"; // Add leading zero for minutes
+  timestamp += String(minutes) + ":";
+  if (seconds < 10) timestamp += "0"; // Add leading zero for seconds
+  timestamp += String(seconds) + ".";
+  if (milliseconds < 100) timestamp += "0"; // Add leading zeros for milliseconds
+  if (milliseconds < 10) timestamp += "0";
+  timestamp += String(milliseconds);
+
+  return timestamp;
 }
 //////////////////////////////////////////////////////////////////////////////
 /// Sensor Reading Functions

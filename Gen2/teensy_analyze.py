@@ -130,7 +130,6 @@ def plot_data(data_path):
     operational_flags = []
     kill_switch_flags = []
 
-    # Read file lines
     with open(data_path, 'r') as file:
         lines = file.readlines()
 
@@ -138,7 +137,7 @@ def plot_data(data_path):
         if '->' not in line:
             continue
 
-        # Parse the timestamp
+        # Parse the timestamp (assumed format: HH:MM:SS.microseconds)
         timestamp_str = line.split('->')[0].strip()
         try:
             timestamp = datetime.strptime(timestamp_str, '%H:%M:%S.%f')
@@ -162,14 +161,12 @@ def plot_data(data_path):
         line_operational = np.nan
         line_kill_switch = np.nan
 
-        # Get data part (everything after the arrow)
         data_part = line.split('->', 1)[1].strip()
 
-        # Tokenize the data part into individual measurements
+        # Tokenize the data part
         measurements = []
         cur_measurement = []
         for token in data_part.split():
-            # Start a new measurement when a token with ':' is encountered and there is an existing measurement
             if ':' in token and cur_measurement:
                 measurements.append(' '.join(cur_measurement))
                 cur_measurement = [token]
@@ -178,7 +175,6 @@ def plot_data(data_path):
         if cur_measurement:
             measurements.append(' '.join(cur_measurement))
 
-        # Process each measurement token
         for meas in measurements:
             if ':' not in meas:
                 continue
@@ -197,7 +193,6 @@ def plot_data(data_path):
                 except:
                     line_voltage = np.nan
             elif key == 'servo':
-                # Value example: "PWM:1500,PWM:1500,..." → extract numeric parts
                 servo_vals = []
                 for token in value.split(','):
                     token = token.strip()
@@ -208,15 +203,12 @@ def plot_data(data_path):
                                 servo_vals.append(float(parts[1]))
                             except:
                                 servo_vals.append(np.nan)
-                # Pad or truncate to exactly 8 values
                 if len(servo_vals) < 8:
                     servo_vals += [np.nan] * (8 - len(servo_vals))
                 elif len(servo_vals) > 8:
                     servo_vals = servo_vals[:8]
                 line_servos = servo_vals
             elif key == 'temps':
-                # Example: "IMU_Temp:24.06250000,ESC_Temp:25.62500000,Orin_Temp:24.00000000,
-                # Bulkhead_BME:26.80999947,MID_BME:23.92000008,..."
                 temp_dict = {}
                 for token in value.split(','):
                     token = token.strip()
@@ -232,8 +224,6 @@ def plot_data(data_path):
                 line_bulkhead_temp = temp_dict.get("Bulkhead_BME", np.nan)
                 line_mid_temp = temp_dict.get("MID_BME", np.nan)
             elif key == 'pressure':
-                # Example: "Bulkhead_BME:1011.38031006,MID_BME:1011.94891357,
-                # EXTpressure:0.00000000,EXTtemperature:20.00000000,EXTdepth:-10.36080742,"
                 tokens = value.split(',')
                 for token in tokens:
                     token = token.strip()
@@ -256,7 +246,6 @@ def plot_data(data_path):
                         except:
                             line_depth = np.nan
             elif key == 'humidity':
-                # Example: "Bulkhead_BME:30.58789062,MID_BME:35.72363281,"
                 tokens = value.split(',')
                 for token in tokens:
                     token = token.strip()
@@ -273,7 +262,6 @@ def plot_data(data_path):
                         except:
                             line_mid_humidity = np.nan
             elif key == 'internalStates':
-                # Example: "Operational:1,KillSwitch:1,"
                 tokens = value.split(',')
                 for token in tokens:
                     token = token.strip()
@@ -287,7 +275,6 @@ def plot_data(data_path):
                         except:
                             continue
 
-        # Append the values for this line
         times.append(timestamp)
         bulkhead_pressure.append(line_bulkhead_pressure)
         mid_pressure.append(line_mid_pressure)
@@ -305,23 +292,28 @@ def plot_data(data_path):
         operational_flags.append(line_operational)
         kill_switch_flags.append(line_kill_switch)
 
+    # Compute a linear time axis that accounts for potential rollovers.
     if times:
-        base_time = times[0]
-        times_seconds = [(t - base_time).total_seconds() for t in times]
+        times_seconds = []
+        cumulative_offset = 0
+        last_value = None
+        for t in times:
+            current_value = t.hour * 3600 + t.minute * 60 + t.second + t.microsecond/1e6
+            if last_value is not None and current_value < last_value:
+                cumulative_offset += 24 * 3600  # Add a day's seconds on rollover
+            times_seconds.append(current_value + cumulative_offset)
+            last_value = current_value
     else:
         times_seconds = []
 
-    # Convert elapsed seconds to minutes
+    # Convert seconds to minutes for the x-axis
     times_minutes = [s / 60.0 for s in times_seconds]
-
     times_plot = times_minutes
 
-    # Convert servos list to a 2D NumPy array.
-    # Ensure each servo reading is exactly length 8.
+    # Convert servos list to a 2D NumPy array (each sublist is exactly length 8)
     servos_fixed = [s if len(s)==8 else s + [np.nan]*(8-len(s)) for s in servos]
-    servos_array = np.array(servos_fixed)  # Now shape (N, 8)
+    servos_array = np.array(servos_fixed)  # shape (N, 8)
 
-    # Create a panel plot using a 4x2 grid with figure size that fits your screen (18x12 inches)
     plt.figure(figsize=(18, 9))
 
     # Subplot 1: Pressure (Bulkhead and MID)
@@ -329,7 +321,7 @@ def plot_data(data_path):
     plt.plot(times_plot, bulkhead_pressure, 'b-', label='Bulkhead Pressure')
     plt.plot(times_plot, mid_pressure, 'c-', label='MID Pressure')
     plt.title('Pressure over Time')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('Pressure (hPa)')
     plt.legend()
     plt.grid(True)
@@ -342,7 +334,7 @@ def plot_data(data_path):
     plt.plot(times_plot, bulkhead_temp, label='Bulkhead Temp')
     plt.plot(times_plot, mid_temp, label='MID Temp')
     plt.title('Temperature over Time')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('Temperature (°C)')
     plt.legend()
     plt.grid(True)
@@ -352,7 +344,7 @@ def plot_data(data_path):
     plt.plot(times_plot, bulkhead_humidity, 'b-', label='Bulkhead Humidity')
     plt.plot(times_plot, mid_humidity, 'c-', label='MID Humidity')
     plt.title('Humidity over Time')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('Humidity (%)')
     plt.legend()
     plt.grid(True)
@@ -361,7 +353,7 @@ def plot_data(data_path):
     plt.subplot(4, 2, 4)
     plt.plot(times_plot, current, 'r-')
     plt.title('Current over Time')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('Current (A)')
     plt.grid(True)
 
@@ -369,7 +361,7 @@ def plot_data(data_path):
     plt.subplot(4, 2, 5)
     plt.plot(times_plot, voltage, 'm-')
     plt.title('Voltage over Time')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('Voltage (V)')
     plt.grid(True)
 
@@ -378,7 +370,7 @@ def plot_data(data_path):
     for i in range(8):
         plt.plot(times_plot, servos_array[:, i], label=f'Servo {i+1}')
     plt.title('Servo Positions over Time')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('Position')
     plt.legend()
     plt.grid(True)
@@ -387,7 +379,7 @@ def plot_data(data_path):
     plt.subplot(4, 2, 7)
     plt.plot(times_plot, depth, 'g-')
     plt.title('Depth over Time (EXTdepth)')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('Depth')
     plt.grid(True)
 
@@ -396,7 +388,7 @@ def plot_data(data_path):
     plt.plot(times_plot, operational_flags, 'ko-', label='Operational')
     plt.plot(times_plot, kill_switch_flags, 'ro-', label='KillSwitch')
     plt.title('Internal States over Time')
-    plt.xlabel('Time (s)')
+    plt.xlabel('Time (min)')
     plt.ylabel('State')
     plt.legend()
     plt.grid(True)

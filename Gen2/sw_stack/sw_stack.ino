@@ -5,6 +5,7 @@
 #include "MS5837.h"
 #include "Adafruit_MCP9808.h"
 #include <Adafruit_BME280.h>
+#include <Adafruit_SSD1306.h>
 ////////////////////////////////////////////////////////////////////////////
 ////////////////Pin Definitions/////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
@@ -282,7 +283,6 @@ void process_input(char *input) {
     // Read BME sensor values into a 2D array
     float bmeVals[2][3];
     readBmeSensorsArray(bmeVals);
-
     // Loop through the two BME sensors and print their values
     for (int i = 0; i < 2; i++) {
       Serial.print(bmeSensorNames[i] + ": ");
@@ -304,9 +304,6 @@ void process_input(char *input) {
     if (lightVal >= 1100 && lightVal <= 1900) {
       lightServo.writeMicroseconds(lightVal);
       Serial.println("Light set to " + String(lightVal));
-    } else if (lightVal == 0) {
-      digitalWrite(LumenPin, LOW);
-      Serial.println("Light turned off");
     } else {
       Serial.println("Invalid light value. Please enter a value between 1100 and 1900.");
     }

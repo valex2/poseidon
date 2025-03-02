@@ -5,16 +5,25 @@
 #include "MS5837.h"
 #include "Adafruit_MCP9808.h"
 #include <Adafruit_BME280.h>
-#include <Adafruit_SSD1306.h>
+#include <ILI9341_t3.h>
 ////////////////////////////////////////////////////////////////////////////
 ////////////////Pin Definitions/////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
+// Display configuration
+#define TFT_CS 10
+#define TFT_DC 31
+ILI9341_t3 tft = ILI9341_t3(TFT_CS, TFT_DC);
+
+// Global display update timing
+unsigned long lastDisplayUpdate = 0;
+const unsigned long displayInterval = 500; // update display every 500 ms
+
 // SD Card
 int sd_loop_counter = 0;
 const int chipSelect = BUILTIN_SDCARD;
 unsigned long loopIterationCounter = 0; // for perioidic SD logging
 // int sdLoggingFrequency = 10000;
-int sdLoggingFrequency = 10000; 
+int sdLoggingFrequency = 40000; 
 
 // Depth Sensor
 MS5837 sensor;
@@ -110,6 +119,10 @@ void setup() {
   config_servo();
   config_depth_sensor();
   config_sd_card();
+
+  tft.begin();
+  tft.fillScreen(ILI9341_BLUE);
+  tft.setRotation(1); 
 
   pinMode(redIndicatorLedPin, OUTPUT);
   pinMode(greenIndicatorLedPin, OUTPUT);
@@ -505,4 +518,25 @@ void set_servo(int servoNum, int val) {
     if (remappedServo >= 0 && remappedServo <= 7 && val >= 1100 && val <= 1900) {
         servo[remappedServo].writeMicroseconds(val);
     }
+}
+
+/// DISPLAY
+#define FRAME_X 210
+#define FRAME_Y 180
+#define FRAME_W 100
+#define FRAME_H 50
+
+#define REDBUTTON_X FRAME_X
+#define REDBUTTON_Y FRAME_Y
+#define REDBUTTON_W (FRAME_W/2)
+#define REDBUTTON_H FRAME_H
+
+#define GREENBUTTON_X (REDBUTTON_X + REDBUTTON_W)
+#define GREENBUTTON_Y FRAME_Y
+#define GREENBUTTON_W (FRAME_W/2)
+#define GREENBUTTON_H FRAME_H
+
+void drawFrame()
+{
+  tft.drawRect(FRAME_X, FRAME_Y, FRAME_W, FRAME_H, ILI9341_BLACK);
 }

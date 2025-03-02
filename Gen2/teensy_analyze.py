@@ -13,7 +13,6 @@ def find_device_port():
     
     for port in ports:
         print(f"Found port: {port.device} - {port.description}")
-        
         if "usbmodem" in port.device:
             print(f"Found Teensy on port: {port.device}")
             return port.device
@@ -25,15 +24,17 @@ if device_port:
     SERIAL_PORT = device_port
     BAUD_RATE = 100000
 else:
-    print("Device not found. Please check your connection.")
+    print("Device not found. Only local plotting will be available.")
+    SERIAL_PORT = None  # Mark that no device is connected
+    BAUD_RATE = None
 
-# make the output directory the location of the script
+# Make the output directory relative to the script location
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIRECTORY = os.path.join(SCRIPT_DIR, "data")  # Replace with your desired output directory
+OUTPUT_DIRECTORY = os.path.join(SCRIPT_DIR, "data")
 if not os.path.exists(OUTPUT_DIRECTORY):
     os.makedirs(OUTPUT_DIRECTORY)
 
-def initialize_serial(port, baud_rate): # function to initialize the serial connection
+def initialize_serial(port, baud_rate):
     try:
         ser = serial.Serial(port, baud_rate, timeout=2)
         print(f"Connected to {port} at {baud_rate} baud.")
@@ -41,9 +42,13 @@ def initialize_serial(port, baud_rate): # function to initialize the serial conn
     except serial.SerialException as e:
         print(f"Error opening serial port: {e}")
         return None
-##############################s
 
+##############################
 def transfer_file(ser):
+    if ser is None:
+        print("No device connected; cannot transfer file.")
+        return None
+
     print("Transferring datalog.txt ...")
     ser.reset_input_buffer()
     ser.reset_output_buffer()
@@ -62,9 +67,9 @@ def transfer_file(ser):
             try:
                 if ser.in_waiting:
                     line = ser.readline().decode('utf-8').strip()
-                    timeout_counter = 0  # Reset timeout counter when we receive data
+                    timeout_counter = 0  # Reset timeout counter when data is received
 
-                    # Check if we've reached the end of the transfer
+                    # Check for transfer completion message
                     if "File transfer complete" in line:
                         file.write(line)
                         break
@@ -75,9 +80,9 @@ def transfer_file(ser):
                     if line_count % 100 == 0:
                         print(f"Received {line_count} lines")
                 else:
-                    time.sleep(0.01)  # Wait if no data
+                    time.sleep(0.01)
                     timeout_counter += 1
-                    if timeout_counter > 1000:  # 10 second timeout
+                    if timeout_counter > 1000:
                         print("Warning: No data received for 10 seconds")
                         break
             except serial.SerialException as e:
@@ -85,26 +90,24 @@ def transfer_file(ser):
                 break
     
     print(f"Transfer complete! Total lines: {line_count}")
-    return output_file_path  # Modified to return the file path
+    return output_file_path
 
-# Function to delete the file
 def delete_file(ser):
-    # Send the 'delete' command to the Arduino
+    if ser is None:
+        print("No device connected; cannot delete file on device.")
+        return
     ser.write(b'delete\n')
-
-    # Wait for the Arduino to respond
     while True:
         line = ser.readline().decode('utf-8').strip()
         print(line)
         if "datalog.txt recreated" in line or "datalog.txt does not exist" in line:
             break
 
-# Function to send servo commands
 def send_servo_command(ser, command):
-    # Send the servo command to the Arduino
+    if ser is None:
+        print("No device connected; cannot send servo command.")
+        return
     ser.write((command + '\n').encode('utf-8'))
-
-    # Wait for the Arduino to respond
     while True:
         line = ser.readline().decode('utf-8').strip()
         print(line)
@@ -137,14 +140,14 @@ def plot_data(data_path):
         if '->' not in line:
             continue
 
-        # Parse the timestamp (assumed format: HH:MM:SS.microseconds)
+        # Parse timestamp (assumed format: HH:MM:SS.microseconds)
         timestamp_str = line.split('->')[0].strip()
         try:
             timestamp = datetime.strptime(timestamp_str, '%H:%M:%S.%f')
         except Exception:
             continue
 
-        # Set default values for this line
+        # Default values for measurements
         line_bulkhead_pressure = np.nan
         line_mid_pressure = np.nan
         line_depth = np.nan
@@ -292,7 +295,7 @@ def plot_data(data_path):
         operational_flags.append(line_operational)
         kill_switch_flags.append(line_kill_switch)
 
-    # Compute a linear time axis that accounts for potential rollovers.
+    # Compute linear time axis with rollover handling
     if times:
         times_seconds = []
         cumulative_offset = 0
@@ -300,23 +303,21 @@ def plot_data(data_path):
         for t in times:
             current_value = t.hour * 3600 + t.minute * 60 + t.second + t.microsecond/1e6
             if last_value is not None and current_value < last_value:
-                cumulative_offset += 24 * 3600  # Add a day's seconds on rollover
+                cumulative_offset += 24 * 3600
             times_seconds.append(current_value + cumulative_offset)
             last_value = current_value
     else:
         times_seconds = []
 
-    # Convert seconds to minutes for the x-axis
     times_minutes = [s / 60.0 for s in times_seconds]
     times_plot = times_minutes
 
-    # Convert servos list to a 2D NumPy array (each sublist is exactly length 8)
     servos_fixed = [s if len(s)==8 else s + [np.nan]*(8-len(s)) for s in servos]
-    servos_array = np.array(servos_fixed)  # shape (N, 8)
+    servos_array = np.array(servos_fixed)
 
     plt.figure(figsize=(18, 9))
 
-    # Subplot 1: Pressure (Bulkhead and MID)
+    # Subplot 1: Pressure
     plt.subplot(4, 2, 1)
     plt.plot(times_plot, bulkhead_pressure, 'b-', label='Bulkhead Pressure')
     plt.plot(times_plot, mid_pressure, 'c-', label='MID Pressure')
@@ -326,7 +327,7 @@ def plot_data(data_path):
     plt.legend()
     plt.grid(True)
 
-    # Subplot 2: Temperature (all channels)
+    # Subplot 2: Temperature
     plt.subplot(4, 2, 2)
     plt.plot(times_plot, imu_temp, label='IMU Temp')
     plt.plot(times_plot, esc_temp, label='ESC Temp')
@@ -339,7 +340,7 @@ def plot_data(data_path):
     plt.legend()
     plt.grid(True)
 
-    # Subplot 3: Humidity (Bulkhead and MID)
+    # Subplot 3: Humidity
     plt.subplot(4, 2, 3)
     plt.plot(times_plot, bulkhead_humidity, 'b-', label='Bulkhead Humidity')
     plt.plot(times_plot, mid_humidity, 'c-', label='MID Humidity')
@@ -375,7 +376,7 @@ def plot_data(data_path):
     plt.legend()
     plt.grid(True)
 
-    # Subplot 7: Depth (EXTdepth)
+    # Subplot 7: Depth
     plt.subplot(4, 2, 7)
     plt.plot(times_plot, depth, 'g-')
     plt.title('Depth over Time (EXTdepth)')
@@ -383,7 +384,7 @@ def plot_data(data_path):
     plt.ylabel('Depth')
     plt.grid(True)
 
-    # Subplot 8: Internal States (Operational and KillSwitch)
+    # Subplot 8: Internal States
     plt.subplot(4, 2, 8)
     plt.plot(times_plot, operational_flags, 'ko-', label='Operational')
     plt.plot(times_plot, kill_switch_flags, 'ro-', label='KillSwitch')
@@ -396,40 +397,71 @@ def plot_data(data_path):
     plt.tight_layout()
     plt.show()
 
-def main():
-    # Initialize serial connection
-    ser = initialize_serial(SERIAL_PORT, BAUD_RATE)
-    if not ser:
+def list_and_plot_files():
+    files = os.listdir(OUTPUT_DIRECTORY)
+    if not files:
+        print("No files found in data folder.")
         return
+    print("Available data files:")
+    for i, filename in enumerate(files):
+        print(f"[{i}] {filename}")
+    try:
+        index = int(input("Enter the index number of the file to plot: "))
+        if index < 0 or index >= len(files):
+            print("Invalid index.")
+            return
+        selected_file = os.path.join(OUTPUT_DIRECTORY, files[index])
+        print(f"Plotting file: {selected_file}")
+        plot_data(selected_file)
+    except Exception as e:
+        print("Error:", e)
 
+def main():
+    ser = None
+    # Try to initialize serial only if a device was found
+    if SERIAL_PORT is not None:
+        ser = initialize_serial(SERIAL_PORT, BAUD_RATE)
+    
     # Interactive command loop
     while True:
-        # Prompt the user for input
-        command = input("Enter command ('transfer', 'transfer plot delete (tpd)', 'delete', 'exit'): ").strip()
+        command = input("Enter command ('transfer', 'transfer plot delete (tpd)', 'delete', 'list', 'exit'): ").strip()
 
         if command.lower() == "exit":
             break
         elif command.lower() == "transfer":
-            print("moving to transfer file")
-            transfer_file(ser)
-        elif command.lower() == "transfer plot delete" or command.lower() == "tpd":
-            file_path = transfer_file(ser)
-            plot_data(file_path)
-            delete_file(ser)
+            if ser:
+                transfer_file(ser)
+            else:
+                print("No device connected; cannot perform transfer.")
+        elif command.lower() in ["transfer plot delete", "tpd"]:
+            if ser:
+                file_path = transfer_file(ser)
+                if file_path:
+                    plot_data(file_path)
+                    delete_file(ser)
+            else:
+                print("No device connected; cannot perform transfer plot delete.")
         elif command.lower() == "delete":
-            delete_file(ser)
+            if ser:
+                delete_file(ser)
+            else:
+                print("No device connected; cannot perform delete.")
+        elif command.lower() == "list":
+            list_and_plot_files()
         else:
-            ser.write((command + '\n').encode('utf-8'))
-            print(f"Sent command: {command}")
-            time.sleep(0.5)
-            # Read all available data before continuing
-            while ser.in_waiting:
-                line = ser.readline().decode('utf-8').strip()
-                print(line)
-            continue
+            if ser:
+                ser.write((command + '\n').encode('utf-8'))
+                print(f"Sent command: {command}")
+                time.sleep(0.5)
+                while ser.in_waiting:
+                    line = ser.readline().decode('utf-8').strip()
+                    print(line)
+            else:
+                print("No device connected; command ignored.")
+                continue
 
-    # Close the serial connection
-    ser.close()
+    if ser:
+        ser.close()
     print("Serial connection closed.")
 
 if __name__ == "__main__":

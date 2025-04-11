@@ -152,11 +152,11 @@ void setup() {
 
   // Initialize the two BME280 sensors
   if (!bme1.begin(0x76)) {
-    Serial.println("BME280 sensor not detected at 0x76!");
+    // Serial.println("BME280 sensor not detected at 0x76!");
     operational = SENSOR_ISSUE;
   }
   if (!bme2.begin(0x77)) {
-    Serial.println("BME280 sensor not detected at 0x77!");
+    // Serial.println("BME280 sensor not detected at 0x77!");
     operational = SENSOR_ISSUE;
   }
 
@@ -192,7 +192,7 @@ void config_depth_sensor() {
 void config_sd_card() {
   // see if the card is present and can be initialized
   if (!SD.begin(chipSelect)) {
-    Serial.println("Card failed, or not present");
+    // Serial.println("Card failed, or not present");
   }
 }
 
@@ -289,15 +289,17 @@ void process_input(char *input) {
     float current, voltage;
     handle_voltage_command(current, voltage);
 
-    String dataString = "> pressure:" + String(pressure, DIGITS) +
-    " temperature:" + String(temperature, DIGITS) +
-    " depth:" + String(depth, DIGITS) +
-    " current:" + String(current, DIGITS) +
-    " voltage:" + String(voltage, DIGITS) +
-    " servo:" + String(s0) + "," + String(s1) + "," + String(s2) + "," +
-    String(s3) + "," + String(s4) + "," + String(s5) + "," +
-    String(s6) + "," + String(s7);
-    Serial.println(dataString);
+    // String dataString = "> pressure:" + String(pressure, DIGITS) +
+    // " temperature:" + String(temperature, DIGITS) +
+    // " depth:" + String(depth, DIGITS) +
+    // " current:" + String(current, DIGITS) +
+    // " voltage:" + String(voltage, DIGITS);
+    // " servo:" + String(s0) + "," + String(s1) + "," + String(s2) + "," +
+    // String(s3) + "," + String(s4) + "," + String(s5) + "," +
+    // String(s6) + "," + String(s7);
+    // Serial.println(dataString);
+
+    Serial.println("sent_command");
 
     logPeriodicData();
   } else if (strcmp(input, "batt") == 0) { // for debugging
@@ -354,7 +356,7 @@ void process_input(char *input) {
         // Serial.println(" V");
       }
   } else {
-    Serial.println(input);
+    // Serial.println(input);
   }
 }
 

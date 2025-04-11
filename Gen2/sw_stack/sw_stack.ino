@@ -5,14 +5,17 @@
 #include "MS5837.h"
 #include "Adafruit_MCP9808.h"
 #include <Adafruit_BME280.h>
-#include <ILI9341_t3.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_ILI9341.h>
+#include <avr/pgmspace.h>
 ////////////////////////////////////////////////////////////////////////////
 ////////////////Pin Definitions/////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
 // Display configuration
 #define TFT_CS 10
 #define TFT_DC 31
-ILI9341_t3 tft = ILI9341_t3(TFT_CS, TFT_DC);
+#define TFT_RST 14
+Adafruit_ILI9341 tft = Adafruit_ILI9341(TFT_CS, TFT_DC, TFT_RST);
 
 // Global display update timing
 unsigned long lastDisplayUpdate = 0;
@@ -34,12 +37,18 @@ Adafruit_MCP9808 tempsensor1 = Adafruit_MCP9808();
 Adafruit_MCP9808 tempsensor2 = Adafruit_MCP9808();
 Adafruit_MCP9808 tempsensor3 = Adafruit_MCP9808();
 String tempSensorNames[] = {"IMU_Temp", "ESC_Temp", "Orin_Temp"};
+String tempDisplayNames[] = {"IMU", "ESC", "Orin"};
+float temps[3] = {0.0, 0.0, 0.0}; 
 
 // BME280 Sensors (addresses 0x76 and 0x77)
 Adafruit_BME280 bme1;
 Adafruit_BME280 bme2;
 float bmeValues[2][3];
 String bmeSensorNames[] = {"Bulkhead_BME", "MID_BME"};
+String bmeDisplayNames[] = {"Bulkhead", "Midbay"};
+
+// ADS7830
+#define ADS7830_ADDRESS 0x48 // Default I2C address
 
 // LED Indicators
 int redIndicatorLedPin = 37;
@@ -121,8 +130,9 @@ void setup() {
   config_sd_card();
 
   tft.begin();
+  tft.setRotation(3);
   tft.fillScreen(ILI9341_BLUE);
-  tft.setRotation(1); 
+  drawUI();
 
   pinMode(redIndicatorLedPin, OUTPUT);
   pinMode(greenIndicatorLedPin, OUTPUT);
@@ -188,6 +198,12 @@ void loop() {
   loopIterationCounter++;
   if (loopIterationCounter % sdLoggingFrequency == 0) {
     logPeriodicData();
+  }
+
+  unsigned long currentMillis = millis();
+  if (currentMillis - lastDisplayUpdate >= displayInterval) {
+      lastDisplayUpdate = currentMillis;
+      updateReadings();
   }
 
   // Update operational status based on kill switch
@@ -321,6 +337,16 @@ void process_input(char *input) {
       Serial.println("Invalid light value. Please enter a value between 1100 and 1900.");
     }
     logPeriodicData();
+  } else if (strcmp(input, "currents") == 0) {
+      float currents[8];
+      readThrusterCurrents(currents);
+      for (int i = 0; i < 8; i++) {
+        Serial.print("Channel ");
+        Serial.print(i);
+        Serial.print(": ");
+        Serial.print(currents[i]);
+        Serial.println(" V");
+      }
   } else {
     Serial.println(input);
   }
@@ -489,6 +515,31 @@ void readBmeSensorsArray(float bmeVals[2][3]) {
   bmeVals[1][2] = bme2.readPressure() / 100.0F;
 }
 
+uint8_t readADS7830(uint8_t channel) {
+  if (channel > 7) return 0;
+
+  uint8_t command = 0x84 | (channel << 1); // Single-ended input mode
+  Wire.beginTransmission(ADS7830_ADDRESS);
+  Wire.write(command);
+  Wire.endTransmission();
+  
+  Wire.requestFrom(ADS7830_ADDRESS, 1);
+  if (Wire.available()) {
+    return Wire.read(); // Returns 8-bit ADC value (0-255)
+  }
+  return 0;
+}
+
+void readThrusterCurrents(float currents[8]) {
+  for (int i = 0; i < 8; i++) {
+    uint8_t raw = readADS7830(i);
+    // Convert raw ADC value to voltage (0-5V for 8-bit resolution)
+    // Then convert to current if needed. Example assumes 5V ref and 1V/A scale:
+    // float voltage = raw * (5.0 / 255.0);
+    currents[i] = raw; // Update this formula if using a current sensor
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////
 // Servo Control
 ////////////////////////////////////////////////////////////////////////////
@@ -505,38 +556,123 @@ void test_servos() {
 void set_servo(int servoNum, int val) {
     int remappedServo;
     switch (servoNum) {
-        case 0: remappedServo = 7; break;
-        case 1: remappedServo = 1; break;
-        case 2: remappedServo = 6; break;
-        case 3: remappedServo = 5; break;
-        case 4: remappedServo = 0; break;
-        case 5: remappedServo = 4; break;
-        case 6: remappedServo = 2; break;
-        case 7: remappedServo = 3; break;
+      // Old
+        case 0: remappedServo = 5; break;
+        case 1: remappedServo = 0; break;
+        case 2: remappedServo = 7; break;
+        case 3: remappedServo = 6; break;
+        case 4: remappedServo = 3; break;
+        case 5: remappedServo = 1; break;
+        case 6: remappedServo = 4; break;
+        case 7: remappedServo = 2; break;
         default: return;
     }
+
+    // remappedServo = servoNum;
     if (remappedServo >= 0 && remappedServo <= 7 && val >= 1100 && val <= 1900) {
         servo[remappedServo].writeMicroseconds(val);
     }
 }
 
-/// DISPLAY
-#define FRAME_X 210
-#define FRAME_Y 180
-#define FRAME_W 100
-#define FRAME_H 50
-
-#define REDBUTTON_X FRAME_X
-#define REDBUTTON_Y FRAME_Y
-#define REDBUTTON_W (FRAME_W/2)
-#define REDBUTTON_H FRAME_H
-
-#define GREENBUTTON_X (REDBUTTON_X + REDBUTTON_W)
-#define GREENBUTTON_Y FRAME_Y
-#define GREENBUTTON_W (FRAME_W/2)
-#define GREENBUTTON_H FRAME_H
-
-void drawFrame()
-{
-  tft.drawRect(FRAME_X, FRAME_Y, FRAME_W, FRAME_H, ILI9341_BLACK);
+//// DISPLAY
+void drawBackground() {
+    tft.fillScreen(ILI9341_BLUE);
 }
+
+void drawUI() {
+    tft.setTextSize(2);
+    tft.setTextColor(ILI9341_WHITE);
+}
+
+void updateReadings() {
+    float temps[3];
+
+    temps[0] = tempsensor1.readTempC();
+    temps[1] = tempsensor2.readTempC();
+    temps[2] = tempsensor3.readTempC();
+    
+    bmeValues[0][0] = bme1.readTemperature();
+    bmeValues[0][1] = bme1.readHumidity();
+    bmeValues[0][2] = bme1.readPressure() / 100.0F;
+    
+    bmeValues[1][0] = bme2.readTemperature();
+    bmeValues[1][1] = bme2.readHumidity();
+    bmeValues[1][2] = bme2.readPressure() / 100.0F;
+
+    updateDisplay(temps);
+}
+
+void printBoldText(int x, int y, const char* text, uint16_t color) {
+    tft.setTextColor(color, ILI9341_BLUE);
+    tft.setCursor(x + 1, y + 1);
+    tft.print(text);  // Slight offset for bold effect
+    tft.setCursor(x, y);
+    tft.print(text);
+}
+
+void updateDisplay(float temps[3]) { 
+    tft.setTextColor(ILI9341_WHITE, ILI9341_BLUE); // Overwrite previous text
+    
+    // Display battery voltage (Bold)
+    printBoldText(20, 20, "Unregulated PWR:", ILI9341_WHITE);
+    tft.setCursor(240, 20);
+    tft.print(voltageVal);
+    tft.print("V, ");
+    tft.print(currentVal);
+    tft.print("A");
+
+    // Temperatures (Bold)
+    printBoldText(20, 40, "Temperatures:", ILI9341_WHITE);
+
+    // Temp from MCP sensors
+    for (int i = 0; i < 3; i++) {
+        tft.setCursor(20 + 80*i, 60);
+        tft.print(tempDisplayNames[i]);
+    }
+
+    for (int i = 0; i < 3; i++) {
+        tft.setCursor(20 + 80*i, 80);
+        tft.print(temps[i]);
+        tft.print("C  ");
+    }
+
+    // Temp from the BMEs
+    for (int i = 0; i < 2; i++) {
+        tft.setCursor(20 + 150*i, 100);
+        tft.print(bmeDisplayNames[i]);
+    }
+
+    for (int i = 0; i < 2; i++) {
+        tft.setCursor(20 + 150*i, 120);
+        tft.print(bmeValues[i][0]);
+        tft.print("C  ");
+    }
+
+    // Humidity (Bold)
+    printBoldText(20, 140, "Humidity:", ILI9341_WHITE);
+
+    for (int i = 0; i < 2; i++) {
+        tft.setCursor(20 + 150*i, 160);
+        tft.print(bmeDisplayNames[i]);
+    }
+
+    for (int i = 0; i < 2; i++) {
+        tft.setCursor(20 + 150*i, 180);
+        tft.print(bmeValues[i][1]);
+        tft.print("%  ");
+    }
+
+    // Status display
+    tft.setCursor(20, 200);
+    if (operational == NOMINAL) {
+        tft.setTextColor(ILI9341_GREEN, ILI9341_BLUE);
+        tft.print("Status: Nominal   ");
+    } else if (operational == KILLED) {
+        tft.setTextColor(ILI9341_RED, ILI9341_BLUE);
+        tft.print("Status: Killed   ");
+    } else {
+        tft.setTextColor(ILI9341_YELLOW, ILI9341_BLUE);
+        tft.print("Status: Sensor Issue   ");
+    }
+}
+

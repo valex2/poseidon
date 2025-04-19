@@ -3,6 +3,8 @@ Stanford Robosub 🏄‍♂️🐳🌊 Electrical Subsystem Repository
 
 [Website](https://www.stanfordrobosub.org/)
 
+[Block Diagram](https://app.diagrams.net/#G1UzBXgo1StivMrRFJ6YxzVo7dkJmS1rf_#%7B%22pageId%22%3A%22x-j5qf0NvjPaKgRI4FiM%22%7D)
+
 # Important notes
 ## Thrusters
 DO NOT RUN THRUSTERS AT FULL POWER FOR THE TIME BEING - 20 to 30% max
@@ -10,7 +12,7 @@ DO NOT RUN THRUSTERS AT FULL POWER FOR THE TIME BEING - 20 to 30% max
 DO NOT RUN FOR MORE THAN 10 SECONDS WHILE OUTSIDE OF WATER
 
 ## Comms
-We are using a Teensy 4.0 that communicates with the Orin over a serial port.
+We are using a Teensy 4.1 that communicates with the Orin over a serial port.
 
 Use serial library in Python, and write as follows:
 > portName.write(b"thruster_number delay_value")

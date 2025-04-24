@@ -3,7 +3,7 @@ Stanford Robosub 🏄‍♂️🐳🌊 Electrical Subsystem Repository
 
 [Website](https://www.stanfordrobosub.org/)
 
-[Block Diagram](https://app.diagrams.net/#G1UzBXgo1StivMrRFJ6YxzVo7dkJmS1rf_#%7B%22pageId%22%3A%22x-j5qf0NvjPaKgRI4FiM%22%7D)
+[Block Diagram](https://drive.google.com/file/d/1UzBXgo1StivMrRFJ6YxzVo7dkJmS1rf_/view?usp=sharing)
 
 # Important notes
 ## Thrusters

@@ -1,0 +1,5 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "Imported Footprints")(type "KiCad")(uri "${KIPRJMOD}/Footprints/Imported Footprints.pretty")(options "")(descr ""))
+  (lib (name "ImportedV2")(type "KiCad")(uri "${KIPRJMOD}/ImportedV2.pretty")(options "")(descr ""))
+)

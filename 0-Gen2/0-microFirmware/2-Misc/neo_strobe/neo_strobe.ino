@@ -1,7 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 
 // Settings
-#define PIN            6          // Pin where NeoPixel strip is connected
+#define PIN            9          // Pin where NeoPixel strip is connected
 #define NUMPIXELS      150        // Total number of pixels
 #define DELAY_MS       10        // Delay between brightness steps (controls speed)
 

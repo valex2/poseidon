@@ -1,7 +1,6 @@
 #include <Servo.h>
 #include <Wire.h>
 #include "MS5837.h"
-
 #include <Adafruit_NeoPixel.h>
 
 // Settings

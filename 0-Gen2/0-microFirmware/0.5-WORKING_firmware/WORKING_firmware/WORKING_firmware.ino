@@ -135,7 +135,7 @@ void setup() {
   config_temp_sensors(); // Initialize the temperature sensors
 
   ////////////// Environmental Sensor Setup ////////////////////////////
-  config_BME_sensors(); // Initialize the BME280 sensors
+  // config_BME_sensors(); // Initialize the BME280 sensors
   
   ////////////// Indicators and Kill Switch ////////////////////////////
   pinMode(redIndicatorLedPin, OUTPUT);

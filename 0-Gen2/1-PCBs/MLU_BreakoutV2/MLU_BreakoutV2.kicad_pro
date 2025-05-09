@@ -710,7 +710,19 @@
     ],
     [
       "38ea1217-5551-41b6-a3b9-444cd4c6916d",
-      "NEOs"
+      "Neopixels"
+    ],
+    [
+      "ff819628-ab19-4c4a-a87c-3aa1c78e0ae1",
+      "GPIO_Expander"
+    ],
+    [
+      "2555663b-1e5f-4c9e-a128-e15786488e6d",
+      "Peripheral Connectors"
+    ],
+    [
+      "9dab6a9b-c343-4374-86a4-2dd37d3a47bf",
+      "On-board Sensors"
     ]
   ],
   "text_variables": {}

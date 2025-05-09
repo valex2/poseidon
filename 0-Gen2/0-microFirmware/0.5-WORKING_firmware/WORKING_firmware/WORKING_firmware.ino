@@ -175,8 +175,11 @@ void config_sd_card() {
 
 void config_depth_sensor() {
   Wire.begin();
+  if (!sensor.init()) {
+    Serial.println("Depth sensor init failed!");
+    operational = SENSOR_ISSUE; // Set operational state to SENSOR_ISSUE
+  }
   sensor.setModel(MS5837::MS5837_02BA); // model number for Bar02
-  sensor.init();
   sensor.setFluidDensity(997); // kg/m^3 (997 freshwater, 1029 for seawater)
 }
 

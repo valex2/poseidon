@@ -1,4 +1,4 @@
-23707411997636462
+23717967376545831
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -6586,6 +6586,13 @@ board-to-board
 0
 30
 30
+Connector
+PHOENIX_1017503
+
+
+0
+4
+4
 Connector
 SpringContact_Harwin_S1941-46R
 7.25mm SMT Multi-directional Spring Contact (T+R), https://cdn.harwin.com/pdfs/S1941R.pdf
@@ -57813,12 +57820,33 @@ heatsink
 0
 0
 Imported_Footprints
+5x5_LED_1655_ADA
+
+1655 
+0
+4
+4
+Imported_Footprints
 ACS711ELCTR25ABT
  LC,8-pin SOIC
 Integrated Circuit
 0
 8
 8
+Imported_Footprints
+CONN_SD-43045-010_02_MOL
+
+430450228 
+0
+2
+2
+Imported_Footprints
+MCP3008
+
+MCP23008-E/P 
+0
+18
+18
 Imported_Footprints
 MyHalleffectSensor
  LC,8-pin SOIC
@@ -57847,6 +57875,13 @@ PHOENIX_1770393
 0
 8
 8
+Imported_Footprints
+SULLINS_SBH11-PBPC-D10-ST-BK
+
+
+0
+20
+20
 Imported_Footprints
 TE_1986660-2
 
@@ -64910,6 +64945,13 @@ AI Kendryte K210 RISC-V
 0
 85
 77
+Module
+Teensy41
+
+
+0
+67
+67
 Module
 Texas_EUK_R-PDSS-T7_THT
 Texas Instruments EUK 7 Pin Double Sided Module

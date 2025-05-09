@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 0,
+    "active_layer": 44,
     "active_layer_preset": "",
     "auto_track_width": true,
     "hidden_netclasses": [],
@@ -37,6 +37,7 @@
       8,
       9,
       10,
+      11,
       13,
       15,
       16,
@@ -72,7 +73,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "MLU_Breakout.kicad_prl",
+    "filename": "MLU_BreakoutV2.kicad_prl",
     "version": 3
   },
   "project": {

@@ -368,6 +368,19 @@ void process_input(char *input) {
       Serial.print("Humidity: " + String(bmeVals[i][1]) + " %, ");
       Serial.println("Pressure: " + String(bmeVals[i][2]) + " hPa");
     }
+  } else if (strcmp(input, "depth") == 0) {
+    float pressure, temperature, depth;
+    handle_depth_command(pressure, temperature, depth);
+    Serial.println("Pressure: " + String(pressure, DIGITS) + " mbar, Temperature: " + String(temperature, DIGITS) + " °C, Depth: " + String(depth, DIGITS) + " m");
+  } else if (strcmp(input, "bme") == 0) {
+    float bmeVals[2][3];
+    readBmeSensorsArray(bmeVals);
+    for (int i = 0; i < 2; i++) {
+      Serial.print(bmeSensorNames[i] + ": ");
+      Serial.print("Temperature: " + String(bmeVals[i][0]) + " °C, ");
+      Serial.print("Humidity: " + String(bmeVals[i][1]) + " %, ");
+      Serial.println("Pressure: " + String(bmeVals[i][2]) + " hPa");
+    }
   
   } else if (strcmp(input, "test") == 0) {
     test_servos();

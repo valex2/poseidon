@@ -446,7 +446,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "MLU_Breakout.kicad_pro",
+    "filename": "MLU_BreakoutV2.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -707,6 +707,10 @@
     [
       "55121ba7-5d22-4fe3-93aa-7f76d75b410c",
       "Root"
+    ],
+    [
+      "38ea1217-5551-41b6-a3b9-444cd4c6916d",
+      "NEOs"
     ]
   ],
   "text_variables": {}

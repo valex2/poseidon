@@ -1,4 +1,4 @@
-23709209828466236
+23737181063647585
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57820,6 +57820,27 @@ heatsink
 0
 0
 ImportedV2
+5x5_LED_1655_ADA
+
+1655 
+0
+4
+4
+ImportedV2
+09.03201_EAO
+
+09.03201.02 
+0
+3
+3
+ImportedV2
+ACS711ELCTR25ABT
+ LC,8-pin SOIC
+Integrated Circuit
+0
+8
+8
+ImportedV2
 BME280
 2.5 mm x 2.5 mm x 0.93 mm metal lid LGA
 
@@ -57827,9 +57848,51 @@ BME280
 8
 8
 ImportedV2
+CONN_SD-43045-001_02_MOL
+
+430450201 
+0
+2
+2
+ImportedV2
+CONN_SD-43045-008_04_MOL
+
+430450422 
+0
+6
+6
+ImportedV2
+CONN_SD-43045-009_04_MOL
+
+430450426 
+0
+6
+6
+ImportedV2
 CONN_SD-43045-010_02_MOL
 
 430450228 
+0
+2
+2
+ImportedV2
+CONN_SD-43045-010_10_MOL
+
+430451027 
+0
+10
+10
+ImportedV2
+J1B1211CCD
+J1B1211CCD
+Connector
+0
+14
+14
+ImportedV2
+K104K15X7RF5TL2_VIS
+
+K104K15X7RF5TL2 
 0
 2
 2
@@ -57840,6 +57903,13 @@ MCP23008-E/P
 0
 18
 18
+ImportedV2
+MyHalleffectSensor
+ LC,8-pin SOIC
+Integrated Circuit
+0
+8
+8
 ImportedV2
 PDIP18_300MC_MCH
 
@@ -57854,6 +57924,48 @@ PHOENIX_1017503
 0
 4
 4
+ImportedV2
+PHOENIX_1098169
+
+
+0
+4
+4
+ImportedV2
+PHOENIX_1719370
+
+
+0
+8
+8
+ImportedV2
+PHOENIX_1770393
+
+
+0
+8
+8
+ImportedV2
+SULLINS_SBH11-PBPC-D10-ST-BK
+
+
+0
+20
+20
+ImportedV2
+TE_1986660-2
+
+
+0
+4
+4
+ImportedV2
+TO252-3_ROM
+
+BA033CC0FP-E2 
+0
+3
+3
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height

@@ -1,0 +1,423 @@
+(footprint "MyHalleffectSensor"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr " LC,8-pin SOIC")
+	(tags "Integrated Circuit")
+	(property "Reference" "IC1"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(uuid "0f1dcfb2-8ba6-4d57-8042-0679cb9f1427")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Value" "ACS713ELCTR-30A-T"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "88bc8ef9-c73d-4c8c-908f-c87155bff7ea")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(property "Footprint" "Imported_Footprints:ACS711ELCTR25ABT"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "863f8e85-14b3-4382-8171-83cb6102e7fc")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.allegromicro.com/~/media/Files/Datasheets/ACS713-Datasheet.ashx"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7e69c380-0e6d-4fa8-a7d6-1a7263f2b12a")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Fully Integrated, Hall-Effect-Based Linear Current Sensor IC with 2.1 kVRMS Voltage Isolation and a Low-Resistance Current Conductor"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c718ed9e-6562-4773-ae75-cfd9f3d2818d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Height" "1.75"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e7d415e3-8a67-423b-9d9a-390f4b4b7a38")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Part Number" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d9e8d534-d75d-4ad2-a6ae-4eefcb9abc8c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Mouser Price/Stock" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "57d1c4a6-5351-4d98-9810-22d9d11a1c01")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Name" "Allegro Microsystems"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a40b79d5-a55f-4395-bd2c-1846da3f3e03")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Manufacturer_Part_Number" "ACS713ELCTR-30A-T"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2e1588ab-e7c8-44b7-a559-fa2ec7c8c52c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MFR" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "94cb4473-bda7-473c-be44-64ac61360168")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MFR S/N" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6e3b0357-729e-43bb-ad71-02e7e3901884")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier 1" "https://www.digikey.com/en/products/detail/allegro-microsystems/ACS713ELCTR-30A-T/1284597?_gl=1*148897x*_up*MQ..&gclid=Cj0KCQjwmt24BhDPARIsAJFYKk21nIx_-tUP4tcUXSovOnmLUqnIoOLB9CLbyM5WIj2G2iDMNpqSVlUaAroJEALw_wcB"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "28398c97-6126-4931-a90b-0820a9059138")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier 1 S/N" "620-1193-1-ND"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ae3799cd-1b7f-42dc-8e6b-38709fa6b46d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier 2" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "33f47b76-ac5d-43de-a8ab-ce11aa887c30")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Supplier 2 S/N" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ab9199ad-a126-4b2a-b528-a06645a5d4cb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -2.45 -1.5)
+		(end -2.45 1.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "960e2d8a-d80a-48b2-ab88-11f028d65b62")
+	)
+	(fp_line
+		(start -2 4.2)
+		(end -2 4.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8a75fb55-ba0c-45ed-a608-470b3c912e27")
+	)
+	(fp_line
+		(start -1.905 4.2)
+		(end -1.905 4.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "80fa8abf-0b94-4cf3-995c-533d0edbcc40")
+	)
+	(fp_line
+		(start 2.45 -1.5)
+		(end 2.45 1.5)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "28d09cd6-8def-463f-bc1b-cbbb7b99311d")
+	)
+	(fp_arc
+		(start -2 4.2)
+		(mid -1.9525 4.1525)
+		(end -1.905 4.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5b1ac56f-699d-4c09-bf10-2da2637ef0e7")
+	)
+	(fp_arc
+		(start -1.905 4.2)
+		(mid -1.9525 4.2475)
+		(end -2 4.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b59471e2-1173-4030-b0fb-605bf7709edc")
+	)
+	(fp_line
+		(start -3.45 -4.675)
+		(end 3.45 -4.675)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "23a1c58a-63ad-488b-9940-6a2836820d17")
+	)
+	(fp_line
+		(start -3.45 4.675)
+		(end -3.45 -4.675)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "f0366a32-226a-43f9-a285-5df0ff86dcb5")
+	)
+	(fp_line
+		(start 3.45 -4.675)
+		(end 3.45 4.675)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e052d964-577f-488b-ad7e-154f68a4018c")
+	)
+	(fp_line
+		(start 3.45 4.675)
+		(end -3.45 4.675)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ad60b59f-554c-471c-8238-a12590883676")
+	)
+	(fp_line
+		(start -2.45 -1.95)
+		(end 2.45 -1.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f7ad2e44-cc3c-4851-a6a6-2336f22b66fa")
+	)
+	(fp_line
+		(start -2.45 1.95)
+		(end -2.45 -1.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "77793100-51d3-4e5b-a1fb-d2578f886cf2")
+	)
+	(fp_line
+		(start 2.45 -1.95)
+		(end 2.45 1.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c75a52c9-ad94-4b75-9a58-2023eb619667")
+	)
+	(fp_line
+		(start 2.45 1.95)
+		(end -2.45 1.95)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "49c08a6b-9412-49a4-bb4e-3b0d87b9f5a7")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "6f1e8bc5-d403-4185-8beb-2a23f58b3956")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.905 2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "6d0a12d6-3438-46f4-87aa-6aec662386a7")
+	)
+	(pad "2" smd rect
+		(at -0.635 2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "4bbd387f-502e-4cfd-b606-bb148b8755c2")
+	)
+	(pad "3" smd rect
+		(at 0.635 2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "4b5b596f-b57e-4d14-b08c-6417fdf6cf72")
+	)
+	(pad "4" smd rect
+		(at 1.905 2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "2e1a8c96-2903-41a2-998a-44de74c8daaf")
+	)
+	(pad "5" smd rect
+		(at 1.905 -2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "eafa423f-e2ab-4f2e-b24e-187477196321")
+	)
+	(pad "6" smd rect
+		(at 0.635 -2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "683ac0c7-5a11-4c19-8a6a-e598571db633")
+	)
+	(pad "7" smd rect
+		(at -0.635 -2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "61964814-16e4-4818-8585-91f7c433ee9e")
+	)
+	(pad "8" smd rect
+		(at -1.905 -2.8)
+		(size 0.65 1.75)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "3eff0c46-e460-4b6d-9c1e-701d8b31c644")
+	)
+	(model "C:/Users/fabian/Desktop/PCB_Projects/MLX91208LDC-CAL-000-TU.STEP"
+		(offset
+			(xyz 0.13 -0.01 0.01)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 -90)
+		)
+	)
+)

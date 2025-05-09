@@ -1,0 +1,10740 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "3c08922a-856d-4602-9a28-584008038e3c")
+	(paper "A4")
+	(lib_symbols
+		(symbol "1655_1"
+			(pin_names
+				(offset 0.254)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(at 20.32 10.16 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Value" "1655"
+				(at 20.32 7.62 0)
+				(effects
+					(font
+						(size 1.524 1.524)
+					)
+				)
+			)
+			(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "1655"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "1655"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED_1655_ADA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "1655_1_0_1"
+				(polyline
+					(pts
+						(xy 7.62 -7.62) (xy 33.02 -7.62)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 7.62 5.08) (xy 7.62 -7.62)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 33.02 -7.62) (xy 33.02 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 33.02 5.08) (xy 7.62 5.08)
+					)
+					(stroke
+						(width 0.127)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "1655_1_1_1"
+				(pin unspecified line
+					(at 0 0 0)
+					(length 7.62)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -2.54 0)
+					(length 7.62)
+					(name "DIN"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 40.64 -2.54 180)
+					(length 7.62)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 40.64 0 180)
+					(length 7.62)
+					(name "DOUT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:+5V"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "power:GND"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 -1.27) (xy 1.27 -1.27) (xy 0 -2.54) (xy -1.27 -1.27) (xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 119.38 113.284) (xy 123.952 113.284)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00a1bed9-7269-4567-a82f-c189d6351d11")
+	)
+	(wire
+		(pts
+			(xy 183.642 145.034) (xy 183.642 145.288)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "01629aec-3be1-4770-adbd-a23c937af5a8")
+	)
+	(wire
+		(pts
+			(xy 182.626 44.704) (xy 182.626 44.958)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02ae82ea-88c2-4f36-8490-8c2a8e2b4c4b")
+	)
+	(wire
+		(pts
+			(xy 168.656 51.816) (xy 118.618 51.816)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "039b9ac6-cc76-443e-a33e-9bd97f2ecdc1")
+	)
+	(wire
+		(pts
+			(xy 82.804 58.928) (xy 87.376 58.928)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "03cb4a12-8e95-4190-ae48-a6706bc0f8d7")
+	)
+	(wire
+		(pts
+			(xy 387.858 55.118) (xy 402.59 55.118)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0423ae4b-763a-4b80-b041-d2fb2c90ff5c")
+	)
+	(wire
+		(pts
+			(xy 101.346 45.212) (xy 101.346 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0558d969-e217-4f02-aff4-b7f73f204fa6")
+	)
+	(wire
+		(pts
+			(xy 169.418 103.886) (xy 119.38 103.886)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "060b05d4-1d5f-41cf-b47b-38fe8d367ab0")
+	)
+	(wire
+		(pts
+			(xy 544.83 74.168) (xy 523.748 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06cf63ae-5a45-451f-ba03-13caa890de73")
+	)
+	(wire
+		(pts
+			(xy 244.348 42.926) (xy 249.174 42.926)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "06da94ca-c862-463f-9e66-13c4316e4047")
+	)
+	(wire
+		(pts
+			(xy 183.642 129.032) (xy 183.642 129.286)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07644e0e-3d10-4e2f-b6da-763869bab3e0")
+	)
+	(wire
+		(pts
+			(xy 468.376 71.628) (xy 483.108 71.628)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "094ab789-5048-404b-b189-b2461bb07755")
+	)
+	(wire
+		(pts
+			(xy 462.026 57.658) (xy 443.23 57.658)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0aaec17c-e3f1-4df7-8e51-5c89db552b44")
+	)
+	(wire
+		(pts
+			(xy 199.898 120.65) (xy 199.898 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cedf4b8-958d-4b5a-8c34-881eadc0f89e")
+	)
+	(wire
+		(pts
+			(xy 183.388 113.03) (xy 183.388 113.284)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e169fa1-6319-4608-b27d-90408c3cf628")
+	)
+	(wire
+		(pts
+			(xy 182.88 76.962) (xy 164.084 76.962)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0eb7455b-0503-4a2b-b137-c94ff4593ec1")
+	)
+	(wire
+		(pts
+			(xy 264.16 129.54) (xy 264.16 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f34c4e8-dbfc-497e-882d-68a861dade7e")
+	)
+	(wire
+		(pts
+			(xy 249.174 26.67) (xy 249.174 36.068)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "10935cdc-a7d9-43d4-a9c6-8819d6fd5893")
+	)
+	(wire
+		(pts
+			(xy 461.772 41.402) (xy 461.772 41.656)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "115764d9-3efc-4961-b67c-0afda889d318")
+	)
+	(wire
+		(pts
+			(xy 380.746 73.914) (xy 380.746 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "11b1bea7-1e4d-4db3-b039-e63652d12b8c")
+	)
+	(wire
+		(pts
+			(xy 461.772 41.656) (xy 442.976 41.656)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12310363-42b9-437d-b899-c05051d42971")
+	)
+	(wire
+		(pts
+			(xy 316.484 58.166) (xy 321.31 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1428f547-0a85-4f27-bd3e-ee4a507c7250")
+	)
+	(wire
+		(pts
+			(xy 164.084 58.42) (xy 168.656 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15456ba0-4cca-46f6-9a87-de5f665ddb59")
+	)
+	(wire
+		(pts
+			(xy 478.282 49.022) (xy 478.282 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "16c5eef1-416a-4d65-a9ea-5acd45b6afe0")
+	)
+	(wire
+		(pts
+			(xy 397.764 32.258) (xy 397.764 41.656)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "17855e9f-ae6d-4b2f-8f2d-7b8f5504079f")
+	)
+	(wire
+		(pts
+			(xy 316.484 42.164) (xy 321.056 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "19c94342-9b04-4552-ab62-ae7f24cb7d77")
+	)
+	(wire
+		(pts
+			(xy 88.138 104.394) (xy 38.1 104.394)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a0315f0-79da-4936-9569-e10ceab3db57")
+	)
+	(wire
+		(pts
+			(xy 263.398 61.214) (xy 263.398 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a65a344-57f0-4228-86ea-9e776bba8632")
+	)
+	(wire
+		(pts
+			(xy 299.974 23.368) (xy 320.802 23.368)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b099731-56b2-4330-9cf8-c3653b59dcdd")
+	)
+	(wire
+		(pts
+			(xy 462.026 57.404) (xy 462.026 57.658)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b156513-93bf-4d8e-b550-4f8c35c8e0e6")
+	)
+	(wire
+		(pts
+			(xy 189.992 127.254) (xy 204.724 127.254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1bb34277-ade0-4fde-a839-25f39508f0a9")
+	)
+	(wire
+		(pts
+			(xy 182.88 76.708) (xy 182.88 76.962)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1cad03e8-5ca3-4962-8f72-d5dbeb1348c1")
+	)
+	(wire
+		(pts
+			(xy 82.55 42.926) (xy 87.376 42.926)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d5b9d0b-6e8d-4d22-9be2-0be58529d23e")
+	)
+	(wire
+		(pts
+			(xy 119.38 120.142) (xy 119.38 129.286)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d81cac7-e439-46d7-9b17-816021b9fbda")
+	)
+	(wire
+		(pts
+			(xy 189.23 74.93) (xy 203.962 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ddb2fbf-a48d-4fce-bc99-db4bcacea17c")
+	)
+	(wire
+		(pts
+			(xy 366.522 55.626) (xy 366.522 65.024)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1eade63d-4aa2-4bae-be14-7d3e36eef45a")
+	)
+	(wire
+		(pts
+			(xy 249.174 26.67) (xy 244.094 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20a1708b-e198-4ff5-a11f-e0db104980c1")
+	)
+	(wire
+		(pts
+			(xy 108.204 26.162) (xy 122.936 26.162)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20cfa676-3d14-4b75-b62e-299ba0044a78")
+	)
+	(wire
+		(pts
+			(xy 164.592 110.744) (xy 169.418 110.744)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2132891a-9ad3-48ce-adc2-984ae98511a7")
+	)
+	(wire
+		(pts
+			(xy 462.026 73.406) (xy 462.026 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22636f95-e33a-46c3-8289-27d6bab4e89e")
+	)
+	(wire
+		(pts
+			(xy 37.338 52.324) (xy 37.338 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23359d8e-1507-42ff-b947-52aba88b0ca3")
+	)
+	(wire
+		(pts
+			(xy 169.418 94.488) (xy 169.418 103.886)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "242622d3-6774-455e-864e-4d1aecbc3226")
+	)
+	(wire
+		(pts
+			(xy 88.138 120.65) (xy 38.1 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "279870b8-8a70-4e03-a009-55b37aa56de0")
+	)
+	(wire
+		(pts
+			(xy 20.828 26.67) (xy 41.656 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2840b5b9-773b-40f6-a6c9-232fbdb779df")
+	)
+	(wire
+		(pts
+			(xy 397.764 41.656) (xy 402.336 41.656)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29502c89-1c02-4a06-87bc-7d5e76bb941d")
+	)
+	(wire
+		(pts
+			(xy 119.38 103.886) (xy 119.38 113.284)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29c7bdaa-0a3e-4e5b-8602-dd1ce1bee2d8")
+	)
+	(wire
+		(pts
+			(xy 263.906 113.792) (xy 245.11 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29d740c3-bb06-43de-8f44-3b7aaa36b43d")
+	)
+	(wire
+		(pts
+			(xy 316.484 65.024) (xy 316.484 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29dc5e93-5430-49c9-a950-7fe4547af882")
+	)
+	(wire
+		(pts
+			(xy 199.898 129.794) (xy 204.724 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b89bae7-0016-45a3-b139-76fb611fffb5")
+	)
+	(wire
+		(pts
+			(xy 183.642 145.288) (xy 164.846 145.288)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2bc83eb8-d96b-4148-8441-7315b41c31a7")
+	)
+	(wire
+		(pts
+			(xy 316.484 74.168) (xy 321.31 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c72f1fa-28a5-4d64-b92c-381b33140b99")
+	)
+	(wire
+		(pts
+			(xy 262.89 28.956) (xy 262.89 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c8086b2-e258-4d37-a21c-f3517da3be58")
+	)
+	(wire
+		(pts
+			(xy 199.136 36.068) (xy 199.136 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2f9c1778-d64c-4887-a7f7-3dc553281e28")
+	)
+	(wire
+		(pts
+			(xy 28.194 127.254) (xy 42.926 127.254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb8b19a-0441-4247-a7f3-710681db1d92")
+	)
+	(wire
+		(pts
+			(xy 306.578 71.628) (xy 321.31 71.628)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "306068e3-64ac-412d-a938-56177d544861")
+	)
+	(wire
+		(pts
+			(xy 542.036 25.908) (xy 523.24 25.908)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3117bfd9-339b-49ea-9fa3-66020f85dae6")
+	)
+	(wire
+		(pts
+			(xy 199.898 113.792) (xy 204.47 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31b36dd6-cbdc-4597-b5c0-8d1d73e14db8")
+	)
+	(wire
+		(pts
+			(xy 168.656 35.56) (xy 118.618 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31dd487a-8f4f-4082-94d5-311262e3b939")
+	)
+	(wire
+		(pts
+			(xy 87.376 36.068) (xy 37.338 36.068)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "31e5a3a9-afe9-463f-8554-3257d9251d72")
+	)
+	(wire
+		(pts
+			(xy 88.138 136.652) (xy 38.1 136.652)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "340681fe-57e2-4df5-b7c2-adecff8a97c2")
+	)
+	(wire
+		(pts
+			(xy 366.522 32.766) (xy 316.484 32.766)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "36091a7a-340d-4da8-b481-20bd0af990de")
+	)
+	(wire
+		(pts
+			(xy 542.544 58.166) (xy 523.748 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3753726d-79d8-4026-9250-6a8d7b640c8f")
+	)
+	(wire
+		(pts
+			(xy 249.936 120.65) (xy 199.898 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37cd871c-7b29-4272-815c-a1c41deeab0b")
+	)
+	(wire
+		(pts
+			(xy 164.846 126.746) (xy 169.418 126.746)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b22276c-bad6-4575-b4b5-ab3160be5a74")
+	)
+	(wire
+		(pts
+			(xy 101.346 45.466) (xy 82.55 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c065acb-bb6d-4d36-a454-b3ca0d733e9f")
+	)
+	(wire
+		(pts
+			(xy 101.854 97.282) (xy 101.854 97.536)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3d9bed8e-8f2c-4ceb-8fea-bfc3aa315f75")
+	)
+	(wire
+		(pts
+			(xy 447.802 39.116) (xy 447.802 48.514)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3df840f9-e469-4c17-9e3d-29ee959ac2e9")
+	)
+	(wire
+		(pts
+			(xy 447.802 55.118) (xy 447.802 64.516)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e2e7593-4a0d-4923-b204-075e3fcd47ef")
+	)
+	(wire
+		(pts
+			(xy 306.578 55.626) (xy 321.31 55.626)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f25a827-51f7-497b-bcf5-bd1905d07815")
+	)
+	(wire
+		(pts
+			(xy 523.748 55.626) (xy 528.32 55.626)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "40f09037-b592-4284-9ed9-30b41e6bd1ec")
+	)
+	(wire
+		(pts
+			(xy 265.684 77.47) (xy 244.602 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43b956e4-4d1f-4477-869d-9a56986a2e7c")
+	)
+	(wire
+		(pts
+			(xy 442.976 39.116) (xy 447.802 39.116)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "44f1e116-40f2-4953-9f45-b8ef6ae4e314")
+	)
+	(wire
+		(pts
+			(xy 38.1 120.65) (xy 38.1 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "454a3255-0636-418b-8177-c8beb8752d1e")
+	)
+	(wire
+		(pts
+			(xy 37.338 68.326) (xy 37.338 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4618fe70-5fe9-46ee-a082-1e24e7d1c55c")
+	)
+	(wire
+		(pts
+			(xy 21.59 94.996) (xy 42.418 94.996)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4716fbf3-c1f4-43ec-8b48-0ffff336e1fc")
+	)
+	(wire
+		(pts
+			(xy 366.522 39.624) (xy 366.522 49.022)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "47638705-edc6-437d-b217-13db891bfcb6")
+	)
+	(wire
+		(pts
+			(xy 88.138 111.252) (xy 88.138 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "49891972-7750-475e-9918-be7a896d9512")
+	)
+	(wire
+		(pts
+			(xy 528.32 65.024) (xy 478.282 65.024)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b1a13e1-b8c3-4425-99d7-52cfa522560c")
+	)
+	(wire
+		(pts
+			(xy 169.418 136.144) (xy 119.38 136.144)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bec821b-c049-4e7c-83d2-24413dd5a63c")
+	)
+	(wire
+		(pts
+			(xy 183.642 129.286) (xy 164.846 129.286)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "520d1cc2-d47f-425d-bc51-537d4463c34f")
+	)
+	(wire
+		(pts
+			(xy 263.906 113.538) (xy 263.906 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5394fb45-2a74-4355-b40d-7b0f84e7da89")
+	)
+	(wire
+		(pts
+			(xy 249.936 136.652) (xy 199.898 136.652)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "53e658ae-6563-484d-aec6-c4377200c389")
+	)
+	(wire
+		(pts
+			(xy 478.282 32.766) (xy 478.282 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5408af91-a26f-46bf-99fc-397883868b9c")
+	)
+	(wire
+		(pts
+			(xy 118.618 76.962) (xy 123.444 76.962)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "543bf4e5-5903-455d-a6f9-68b8c9280d1e")
+	)
+	(wire
+		(pts
+			(xy 37.338 77.47) (xy 42.164 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "54d75275-6458-4784-9d4f-d3be126b26b3")
+	)
+	(wire
+		(pts
+			(xy 366.522 23.368) (xy 361.442 23.368)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "551a7b36-052b-4f33-b958-916bc8944985")
+	)
+	(wire
+		(pts
+			(xy 199.136 77.47) (xy 203.962 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "58247325-ce8d-4eee-b1f6-31693d66393d")
+	)
+	(wire
+		(pts
+			(xy 199.898 136.652) (xy 199.898 145.796)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "595923bc-6423-4fc0-b051-0292b8c092d9")
+	)
+	(wire
+		(pts
+			(xy 249.936 94.996) (xy 249.936 104.394)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5b3573d8-2129-48ad-a84a-91f07bba02d7")
+	)
+	(wire
+		(pts
+			(xy 38.1 104.394) (xy 38.1 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5bd7dd04-95e6-4ec3-9bcc-1ab6698c2b7d")
+	)
+	(wire
+		(pts
+			(xy 366.522 23.368) (xy 366.522 32.766)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5e164e12-ca0a-4b21-b4a2-8f8337a78811")
+	)
+	(wire
+		(pts
+			(xy 468.122 39.624) (xy 482.854 39.624)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "624992fd-117b-4027-8b00-c9d3b0536821")
+	)
+	(wire
+		(pts
+			(xy 168.656 67.818) (xy 118.618 67.818)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62a16b2d-95d2-425e-ac2a-9af8d1f1b638")
+	)
+	(wire
+		(pts
+			(xy 380.746 74.168) (xy 361.95 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "68c119d2-965f-47fd-9881-cf1648cc2190")
+	)
+	(wire
+		(pts
+			(xy 102.362 145.796) (xy 83.566 145.796)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b24dc11-ca29-40f1-b959-1441b4926b0a")
+	)
+	(wire
+		(pts
+			(xy 397.764 73.66) (xy 402.59 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6ddc8c72-9bf1-491a-9afe-4e9141211d02")
+	)
+	(wire
+		(pts
+			(xy 249.174 52.324) (xy 199.136 52.324)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e805336-c3ea-457b-a654-591ae7a12185")
+	)
+	(wire
+		(pts
+			(xy 523.494 39.624) (xy 528.32 39.624)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7108079a-dc48-4966-b2a1-07cbc4fb2daa")
+	)
+	(wire
+		(pts
+			(xy 397.764 57.658) (xy 402.59 57.658)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "71eb54ff-218f-4092-82db-9dbf731468fa")
+	)
+	(wire
+		(pts
+			(xy 169.418 120.142) (xy 119.38 120.142)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72d02059-16a7-4556-8ae3-cdbc7597c668")
+	)
+	(wire
+		(pts
+			(xy 101.854 97.536) (xy 83.058 97.536)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73d2be9c-3a97-4c75-88ea-93588a5b9879")
+	)
+	(wire
+		(pts
+			(xy 249.174 36.068) (xy 199.136 36.068)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7408537e-583e-4034-985a-4c4bd8b25831")
+	)
+	(wire
+		(pts
+			(xy 380.492 41.91) (xy 380.492 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "745b2603-7129-47d9-b89a-6646c9ca7b49")
+	)
+	(wire
+		(pts
+			(xy 37.338 45.466) (xy 41.91 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7530b907-29f7-426f-bc9c-7a809d8e0ddc")
+	)
+	(wire
+		(pts
+			(xy 387.35 22.86) (xy 402.082 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7584e0a3-cd86-480b-b15e-6db5ee48ea23")
+	)
+	(wire
+		(pts
+			(xy 101.092 29.21) (xy 82.296 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7806a15c-312e-4697-8468-19cc48a98e95")
+	)
+	(wire
+		(pts
+			(xy 189.738 111.252) (xy 204.47 111.252)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78d74221-b80d-4a4e-9e62-176904a38dda")
+	)
+	(wire
+		(pts
+			(xy 101.6 77.47) (xy 82.804 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "796b6796-bbcc-476c-88ec-e3a7b24fd74f")
+	)
+	(wire
+		(pts
+			(xy 387.858 71.12) (xy 402.59 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a127b80-a736-48d6-baaa-0f022e58e365")
+	)
+	(wire
+		(pts
+			(xy 528.32 55.626) (xy 528.32 65.024)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a7a3147-5989-40af-b593-9d157eb49628")
+	)
+	(wire
+		(pts
+			(xy 118.618 67.818) (xy 118.618 76.962)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7aa350d4-3e4b-4db4-a07b-72df240332d2")
+	)
+	(wire
+		(pts
+			(xy 38.1 136.652) (xy 38.1 145.796)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ae89099-e512-4b43-b317-ab43028fa798")
+	)
+	(wire
+		(pts
+			(xy 380.492 42.164) (xy 361.696 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b2242c1-d59f-42d2-bf0c-b8995b782b3c")
+	)
+	(wire
+		(pts
+			(xy 306.324 39.624) (xy 321.056 39.624)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7d0e93ae-925c-4b30-bd96-e8077371af57")
+	)
+	(wire
+		(pts
+			(xy 542.29 42.164) (xy 523.494 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7e804500-5bbe-4e85-bc84-974057183e92")
+	)
+	(wire
+		(pts
+			(xy 528.32 49.022) (xy 478.282 49.022)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83d2f1a4-cab2-4049-9262-2cce5a57cf92")
+	)
+	(wire
+		(pts
+			(xy 108.458 42.418) (xy 123.19 42.418)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84cd24ee-c112-42ee-baf5-379f78ccae14")
+	)
+	(wire
+		(pts
+			(xy 119.38 129.286) (xy 124.206 129.286)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8718c894-a372-4d1f-9ccc-197a015aa6c8")
+	)
+	(wire
+		(pts
+			(xy 28.194 143.256) (xy 42.926 143.256)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "87b3f055-1ca4-453d-98a4-93f1ec014dff")
+	)
+	(wire
+		(pts
+			(xy 478.282 42.164) (xy 482.854 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8931499d-224c-463e-84db-f3b84502624a")
+	)
+	(wire
+		(pts
+			(xy 118.618 35.56) (xy 118.618 44.958)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8c87a5f5-27c5-4a61-83b1-b18883c8fd1b")
+	)
+	(wire
+		(pts
+			(xy 183.134 97.028) (xy 164.338 97.028)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e0b1178-4ec1-4fda-853b-09d335e843b3")
+	)
+	(wire
+		(pts
+			(xy 263.652 97.536) (xy 244.856 97.536)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ebf93d9-3b11-4d2f-a5bb-d797f96fb32c")
+	)
+	(wire
+		(pts
+			(xy 478.282 74.168) (xy 483.108 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8eef3cb0-6e94-4fad-a6d3-a29741e4408a")
+	)
+	(wire
+		(pts
+			(xy 249.936 94.996) (xy 244.856 94.996)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8fd67f6c-3af7-4bd9-b443-b185a130fd83")
+	)
+	(wire
+		(pts
+			(xy 263.144 45.212) (xy 263.144 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90679f5c-2ff4-4844-8dc1-983874d4c86a")
+	)
+	(wire
+		(pts
+			(xy 249.174 42.926) (xy 249.174 52.324)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90804193-067e-40c3-b458-876d9920e62a")
+	)
+	(wire
+		(pts
+			(xy 528.32 23.368) (xy 523.24 23.368)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90f23227-cf07-4e1d-91a3-75f170d7bf6a")
+	)
+	(wire
+		(pts
+			(xy 108.966 94.488) (xy 123.698 94.488)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9272c788-8212-4fd7-ae86-2b41a4074258")
+	)
+	(wire
+		(pts
+			(xy 102.362 129.794) (xy 83.566 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9274def2-0ea8-4713-b569-46e56e76dd52")
+	)
+	(wire
+		(pts
+			(xy 263.652 97.282) (xy 263.652 97.536)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93771850-4ab6-4bc6-80a9-9475f076370b")
+	)
+	(wire
+		(pts
+			(xy 443.23 55.118) (xy 447.802 55.118)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "93a2236a-687c-4be3-bae3-8e327fd77d89")
+	)
+	(wire
+		(pts
+			(xy 249.936 111.252) (xy 249.936 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "94d4d0f0-b347-47f8-a5b9-5af95203f834")
+	)
+	(wire
+		(pts
+			(xy 119.38 145.288) (xy 124.206 145.288)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9511c7cc-c1be-47ff-b458-0eb67bc7a0b2")
+	)
+	(wire
+		(pts
+			(xy 542.544 57.912) (xy 542.544 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9545bdac-63fe-4b04-beca-3d314d92166f")
+	)
+	(wire
+		(pts
+			(xy 245.11 111.252) (xy 249.936 111.252)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "95d543d8-39f9-4a26-b2f7-68c9feea65a4")
+	)
+	(wire
+		(pts
+			(xy 182.626 44.958) (xy 163.83 44.958)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "96236324-ab00-4a33-b304-eed15139e337")
+	)
+	(wire
+		(pts
+			(xy 182.372 28.702) (xy 163.576 28.702)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "965c9a89-0dc2-4279-baee-0056d69266ee")
+	)
+	(wire
+		(pts
+			(xy 249.936 104.394) (xy 199.898 104.394)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97af75c2-75a8-4aef-b0b4-071b4a6f79a1")
+	)
+	(wire
+		(pts
+			(xy 119.38 136.144) (xy 119.38 145.288)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99148453-f9fb-4237-8bbc-d29e59643fc6")
+	)
+	(wire
+		(pts
+			(xy 109.22 110.744) (xy 123.952 110.744)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99ba2e93-5861-4dc4-b843-2685f8f58a01")
+	)
+	(wire
+		(pts
+			(xy 83.312 111.252) (xy 88.138 111.252)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "99d83cfb-3149-4266-9dd7-ddaf98c195a2")
+	)
+	(wire
+		(pts
+			(xy 266.446 145.796) (xy 245.364 145.796)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9b630f0b-ca71-49ed-a013-54df5842ac1f")
+	)
+	(wire
+		(pts
+			(xy 264.16 129.794) (xy 245.364 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c22872e-c67b-4d83-ab0a-26fb4c388af8")
+	)
+	(wire
+		(pts
+			(xy 27.94 111.252) (xy 42.672 111.252)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d236f01-042f-4813-91e2-568869fa8748")
+	)
+	(wire
+		(pts
+			(xy 199.136 45.466) (xy 203.708 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9d53af84-e2bc-4337-93eb-8b04fc418ee6")
+	)
+	(wire
+		(pts
+			(xy 397.764 48.514) (xy 397.764 57.658)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9dce4ace-ab37-46ed-b4db-ac81d3e05939")
+	)
+	(wire
+		(pts
+			(xy 27.432 74.93) (xy 42.164 74.93)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e005274-1c5c-4ac9-a24f-ff9dbae53006")
+	)
+	(wire
+		(pts
+			(xy 189.992 143.256) (xy 204.724 143.256)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9e2a2018-cc80-42b2-b0c6-28badb8a632b")
+	)
+	(wire
+		(pts
+			(xy 380.746 58.166) (xy 361.95 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9f416146-b363-4634-bcfd-ef467816d59e")
+	)
+	(wire
+		(pts
+			(xy 169.418 126.746) (xy 169.418 136.144)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a569c7bb-4d3c-4b48-bbdf-270fdc5002f1")
+	)
+	(wire
+		(pts
+			(xy 183.388 113.284) (xy 164.592 113.284)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a5bf9123-5b97-437e-a048-ad7bdb670ca5")
+	)
+	(wire
+		(pts
+			(xy 361.696 39.624) (xy 366.522 39.624)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a74aeeae-58a4-4974-b645-2f898fced573")
+	)
+	(wire
+		(pts
+			(xy 169.418 94.488) (xy 164.338 94.488)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8554c76-e086-4eb7-a57a-6e41a4cae71d")
+	)
+	(wire
+		(pts
+			(xy 108.712 58.42) (xy 123.444 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a8f5997e-a798-4bb7-9434-6e64bc5c1bd1")
+	)
+	(wire
+		(pts
+			(xy 199.136 68.326) (xy 199.136 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9b4591c-a746-48c5-9a2d-e98aa5cda03c")
+	)
+	(wire
+		(pts
+			(xy 87.376 26.67) (xy 82.296 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a9e75854-d711-4e8e-a57d-474f6e0d6cb0")
+	)
+	(wire
+		(pts
+			(xy 38.1 113.792) (xy 42.672 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "abffc059-3ed3-45bc-a492-5d0f59d44ed1")
+	)
+	(wire
+		(pts
+			(xy 168.656 42.418) (xy 168.656 51.816)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac4edec6-3552-4a96-b12b-ba09acac95a9")
+	)
+	(wire
+		(pts
+			(xy 88.138 94.996) (xy 88.138 104.394)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac4ff66a-d40e-4376-8fab-05a6c4f2fb36")
+	)
+	(wire
+		(pts
+			(xy 542.036 25.654) (xy 542.036 25.908)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "acb98719-a429-4b01-87f8-13a4a69f0068")
+	)
+	(wire
+		(pts
+			(xy 168.656 58.42) (xy 168.656 67.818)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ad68ee5e-20d0-4820-a8ea-72a9e9ca6503")
+	)
+	(wire
+		(pts
+			(xy 87.376 42.926) (xy 87.376 52.324)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae15b0d0-56aa-4304-9bf9-0ccc76e001a6")
+	)
+	(wire
+		(pts
+			(xy 199.136 61.468) (xy 203.962 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ae9d4c3f-8edc-4c87-9edb-d62f351ef8e3")
+	)
+	(wire
+		(pts
+			(xy 447.802 48.514) (xy 397.764 48.514)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aed818c3-f1e5-4235-a4fa-e215236f8375")
+	)
+	(wire
+		(pts
+			(xy 189.484 94.996) (xy 204.216 94.996)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "af4c48e7-8cf6-4b41-9483-9ae3c2ad9d3a")
+	)
+	(wire
+		(pts
+			(xy 109.474 126.746) (xy 124.206 126.746)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0f79e8c-37a1-4a89-8934-7d8791d67bac")
+	)
+	(wire
+		(pts
+			(xy 188.722 26.67) (xy 203.454 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b161dcd2-d3f5-4320-8c23-26837ea66bdf")
+	)
+	(wire
+		(pts
+			(xy 380.746 57.912) (xy 380.746 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b1e24b30-c4a6-4c2a-8c64-36b1471442d5")
+	)
+	(wire
+		(pts
+			(xy 316.484 49.022) (xy 316.484 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2333352-80ed-4647-86ff-a613a189fc9a")
+	)
+	(wire
+		(pts
+			(xy 188.976 42.926) (xy 203.708 42.926)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2656057-86cc-44a6-99cd-66944bad42da")
+	)
+	(wire
+		(pts
+			(xy 199.898 145.796) (xy 204.724 145.796)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b2977727-057d-4774-8b33-a0786d3fc85b")
+	)
+	(wire
+		(pts
+			(xy 101.6 77.216) (xy 101.6 77.47)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b3534155-f6f4-48e7-93a7-d4ee35526630")
+	)
+	(wire
+		(pts
+			(xy 27.432 58.928) (xy 42.164 58.928)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b49e1a74-3406-4f7d-baa5-50ab007bab31")
+	)
+	(wire
+		(pts
+			(xy 118.618 44.958) (xy 123.19 44.958)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4cbc05f-79a3-4d78-a39f-4577701374aa")
+	)
+	(wire
+		(pts
+			(xy 447.802 32.258) (xy 397.764 32.258)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7893152-90b5-4f69-8a09-ed2694c7fb51")
+	)
+	(wire
+		(pts
+			(xy 102.362 145.542) (xy 102.362 145.796)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7dbc30f-fd21-415c-b868-f50f94c3b61c")
+	)
+	(wire
+		(pts
+			(xy 397.764 64.516) (xy 397.764 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ba7b133d-363f-4543-bd5e-dd5117c3f432")
+	)
+	(wire
+		(pts
+			(xy 447.802 64.516) (xy 397.764 64.516)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc084a02-aade-4402-8684-02944315ada8")
+	)
+	(wire
+		(pts
+			(xy 249.174 58.928) (xy 249.174 68.326)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be9ad30d-8612-4a1f-a522-bc0d8e5c0e45")
+	)
+	(wire
+		(pts
+			(xy 182.88 60.96) (xy 164.084 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfe63fd2-3fe7-4ef5-985c-abddaf2f0404")
+	)
+	(wire
+		(pts
+			(xy 168.656 26.162) (xy 163.576 26.162)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c051bb4c-2c21-4937-88ee-633437ec7d06")
+	)
+	(wire
+		(pts
+			(xy 38.1 129.794) (xy 42.926 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c061272f-5484-4e90-a06d-f4a0452b7000")
+	)
+	(wire
+		(pts
+			(xy 468.376 55.626) (xy 483.108 55.626)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c17df928-ff83-4e6c-8733-45f3faa2e158")
+	)
+	(wire
+		(pts
+			(xy 182.88 60.706) (xy 182.88 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6f262dc-cd3c-41ad-ba90-4d7984b59a8d")
+	)
+	(wire
+		(pts
+			(xy 102.362 129.54) (xy 102.362 129.794)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c733ce5b-9317-41d7-876c-fab68f98c578")
+	)
+	(wire
+		(pts
+			(xy 87.376 26.67) (xy 87.376 36.068)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c85507de-38cd-4d8c-b346-19beca833b53")
+	)
+	(wire
+		(pts
+			(xy 38.1 145.796) (xy 42.926 145.796)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9671391-4ff2-416d-a074-f103d783dac0")
+	)
+	(wire
+		(pts
+			(xy 199.136 52.324) (xy 199.136 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca95687b-06bd-4aee-a38e-f876f417a78f")
+	)
+	(wire
+		(pts
+			(xy 462.026 73.66) (xy 443.23 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cff3f231-cedf-4535-9f46-342606f7618b")
+	)
+	(wire
+		(pts
+			(xy 87.376 52.324) (xy 37.338 52.324)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d33c9333-7575-407a-afc5-102d2bc0ab8a")
+	)
+	(wire
+		(pts
+			(xy 102.108 113.792) (xy 83.312 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d36ad3bb-9c05-4443-90b2-314562fcdc82")
+	)
+	(wire
+		(pts
+			(xy 101.6 61.214) (xy 101.6 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d463fcd8-acc7-4b24-adb2-111041faaa74")
+	)
+	(wire
+		(pts
+			(xy 169.418 110.744) (xy 169.418 120.142)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4d6d54b-3b96-4468-8700-e2cecb78e9da")
+	)
+	(wire
+		(pts
+			(xy 101.6 61.468) (xy 82.804 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d54a49a8-2ef6-4410-81f7-dce977a19f5d")
+	)
+	(wire
+		(pts
+			(xy 88.138 94.996) (xy 83.058 94.996)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d664456a-3ca4-41c7-9e4f-a1a999cdf852")
+	)
+	(wire
+		(pts
+			(xy 87.376 68.326) (xy 37.338 68.326)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d66c5725-8ab3-44a9-bfdb-4ecc6089209a")
+	)
+	(wire
+		(pts
+			(xy 380.238 25.908) (xy 361.442 25.908)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8106177-7e86-452b-ae1f-a2fd10104601")
+	)
+	(wire
+		(pts
+			(xy 467.868 23.368) (xy 482.6 23.368)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d9775d8e-eb5e-47c0-81ae-9f6418d42034")
+	)
+	(wire
+		(pts
+			(xy 528.32 23.368) (xy 528.32 32.766)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "da55f273-e0f5-4ea3-aa29-1d2bffe8f9fe")
+	)
+	(wire
+		(pts
+			(xy 244.602 58.928) (xy 249.174 58.928)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc27cecc-c585-41ef-9f5f-fecf90ad0e5e")
+	)
+	(wire
+		(pts
+			(xy 461.518 25.146) (xy 461.518 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dd16d2e1-2ff9-4385-9d45-8280758d9e69")
+	)
+	(wire
+		(pts
+			(xy 528.32 32.766) (xy 478.282 32.766)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ddc7a818-f48a-4eae-b2ad-a9f170195009")
+	)
+	(wire
+		(pts
+			(xy 245.364 127.254) (xy 249.936 127.254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de361f67-7a0b-4191-80d2-74648502ee76")
+	)
+	(wire
+		(pts
+			(xy 461.518 25.4) (xy 442.722 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df06149a-1e65-46e0-888b-37f1930f3c9f")
+	)
+	(wire
+		(pts
+			(xy 447.802 22.86) (xy 442.722 22.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1669b28-f108-42b6-a63a-4633e20173d6")
+	)
+	(wire
+		(pts
+			(xy 447.802 22.86) (xy 447.802 32.258)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1a98c34-a97d-4374-a61a-31eb90ced388")
+	)
+	(wire
+		(pts
+			(xy 199.898 104.394) (xy 199.898 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e489c1a7-12f2-44cd-9431-1ac83454b551")
+	)
+	(wire
+		(pts
+			(xy 83.566 127.254) (xy 88.138 127.254)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4e93979-56f0-471d-9993-2a39be58baf3")
+	)
+	(wire
+		(pts
+			(xy 478.282 65.024) (xy 478.282 74.168)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea159476-341e-4ad4-a8b2-778330db5500")
+	)
+	(wire
+		(pts
+			(xy 366.522 65.024) (xy 316.484 65.024)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea18efea-39a0-474b-98bb-5b494eab4f91")
+	)
+	(wire
+		(pts
+			(xy 249.174 68.326) (xy 199.136 68.326)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea941f5d-8fea-4815-98fd-930ea6b654e0")
+	)
+	(wire
+		(pts
+			(xy 263.398 61.468) (xy 244.602 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eb9238fb-10c7-42f8-8287-4437d31f931b")
+	)
+	(wire
+		(pts
+			(xy 118.618 51.816) (xy 118.618 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ebaf2eaa-3914-4aee-a3ea-81dedf71d421")
+	)
+	(wire
+		(pts
+			(xy 316.484 32.766) (xy 316.484 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ed1f5656-c54d-4697-ab36-7ddb61e74846")
+	)
+	(wire
+		(pts
+			(xy 361.95 55.626) (xy 366.522 55.626)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "edff1dee-786f-4730-9ca9-f6d491dc2b84")
+	)
+	(wire
+		(pts
+			(xy 101.092 28.956) (xy 101.092 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee047629-7ad4-4073-bf8b-c91a60de104e")
+	)
+	(wire
+		(pts
+			(xy 366.522 49.022) (xy 316.484 49.022)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef4c1a79-6f7b-43c9-9cfb-9e94d55e5257")
+	)
+	(wire
+		(pts
+			(xy 263.144 45.466) (xy 244.348 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef63ee6d-508b-4258-b8c2-d0004fefe850")
+	)
+	(wire
+		(pts
+			(xy 87.376 58.928) (xy 87.376 68.326)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "efde3a94-7c32-4419-8cf6-d19cb952b720")
+	)
+	(wire
+		(pts
+			(xy 262.89 29.21) (xy 244.094 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f0e60ddb-eb0b-47ac-a40c-1bfb3943bdf3")
+	)
+	(wire
+		(pts
+			(xy 102.108 113.538) (xy 102.108 113.792)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2bd9cbf-45ea-47a2-8a66-3a2e2090b7cc")
+	)
+	(wire
+		(pts
+			(xy 478.282 58.166) (xy 483.108 58.166)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2cec1a6-6aed-4ecb-955e-93473b81ab40")
+	)
+	(wire
+		(pts
+			(xy 168.656 26.162) (xy 168.656 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f33fd602-fb14-43f6-9c4d-826eeedeb5eb")
+	)
+	(wire
+		(pts
+			(xy 118.618 60.96) (xy 123.444 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f393d9c2-f167-45de-a1b8-9f5d9937671b")
+	)
+	(wire
+		(pts
+			(xy 37.338 61.468) (xy 42.164 61.468)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3c90991-d649-4e00-8432-3d980af99fd5")
+	)
+	(wire
+		(pts
+			(xy 542.29 41.91) (xy 542.29 42.164)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4e4129d-0fd3-4e2d-8223-fce43f1d8302")
+	)
+	(wire
+		(pts
+			(xy 182.372 28.448) (xy 182.372 28.702)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f52ef8f9-c5bd-4f12-97e6-61690b3ccfe6")
+	)
+	(wire
+		(pts
+			(xy 108.712 74.422) (xy 123.444 74.422)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f6635769-5530-46f8-b2e2-5c206414a31f")
+	)
+	(wire
+		(pts
+			(xy 88.138 127.254) (xy 88.138 136.652)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f723696d-207c-41f3-88d4-0ca92469c01f")
+	)
+	(wire
+		(pts
+			(xy 387.604 39.116) (xy 402.336 39.116)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7e1fa4e-51c1-4e48-b2b4-ed4edbec2ef4")
+	)
+	(wire
+		(pts
+			(xy 183.134 96.774) (xy 183.134 97.028)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8ae9b4c-89e5-49ee-bb47-1c11c3ab635b")
+	)
+	(wire
+		(pts
+			(xy 27.178 42.926) (xy 41.91 42.926)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8ddc1d8-e434-4173-ac51-c588219d6419")
+	)
+	(wire
+		(pts
+			(xy 189.23 58.928) (xy 203.962 58.928)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f9796e50-f31e-4499-8839-ed156dfe7278")
+	)
+	(wire
+		(pts
+			(xy 528.32 39.624) (xy 528.32 49.022)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fabe4e68-5062-40c8-84d1-967b8cd71dfc")
+	)
+	(wire
+		(pts
+			(xy 163.83 42.418) (xy 168.656 42.418)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fb678da0-ff54-433a-815c-ec9d1d0af033")
+	)
+	(wire
+		(pts
+			(xy 37.338 36.068) (xy 37.338 45.466)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fc8a78ef-2bba-4744-a23e-947ee6127982")
+	)
+	(wire
+		(pts
+			(xy 109.474 142.748) (xy 124.206 142.748)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fded0657-2ab7-421e-a23e-1c35a3abeda3")
+	)
+	(wire
+		(pts
+			(xy 380.238 25.654) (xy 380.238 25.908)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe376bb4-610f-432a-996e-a386704b9c4c")
+	)
+	(wire
+		(pts
+			(xy 249.936 127.254) (xy 249.936 136.652)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffa7c9ec-b807-412e-b08d-4ae7cccc6d40")
+	)
+	(global_label "NEO_PASS5"
+		(shape output)
+		(at 164.846 142.748 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0b673b29-1afd-48b7-be19-35bcda79b8ae")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 178.5959 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS7"
+		(shape input)
+		(at 402.082 25.4 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1c3f355a-95a1-41e3-a261-4cc1517c31d5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 388.3321 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS2"
+		(shape output)
+		(at 164.084 74.422 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "30efc433-19b0-4bf3-a268-f9c56abad703")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 177.8339 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS1"
+		(shape output)
+		(at 82.804 74.93 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3cc3d0d8-5b6c-4925-9356-7dbf04c96721")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 96.5539 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS7"
+		(shape output)
+		(at 361.95 71.628 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "451fb143-793c-4cd0-95b8-2084ec46e59a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 375.6999 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "outNEO_CTRL_MLU"
+		(shape output)
+		(at 523.748 71.628 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "4cc840db-c451-4a53-b0a3-f0b301a3740a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 543.8478 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS2"
+		(shape input)
+		(at 203.454 29.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4f08da46-0857-44de-9595-0ea9739837d8")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 189.7041 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS8"
+		(shape output)
+		(at 443.23 71.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6fc5fc69-cf7b-4512-a939-6d8ab785a07b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 456.9799 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS4"
+		(shape output)
+		(at 83.566 143.256 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "92689b65-7505-40b0-86a7-ca0e73de659b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 97.3159 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS3"
+		(shape output)
+		(at 244.602 74.93 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "a45f01db-c7d5-4cb7-9f51-583099e3ab48")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 258.3519 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS6"
+		(shape output)
+		(at 245.364 143.256 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ab5e135e-20d4-4380-a709-b675e34ad00a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 259.1139 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS4"
+		(shape input)
+		(at 123.698 97.028 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b3b996ee-3361-42d7-87b2-a9d60edfea4a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 109.9481 97.028 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS8"
+		(shape input)
+		(at 482.6 25.908 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c2479973-6fc3-4a14-984d-5dedd3cc6ecc")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 468.8501 25.908 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS1"
+		(shape input)
+		(at 122.936 28.702 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c3fc2d15-942e-40fa-aeba-67e2b3948c45")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 109.1861 28.702 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "toNEO_CTRL_MLU"
+		(shape input)
+		(at 41.656 29.21 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ce34319c-6d13-413a-8a86-3dde8da5f377")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 22.7052 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS5"
+		(shape input)
+		(at 204.216 97.536 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d1848d4a-bb79-4c85-9d1d-f4c1b5cc1548")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 190.4661 97.536 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS3"
+		(shape input)
+		(at 42.418 97.536 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d3b6ff3c-02ac-491b-97a0-83ed9787fa98")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 28.6681 97.536 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "NEO_PASS6"
+		(shape input)
+		(at 320.802 25.908 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fd191999-e9a2-45ac-baf8-74e9e2a8e7e9")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 307.0521 25.908 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 183.388 113.03 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "01fc866e-959f-47b5-adaf-69acea602a32")
+		(property "Reference" "#PWR0123"
+			(at 183.388 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 183.388 108.204 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 183.388 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 183.388 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 183.388 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "248b9ef2-de95-4d77-95ab-5eec56f0cea8")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0123")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 468.376 55.626 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "083e8b2c-ff73-4a4f-9b74-1ae9e4db9aab")
+		(property "Reference" "#PWR0152"
+			(at 468.376 61.976 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 468.376 60.452 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 468.376 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 468.376 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 468.376 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d783d15-a711-435b-bbdf-c4246b6cb3c4")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0152")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 402.59 55.118 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09bd51d0-8e58-4ca4-9df0-beb0ece83595")
+		(property "Reference" "LED31"
+			(at 422.91 45.212 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 422.91 47.752 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 402.59 55.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 402.59 55.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 402.59 55.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "af679286-5a10-4b93-9a57-2bb8a8fcd9f6")
+		)
+		(pin "4"
+			(uuid "a79fa001-f7eb-447f-a9b0-fc649f67e862")
+		)
+		(pin "2"
+			(uuid "1cd37193-17ed-4002-a979-e7bd5a0c3abd")
+		)
+		(pin "1"
+			(uuid "45ec73ee-6375-42bc-883c-bb08d43840c2")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED31")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 321.31 71.628 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0afcc855-4127-4371-97de-459d62251efe")
+		(property "Reference" "LED35"
+			(at 341.63 61.722 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 341.63 64.262 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 321.31 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 321.31 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 321.31 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "9cdb070f-14a0-48c7-9480-7cd6630acf9c")
+		)
+		(pin "4"
+			(uuid "d0a74502-7fe5-4a22-a8cd-ca753ee4401b")
+		)
+		(pin "2"
+			(uuid "061d70d6-8193-44ca-8193-109414c94440")
+		)
+		(pin "1"
+			(uuid "360c389a-966e-4a25-be4a-ecc1bb5981d2")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 108.712 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0b1fbac8-cb05-417e-b966-43c3826c60af")
+		(property "Reference" "#PWR0102"
+			(at 108.712 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 108.712 63.246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 108.712 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 108.712 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 108.712 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "86726463-edb6-4c80-a84c-2ed4ab14fe5c")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 124.206 142.748 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c91fb76-391b-4f3d-aca1-9fe3913384d3")
+		(property "Reference" "LED22"
+			(at 144.526 132.842 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 144.526 135.382 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 124.206 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 124.206 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.206 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "c088c11b-7eeb-4b68-8128-cb2b8f4bb0fc")
+		)
+		(pin "4"
+			(uuid "c62cea1b-ce68-4a01-a09a-f4f981929b6e")
+		)
+		(pin "2"
+			(uuid "eb0f5c85-d047-4b5e-bf9c-a2fd7e65a6dd")
+		)
+		(pin "1"
+			(uuid "b7eff0e7-af0a-4209-bbbb-50fe4240a805")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 380.492 41.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "10af44e0-32b0-4e77-8c7e-21d7a4ccc83b")
+		(property "Reference" "#PWR0148"
+			(at 380.492 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 380.492 37.084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 380.492 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 380.492 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 380.492 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8f6b7753-b0ab-4300-aecb-994844eb8b22")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0148")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 42.926 143.256 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "10c31469-32d2-425d-a667-752d870658b6")
+		(property "Reference" "LED23"
+			(at 63.246 133.35 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 63.246 135.89 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 42.926 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 42.926 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 42.926 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "8c651303-3ee6-4be3-a474-6ad4bb21611e")
+		)
+		(pin "4"
+			(uuid "a36115c9-1828-4033-87ee-6e8f203d6a8a")
+		)
+		(pin "2"
+			(uuid "1007bf62-7817-4df6-89ab-cbb84445227a")
+		)
+		(pin "1"
+			(uuid "5bd67b7d-af8a-43c5-8a5f-8ea38ac5caf6")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED23")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 204.724 127.254 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "18f3ee93-e557-4531-9539-0237fa8c5358")
+		(property "Reference" "LED21"
+			(at 225.044 117.348 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 225.044 119.888 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 204.724 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 204.724 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 204.724 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "f15f2250-5d87-4445-888f-ca4c67f989ef")
+		)
+		(pin "4"
+			(uuid "f78fff25-6ef3-43bf-8b0f-d58536d0fb7d")
+		)
+		(pin "2"
+			(uuid "e75228a3-2937-466f-ad9a-10d752170800")
+		)
+		(pin "1"
+			(uuid "39e1d8e7-03c7-42c5-9b3c-de02225b85c9")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 124.206 126.746 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1a0e5e90-c705-42c6-a06f-9a605b128489")
+		(property "Reference" "LED19"
+			(at 144.526 116.84 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 144.526 119.38 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 124.206 126.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 124.206 126.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 124.206 126.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "7ba4a3d3-24ac-4193-8a9f-3b1e82bdefbd")
+		)
+		(pin "4"
+			(uuid "348bc904-0c65-4972-9e86-1e1abb2c67b0")
+		)
+		(pin "2"
+			(uuid "47059859-3fe7-4a4c-8c09-ecc9f58e5518")
+		)
+		(pin "1"
+			(uuid "d8f5e226-7b1c-4348-9c46-89b7bccb61c6")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED19")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 28.194 127.254 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "21593d35-676e-4df5-ac50-5b84c242204b")
+		(property "Reference" "#PWR0127"
+			(at 28.194 133.604 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 28.194 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 28.194 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 28.194 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 28.194 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "93bffac3-0800-4e9c-bd62-3483da887b02")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0127")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 182.88 60.706 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "26269965-08d7-4be3-bf31-ef7429523340")
+		(property "Reference" "#PWR0105"
+			(at 182.88 64.516 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 182.88 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 60.706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 60.706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 182.88 60.706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "141a1a20-5905-4780-858e-e7da4ca845ee")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 321.31 55.626 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "27801330-8d20-4676-9133-f8311e70dbdc")
+		(property "Reference" "LED32"
+			(at 341.63 45.72 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 341.63 48.26 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 321.31 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 321.31 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 321.31 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "5acd0e22-fa34-4f99-ba5a-ee1b6af4a1ae")
+		)
+		(pin "4"
+			(uuid "7820deb1-5bd9-44f4-adac-8df3f152d8e6")
+		)
+		(pin "2"
+			(uuid "4fcdc7f2-4ebf-4904-a305-ee3298ec9d6a")
+		)
+		(pin "1"
+			(uuid "1743c205-9387-4a96-a501-e01db57b58f6")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 123.952 110.744 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "28f25136-1c55-469b-adc6-b51821e72f91")
+		(property "Reference" "LED16"
+			(at 144.272 100.838 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 144.272 103.378 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 123.952 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 123.952 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.952 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "485b9983-a722-4f0b-861b-c7eec3a53965")
+		)
+		(pin "4"
+			(uuid "b92e1f40-1940-48a5-b5ee-fd45284f5474")
+		)
+		(pin "2"
+			(uuid "4be329c2-27d8-4e71-af59-9314509689bb")
+		)
+		(pin "1"
+			(uuid "529c362b-dee0-40ae-872d-d14c1f9b9a97")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.992 127.254 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2b3dda21-ba82-433b-b52d-96f4f58a3a78")
+		(property "Reference" "#PWR0128"
+			(at 189.992 133.604 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.992 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.992 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.992 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 189.992 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d969a02e-1eff-4f16-88eb-37d2ec94b379")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0128")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.992 143.256 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ba99ee6-67f8-4c45-afb0-d3a812b60edb")
+		(property "Reference" "#PWR0134"
+			(at 189.992 149.606 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.992 148.082 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.992 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.992 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 189.992 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2661f080-6852-44c6-ba94-f1171126c7ca")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0134")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 108.712 74.422 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2ddc93bb-9887-4aea-9721-38d1344560a4")
+		(property "Reference" "#PWR0108"
+			(at 108.712 80.772 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 108.712 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 108.712 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 108.712 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 108.712 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "cac2705c-c7b7-4b13-8d0b-45317c33b782")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0108")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 102.362 145.542 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "32bb8057-52a9-447f-a931-0bee776a1de2")
+		(property "Reference" "#PWR0136"
+			(at 102.362 149.352 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 102.362 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.362 145.542 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.362 145.542 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 102.362 145.542 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "866aba32-d621-426c-8dce-3878b3d958e2")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0136")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 27.94 111.252 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "33401f1c-b02e-46be-aeef-38ff254ff2f8")
+		(property "Reference" "#PWR0121"
+			(at 27.94 117.602 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 27.94 116.078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.94 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.94 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 27.94 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c893de63-bbae-4b30-99af-f30702e2c231")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0121")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 482.854 39.624 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34dd47fe-7220-437e-b787-9e73a7195aae")
+		(property "Reference" "LED30"
+			(at 503.174 29.718 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 503.174 32.258 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 482.854 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 482.854 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 482.854 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "97966217-358d-4ff7-ad5c-4d391c7dac31")
+		)
+		(pin "4"
+			(uuid "7edabbfe-32ba-4c14-9b76-81ab7a4264f8")
+		)
+		(pin "2"
+			(uuid "d4c4c135-b7ae-4481-ab91-56523a492fa2")
+		)
+		(pin "1"
+			(uuid "c04a141d-81e2-4de0-95a9-cdffabcc6cd8")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED30")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 544.83 74.168 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "34fcea55-38d6-420b-9129-91d25ef12e2a")
+		(property "Reference" "#PWR0161"
+			(at 544.83 77.978 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 544.83 69.342 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 544.83 74.168 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 544.83 74.168 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 544.83 74.168 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5b810baa-4d47-45ae-a6c4-cd31a8bf2270")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0161")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 387.35 22.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3663f230-5aa4-43b1-822c-69321831c489")
+		(property "Reference" "#PWR0138"
+			(at 387.35 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 387.35 27.686 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 387.35 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 387.35 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 387.35 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d20b9410-3ded-41c0-abc6-4e6bb11b8846")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0138")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 21.59 94.996 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "36fc63eb-2e6b-4c5e-92bf-16f56ca542d4")
+		(property "Reference" "#PWR0115"
+			(at 21.59 101.346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 21.59 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 21.59 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 21.59 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 21.59 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "460c8676-eaee-4064-851e-7062054bc4a2")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0115")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 108.204 26.162 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3919ed49-03f4-4c9a-9eb2-98ba28e7ecb7")
+		(property "Reference" "#PWR023"
+			(at 108.204 32.512 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 108.204 30.988 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 108.204 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 108.204 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 108.204 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9877526c-ce4d-45a7-a88a-0a4b5f37900d")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR023")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 108.458 42.418 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "3f95ec38-aac2-403e-9fcc-0f91ab60e47e")
+		(property "Reference" "#PWR096"
+			(at 108.458 48.768 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 108.458 47.244 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 108.458 42.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 108.458 42.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 108.458 42.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "31ec22fa-1ff0-474a-9df1-e1636cce5edf")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR096")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 306.324 39.624 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "446ecf01-a8da-4f97-b4e2-78b56caf1971")
+		(property "Reference" "#PWR0145"
+			(at 306.324 45.974 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 306.324 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 306.324 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 306.324 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 306.324 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "61daa70b-fb1e-4c1c-8a90-e749dd1be931")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0145")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 102.362 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "47e29524-944f-4851-94b2-0159a15378eb")
+		(property "Reference" "#PWR0130"
+			(at 102.362 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 102.362 124.714 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.362 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.362 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 102.362 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "92118e47-c15f-4c3c-a56f-c17ba713498b")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0130")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.738 111.252 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "48f86a09-05e1-468f-8e8e-4fb2d4345397")
+		(property "Reference" "#PWR0122"
+			(at 189.738 117.602 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.738 116.078 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.738 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.738 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 189.738 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0c047c24-f0d5-4130-823e-6f5efa0fa75f")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0122")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 299.974 23.368 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4a705cc5-2621-4677-bfd8-3dff8eae96e7")
+		(property "Reference" "#PWR0139"
+			(at 299.974 29.718 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 299.974 28.194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 299.974 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 299.974 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 299.974 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b4e1038c-0029-435e-8f24-382b9423f62f")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0139")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 306.578 71.628 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4e779c3e-48ff-4de8-a2df-f26b585b1835")
+		(property "Reference" "#PWR0157"
+			(at 306.578 77.978 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 306.578 76.454 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 306.578 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 306.578 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 306.578 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f32a3f24-d53b-4437-96c1-500f2dd9ab12")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0157")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 42.418 94.996 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "4e84a9a2-b5c4-46a9-9333-34eabd9416f4")
+		(property "Reference" "LED14"
+			(at 62.738 85.09 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 62.738 87.63 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 42.418 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 42.418 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 42.418 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "68d50357-6f03-4b23-967c-ecb5ea3f617d")
+		)
+		(pin "4"
+			(uuid "d1ba372f-c607-4c32-a8e5-b956401c68e5")
+		)
+		(pin "2"
+			(uuid "c959a263-8bf9-4050-a4a1-a145d0e38427")
+		)
+		(pin "1"
+			(uuid "65cadad9-4f55-4245-9756-7710c27a4890")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 182.626 44.704 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "511de97e-0c15-49c9-9338-9eefe2ec3273")
+		(property "Reference" "#PWR099"
+			(at 182.626 48.514 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 182.626 39.878 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.626 44.704 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.626 44.704 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 182.626 44.704 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5aaa4026-e3d7-414e-942c-a629e36b8ecf")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR099")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 462.026 57.404 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "52f19cf1-b31e-491b-9c88-d833fcacb862")
+		(property "Reference" "#PWR0153"
+			(at 462.026 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 462.026 52.578 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 462.026 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 462.026 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 462.026 57.404 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "450825cd-1bb0-4def-9685-0256ba7451b3")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0153")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 263.144 45.212 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5347bc91-0162-44fb-86f8-45d2e6895bb6")
+		(property "Reference" "#PWR0101"
+			(at 263.144 49.022 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 263.144 40.386 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 263.144 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 263.144 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 263.144 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c21ecadc-3cf9-430f-aa37-649b3ffaf125")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0101")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 27.178 42.926 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5a9e6b7d-e0ea-4cc3-a573-05f4d13157db")
+		(property "Reference" "#PWR097"
+			(at 27.178 49.276 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 27.178 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.178 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.178 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 27.178 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1703c1f3-900f-418a-be76-915a3d65df8f")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR097")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 306.578 55.626 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5ab9b453-51e1-4589-aef9-c2ea997fc21c")
+		(property "Reference" "#PWR0151"
+			(at 306.578 61.976 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 306.578 60.452 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 306.578 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 306.578 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 306.578 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ab835b5e-fdf3-42f4-bf6e-b42c3c809a7d")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0151")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 402.59 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5bcab4fa-4332-4539-a5f5-055c8e8264ee")
+		(property "Reference" "LED34"
+			(at 422.91 61.214 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 422.91 63.754 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 402.59 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 402.59 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 402.59 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "ada4a9e6-b7ed-49e1-a3cc-07f994101545")
+		)
+		(pin "4"
+			(uuid "28a7763a-a3d3-4d30-aa37-c22cc9bc3319")
+		)
+		(pin "2"
+			(uuid "d15d2a09-8e5d-4650-904a-32c8c16f1a81")
+		)
+		(pin "1"
+			(uuid "a43f8c8a-6960-4068-b937-332d506c52d6")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED34")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 387.604 39.116 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5df65241-e5d1-42a2-9945-7a697ac0a70d")
+		(property "Reference" "#PWR0144"
+			(at 387.604 45.466 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 387.604 43.942 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 387.604 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 387.604 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 387.604 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c5ab11d7-9c68-46b8-be09-d183b0e75ad5")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0144")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 123.444 74.422 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5e95ddef-ce72-456e-aef1-ddb0b07c992f")
+		(property "Reference" "LED10"
+			(at 143.764 64.516 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 143.764 67.056 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 123.444 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 123.444 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.444 74.422 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "9cbbbdae-d3ba-467f-84d1-4911cb637dcd")
+		)
+		(pin "4"
+			(uuid "3cbda122-34cf-4da1-83b8-74d23c912fac")
+		)
+		(pin "2"
+			(uuid "d8e59b36-c65e-4ac1-9041-7d24200cd87b")
+		)
+		(pin "1"
+			(uuid "a1c8c883-b926-4f4b-b0ec-2e66472f4d0c")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 204.47 111.252 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5f5b12f6-7790-42e8-ac3b-c1c2d9615980")
+		(property "Reference" "LED18"
+			(at 224.79 101.346 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 224.79 103.886 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 204.47 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 204.47 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 204.47 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "cc2c7cf8-4990-4a6b-8193-da59377eb556")
+		)
+		(pin "4"
+			(uuid "cec262d8-f446-4b31-a1d8-f649176efd7c")
+		)
+		(pin "2"
+			(uuid "65f441ba-88b8-48e1-be30-3c34e5d206fb")
+		)
+		(pin "1"
+			(uuid "95ec39fc-128e-48cb-8e34-f438b253280e")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED18")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 380.238 25.654 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "62ca4e91-7c84-4501-b496-980b3283d5cd")
+		(property "Reference" "#PWR0142"
+			(at 380.238 29.464 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 380.238 20.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 380.238 25.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 380.238 25.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 380.238 25.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4d7b83fe-af09-4510-90ff-918194fe6e64")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0142")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 461.772 41.402 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "65435d5d-6ab9-48f6-993e-0eca4889b658")
+		(property "Reference" "#PWR0147"
+			(at 461.772 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 461.772 36.576 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 461.772 41.402 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 461.772 41.402 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 461.772 41.402 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "862a269d-ae6b-4de3-ba31-30c84331b235")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0147")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 402.082 22.86 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6987fa62-7dfc-425d-8887-6820bab949c0")
+		(property "Reference" "LED25"
+			(at 422.402 12.954 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 422.402 15.494 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 402.082 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 402.082 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 402.082 22.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "9960ff51-e6e9-4efa-b7ff-6221c45e1e6f")
+		)
+		(pin "4"
+			(uuid "e4a3fd90-ce0c-48d7-8e16-3d621a84f462")
+		)
+		(pin "2"
+			(uuid "19b14fe8-de19-4673-9999-3b726dcf0cc1")
+		)
+		(pin "1"
+			(uuid "de800966-f54e-451e-ba3b-b6bd302c100c")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED25")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.23 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "69fd2d91-7375-4e08-b321-bec9bcbcd1a8")
+		(property "Reference" "#PWR0110"
+			(at 189.23 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.23 79.756 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 189.23 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "115cd11f-4a23-4d94-849e-391bf0a342f1")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0110")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 183.134 96.774 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6c5e3c5b-79db-47cd-bc4a-6407da3fbec8")
+		(property "Reference" "#PWR0117"
+			(at 183.134 100.584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 183.134 91.948 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 183.134 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 183.134 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 183.134 96.774 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0446a75b-9570-4e80-bc9e-e589dac39260")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0117")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 27.432 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6e1b78fe-932e-4848-b8b9-93dd9bfa8b95")
+		(property "Reference" "#PWR0109"
+			(at 27.432 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 27.432 79.756 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.432 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.432 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 27.432 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2710ce0f-1776-4973-ae81-39699d8b3d16")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0109")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 266.446 145.796 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ec1051d-d351-4f2f-bd2e-58558462c134")
+		(property "Reference" "#PWR0137"
+			(at 266.446 149.606 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 266.446 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 266.446 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 266.446 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 266.446 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "165a5c80-4dfa-4782-82a6-a1f27fcdff13")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0137")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 265.684 77.47 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "712fad3f-80ff-4e3b-94a5-035be74cc946")
+		(property "Reference" "#PWR0113"
+			(at 265.684 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 265.684 72.644 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 265.684 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 265.684 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 265.684 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9b43674a-61e2-42b8-a813-eaf5066a432b")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0113")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 108.966 94.488 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "733e6085-bd62-4c30-a0ef-e72b39cd983a")
+		(property "Reference" "#PWR0114"
+			(at 108.966 100.838 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 108.966 99.314 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 108.966 94.488 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 108.966 94.488 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 108.966 94.488 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a1e52bc6-bbd7-4825-bdb8-d17ff91867a3")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0114")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 123.19 42.418 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "743d0761-1aac-4fd5-83c1-c82830f8a9e7")
+		(property "Reference" "LED4"
+			(at 143.51 32.512 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 143.51 35.052 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 123.19 42.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 123.19 42.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.19 42.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "168c8edc-533a-4dc9-a8fe-a40b3d74df87")
+		)
+		(pin "4"
+			(uuid "dd43948e-8edf-4a75-bee4-4fe9afe5c723")
+		)
+		(pin "2"
+			(uuid "76260d6f-e0df-4b4f-a6eb-ed0bb82e8c3d")
+		)
+		(pin "1"
+			(uuid "92d7d812-3289-47fd-b6b0-b9f514453c6f")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 483.108 55.626 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "75dad439-26c4-471c-a74b-4ac9c7901e83")
+		(property "Reference" "LED33"
+			(at 503.428 45.72 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 503.428 48.26 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 483.108 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 483.108 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 483.108 55.626 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "02dee632-6469-460c-a3b8-779a19e9e43f")
+		)
+		(pin "4"
+			(uuid "56d4f0fb-c13f-453e-b1b3-f5da3774f5e6")
+		)
+		(pin "2"
+			(uuid "5e00fc4e-fe86-4b08-81d1-3f5aa28c4b6e")
+		)
+		(pin "1"
+			(uuid "a54c5ccb-4993-438f-81a9-e0e116c430eb")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED33")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 101.6 61.214 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "77a370e2-73c6-4d89-9d9a-54e667e562b8")
+		(property "Reference" "#PWR0106"
+			(at 101.6 65.024 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 101.6 56.388 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 101.6 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4bf92344-48dd-4f46-b466-2d8aad8d7a5e")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0106")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 122.936 26.162 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7be34c49-7dc0-4871-9c42-93e09842ac4b")
+		(property "Reference" "LED1"
+			(at 143.256 16.256 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 143.256 18.796 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 122.936 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 122.936 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 122.936 26.162 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "c417be08-1569-4f2a-8122-416978ab9372")
+		)
+		(pin "4"
+			(uuid "f58d636e-798c-4e9a-be62-de52bf1c4a49")
+		)
+		(pin "2"
+			(uuid "29f87805-06ce-4b6c-adb0-517670ec9659")
+		)
+		(pin "1"
+			(uuid "d0c6b357-eeb2-4f92-bdfd-0d31d71b2f14")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 462.026 73.406 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7e2dd22e-0c40-4ef8-b074-01871a47da1e")
+		(property "Reference" "#PWR0159"
+			(at 462.026 77.216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 462.026 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 462.026 73.406 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 462.026 73.406 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 462.026 73.406 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a0fd78a9-04b1-408c-97bf-1620b9bc3396")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0159")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.484 94.996 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "82b8dcd2-fa06-49ab-a42c-9f1bd4908da8")
+		(property "Reference" "#PWR0116"
+			(at 189.484 101.346 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.484 99.822 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.484 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.484 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 189.484 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aafb5c2b-dff0-49d4-9ea1-c23007b5b584")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0116")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 109.474 142.748 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "82ee1f88-cc4b-4595-885c-a0b3e845a4da")
+		(property "Reference" "#PWR0132"
+			(at 109.474 149.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 109.474 147.574 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.474 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.474 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 109.474 142.748 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a6f059db-906e-4808-bc1d-253b4fae7cb6")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0132")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 123.444 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8665eab8-02cf-404b-808f-d2e09545d421")
+		(property "Reference" "LED7"
+			(at 143.764 48.514 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 143.764 51.054 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 123.444 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 123.444 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.444 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "30428644-51a8-433a-8a6d-5c7d709639b9")
+		)
+		(pin "4"
+			(uuid "5c7069e2-cd39-4747-a0b1-e9df4cdcc92a")
+		)
+		(pin "2"
+			(uuid "7da32ce7-dbad-48cc-8a27-7df2547ef8d5")
+		)
+		(pin "1"
+			(uuid "86cd1da5-2bca-41a4-b73a-1630e3a6d093")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 483.108 71.628 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "86e7c089-4b84-41a9-8c8e-102e1755def3")
+		(property "Reference" "LED36"
+			(at 503.428 61.722 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 503.428 64.262 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 483.108 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 483.108 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 483.108 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "42d5d2d0-3df9-4d7b-95ef-3772a6671336")
+		)
+		(pin "4"
+			(uuid "c8c7a44d-abd7-4c7e-9a7d-e258da7ca45f")
+		)
+		(pin "2"
+			(uuid "4325879c-659c-417e-9ca0-630686873528")
+		)
+		(pin "1"
+			(uuid "85b86b66-8126-4b88-bbe0-aa3af964dd11")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED36")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 203.708 42.926 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8b538611-52d4-492c-8ebf-4a4ffc44c0a6")
+		(property "Reference" "LED6"
+			(at 224.028 33.02 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 224.028 35.56 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 203.708 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 203.708 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.708 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "471b182f-8685-420c-9825-a68e086f7748")
+		)
+		(pin "4"
+			(uuid "e8216e74-3041-4721-b3a2-b4bed60caf84")
+		)
+		(pin "2"
+			(uuid "d10a42b7-c965-43fc-ad85-be3d9fe16597")
+		)
+		(pin "1"
+			(uuid "810cbe0a-4c12-4f36-b71c-84c379dfcfed")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 203.454 26.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8bfadcf6-0b17-4859-9e6c-bce7c7f02228")
+		(property "Reference" "LED3"
+			(at 223.774 16.764 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 223.774 19.304 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 203.454 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 203.454 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.454 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "3dc490e7-4f50-4711-8f2f-ed48d463c46f")
+		)
+		(pin "4"
+			(uuid "9f646d48-3c1b-46a6-a190-287e8463a0ec")
+		)
+		(pin "2"
+			(uuid "4826f97d-6264-48a4-bcab-9f4db966d4d6")
+		)
+		(pin "1"
+			(uuid "50533df5-7af8-41c3-a3c7-06a8e2007c5e")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 264.16 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "8ecf9fa0-de74-445d-b486-385d6d3dcfa6")
+		(property "Reference" "#PWR0131"
+			(at 264.16 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 264.16 124.714 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 264.16 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 264.16 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 264.16 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e05c523-3e8c-4fc2-bac2-64f80b96929e")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0131")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 101.854 97.282 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90c0677a-f6fb-407f-8b73-34a888764b69")
+		(property "Reference" "#PWR0118"
+			(at 101.854 101.092 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 101.854 92.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.854 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.854 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 101.854 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e94182c2-d804-4da9-8e67-5a44139b0cde")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0118")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 183.642 145.034 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "90e3d58e-8722-457c-9216-6eb0bd1d2dda")
+		(property "Reference" "#PWR0135"
+			(at 183.642 148.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 183.642 140.208 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 183.642 145.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 183.642 145.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 183.642 145.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2c7dfed4-d51b-4796-b5fc-a1d2bca1902c")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0135")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 42.672 111.252 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "938d3e7e-1782-4d59-b89f-deed025d7e26")
+		(property "Reference" "LED17"
+			(at 62.992 101.346 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 62.992 103.886 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 42.672 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 42.672 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 42.672 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "2ef1d552-37cb-4c38-89a2-33193fddde28")
+		)
+		(pin "4"
+			(uuid "60be5f6d-6b7d-410a-b7a5-6ddd572ee250")
+		)
+		(pin "2"
+			(uuid "a64ef046-decd-4879-88c6-bb4cb8b07c96")
+		)
+		(pin "1"
+			(uuid "b1cb922d-52a0-4d5f-b23c-0355d42f0c1e")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 380.746 73.914 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9552b538-1e5b-449a-90ae-47fb9a5e0cd6")
+		(property "Reference" "#PWR0160"
+			(at 380.746 77.724 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 380.746 69.088 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 380.746 73.914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 380.746 73.914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 380.746 73.914 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "69be74c1-da54-4490-99f0-67527f144c6a")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0160")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 101.6 77.216 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9b442ef9-14c9-47d2-92c5-65109ea4a400")
+		(property "Reference" "#PWR0112"
+			(at 101.6 81.026 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 101.6 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.6 77.216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.6 77.216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 101.6 77.216 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "853fc134-21f2-4b94-b962-b54600e3b360")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0112")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 188.722 26.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a0fec6fc-5ee4-4f63-8a1d-4e014820bfdf")
+		(property "Reference" "#PWR069"
+			(at 188.722 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 188.722 31.496 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 188.722 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 188.722 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 188.722 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7ac089cd-55cf-4db0-bb15-0bcce983c895")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR069")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 468.122 39.624 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a4db92f1-3008-4559-9daf-9c6515824e83")
+		(property "Reference" "#PWR0146"
+			(at 468.122 45.974 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 468.122 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 468.122 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 468.122 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 468.122 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "865d0e12-9d2c-4e7e-8840-0ac39f5e1111")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0146")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 380.746 57.912 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a57e7a0a-70e8-4082-a623-1588a128cbfd")
+		(property "Reference" "#PWR0154"
+			(at 380.746 61.722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 380.746 53.086 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 380.746 57.912 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 380.746 57.912 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 380.746 57.912 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c1d2ce73-ed07-4151-940a-c71107d9b03a")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0154")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 204.216 94.996 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a6d212bb-6e49-4bd7-8ad9-5378f45c4257")
+		(property "Reference" "LED15"
+			(at 224.536 85.09 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 224.536 87.63 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 204.216 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 204.216 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 204.216 94.996 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "6e8460c1-224a-4cfd-86c8-7839fc86a321")
+		)
+		(pin "4"
+			(uuid "150050df-797b-4d08-b280-e0bf31e67efb")
+		)
+		(pin "2"
+			(uuid "1d702d3e-5c88-4e4a-b8d0-3e9bbba6193d")
+		)
+		(pin "1"
+			(uuid "5f4b9815-9840-48fc-acbf-e674a95da22d")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 189.23 58.928 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ab9a2086-7bac-435b-bce1-1fec7cf4ef65")
+		(property "Reference" "#PWR0104"
+			(at 189.23 65.278 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 189.23 63.754 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 189.23 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 189.23 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 189.23 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "70fdf01a-f8ca-47f9-9b11-f9f4a230ae6d")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 542.29 41.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "afbdf83b-c9ad-495d-a76e-605902266dfe")
+		(property "Reference" "#PWR0149"
+			(at 542.29 45.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 542.29 37.084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 542.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 542.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 542.29 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dca5c427-57d5-443e-807a-dfe62d09a63e")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0149")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 402.336 39.116 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "afe3f051-2cf5-458a-a84e-5bb4a0c93160")
+		(property "Reference" "LED28"
+			(at 422.656 29.21 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 422.656 31.75 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 402.336 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 402.336 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 402.336 39.116 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "aa7fb9af-3280-4a5c-94f5-0bee2e72b084")
+		)
+		(pin "4"
+			(uuid "a8aa8910-e557-4944-a036-8d15f35f9d7b")
+		)
+		(pin "2"
+			(uuid "9b4e1ab8-a204-45e4-b8eb-9654c1366b2f")
+		)
+		(pin "1"
+			(uuid "40187486-79b7-4193-996f-59b49e43713a")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED28")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 109.22 110.744 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b047ccdb-9e14-466e-9999-6fa52dd69b03")
+		(property "Reference" "#PWR0120"
+			(at 109.22 117.094 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 109.22 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.22 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 109.22 110.744 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "21e62b56-b772-4c01-b73d-ae63c7c276a6")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0120")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 183.642 129.032 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b6976bb1-d7cc-45a5-8062-133646a1a54c")
+		(property "Reference" "#PWR0129"
+			(at 183.642 132.842 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 183.642 124.206 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 183.642 129.032 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 183.642 129.032 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 183.642 129.032 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "82981461-edbb-42da-b64c-ec74d5654bea")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0129")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 182.88 76.708 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b9d5c73d-c327-43a7-81c1-ad2cbaf23c5c")
+		(property "Reference" "#PWR0111"
+			(at 182.88 80.518 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 182.88 71.882 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.88 76.708 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.88 76.708 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 182.88 76.708 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ddacb8ed-08ea-4728-ba18-6a4d2ee5d92c")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0111")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 42.164 58.928 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "baa992b4-cab4-4b38-a5a8-a086d0b858b1")
+		(property "Reference" "LED8"
+			(at 62.484 49.022 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 62.484 51.562 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 42.164 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 42.164 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 42.164 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "a54926f6-d37e-4584-90c0-18cd4a2b60ee")
+		)
+		(pin "4"
+			(uuid "8ce9519f-b1eb-40bb-8905-36613804fde5")
+		)
+		(pin "2"
+			(uuid "9e6f164d-789d-42fc-8488-3586da65204f")
+		)
+		(pin "1"
+			(uuid "94069be1-ad75-4d3e-8966-54ce7c1e43cb")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 542.036 25.654 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bac86a28-69e5-47a8-b6c1-4212f315cc1a")
+		(property "Reference" "#PWR0143"
+			(at 542.036 29.464 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 542.036 20.828 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 542.036 25.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 542.036 25.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 542.036 25.654 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2aa0e081-3ab3-4f17-8e29-71cd6abe36ac")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0143")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 109.474 126.746 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bd7ce011-6746-4a47-b9f4-ced7bdbebd22")
+		(property "Reference" "#PWR0126"
+			(at 109.474 133.096 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 109.474 131.572 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 109.474 126.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.474 126.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 109.474 126.746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bcbb40a1-ef49-4c11-bfc7-f2d4e1f1522b")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0126")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 27.432 58.928 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c05a7c20-1a75-4411-8f78-3ae89ddda749")
+		(property "Reference" "#PWR0103"
+			(at 27.432 65.278 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 27.432 63.754 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 27.432 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 27.432 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 27.432 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "797bc1c0-c75c-4cdc-a6c7-09b230213d75")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 320.802 23.368 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c074c5e6-a2ff-45fa-ab72-1a9847102cb1")
+		(property "Reference" "LED26"
+			(at 341.122 13.462 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 341.122 16.002 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 320.802 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 320.802 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 320.802 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "b0fbb549-1acd-4c0c-ba52-33ffd4afb78b")
+		)
+		(pin "4"
+			(uuid "d5695a36-9830-4b1f-a60e-538f1a81d5d0")
+		)
+		(pin "2"
+			(uuid "afa4b48c-1949-49ef-a508-deb77419e9d6")
+		)
+		(pin "1"
+			(uuid "a3ff01c0-231d-41a5-84bb-53dad8df8e60")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED26")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 20.828 26.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c0ce70b1-8985-4fc5-a808-b6fd67677cc8")
+		(property "Reference" "#PWR044"
+			(at 20.828 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 20.828 31.496 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 20.828 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 20.828 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 20.828 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "11d80254-e009-4896-8845-e5bd6d8630ce")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR044")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 482.6 23.368 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c63b8801-7835-4f7a-b3f5-19a1765761d4")
+		(property "Reference" "LED27"
+			(at 502.92 13.462 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 502.92 16.002 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 482.6 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 482.6 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 482.6 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "4adf4efe-86c1-4bba-ae9a-3fd5564172a6")
+		)
+		(pin "4"
+			(uuid "9428e9ee-d888-4b1b-b6fe-6437d96ba763")
+		)
+		(pin "2"
+			(uuid "0d324358-06ee-4a4f-99a1-093e54009381")
+		)
+		(pin "1"
+			(uuid "2e926e0e-14ae-4c8d-9d73-044a2b7c9cf8")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 41.91 42.926 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c9e18437-8ad9-4fc9-aca7-8da30c4f1937")
+		(property "Reference" "LED5"
+			(at 62.23 33.02 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 62.23 35.56 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 41.91 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 41.91 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 41.91 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "924f89c5-2ecc-44da-a39b-1216bb627ca4")
+		)
+		(pin "4"
+			(uuid "14dff912-683f-4862-9a76-2e07980cb362")
+		)
+		(pin "2"
+			(uuid "049ee9f5-b472-426b-9eb9-fc1ea857bd1c")
+		)
+		(pin "1"
+			(uuid "dc6f52e9-2de2-4a8e-8b0a-036af4c08c9a")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 123.698 94.488 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "cb41f966-2f00-4d53-bf20-c2c9f67e9aa7")
+		(property "Reference" "LED13"
+			(at 144.018 84.582 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 144.018 87.122 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 123.698 94.488 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 123.698 94.488 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 123.698 94.488 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "79e5de01-864f-45e6-a169-346f445dbd6e")
+		)
+		(pin "4"
+			(uuid "96f1966a-4c4f-4f24-b4c7-b2bc2999a5c8")
+		)
+		(pin "2"
+			(uuid "0c8142b2-41a8-419c-8ea3-b15bafd67510")
+		)
+		(pin "1"
+			(uuid "b629fc88-0112-4a97-ae20-2d67a548fc58")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 41.656 26.67 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d6e64e35-3f82-4941-b79a-951d4d42fa44")
+		(property "Reference" "LED2"
+			(at 61.976 16.764 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 61.976 19.304 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "0616f268-12a6-4b67-a78e-e0d84e8fa392")
+		)
+		(pin "4"
+			(uuid "710299e2-6744-468b-afc6-37dcc8fe2f06")
+		)
+		(pin "2"
+			(uuid "21df0234-06bd-480f-ba6c-875e8641c012")
+		)
+		(pin "1"
+			(uuid "bada968a-613a-4869-b48d-8d3e14457bbc")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 468.376 71.628 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d7ed133a-143a-499d-8be9-d540aee0710c")
+		(property "Reference" "#PWR0158"
+			(at 468.376 77.978 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 468.376 76.454 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 468.376 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 468.376 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 468.376 71.628 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "24294a12-48e7-4687-862c-58233de215d0")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0158")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 321.056 39.624 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d86c9d8e-c71d-497e-a08e-0be434cfbe98")
+		(property "Reference" "LED29"
+			(at 341.376 29.718 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 341.376 32.258 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 321.056 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 321.056 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 321.056 39.624 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "ec0d5de0-538b-48d3-b1fc-6b399b6f96b4")
+		)
+		(pin "4"
+			(uuid "c7803fea-b0c3-453b-b4b1-1a6f332e3c01")
+		)
+		(pin "2"
+			(uuid "fa822fe0-5ffd-49d3-a160-6a8b5f49c2e4")
+		)
+		(pin "1"
+			(uuid "bbc0914e-0380-4fb3-ab55-e6124141ebe3")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED29")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 102.108 113.538 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d904ea81-1359-4fff-8d4b-738222ffed25")
+		(property "Reference" "#PWR0124"
+			(at 102.108 117.348 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 102.108 108.712 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 102.108 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 102.108 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 102.108 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ed650976-b331-40d9-80eb-1aa58c46f2b3")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0124")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 263.652 97.282 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "db0d5d1f-a8cd-4d21-adb2-001ad7e67634")
+		(property "Reference" "#PWR0119"
+			(at 263.652 101.092 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 263.652 92.456 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 263.652 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 263.652 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 263.652 97.282 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b1e6cceb-c9d9-42ef-aed9-1b03e29ad100")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0119")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 263.906 113.538 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dce2516a-9d94-4726-bd3a-8a7c97202d0a")
+		(property "Reference" "#PWR0125"
+			(at 263.906 117.348 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 263.906 108.712 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 263.906 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 263.906 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 263.906 113.538 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a671d484-bd49-49ce-a80d-97f7130a9ed6")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0125")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 42.164 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ddeba272-0981-462d-8376-0a54df2d1c24")
+		(property "Reference" "LED11"
+			(at 62.484 65.024 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 62.484 67.564 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 42.164 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 42.164 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 42.164 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "cf373f3c-4b4c-4ebd-ade7-3f8899d0e63b")
+		)
+		(pin "4"
+			(uuid "0fe25079-da41-4b73-877d-e0101c92f786")
+		)
+		(pin "2"
+			(uuid "5c096a94-e981-4cd1-9f5b-31f62e7cf46c")
+		)
+		(pin "1"
+			(uuid "4126d2fd-900b-44da-bf93-d3c226a9b93b")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 387.858 55.118 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "de2f08c5-023e-44e0-b02f-906580c80306")
+		(property "Reference" "#PWR0150"
+			(at 387.858 61.468 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 387.858 59.944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 387.858 55.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 387.858 55.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 387.858 55.118 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5bb4e2ff-a04b-4b51-894c-e20dd66f1021")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0150")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 467.868 23.368 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e068e1b2-52f0-4ac2-b0d3-88bc075a25da")
+		(property "Reference" "#PWR0140"
+			(at 467.868 29.718 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 467.868 28.194 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 467.868 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 467.868 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 467.868 23.368 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "99cabc0d-8756-45f2-b7ba-169011ccba20")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0140")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 204.724 143.256 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e34210d9-8462-458b-88d0-b28f58ba1d2c")
+		(property "Reference" "LED24"
+			(at 225.044 133.35 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 225.044 135.89 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 204.724 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 204.724 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 204.724 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "4cafac12-e1c8-44d0-8bfc-a7061df77ba1")
+		)
+		(pin "4"
+			(uuid "0e257446-992a-488f-9b9f-e15e6f26cc4a")
+		)
+		(pin "2"
+			(uuid "207aa8cd-1208-4ebc-8a6c-94dde14b1751")
+		)
+		(pin "1"
+			(uuid "52eadfa7-99f3-49f7-a083-2e92cb8266c9")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED24")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 203.962 74.93 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e469c14c-98e5-45a4-b527-d69b762f51e0")
+		(property "Reference" "LED12"
+			(at 224.282 65.024 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 224.282 67.564 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 203.962 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 203.962 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.962 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "dfab860c-000f-4757-9ddc-61f25219b8a4")
+		)
+		(pin "4"
+			(uuid "27d498cc-98c1-47c3-bdd5-78e50084d74f")
+		)
+		(pin "2"
+			(uuid "81fd7432-6226-4e83-97bd-26328c1c7ecd")
+		)
+		(pin "1"
+			(uuid "bc4aeb31-1969-478b-a816-db503d3bf66c")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 182.372 28.448 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e6d1b8b8-f227-4cdf-bd58-827430e20699")
+		(property "Reference" "#PWR086"
+			(at 182.372 32.258 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 182.372 23.622 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 182.372 28.448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 182.372 28.448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 182.372 28.448 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ad414f51-8591-4ecb-aad1-8ed6c9285519")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR086")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 28.194 143.256 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e75855cb-d6f6-420d-b04f-65089bf2fe4a")
+		(property "Reference" "#PWR0133"
+			(at 28.194 149.606 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 28.194 148.082 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 28.194 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 28.194 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 28.194 143.256 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "15c58bd0-82e5-4400-8332-881cb02970df")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0133")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 542.544 57.912 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eaa006f6-e21e-4422-96ab-a5ffc98a81ea")
+		(property "Reference" "#PWR0155"
+			(at 542.544 61.722 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 542.544 53.086 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 542.544 57.912 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 542.544 57.912 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 542.544 57.912 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3d727739-9b62-46a7-874c-f839c78e197e")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0155")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 101.346 45.212 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eab6b542-20eb-4442-b2eb-ae9dbe4eaad5")
+		(property "Reference" "#PWR0100"
+			(at 101.346 49.022 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 101.346 40.386 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.346 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.346 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 101.346 45.212 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c22aa8c6-32f1-4c4c-9ad1-085fe2806f31")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0100")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 461.518 25.146 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eb12cdd6-5543-463d-bc55-da47da6a8020")
+		(property "Reference" "#PWR0141"
+			(at 461.518 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 461.518 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 461.518 25.146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 461.518 25.146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 461.518 25.146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "09a6f665-3d7f-4aab-bc3c-65f243960bbe")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0141")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 188.976 42.926 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ec33700e-3df6-4de2-8b4c-803d48716bb3")
+		(property "Reference" "#PWR098"
+			(at 188.976 49.276 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 188.976 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 188.976 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 188.976 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 188.976 42.926 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8e090d2-5b90-40e6-b38b-6e56b0c2a0fb")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR098")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 387.858 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ecc3a28e-7bd4-49ec-b72a-7bada704d8ae")
+		(property "Reference" "#PWR0156"
+			(at 387.858 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 387.858 75.946 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 387.858 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 387.858 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 387.858 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7f36783f-68d9-44af-b4fa-421b7fe43b0b")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0156")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 262.89 28.956 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eefd6cf4-2676-4a55-b02a-88538994f245")
+		(property "Reference" "#PWR088"
+			(at 262.89 32.766 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 262.89 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 262.89 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 262.89 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 262.89 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d862fce7-cf7f-470c-93ce-715da45fcc69")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR088")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 263.398 61.214 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ef149d89-faa6-4d19-977f-4ee8e51cba0a")
+		(property "Reference" "#PWR0107"
+			(at 263.398 65.024 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 263.398 56.388 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 263.398 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 263.398 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 263.398 61.214 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a2fefd44-dd25-49f8-9f41-a8391e02c39a")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR0107")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 203.962 58.928 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f0a22571-b45b-46c0-a1c6-41f9fdcbd8bc")
+		(property "Reference" "LED9"
+			(at 224.282 49.022 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 224.282 51.562 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 203.962 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 203.962 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 203.962 58.928 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "934a50f8-cde8-43e4-9d5c-fa81f84ee60b")
+		)
+		(pin "4"
+			(uuid "112c9f0d-d81e-4273-be90-27f07f0fc576")
+		)
+		(pin "2"
+			(uuid "e4dbe6b3-d2b8-402d-94a1-5fb98ed2f0c0")
+		)
+		(pin "1"
+			(uuid "d647feed-434d-48d4-871f-96807d368ca0")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 101.092 28.956 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f7537d59-0176-4f35-adbe-6dc94223519f")
+		(property "Reference" "#PWR087"
+			(at 101.092 32.766 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 101.092 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 101.092 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 101.092 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 101.092 28.956 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b087a3dd-996a-4f35-95f3-301fc6c34138")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "#PWR087")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_name "1655_1")
+		(lib_id "Imported_Symbols:1655")
+		(at 42.926 127.254 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f92e2554-b383-46be-8827-9df64428e562")
+		(property "Reference" "LED20"
+			(at 63.246 117.348 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Value" "1655"
+			(at 63.246 119.888 0)
+			(effects
+				(font
+					(size 1.524 1.524)
+				)
+			)
+		)
+		(property "Footprint" "LED_SMD:LED_LiteOn_LTST-E563C_PLCC4_5.0x5.0mm_P3.2mm_HandSoldering"
+			(at 42.926 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "1655"
+			(at 42.926 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 42.926 127.254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "b846502e-4bf9-4a3d-9c80-409472649ecd")
+		)
+		(pin "4"
+			(uuid "a3c32904-6fcb-49e5-812f-7c5c8a990d5d")
+		)
+		(pin "2"
+			(uuid "271596d4-34e4-4115-bc32-a065dc8129d2")
+		)
+		(pin "1"
+			(uuid "4ee1a952-e36b-48dc-9bb9-338bc9b6e0b5")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
+					(reference "LED20")
+					(unit 1)
+				)
+			)
+		)
+	)
+)

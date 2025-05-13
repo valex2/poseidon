@@ -723,6 +723,10 @@
     [
       "9dab6a9b-c343-4374-86a4-2dd37d3a47bf",
       "On-board Sensors"
+    ],
+    [
+      "9e78e214-9eaa-4133-a14f-75961ce763bc",
+      "Power Management"
     ]
   ],
   "text_variables": {}

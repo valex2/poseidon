@@ -1160,29 +1160,7 @@
 		)
 		(uuid "f3354164-b854-4ff8-b256-ebaeb0f1149a")
 	)
-	(global_label "I2C1_SCL"
-		(shape input)
-		(at 33.02 34.798 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2beb07d7-db52-41bb-afa3-a517573cef79")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 21.2658 34.798 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C1_SDA"
+	(hierarchical_label "I2C1_SDA"
 		(shape bidirectional)
 		(at 33.02 32.258 180)
 		(fields_autoplaced yes)
@@ -1192,63 +1170,9 @@
 			)
 			(justify right)
 		)
-		(uuid "47792773-348a-4592-9f70-60973c0cc453")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 20.094 32.258 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "469052f3-cd99-4592-b770-12762ff0b354")
 	)
-	(global_label "I2C1_SDA"
-		(shape bidirectional)
-		(at 144.272 42.672 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b9cb7b69-ebd3-4e90-a97c-f5015ca4cf86")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 131.346 42.672 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C1_SCL"
-		(shape input)
-		(at 144.526 37.592 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ba3d9e13-7509-4777-ba45-3415ad205df0")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 132.7718 37.592 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "I2C1_SDA"
+	(hierarchical_label "I2C1_SDA"
 		(shape bidirectional)
 		(at 83.312 32.512 180)
 		(fields_autoplaced yes)
@@ -1258,19 +1182,45 @@
 			)
 			(justify right)
 		)
-		(uuid "e76b4cdc-7eae-43e1-91c9-f7218e37e523")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 70.386 32.512 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "7cfd4c9d-aa0d-4da9-b605-c7c9e8b17dc1")
 	)
-	(global_label "I2C1_SCL"
+	(hierarchical_label "I2C1_SCL"
+		(shape input)
+		(at 144.526 37.592 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9fedb5ff-13c1-4637-84d3-932d8073abfc")
+	)
+	(hierarchical_label "I2C1_SCL"
+		(shape input)
+		(at 33.02 34.798 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "acc1d48b-9339-44b5-9b60-2facee37c9af")
+	)
+	(hierarchical_label "I2C1_SDA"
+		(shape bidirectional)
+		(at 144.272 42.672 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c98ec8f7-8048-4056-88d1-897ff3706461")
+	)
+	(hierarchical_label "I2C1_SCL"
 		(shape input)
 		(at 83.312 35.052 180)
 		(fields_autoplaced yes)
@@ -1280,17 +1230,7 @@
 			)
 			(justify right)
 		)
-		(uuid "f8f773d3-1374-4d47-a59b-4c72a3379392")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 71.5578 35.052 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "e7c829e5-4374-427d-b517-f66e53d9781f")
 	)
 	(symbol
 		(lib_id "power:GND")

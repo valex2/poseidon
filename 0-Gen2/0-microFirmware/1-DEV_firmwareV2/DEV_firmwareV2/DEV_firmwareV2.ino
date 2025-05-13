@@ -212,18 +212,18 @@ void config_temp_sensors() {
     Serial.println("MCP9808 sensor not detected at 0x19!");
     operational = SENSOR_ISSUE;
   }
-  if (!tempsensor3.begin(0x1A)) {
-    Serial.println("MCP9808 sensor not detected at 0x1A!");
-    operational = SENSOR_ISSUE;
-  }
+  // if (!tempsensor3.begin(0x1A)) {
+  //   Serial.println("MCP9808 sensor not detected at 0x1A!");
+  //   operational = SENSOR_ISSUE;
+  // }
   // Set resolution and wake up the sensors
   tempsensor1.setResolution(3); // Set resolution to 0.0625 C
   tempsensor2.setResolution(3); // Set resolution to 0.0625 C
-  tempsensor3.setResolution(3); // Set resolution to 0.0625 C
+  // tempsensor3.setResolution(3); // Set resolution to 0.0625 C
   // Wake up the sensors
   tempsensor1.wake();
   tempsensor2.wake();
-  tempsensor3.wake();
+  // tempsensor3.wake();
 }
 
 // void config_BME_sensors() {
@@ -355,9 +355,9 @@ void process_input(char *input) {
     }
   
   } else if (strcmp(input, "temp") == 0) {
-    float temps[3];
+    float temps[2];
     readTempSensors(temps);
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 2; i++) {
       Serial.print(tempSensorNames[i] + ": ");
       Serial.println(temps[i]);
     }
@@ -411,10 +411,10 @@ void handle_voltage_command(float& current, float& voltage) {
   voltage = (voltageVal * 60.0) / 1024; // V
 }
 
-void readTempSensors(float temps[3]) {
+void readTempSensors(float temps[2]) {
     temps[0] = tempsensor1.readTempC();
     temps[1] = tempsensor2.readTempC();
-    temps[2] = tempsensor3.readTempC();
+    // temps[2] = tempsensor3.readTempC();
 }
 
 // void readBmeSensorsArray(float bmeVals[2][3]) {
@@ -505,8 +505,8 @@ void logPeriodicData() {
 
   dataString += " temps:" + 
                 String(tempSensorNames[0]) + ":" + String(temps[0], DIGITS) +
-                "," + String(tempSensorNames[1]) + ":" + String(temps[1], DIGITS) +
-                "," + String(tempSensorNames[2]) + ":" + String(temps[2], DIGITS);
+                "," + String(tempSensorNames[1]) + ":" + String(temps[1], DIGITS);
+                // "," + String(tempSensorNames[2]) + ":" + String(temps[2], DIGITS);
   //               "," + String(bmeSensorNames[0]) + ":" + String(bmeVals[0][0], DIGITS) +
   //               "," + String(bmeSensorNames[1]) + ":" + String(bmeVals[1][0], DIGITS) + ",";
   
@@ -624,7 +624,7 @@ void updateReadings() {
 
     temps[0] = tempsensor1.readTempC();
     temps[1] = tempsensor2.readTempC();
-    temps[2] = tempsensor3.readTempC();
+    // temps[2] = tempsensor3.readTempC();
     
     // bmeValues[0][0] = bme1.readTemperature();
     // bmeValues[0][1] = bme1.readHumidity();
@@ -665,7 +665,7 @@ void updateDisplay(float temps[3]) {
         tft.print(tempDisplayNames[i]);
     }
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 2; i++) {
         tft.setCursor(20 + 80*i, 80);
         tft.print(temps[i]);
         tft.print("C  ");

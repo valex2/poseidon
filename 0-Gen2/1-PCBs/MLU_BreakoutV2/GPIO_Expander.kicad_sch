@@ -1878,7 +1878,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical"
 			(at 93.98 75.946 0)
 			(effects
 				(font
@@ -3294,7 +3294,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Imported Footprints:MCP3008"
+		(property "Footprint" "ImportedV2:MCP3008"
 			(at 163.322 92.71 0)
 			(effects
 				(font
@@ -4033,7 +4033,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical"
 			(at 75.438 83.82 0)
 			(effects
 				(font
@@ -4227,7 +4227,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Bridged2Bar12_RoundedPad1.0x1.5mm"
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x03_P1.27mm_Vertical"
 			(at 111.76 111.252 0)
 			(effects
 				(font

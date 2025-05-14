@@ -7560,6 +7560,28 @@
 			)
 		)
 	)
+	(global_label "ETH_GND"
+		(shape input)
+		(at 100.076 88.138 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "35f9cfb6-761d-455c-b550-b5fa09b8040a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 111.3464 88.138 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "I2C1_SCL"
 		(shape output)
 		(at 135.128 38.608 0)
@@ -8881,28 +8903,6 @@
 			)
 		)
 	)
-	(global_label "GND"
-		(shape input)
-		(at 100.076 88.138 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d2bf3aca-c95f-476e-8396-d7a40bd4c581")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 106.9317 88.138 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "xD5"
 		(shape bidirectional)
 		(at 224.536 30.734 0)
@@ -9252,130 +9252,6 @@
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
 					(reference "#PWR039")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Small_Open")
-		(at 62.992 140.716 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "05a96c67-25aa-4ad9-853d-d37e5efca783")
-		(property "Reference" "JP61"
-			(at 62.484 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Jumper_2_Small_Open"
-			(at 61.7221 143.256 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, small symbol, open"
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 62.992 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "95aa9397-d9e4-41bb-bbee-bc9c40527dd9")
-		)
-		(pin "2"
-			(uuid "31039075-d9ff-4311-bd9a-ef946f0da6af")
-		)
-		(instances
-			(project "MLU_BreakoutV2"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP61")
 					(unit 1)
 				)
 			)
@@ -10004,130 +9880,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:Jumper_2_Small_Open")
-		(at 62.992 148.336 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "26048710-bbd0-4bbf-bbd7-cd71f21ca7d1")
-		(property "Reference" "JP64"
-			(at 62.484 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Jumper_2_Small_Open"
-			(at 61.7221 150.876 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, small symbol, open"
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 62.992 148.336 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4dc35c6c-d2e8-4744-b028-405db3059997")
-		)
-		(pin "2"
-			(uuid "86eedbde-6cef-42fb-a7a7-93a270603a47")
-		)
-		(instances
-			(project "MLU_BreakoutV2"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP64")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 81.026 143.256 0)
 		(unit 1)
@@ -10384,124 +10136,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 243.078 100.584 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4324939c-5c89-4434-b112-29cee249dff6")
-		(property "Reference" "H10"
-			(at 245.618 99.3139 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 245.618 101.8539 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 243.078 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "MLU_Breakout"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "H10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 145.034 145.542 270)
 		(unit 1)
@@ -10563,241 +10197,6 @@
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
 					(reference "#PWR030")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 243.078 92.964 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(uuid "4e633589-1e5c-46e5-942d-64100454b0ef")
-		(property "Reference" "H8"
-			(at 245.618 91.6939 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 245.618 94.2339 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 243.078 92.964 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "MLU_Breakout"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "H8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 264.668 100.584 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom no)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4fa3e913-89ac-4c47-8b38-21f05cb73728")
-		(property "Reference" "H11"
-			(at 267.208 99.3139 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "MountingHole"
-			(at 267.208 101.8539 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Mounting Hole without connection"
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 264.668 100.584 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project "MLU_Breakout"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "H11")
 					(unit 1)
 				)
 			)
@@ -10986,6 +10385,131 @@
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
 					(reference "#PWR060")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:Jumper_2_Small_Open")
+		(at 62.992 140.716 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "69d22867-a508-4c2b-9442-681730d114f4")
+		(property "Reference" "JP50"
+			(at 56.642 139.446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Jumper_2_Small_Open"
+			(at 64.2619 143.256 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" ""
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/adam-tech/HMSC-G/9830451"
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" "2057-HMSC-G-ND"
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 62.992 140.716 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1b66928b-18f5-465f-b4b1-5239801d529f")
+		)
+		(pin "2"
+			(uuid "628bfad7-27d9-46a2-84a1-4a15634754cb")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
+					(reference "JP50")
 					(unit 1)
 				)
 			)
@@ -11590,6 +11114,131 @@
 		)
 	)
 	(symbol
+		(lib_id "Jumper:Jumper_2_Small_Open")
+		(at 62.992 148.336 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "93f009c7-edf2-4734-985b-7b1a92afc800")
+		(property "Reference" "JP53"
+			(at 56.642 147.066 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Jumper_2_Small_Open"
+			(at 64.2619 150.876 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" ""
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/adam-tech/HMSC-G/9830451"
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" "2057-HMSC-G-ND"
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 62.992 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ccd51a3b-510e-495c-98bd-526437fbbc07")
+		)
+		(pin "2"
+			(uuid "6fd8cf09-ec5b-4485-883f-fca82f123836")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
+					(reference "JP53")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Imported_Symbols:SBH11-PBPC-D10-ST-BK")
 		(at 130.302 140.462 0)
 		(unit 1)
@@ -11930,34 +11579,36 @@
 		)
 	)
 	(symbol
-		(lib_id "Mechanical:MountingHole")
-		(at 264.16 93.218 0)
+		(lib_id "Jumper:Jumper_2_Small_Open")
+		(at 62.992 143.256 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim yes)
-		(in_bom no)
+		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a75c4a92-eacf-432c-a308-4bb96e189f2d")
-		(property "Reference" "H9"
-			(at 266.7 91.9479 0)
+		(uuid "a6471630-a3d2-415a-8dce-c8c638694073")
+		(property "Reference" "JP51"
+			(at 56.642 141.986 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
-		(property "Value" "MountingHole"
-			(at 266.7 94.4879 0)
+		(property "Value" "Jumper_2_Small_Open"
+			(at 64.2619 145.796 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
+				(hide yes)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
-			(at 264.16 93.218 0)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11966,7 +11617,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 264.16 93.218 0)
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11974,8 +11625,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
-			(at 264.16 93.218 0)
+		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11984,7 +11635,7 @@
 			)
 		)
 		(property "MFR" ""
-			(at 264.16 93.218 0)
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11993,7 +11644,7 @@
 			)
 		)
 		(property "MFR S/N" ""
-			(at 264.16 93.218 0)
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12001,8 +11652,8 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1" ""
-			(at 264.16 93.218 0)
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/adam-tech/HMSC-G/9830451"
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12010,8 +11661,8 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
-			(at 264.16 93.218 0)
+		(property "Supplier 1 S/N" "2057-HMSC-G-ND"
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12020,7 +11671,7 @@
 			)
 		)
 		(property "Supplier 2" ""
-			(at 264.16 93.218 0)
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12029,7 +11680,7 @@
 			)
 		)
 		(property "Supplier 2 S/N" ""
-			(at 264.16 93.218 0)
+			(at 62.992 143.256 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12037,10 +11688,140 @@
 				(hide yes)
 			)
 		)
+		(pin "1"
+			(uuid "5645d9da-3150-4b98-867a-8a21662024ac")
+		)
+		(pin "2"
+			(uuid "07010e3d-6ace-4871-ba34-36670a992271")
+		)
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "H9")
+					(reference "JP51")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:Jumper_2_Small_Open")
+		(at 30.988 138.176 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b1f230e3-01ce-4001-8f95-66ad4b3ea4e4")
+		(property "Reference" "JP49"
+			(at 37.338 136.906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Jumper_2_Small_Open"
+			(at 29.7181 140.716 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" ""
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/adam-tech/HMSC-G/9830451"
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" "2057-HMSC-G-ND"
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 30.988 138.176 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b93b54ae-feab-459a-a875-4a381a721578")
+		)
+		(pin "2"
+			(uuid "1f1162fa-b80b-4425-b8a1-cd6ef9d2b404")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
+					(reference "JP49")
 					(unit 1)
 				)
 			)
@@ -12182,15 +11963,15 @@
 	)
 	(symbol
 		(lib_id "Jumper:Jumper_2_Small_Open")
-		(at 62.992 145.796 0)
+		(at 30.988 140.716 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b7fbaa74-c86f-42d1-bb2b-a0d294af9e5f")
-		(property "Reference" "JP63"
-			(at 62.484 144.78 0)
+		(uuid "bda85da5-c59f-455a-beaa-883a2385f3b4")
+		(property "Reference" "JP41"
+			(at 37.338 139.446 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12199,7 +11980,7 @@
 			)
 		)
 		(property "Value" "Jumper_2_Small_Open"
-			(at 61.7221 148.336 90)
+			(at 29.7181 143.256 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12208,8 +11989,8 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 62.992 145.796 0)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12218,7 +11999,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 62.992 145.796 0)
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12227,7 +12008,7 @@
 			)
 		)
 		(property "Description" "Jumper, 2-pole, small symbol, open"
-			(at 62.992 145.796 0)
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12236,7 +12017,7 @@
 			)
 		)
 		(property "MFR" ""
-			(at 62.992 145.796 0)
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12245,7 +12026,7 @@
 			)
 		)
 		(property "MFR S/N" ""
-			(at 62.992 145.796 0)
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12253,8 +12034,8 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1" ""
-			(at 62.992 145.796 0)
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/adam-tech/HMSC-G/9830451"
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12262,8 +12043,8 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" ""
-			(at 62.992 145.796 0)
+		(property "Supplier 1 S/N" "2057-HMSC-G-ND"
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12272,7 +12053,7 @@
 			)
 		)
 		(property "Supplier 2" ""
-			(at 62.992 145.796 0)
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12281,7 +12062,7 @@
 			)
 		)
 		(property "Supplier 2 S/N" ""
-			(at 62.992 145.796 0)
+			(at 30.988 140.716 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12290,15 +12071,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "f4ca0335-2a7a-4fc8-8a13-e5c10a7e019c")
+			(uuid "ddfdd1cd-5533-43c6-8522-903ed3ce77f0")
 		)
 		(pin "2"
-			(uuid "b7196e29-fb8c-46b5-bd6e-0ec3f050484f")
+			(uuid "49b3eba7-f7fe-405f-a550-40e440bf17a7")
 		)
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP63")
+					(reference "JP41")
 					(unit 1)
 				)
 			)
@@ -12365,254 +12146,6 @@
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
 					(reference "#PWR064")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Small_Open")
-		(at 30.988 138.176 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d2a916be-58a5-4bd8-8973-18a066428fd8")
-		(property "Reference" "JP66"
-			(at 35.814 136.652 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Jumper_2_Small_Open"
-			(at 29.7181 140.716 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, small symbol, open"
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 30.988 138.176 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "92173fe3-bc39-4d20-bc22-d6e9abb1c5e9")
-		)
-		(pin "2"
-			(uuid "97287181-6cb5-48f4-9646-7d25bc940f86")
-		)
-		(instances
-			(project "MLU_BreakoutV2"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP66")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:Jumper_2_Small_Open")
-		(at 62.992 143.256 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d5be8b5a-badb-4340-a79e-969e13be08e6")
-		(property "Reference" "JP62"
-			(at 62.484 142.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Jumper_2_Small_Open"
-			(at 61.7221 145.796 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, small symbol, open"
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 62.992 143.256 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "50702310-7a3e-4ecd-9b46-a113e4db4ac8")
-		)
-		(pin "2"
-			(uuid "931950bb-7f51-4958-b86b-ecbacaa1c669")
-		)
-		(instances
-			(project "MLU_BreakoutV2"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP62")
 					(unit 1)
 				)
 			)
@@ -12804,130 +12337,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:Jumper_2_Small_Open")
-		(at 30.988 140.716 0)
-		(unit 1)
-		(exclude_from_sim yes)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ea712d80-7f0a-456a-96e2-dd382a2fb773")
-		(property "Reference" "JP65"
-			(at 35.052 141.732 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Jumper_2_Small_Open"
-			(at 29.7181 143.256 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm"
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Jumper, 2-pole, small symbol, open"
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR" ""
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "MFR S/N" ""
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1" ""
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 1 S/N" ""
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2" ""
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Supplier 2 S/N" ""
-			(at 30.988 140.716 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b1f425ef-e40d-41ae-8729-735def625c68")
-		)
-		(pin "2"
-			(uuid "da4c4123-1ebc-470b-861f-fc8a4e52209c")
-		)
-		(instances
-			(project "MLU_BreakoutV2"
-				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP65")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:+5V")
 		(at 144.78 143.002 270)
 		(unit 1)
@@ -12989,6 +12398,131 @@
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
 					(reference "#PWR029")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Jumper:Jumper_2_Small_Open")
+		(at 62.992 145.796 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fd2597bd-a9f4-4e12-9a20-80df57a0b9f9")
+		(property "Reference" "JP52"
+			(at 56.642 144.526 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Jumper_2_Small_Open"
+			(at 64.2619 148.336 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_1x02_P1.27mm_Vertical"
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Jumper, 2-pole, small symbol, open"
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" ""
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/adam-tech/HMSC-G/9830451"
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" "2057-HMSC-G-ND"
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 62.992 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "63e0419c-de0b-49cc-bf35-134ebbd6c3f9")
+		)
+		(pin "2"
+			(uuid "203ae1af-ae22-4466-853f-b864d2bad7a4")
+		)
+		(instances
+			(project "MLU_BreakoutV2"
+				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
+					(reference "JP52")
 					(unit 1)
 				)
 			)

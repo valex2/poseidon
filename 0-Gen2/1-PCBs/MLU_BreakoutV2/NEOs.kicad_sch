@@ -2817,6 +2817,17 @@
 		)
 		(uuid "ffa7c9ec-b807-412e-b08d-4ae7cccc6d40")
 	)
+	(text "first two are indicators, the remaining should be on breathe mode"
+		(exclude_from_sim no)
+		(at 16.764 14.478 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0348c686-a7e7-42fa-8015-63c3e344d529")
+	)
 	(global_label "NEO_PASS5"
 		(shape output)
 		(at 164.846 142.748 0)
@@ -9133,7 +9144,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d6e64e35-3f82-4941-b79a-951d4d42fa44")
-		(property "Reference" "LED5"
+		(property "Reference" "LED1"
 			(at 61.976 16.764 0)
 			(effects
 				(font
@@ -9178,6 +9189,60 @@
 				(hide yes)
 			)
 		)
+		(property "MFR" ""
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" ""
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" ""
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 41.656 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "0616f268-12a6-4b67-a78e-e0d84e8fa392")
 		)
@@ -9193,7 +9258,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED5")
+					(reference "LED1")
 					(unit 1)
 				)
 			)

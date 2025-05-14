@@ -12485,7 +12485,7 @@
 	)
 	(global_label "UART_RX1"
 		(shape input)
-		(at 239.776 128.778 0)
+		(at 239.776 126.238 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12495,7 +12495,7 @@
 		)
 		(uuid "78a051b2-71cc-4ec4-a47f-79a69282598b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 252.0745 128.778 0)
+			(at 252.0745 126.238 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12705,7 +12705,7 @@
 	)
 	(global_label "UART_TX1"
 		(shape output)
-		(at 239.776 126.238 0)
+		(at 239.776 128.778 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12715,7 +12715,7 @@
 		)
 		(uuid "981c15df-ed6b-436d-b733-2de10b86a175")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 251.7721 126.238 0)
+			(at 251.7721 128.778 0)
 			(effects
 				(font
 					(size 1.27 1.27)

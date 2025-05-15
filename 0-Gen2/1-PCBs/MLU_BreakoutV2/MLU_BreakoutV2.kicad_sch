@@ -9200,7 +9200,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0210d076-16b0-46fc-a415-66d0a3cfde89")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR039"
 			(at 116.84 56.388 0)
 			(effects
 				(font
@@ -9251,7 +9251,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR04")
+					(reference "#PWR039")
 					(unit 1)
 				)
 			)
@@ -9266,7 +9266,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "05c10eb7-c73a-4f48-9b0a-228c89c2d110")
-		(property "Reference" "U1"
+		(property "Reference" "U6"
 			(at 72.136 16.51 0)
 			(effects
 				(font
@@ -9567,7 +9567,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "U1")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -9582,7 +9582,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0bf3f6e7-0c31-4fd8-83c9-7c784866a20f")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR027"
 			(at 127.762 30.988 0)
 			(effects
 				(font
@@ -9632,7 +9632,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR03")
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -9647,7 +9647,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0fcf755d-f3bd-4771-bc4f-7d1be876e3c6")
-		(property "Reference" "R1"
+		(property "Reference" "R4"
 			(at 124.46 29.4639 0)
 			(effects
 				(font
@@ -9755,7 +9755,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "R1")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -9771,7 +9771,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "18b18796-3591-4fa6-8d64-45340f507a84")
-		(property "Reference" "H2"
+		(property "Reference" "H7"
 			(at 46.228 156.2099 0)
 			(effects
 				(font
@@ -9873,7 +9873,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "H2")
+					(reference "H7")
 					(unit 1)
 				)
 			)
@@ -9889,7 +9889,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b7f0483-7b6f-4dc2-8e03-de40914eb0e3")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR063"
 			(at 81.026 149.606 0)
 			(effects
 				(font
@@ -9939,7 +9939,7 @@
 		(instances
 			(project ""
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR09")
+					(reference "#PWR063")
 					(unit 1)
 				)
 			)
@@ -10079,7 +10079,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3c4b1cdc-68da-42dd-99fe-10ba8ce91826")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR061"
 			(at 80.772 124.206 0)
 			(effects
 				(font
@@ -10129,7 +10129,7 @@
 		(instances
 			(project ""
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR06")
+					(reference "#PWR061")
 					(unit 1)
 				)
 			)
@@ -10145,7 +10145,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4641bed7-34fa-46e5-bb81-97c1f32efeea")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR030"
 			(at 141.224 145.542 0)
 			(effects
 				(font
@@ -10196,7 +10196,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR010")
+					(reference "#PWR030")
 					(unit 1)
 				)
 			)
@@ -10211,7 +10211,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5a08a0aa-d2ad-4235-9825-05ac5eed3442")
-		(property "Reference" "JP2"
+		(property "Reference" "JP5"
 			(at 76.708 133.604 0)
 			(effects
 				(font
@@ -10318,7 +10318,7 @@
 		(instances
 			(project ""
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP2")
+					(reference "JP5")
 					(unit 1)
 				)
 			)
@@ -10333,7 +10333,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "61c88329-022a-419f-ba87-cfa35eacacc8")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR060"
 			(at 27.686 131.826 0)
 			(effects
 				(font
@@ -10384,7 +10384,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR05")
+					(reference "#PWR060")
 					(unit 1)
 				)
 			)
@@ -10400,7 +10400,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "69d22867-a508-4c2b-9442-681730d114f4")
-		(property "Reference" "JP6"
+		(property "Reference" "JP50"
 			(at 56.642 139.446 0)
 			(effects
 				(font
@@ -10509,7 +10509,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP6")
+					(reference "JP50")
 					(unit 1)
 				)
 			)
@@ -10525,7 +10525,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "77ba5420-3fef-48b3-96e5-1c55c2ed4ffa")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR028"
 			(at 151.13 140.462 0)
 			(effects
 				(font
@@ -10576,7 +10576,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR07")
+					(reference "#PWR028")
 					(unit 1)
 				)
 			)
@@ -10591,7 +10591,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7cb7ed06-b817-46d4-ad95-7ed0032473a3")
-		(property "Reference" "JP1"
+		(property "Reference" "JP4"
 			(at 81.788 131.826 90)
 			(effects
 				(font
@@ -10700,7 +10700,7 @@
 		(instances
 			(project ""
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP1")
+					(reference "JP4")
 					(unit 1)
 				)
 			)
@@ -10716,7 +10716,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81f68415-bbdd-472f-98cc-c7fa09baaef4")
-		(property "Reference" "R2"
+		(property "Reference" "R5"
 			(at 130.81 29.4639 0)
 			(effects
 				(font
@@ -10824,7 +10824,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "R2")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -10839,7 +10839,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "83e41bc5-d114-4cc0-aadf-aa575a845b3b")
-		(property "Reference" "J2"
+		(property "Reference" "J13"
 			(at 46.228 123.444 0)
 			(effects
 				(font
@@ -11041,7 +11041,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "J2")
+					(reference "J13")
 					(unit 1)
 				)
 			)
@@ -11056,7 +11056,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8a12d5ed-0235-49e7-81a0-49c7b4f4b086")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR026"
 			(at 116.332 23.368 0)
 			(effects
 				(font
@@ -11107,7 +11107,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR02")
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -11123,7 +11123,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "93f009c7-edf2-4734-985b-7b1a92afc800")
-		(property "Reference" "JP10"
+		(property "Reference" "JP53"
 			(at 56.642 147.066 0)
 			(effects
 				(font
@@ -11232,7 +11232,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP10")
+					(reference "JP53")
 					(unit 1)
 				)
 			)
@@ -11247,7 +11247,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a0061e95-9187-47a4-a054-da912743d61c")
-		(property "Reference" "J1"
+		(property "Reference" "J7"
 			(at 130.302 123.19 0)
 			(effects
 				(font
@@ -11449,7 +11449,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "J1")
+					(reference "J7")
 					(unit 1)
 				)
 			)
@@ -11465,7 +11465,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a31b9269-d190-4134-ba25-82b99042fb67")
-		(property "Reference" "JP4"
+		(property "Reference" "JP6"
 			(at 76.708 140.208 0)
 			(effects
 				(font
@@ -11572,7 +11572,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP4")
+					(reference "JP6")
 					(unit 1)
 				)
 			)
@@ -11588,7 +11588,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a6471630-a3d2-415a-8dce-c8c638694073")
-		(property "Reference" "JP8"
+		(property "Reference" "JP51"
 			(at 56.642 141.986 0)
 			(effects
 				(font
@@ -11697,7 +11697,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP8")
+					(reference "JP51")
 					(unit 1)
 				)
 			)
@@ -11712,7 +11712,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b1f230e3-01ce-4001-8f95-66ad4b3ea4e4")
-		(property "Reference" "JP3"
+		(property "Reference" "JP49"
 			(at 37.338 136.906 0)
 			(effects
 				(font
@@ -11821,7 +11821,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP3")
+					(reference "JP49")
 					(unit 1)
 				)
 			)
@@ -11837,7 +11837,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2988056-6ec3-4ee7-8db8-a23bc182d597")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR034"
 			(at 151.384 150.622 0)
 			(effects
 				(font
@@ -11888,7 +11888,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR012")
+					(reference "#PWR034")
 					(unit 1)
 				)
 			)
@@ -11904,7 +11904,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b38a363a-2e09-44ca-bfd1-153e08799986")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR025"
 			(at 29.972 20.828 0)
 			(effects
 				(font
@@ -11955,7 +11955,7 @@
 		(instances
 			(project ""
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR01")
+					(reference "#PWR025")
 					(unit 1)
 				)
 			)
@@ -11970,7 +11970,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bda85da5-c59f-455a-beaa-883a2385f3b4")
-		(property "Reference" "JP5"
+		(property "Reference" "JP41"
 			(at 37.338 139.446 0)
 			(effects
 				(font
@@ -12079,7 +12079,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP5")
+					(reference "JP41")
 					(unit 1)
 				)
 			)
@@ -12095,7 +12095,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cffd1caa-c52b-4e12-8085-e626e9e8a66b")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR064"
 			(at 27.94 157.226 0)
 			(effects
 				(font
@@ -12145,7 +12145,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR013")
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -12161,7 +12161,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e297b545-a658-4324-bbca-67425690024b")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR032"
 			(at 141.224 148.082 0)
 			(effects
 				(font
@@ -12212,7 +12212,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR011")
+					(reference "#PWR032")
 					(unit 1)
 				)
 			)
@@ -12228,7 +12228,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e3c104e5-1593-44af-a1c6-af0377865e86")
-		(property "Reference" "H1"
+		(property "Reference" "H5"
 			(at 130.302 155.9559 0)
 			(effects
 				(font
@@ -12330,7 +12330,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "H1")
+					(reference "H5")
 					(unit 1)
 				)
 			)
@@ -12346,7 +12346,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f3211450-16a7-44a7-8f6e-54971ca948d6")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR029"
 			(at 140.97 143.002 0)
 			(effects
 				(font
@@ -12397,7 +12397,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "#PWR08")
+					(reference "#PWR029")
 					(unit 1)
 				)
 			)
@@ -12413,7 +12413,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fd2597bd-a9f4-4e12-9a20-80df57a0b9f9")
-		(property "Reference" "JP9"
+		(property "Reference" "JP52"
 			(at 56.642 144.526 0)
 			(effects
 				(font
@@ -12522,7 +12522,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c"
-					(reference "JP9")
+					(reference "JP52")
 					(unit 1)
 				)
 			)

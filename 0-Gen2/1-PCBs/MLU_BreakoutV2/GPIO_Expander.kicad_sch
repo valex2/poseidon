@@ -1860,7 +1860,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0290fd78-b03e-4a40-a706-a4a993ed8706")
-		(property "Reference" "JP11"
+		(property "Reference" "JP8"
 			(at 93.98 72.644 0)
 			(effects
 				(font
@@ -1971,7 +1971,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "JP11")
+					(reference "JP8")
 					(unit 1)
 				)
 			)
@@ -1987,7 +1987,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0900ed9f-eb50-4ece-be9c-cfe1c109d13b")
-		(property "Reference" "C2"
+		(property "Reference" "C4"
 			(at 120.142 115.8239 0)
 			(effects
 				(font
@@ -2095,7 +2095,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "C2")
+					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -2110,7 +2110,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2bbacca6-176a-4d6a-9149-4943d8f3db4f")
-		(property "Reference" "#PWR090"
+		(property "Reference" "#PWR0141"
 			(at 205.232 88.9 0)
 			(effects
 				(font
@@ -2160,7 +2160,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR090")
+					(reference "#PWR0141")
 					(unit 1)
 				)
 			)
@@ -2176,7 +2176,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2c838ed1-943b-412d-a0eb-4d7317b220ae")
-		(property "Reference" "#PWR095"
+		(property "Reference" "#PWR0146"
 			(at 111.76 123.952 0)
 			(effects
 				(font
@@ -2226,7 +2226,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR095")
+					(reference "#PWR0146")
 					(unit 1)
 				)
 			)
@@ -2436,7 +2436,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5db14bbf-49e2-4202-bb35-c2ba0dfc3251")
-		(property "Reference" "#PWR086"
+		(property "Reference" "#PWR0137"
 			(at 111.76 79.502 0)
 			(effects
 				(font
@@ -2486,7 +2486,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR086")
+					(reference "#PWR0137")
 					(unit 1)
 				)
 			)
@@ -2502,7 +2502,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f112305-b803-4cc1-a6ec-13ec257bfa9e")
-		(property "Reference" "#PWR092"
+		(property "Reference" "#PWR0143"
 			(at 205.232 99.06 0)
 			(effects
 				(font
@@ -2552,7 +2552,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR092")
+					(reference "#PWR0143")
 					(unit 1)
 				)
 			)
@@ -2568,7 +2568,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6acb450c-b395-4c4e-9f9b-89bf764fe97b")
-		(property "Reference" "#PWR093"
+		(property "Reference" "#PWR0144"
 			(at 93.218 102.87 0)
 			(effects
 				(font
@@ -2618,7 +2618,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR093")
+					(reference "#PWR0144")
 					(unit 1)
 				)
 			)
@@ -2634,7 +2634,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6c18db2a-42cc-4e05-92a3-d58bb6cb96d8")
-		(property "Reference" "#PWR094"
+		(property "Reference" "#PWR0145"
 			(at 93.218 109.22 0)
 			(effects
 				(font
@@ -2684,7 +2684,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR094")
+					(reference "#PWR0145")
 					(unit 1)
 				)
 			)
@@ -3089,7 +3089,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "81e0f7b6-5b39-4d58-a906-b12f7fb0f584")
-		(property "Reference" "C3"
+		(property "Reference" "C5"
 			(at 133.604 115.8239 0)
 			(effects
 				(font
@@ -3197,7 +3197,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "C3")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -3212,7 +3212,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8aa86269-5e32-4348-b7ec-ed88f370f3c8")
-		(property "Reference" "#PWR088"
+		(property "Reference" "#PWR0139"
 			(at 127.762 79.502 0)
 			(effects
 				(font
@@ -3262,7 +3262,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR088")
+					(reference "#PWR0139")
 					(unit 1)
 				)
 			)
@@ -3278,7 +3278,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c65f5a3-6c68-4f53-aa65-f4debf5e419f")
-		(property "Reference" "U2"
+		(property "Reference" "U7"
 			(at 163.322 74.93 0)
 			(effects
 				(font
@@ -3483,7 +3483,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "U2")
+					(reference "U7")
 					(unit 1)
 				)
 			)
@@ -3499,7 +3499,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "92284728-3183-4a97-bc1d-4b08352c9f41")
-		(property "Reference" "#PWR096"
+		(property "Reference" "#PWR0147"
 			(at 140.462 128.524 0)
 			(effects
 				(font
@@ -3549,7 +3549,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR096")
+					(reference "#PWR0147")
 					(unit 1)
 				)
 			)
@@ -3759,7 +3759,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a6ebbb1b-c195-41f3-8ab4-266c0df76f63")
-		(property "Reference" "#PWR089"
+		(property "Reference" "#PWR0140"
 			(at 135.636 79.502 0)
 			(effects
 				(font
@@ -3809,7 +3809,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR089")
+					(reference "#PWR0140")
 					(unit 1)
 				)
 			)
@@ -3825,7 +3825,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ab6f6037-224d-402f-81ee-606e69b59f63")
-		(property "Reference" "#PWR091"
+		(property "Reference" "#PWR0142"
 			(at 93.472 96.774 0)
 			(effects
 				(font
@@ -3875,7 +3875,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR091")
+					(reference "#PWR0142")
 					(unit 1)
 				)
 			)
@@ -3890,7 +3890,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b1c4be94-3a3e-45de-adc3-dec4daf67aa4")
-		(property "Reference" "C1"
+		(property "Reference" "C3"
 			(at 209.296 87.6299 0)
 			(effects
 				(font
@@ -3998,7 +3998,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "C1")
+					(reference "C3")
 					(unit 1)
 				)
 			)
@@ -4015,7 +4015,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c1c8bd37-0c8e-4ce8-a681-42a7b517fcb5")
-		(property "Reference" "JP12"
+		(property "Reference" "JP9"
 			(at 75.438 80.264 0)
 			(effects
 				(font
@@ -4126,7 +4126,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "JP12")
+					(reference "JP9")
 					(unit 1)
 				)
 			)
@@ -4141,7 +4141,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d86b0cea-f39c-407a-b9d3-abc1215f8d9e")
-		(property "Reference" "#PWR087"
+		(property "Reference" "#PWR0138"
 			(at 119.634 79.502 0)
 			(effects
 				(font
@@ -4191,7 +4191,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "#PWR087")
+					(reference "#PWR0138")
 					(unit 1)
 				)
 			)
@@ -4208,7 +4208,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f3074aa3-3308-40f0-a1ac-e4f480e526cc")
-		(property "Reference" "JP13"
+		(property "Reference" "JP10"
 			(at 109.474 109.9819 90)
 			(effects
 				(font
@@ -4320,7 +4320,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/ff819628-ab19-4c4a-a87c-3aa1c78e0ae1"
-					(reference "JP13")
+					(reference "JP10")
 					(unit 1)
 				)
 			)

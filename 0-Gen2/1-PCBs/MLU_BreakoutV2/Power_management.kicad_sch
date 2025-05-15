@@ -2143,7 +2143,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "169b6cbe-fb23-48c6-9f2b-1bd3b9985307")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR0147"
 			(at 143.002 64.008 0)
 			(effects
 				(font
@@ -2193,7 +2193,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "#PWR024")
+					(reference "#PWR0147")
 					(unit 1)
 				)
 			)
@@ -2209,7 +2209,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1efd0deb-37b1-43c9-86dd-2310852a552f")
-		(property "Reference" "#PWR053"
+		(property "Reference" "#PWR0152"
 			(at 169.418 142.748 0)
 			(effects
 				(font
@@ -2259,7 +2259,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "#PWR053")
+					(reference "#PWR0152")
 					(unit 1)
 				)
 			)
@@ -2404,7 +2404,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3fff1a34-f875-48f6-a690-651143d6dc6a")
-		(property "Reference" "#PWR042"
+		(property "Reference" "#PWR0149"
 			(at 119.38 131.826 0)
 			(effects
 				(font
@@ -2454,7 +2454,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "#PWR042")
+					(reference "#PWR0149")
 					(unit 1)
 				)
 			)
@@ -2470,7 +2470,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "49b188d8-2c82-4e6a-94b1-94d52dc3d4f1")
-		(property "Reference" "#PWR044"
+		(property "Reference" "#PWR0151"
 			(at 165.1 136.906 0)
 			(effects
 				(font
@@ -2520,7 +2520,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "#PWR044")
+					(reference "#PWR0151")
 					(unit 1)
 				)
 			)
@@ -2659,7 +2659,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "582712e0-cc70-49f5-8d8f-8ace207664bd")
-		(property "Reference" "J6"
+		(property "Reference" "J25"
 			(at 167.64 74.4219 0)
 			(effects
 				(font
@@ -2770,7 +2770,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "J6")
+					(reference "J25")
 					(unit 1)
 				)
 			)
@@ -2786,7 +2786,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "60a5a8d4-0a8c-4c29-b269-aaa21cad9f8f")
-		(property "Reference" "R7"
+		(property "Reference" "R9"
 			(at 156.718 101.5999 0)
 			(effects
 				(font
@@ -2894,7 +2894,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "R7")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -2911,7 +2911,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "695c4715-6952-4ef6-99b7-f503a09a420c")
-		(property "Reference" "U1"
+		(property "Reference" "U6"
 			(at 142.24 118.618 0)
 			(effects
 				(font
@@ -3022,7 +3022,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "U1")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -3161,7 +3161,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "797ec466-b8cd-45bb-9b71-330194330461")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR0153"
 			(at 175.26 142.748 0)
 			(effects
 				(font
@@ -3211,7 +3211,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "#PWR054")
+					(reference "#PWR0153")
 					(unit 1)
 				)
 			)
@@ -3350,7 +3350,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "991f7d6e-c6d9-45cc-92c2-e8aeed887c4d")
-		(property "Reference" "#PWR037"
+		(property "Reference" "#PWR0148"
 			(at 143.002 113.03 0)
 			(effects
 				(font
@@ -3400,7 +3400,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "#PWR037")
+					(reference "#PWR0148")
 					(unit 1)
 				)
 			)
@@ -3539,7 +3539,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c8dbcc97-d479-4b78-995a-0ba87ca5ed3e")
-		(property "Reference" "R6"
+		(property "Reference" "R8"
 			(at 128.524 101.5999 0)
 			(effects
 				(font
@@ -3647,7 +3647,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "R6")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -3802,7 +3802,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "def4b4df-681e-42e9-b13c-1bb96f00161e")
-		(property "Reference" "C1"
+		(property "Reference" "C5"
 			(at 147.066 94.9959 0)
 			(effects
 				(font
@@ -3910,7 +3910,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "C1")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -3925,7 +3925,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ed83ac77-b703-491e-b62c-dee36cddd03a")
-		(property "Reference" "#PWR043"
+		(property "Reference" "#PWR0150"
 			(at 182.372 131.826 0)
 			(effects
 				(font
@@ -3975,7 +3975,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/9e78e214-9eaa-4133-a14f-75961ce763bc"
-					(reference "#PWR043")
+					(reference "#PWR0150")
 					(unit 1)
 				)
 			)

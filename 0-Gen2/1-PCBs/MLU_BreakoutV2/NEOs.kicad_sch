@@ -3336,8 +3336,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "09bd51d0-8e58-4ca4-9df0-beb0ece83595")
-		(property "Reference" "LED13"
-			(at 422.91 45.212 0)
+		(property "Reference" "LED31"
+			(at 422.91 45.72 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3345,7 +3345,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 422.91 47.752 0)
+			(at 422.91 48.26 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3396,7 +3396,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED13")
+					(reference "LED31")
 					(unit 1)
 				)
 			)
@@ -3413,8 +3413,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0afcc855-4127-4371-97de-459d62251efe")
-		(property "Reference" "LED20"
-			(at 341.63 61.722 0)
+		(property "Reference" "LED28"
+			(at 341.63 62.23 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3422,7 +3422,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 341.63 64.262 0)
+			(at 341.63 64.77 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3473,7 +3473,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED20")
+					(reference "LED28")
 					(unit 1)
 				)
 			)
@@ -3556,8 +3556,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0c91fb76-391b-4f3d-aca1-9fe3913384d3")
-		(property "Reference" "LED34"
-			(at 144.526 132.842 0)
+		(property "Reference" "LED20"
+			(at 144.526 133.35 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3565,7 +3565,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 144.526 135.382 0)
+			(at 144.526 135.89 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3616,7 +3616,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED34")
+					(reference "LED20")
 					(unit 1)
 				)
 			)
@@ -3699,7 +3699,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "10c31469-32d2-425d-a667-752d870658b6")
-		(property "Reference" "LED35"
+		(property "Reference" "LED16"
 			(at 63.246 133.35 0)
 			(effects
 				(font
@@ -3759,7 +3759,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED35")
+					(reference "LED16")
 					(unit 1)
 				)
 			)
@@ -3776,8 +3776,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "18f3ee93-e557-4531-9539-0237fa8c5358")
-		(property "Reference" "LED33"
-			(at 225.044 117.348 0)
+		(property "Reference" "LED23"
+			(at 225.044 116.84 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3785,7 +3785,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 225.044 119.888 0)
+			(at 225.044 119.38 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -3836,7 +3836,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED33")
+					(reference "LED23")
 					(unit 1)
 				)
 			)
@@ -3853,7 +3853,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1a0e5e90-c705-42c6-a06f-9a605b128489")
-		(property "Reference" "LED31"
+		(property "Reference" "LED19"
 			(at 144.526 116.84 0)
 			(effects
 				(font
@@ -3913,7 +3913,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED31")
+					(reference "LED19")
 					(unit 1)
 				)
 			)
@@ -4062,7 +4062,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "27801330-8d20-4676-9133-f8311e70dbdc")
-		(property "Reference" "LED14"
+		(property "Reference" "LED27"
 			(at 341.63 45.72 0)
 			(effects
 				(font
@@ -4122,7 +4122,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED14")
+					(reference "LED27")
 					(unit 1)
 				)
 			)
@@ -4139,8 +4139,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28f25136-1c55-469b-adc6-b51821e72f91")
-		(property "Reference" "LED28"
-			(at 144.272 100.838 0)
+		(property "Reference" "LED18"
+			(at 144.272 100.33 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -4148,7 +4148,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 144.272 103.378 0)
+			(at 144.272 102.87 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -4199,7 +4199,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED28")
+					(reference "LED18")
 					(unit 1)
 				)
 			)
@@ -4546,8 +4546,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "34dd47fe-7220-437e-b787-9e73a7195aae")
-		(property "Reference" "LED9"
-			(at 503.174 29.718 0)
+		(property "Reference" "LED34"
+			(at 503.174 29.21 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -4555,7 +4555,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 503.174 32.258 0)
+			(at 503.174 31.75 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -4606,7 +4606,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED9")
+					(reference "LED34")
 					(unit 1)
 				)
 			)
@@ -5283,7 +5283,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4e84a9a2-b5c4-46a9-9333-34eabd9416f4")
-		(property "Reference" "LED26"
+		(property "Reference" "LED13"
 			(at 62.738 85.09 0)
 			(effects
 				(font
@@ -5343,7 +5343,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED26")
+					(reference "LED13")
 					(unit 1)
 				)
 			)
@@ -5690,8 +5690,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5bcab4fa-4332-4539-a5f5-055c8e8264ee")
-		(property "Reference" "LED19"
-			(at 422.91 61.214 0)
+		(property "Reference" "LED32"
+			(at 422.91 60.96 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5699,7 +5699,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 422.91 63.754 0)
+			(at 422.91 63.5 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5750,7 +5750,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED19")
+					(reference "LED32")
 					(unit 1)
 				)
 			)
@@ -5833,8 +5833,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5e95ddef-ce72-456e-aef1-ddb0b07c992f")
-		(property "Reference" "LED22"
-			(at 143.764 64.516 0)
+		(property "Reference" "LED8"
+			(at 143.764 64.77 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5842,7 +5842,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 143.764 67.056 0)
+			(at 143.764 67.31 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5893,7 +5893,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED22")
+					(reference "LED8")
 					(unit 1)
 				)
 			)
@@ -5910,8 +5910,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f5b12f6-7790-42e8-ac3b-c1c2d9615980")
-		(property "Reference" "LED30"
-			(at 224.79 101.346 0)
+		(property "Reference" "LED22"
+			(at 224.79 101.6 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5919,7 +5919,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 224.79 103.886 0)
+			(at 224.79 104.14 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -5970,7 +5970,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED30")
+					(reference "LED22")
 					(unit 1)
 				)
 			)
@@ -6119,8 +6119,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6987fa62-7dfc-425d-8887-6820bab949c0")
-		(property "Reference" "LED1"
-			(at 422.402 12.954 0)
+		(property "Reference" "LED29"
+			(at 422.402 12.7 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6128,7 +6128,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 422.402 15.494 0)
+			(at 422.402 15.24 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6179,7 +6179,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED1")
+					(reference "LED29")
 					(unit 1)
 				)
 			)
@@ -6592,8 +6592,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "743d0761-1aac-4fd5-83c1-c82830f8a9e7")
-		(property "Reference" "LED10"
-			(at 143.51 32.512 0)
+		(property "Reference" "LED6"
+			(at 143.51 33.02 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6601,7 +6601,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 143.51 35.052 0)
+			(at 143.51 35.56 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6652,7 +6652,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED10")
+					(reference "LED6")
 					(unit 1)
 				)
 			)
@@ -6669,7 +6669,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75dad439-26c4-471c-a74b-4ac9c7901e83")
-		(property "Reference" "LED15"
+		(property "Reference" "LED35"
 			(at 503.428 45.72 0)
 			(effects
 				(font
@@ -6729,7 +6729,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED15")
+					(reference "LED35")
 					(unit 1)
 				)
 			)
@@ -6812,8 +6812,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7be34c49-7dc0-4871-9c42-93e09842ac4b")
-		(property "Reference" "LED4"
-			(at 143.256 16.256 0)
+		(property "Reference" "LED5"
+			(at 143.256 16.51 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6821,7 +6821,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 143.256 18.796 0)
+			(at 143.256 19.05 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -6872,7 +6872,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED4")
+					(reference "LED5")
 					(unit 1)
 				)
 			)
@@ -7087,8 +7087,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8665eab8-02cf-404b-808f-d2e09545d421")
-		(property "Reference" "LED16"
-			(at 143.764 48.514 0)
+		(property "Reference" "LED7"
+			(at 143.764 48.26 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7096,7 +7096,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 143.764 51.054 0)
+			(at 143.764 50.8 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7147,7 +7147,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED16")
+					(reference "LED7")
 					(unit 1)
 				)
 			)
@@ -7164,8 +7164,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "86e7c089-4b84-41a9-8c8e-102e1755def3")
-		(property "Reference" "LED21"
-			(at 503.428 61.722 0)
+		(property "Reference" "LED36"
+			(at 503.428 62.23 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7173,7 +7173,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 503.428 64.262 0)
+			(at 503.428 64.77 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7224,7 +7224,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED21")
+					(reference "LED36")
 					(unit 1)
 				)
 			)
@@ -7241,7 +7241,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8b538611-52d4-492c-8ebf-4a4ffc44c0a6")
-		(property "Reference" "LED12"
+		(property "Reference" "LED10"
 			(at 224.028 33.02 0)
 			(effects
 				(font
@@ -7301,7 +7301,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED12")
+					(reference "LED10")
 					(unit 1)
 				)
 			)
@@ -7318,8 +7318,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8bfadcf6-0b17-4859-9e6c-bce7c7f02228")
-		(property "Reference" "LED6"
-			(at 223.774 16.764 0)
+		(property "Reference" "LED9"
+			(at 223.774 16.51 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7327,7 +7327,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 223.774 19.304 0)
+			(at 223.774 19.05 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7378,7 +7378,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED6")
+					(reference "LED9")
 					(unit 1)
 				)
 			)
@@ -7593,8 +7593,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "938d3e7e-1782-4d59-b89f-deed025d7e26")
-		(property "Reference" "LED29"
-			(at 62.992 101.346 0)
+		(property "Reference" "LED14"
+			(at 62.992 101.6 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7602,7 +7602,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 62.992 103.886 0)
+			(at 62.992 104.14 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -7653,7 +7653,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED29")
+					(reference "LED14")
 					(unit 1)
 				)
 			)
@@ -8000,7 +8000,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a6d212bb-6e49-4bd7-8ad9-5378f45c4257")
-		(property "Reference" "LED27"
+		(property "Reference" "LED21"
 			(at 224.536 85.09 0)
 			(effects
 				(font
@@ -8060,7 +8060,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED27")
+					(reference "LED21")
 					(unit 1)
 				)
 			)
@@ -8209,7 +8209,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "afe3f051-2cf5-458a-a84e-5bb4a0c93160")
-		(property "Reference" "LED7"
+		(property "Reference" "LED30"
 			(at 422.656 29.21 0)
 			(effects
 				(font
@@ -8269,7 +8269,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED7")
+					(reference "LED30")
 					(unit 1)
 				)
 			)
@@ -8484,8 +8484,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "baa992b4-cab4-4b38-a5a8-a086d0b858b1")
-		(property "Reference" "LED17"
-			(at 62.484 49.022 0)
+		(property "Reference" "LED3"
+			(at 62.484 49.53 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -8493,7 +8493,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 62.484 51.562 0)
+			(at 62.484 52.07 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -8544,7 +8544,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED17")
+					(reference "LED3")
 					(unit 1)
 				)
 			)
@@ -8759,8 +8759,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c074c5e6-a2ff-45fa-ab72-1a9847102cb1")
-		(property "Reference" "LED2"
-			(at 341.122 13.462 0)
+		(property "Reference" "LED25"
+			(at 341.122 13.97 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -8768,7 +8768,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 341.122 16.002 0)
+			(at 341.122 16.51 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -8819,7 +8819,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED2")
+					(reference "LED25")
 					(unit 1)
 				)
 			)
@@ -8902,8 +8902,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c63b8801-7835-4f7a-b3f5-19a1765761d4")
-		(property "Reference" "LED3"
-			(at 502.92 13.462 0)
+		(property "Reference" "LED33"
+			(at 502.92 13.97 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -8911,7 +8911,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 502.92 16.002 0)
+			(at 502.92 16.51 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -8962,7 +8962,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED3")
+					(reference "LED33")
 					(unit 1)
 				)
 			)
@@ -8979,7 +8979,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c9e18437-8ad9-4fc9-aca7-8da30c4f1937")
-		(property "Reference" "LED11"
+		(property "Reference" "LED2"
 			(at 62.23 33.02 0)
 			(effects
 				(font
@@ -9039,7 +9039,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED11")
+					(reference "LED2")
 					(unit 1)
 				)
 			)
@@ -9056,8 +9056,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb41f966-2f00-4d53-bf20-c2c9f67e9aa7")
-		(property "Reference" "LED25"
-			(at 144.018 84.582 0)
+		(property "Reference" "LED17"
+			(at 144.018 85.09 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9065,7 +9065,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 144.018 87.122 0)
+			(at 144.018 87.63 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9116,7 +9116,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED25")
+					(reference "LED17")
 					(unit 1)
 				)
 			)
@@ -9133,8 +9133,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d6e64e35-3f82-4941-b79a-951d4d42fa44")
-		(property "Reference" "LED5"
-			(at 61.976 16.764 0)
+		(property "Reference" "LED1"
+			(at 61.976 16.51 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9142,7 +9142,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 61.976 19.304 0)
+			(at 61.976 19.05 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9193,7 +9193,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED5")
+					(reference "LED1")
 					(unit 1)
 				)
 			)
@@ -9276,8 +9276,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d86c9d8e-c71d-497e-a08e-0be434cfbe98")
-		(property "Reference" "LED8"
-			(at 341.376 29.718 0)
+		(property "Reference" "LED26"
+			(at 341.376 29.21 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9285,7 +9285,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 341.376 32.258 0)
+			(at 341.376 31.75 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9336,7 +9336,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED8")
+					(reference "LED26")
 					(unit 1)
 				)
 			)
@@ -9551,8 +9551,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ddeba272-0981-462d-8376-0a54df2d1c24")
-		(property "Reference" "LED23"
-			(at 62.484 65.024 0)
+		(property "Reference" "LED4"
+			(at 62.484 64.77 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9560,7 +9560,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 62.484 67.564 0)
+			(at 62.484 67.31 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9611,7 +9611,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED23")
+					(reference "LED4")
 					(unit 1)
 				)
 			)
@@ -9760,7 +9760,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e34210d9-8462-458b-88d0-b28f58ba1d2c")
-		(property "Reference" "LED36"
+		(property "Reference" "LED24"
 			(at 225.044 133.35 0)
 			(effects
 				(font
@@ -9820,7 +9820,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED36")
+					(reference "LED24")
 					(unit 1)
 				)
 			)
@@ -9837,8 +9837,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e469c14c-98e5-45a4-b527-d69b762f51e0")
-		(property "Reference" "LED24"
-			(at 224.282 65.024 0)
+		(property "Reference" "LED12"
+			(at 224.282 64.77 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9846,7 +9846,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 224.282 67.564 0)
+			(at 224.282 67.31 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -9897,7 +9897,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED24")
+					(reference "LED12")
 					(unit 1)
 				)
 			)
@@ -10508,8 +10508,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f0a22571-b45b-46c0-a1c6-41f9fdcbd8bc")
-		(property "Reference" "LED18"
-			(at 224.282 49.022 0)
+		(property "Reference" "LED11"
+			(at 224.282 49.53 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10517,7 +10517,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 224.282 51.562 0)
+			(at 224.282 52.07 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10568,7 +10568,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED18")
+					(reference "LED11")
 					(unit 1)
 				)
 			)
@@ -10651,8 +10651,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f92e2554-b383-46be-8827-9df64428e562")
-		(property "Reference" "LED32"
-			(at 63.246 117.348 0)
+		(property "Reference" "LED15"
+			(at 63.246 116.84 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10660,7 +10660,7 @@
 			)
 		)
 		(property "Value" "1655"
-			(at 63.246 119.888 0)
+			(at 63.246 119.38 0)
 			(effects
 				(font
 					(size 1.524 1.524)
@@ -10711,7 +10711,7 @@
 		(instances
 			(project "MLU_BreakoutV2"
 				(path "/55121ba7-5d22-4fe3-93aa-7f76d75b410c/38ea1217-5551-41b6-a3b9-444cd4c6916d"
-					(reference "LED32")
+					(reference "LED15")
 					(unit 1)
 				)
 			)

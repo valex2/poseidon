@@ -11345,7 +11345,7 @@
 			(uuid "e8358b63-9375-4812-b3bd-d6a682686443")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 8.89 360)
+			(at 0 8.89 0)
 			(layer "F.Fab")
 			(uuid "e3cae32b-8b5b-44a3-b706-857f57270a5f")
 			(effects
@@ -16291,7 +16291,7 @@
 		(descr "Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "resistor handsolder")
 		(property "Reference" "R2"
-			(at 0 -1.77 360)
+			(at 0 -1.77 0)
 			(layer "F.SilkS")
 			(uuid "c2d737b7-6988-498b-8183-718027abc67b")
 			(effects
@@ -16302,7 +16302,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at -3.41 0 360)
+			(at -3.41 0 0)
 			(layer "F.Fab")
 			(uuid "ba7bfc7b-de6c-4f49-a82a-058ea5e2bb4a")
 			(effects
@@ -16535,7 +16535,7 @@
 			(uuid "2f488c4e-717d-4ad6-97ae-0ae5639387fe")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 0 360)
+			(at 0 0 0)
 			(layer "F.Fab")
 			(uuid "baf9c6d0-617c-4c4f-bb64-027ab0cc0da4")
 			(effects
@@ -20360,7 +20360,7 @@
 			(uuid "ddf144c3-1510-43f6-8ead-8e2bc2ff0d33")
 		)
 		(fp_text user "${REFERENCE}"
-			(at 0 8.89 360)
+			(at 0 8.89 0)
 			(layer "F.Fab")
 			(uuid "5cf41e54-1580-4ef8-9599-7c8495564a0a")
 			(effects
@@ -23522,25 +23522,49 @@
 		(uuid "e84664a3-ac20-42a6-a0f7-79eaa2c091a1")
 	)
 	(gr_text "         __  |__\n       __L L_|L L__\n ...[+(____________)\n        C_________/"
-		(at 122.99 103.97 -0)
+		(at 128.27 105.4354 0)
 		(layer "B.SilkS")
 		(uuid "5cf2d924-c33a-410f-b3a3-48d26f3e9791")
 		(effects
 			(font
-				(size 1 1)
+				(size 1.4 1.4)
 				(thickness 0.15)
 			)
 			(justify left bottom mirror)
 		)
 	)
-	(gr_text "Stanford Robosub, Thruster Power\n{dblquote}The sea, once it casts its spell, \nholds one in its net of wonder forever.{dblquote} \n- Jacques Cousteau\n"
-		(at 158.15 88.02 -0)
+	(gr_text "{dblquote}Survival is the ability to swim in strange water{dblquote} \n- Frank Herbert\n"
+		(at 157.6324 93.5736 0)
+		(layer "B.SilkS")
+		(uuid "6eee57e2-5f28-4347-b43b-e62f4f237b1d")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "{dblquote}The sea, once it casts its spell, \nholds one in its net of wonder forever.{dblquote} \n- Jacques Cousteau\n"
+		(at 209.4738 88.392 0)
 		(layer "B.SilkS")
 		(uuid "91f28f76-89e1-42fe-b672-4d0a1b116bc2")
 		(effects
 			(font
-				(size 1 1)
-				(thickness 0.15)
+				(size 2 2)
+				(thickness 0.3)
+			)
+			(justify left bottom mirror)
+		)
+	)
+	(gr_text "Stanford Robosub '25, Thruster Power"
+		(at 173.1264 72.898 0)
+		(layer "B.SilkS")
+		(uuid "a2834d9d-bdc6-4958-99ff-8d7901512728")
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.3)
 			)
 			(justify left bottom mirror)
 		)

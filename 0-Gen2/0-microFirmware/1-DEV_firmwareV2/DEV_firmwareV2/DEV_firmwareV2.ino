@@ -4,6 +4,11 @@
 #include <Wire.h>
 #include <SPI.h>
 
+/////////////////////// Timer ////////////////////////////////////
+unsigned long prevTime = 0;
+unsigned long curTime = 0;
+unsigned int shutdownTime = 5;   // turn off servo if theres no serial input (sec)
+
 /////////////////////// Servo Control ////////////////////////////
 #include <Servo.h>
 Servo servo[8];
@@ -283,6 +288,7 @@ void loop() {
   }
 
   while (Serial.available() > 0) {
+    prevTime = millis();
     char inChar = (char)Serial.read();
     if (inChar == '\n' || inChar == '\r') { // End of one command
       inputBuffer[bufferPosition] = '\0'; // Null-terminate the string
@@ -293,6 +299,20 @@ void loop() {
         inputBuffer[bufferPosition++] = inChar;
       }
     }
+  }
+
+  // If we are not recieving serial commands, turn off servo
+  curTime = millis();
+  if ((curTime - prevTime) >= (shutdownTime * 1000)) {
+    // Serial.printf("Servo shutdown!! (it has been %lu ms)\n", curTime);
+    set_servo(0, 1500);
+    set_servo(1, 1500);
+    set_servo(2, 1500);
+    set_servo(3, 1500);
+    set_servo(4, 1500);
+    set_servo(5, 1500);
+    set_servo(6, 1500);
+    set_servo(7, 1500);
   }
 }
 

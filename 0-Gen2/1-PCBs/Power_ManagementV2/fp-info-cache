@@ -1,4 +1,4 @@
-23724706936626913
+23728500603777155
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -6586,6 +6586,13 @@ board-to-board
 0
 30
 30
+Connector
+PHOENIX_1017503
+
+
+0
+4
+4
 Connector
 SpringContact_Harwin_S1941-46R
 7.25mm SMT Multi-directional Spring Contact (T+R), https://cdn.harwin.com/pdfs/S1941R.pdf
@@ -64980,6 +64987,13 @@ AI Kendryte K210 RISC-V
 0
 85
 77
+Module
+Teensy41
+
+
+0
+67
+67
 Module
 Texas_EUK_R-PDSS-T7_THT
 Texas Instruments EUK 7 Pin Double Sided Module

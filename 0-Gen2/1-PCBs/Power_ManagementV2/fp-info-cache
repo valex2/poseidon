@@ -1,4 +1,4 @@
-23728500603777155
+23737240427931439
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57862,12 +57862,47 @@ CONN2_1986660-2_TEC
 4
 4
 Imported_Footprints
+CONV_URB2405YMD-20WR3
+
+
+0
+6
+6
+Imported_Footprints
+D2PAK_STM
+
+STPS5045SG-TR 
+0
+3
+3
+Imported_Footprints
+D2PAK_STM-L
+
+STPS5045SG-TR 
+0
+3
+3
+Imported_Footprints
+D2PAK_STM-M
+
+STPS5045SG-TR 
+0
+3
+3
+Imported_Footprints
 LM393DT
 
 LM393DT 
 0
 8
 8
+Imported_Footprints
+LMS78
+Through hole straight pin header, 1x03, 2.54mm pitch, single row
+Through hole pin header THT 1x03 2.54mm single row
+0
+3
+3
 Imported_Footprints
 LTC1255
 

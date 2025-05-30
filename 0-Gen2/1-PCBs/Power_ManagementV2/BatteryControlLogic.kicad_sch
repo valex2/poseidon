@@ -5122,7 +5122,7 @@
 	)
 	(hierarchical_label "~{GateDisable}"
 		(shape input)
-		(at 177.673 58.674 180)
+		(at 177.546 58.674 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5168,7 +5168,7 @@
 		)
 		(uuid "84e52752-2b78-42f3-bdb2-ed318d7e3e44")
 	)
-	(hierarchical_label "VBatt1>VBatt2"
+	(hierarchical_label "VBatt1<VBatt2"
 		(shape output)
 		(at 76.2 147.447 0)
 		(fields_autoplaced yes)

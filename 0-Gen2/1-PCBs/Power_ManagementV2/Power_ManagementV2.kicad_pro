@@ -675,28 +675,8 @@
       "Root"
     ],
     [
-      "6ad413c9-f760-412c-b3bc-83fae2442b0c",
-      "FET_control_logic"
-    ],
-    [
-      "1f10f4e6-f4a7-4865-a38c-e50d76a6571f",
-      "OCP_UVP_detect"
-    ],
-    [
-      "06ba91b2-02a7-4178-9d32-cd29b8d5ec59",
-      "BattSelect"
-    ],
-    [
-      "6c20a581-8bbd-419d-a99b-f8c8d76650f0",
-      "buck_boost"
-    ],
-    [
-      "473e280a-6ccb-491d-bdf9-ca10714b2eb4",
-      "FETs"
-    ],
-    [
-      "a4ddb6ba-5c45-4efa-9e59-6194a9168a78",
-      "Thruster_output"
+      "1621a41f-46bb-44c2-967a-17c3fb05a2b3",
+      "Battery Control Logic"
     ]
   ],
   "text_variables": {}

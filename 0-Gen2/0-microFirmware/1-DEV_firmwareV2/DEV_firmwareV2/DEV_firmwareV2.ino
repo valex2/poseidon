@@ -9,6 +9,8 @@ unsigned long prevTime = 0;
 unsigned long curTime = 0;
 unsigned int shutdownTime = 5;   // turn off servo if theres no serial input (sec)
 
+static int pixelUpdateCounter = 0;  // persists between calls
+
 /////////////////////// Servo Control ////////////////////////////
 #include <Servo.h>
 Servo servo[8];
@@ -196,7 +198,7 @@ void config_lumen() {
 void config_neopixels() {
   strip.begin();
   strip.show(); // Initialize all pixels to 'off'
-  int brightness = 70; // Set brightness level
+  int brightness = 40; // Set brightness level
   setBlueBreathing(brightness); // Breathing animation for visual indicator
 }
 
@@ -427,8 +429,18 @@ void handle_depth_command(float& pressure, float& temperature, float& depth) {
 void handle_voltage_command(float& current, float& voltage) {
   currentVal = analogRead(currentPin);
   voltageVal = analogRead(voltagePin);
-  current = (currentVal * 120.0) / 1024; // A
-  voltage = (voltageVal * 60.0) / 1024; // V
+
+  const float VOLTAGE_FULLSCALE = 3.3 * 18.182 + 1.4; // some calibration error
+  const float CURRENT_FULLSCALE = 120.0; // e.g. 120A produces 1023
+
+  const int VOLTAGE_MIN_ADC = 0;   // e.g. no offset, or set to actual min
+  const int CURRENT_MIN_ADC = 100; // e.g. 100 ADC reading = 0A baseline offset
+
+  voltage = (voltageVal - VOLTAGE_MIN_ADC) * VOLTAGE_FULLSCALE / (1024.0 - VOLTAGE_MIN_ADC);
+  current = (currentVal - CURRENT_MIN_ADC) * CURRENT_FULLSCALE / (1024.0 - CURRENT_MIN_ADC);
+
+  // voltage = voltageVal;
+  // current = currentVal;
 }
 
 void readTempSensors(float temps[2]) {
@@ -487,6 +499,35 @@ void setBlueBreathing(uint8_t brightness) {
 
   uint32_t color = strip.Color(red, green, blue);
 
+  for (int i = 0; i < NUMPIXELS; i++) {
+    strip.setPixelColor(i, color);
+  }
+  strip.show();
+}
+
+void setNeoPixelVoltageColor(float voltage) {
+  // Clamp voltage between 12.8 and 16.8
+  voltage = constrain(voltage, 12.8, 16.8);
+  float norm = (voltage - 12.8) / (16.8 - 12.8); // 0 to 1
+
+  uint8_t r, g, b;
+
+  if (norm < 0.5) {
+    // 12.8V → 14.8V: Red (255,0,0) → Yellow (255,255,0)
+    float t = norm / 0.5;
+    r = 255;
+    g = (uint8_t)(255 * t);
+    b = 0;
+  } else {
+    // 14.8V → 16.8V: Yellow (255,255,0) → Cyan (0,255,255)
+    float t = (norm - 0.5) / 0.5;
+    r = (uint8_t)(255 * (1.0 - t));
+    g = 255;
+    b = (uint8_t)(255 * t);
+  }
+
+  strip.setBrightness(25);  // ← use global variable
+  uint32_t color = strip.Color(r, g, b);
   for (int i = 0; i < NUMPIXELS; i++) {
     strip.setPixelColor(i, color);
   }
@@ -645,7 +686,15 @@ void updateReadings() {
     temps[0] = tempsensor1.readTempC();
     temps[1] = tempsensor2.readTempC();
     // temps[2] = tempsensor3.readTempC();
-    
+
+    float current, voltage;
+    handle_voltage_command(current, voltage); // Get voltage reading
+
+    // Update NeoPixels only every 1000 iterations
+    if (pixelUpdateCounter++ >= 15) {
+        setNeoPixelVoltageColor(voltage);
+        pixelUpdateCounter = 0;
+    }
     // bmeValues[0][0] = bme1.readTemperature();
     // bmeValues[0][1] = bme1.readHumidity();
     // bmeValues[0][2] = bme1.readPressure() / 100.0F;
@@ -654,7 +703,7 @@ void updateReadings() {
     // bmeValues[1][1] = bme2.readHumidity();
     // bmeValues[1][2] = bme2.readPressure() / 100.0F;
 
-    updateDisplay(temps);
+    updateDisplay(temps, voltage);
 }
 
 void printBoldText(int x, int y, const char* text, uint16_t color) {
@@ -665,14 +714,14 @@ void printBoldText(int x, int y, const char* text, uint16_t color) {
     tft.print(text);
 }
 
-void updateDisplay(float temps[3]) { 
+void updateDisplay(float temps[3], float voltage) { 
     tft.setTextColor(ILI9341_WHITE, ILI9341_BLUE); // Overwrite previous text
     
     // Display battery voltage (Bold)
-    // printBoldText(20, 20, "Unregulated PWR:", ILI9341_WHITE);
-    // tft.setCursor(240, 20);
-    // tft.print(voltageVal);
-    // tft.print("V, ");
+    printBoldText(20, 20, "Unregulated PWR:", ILI9341_WHITE);
+    tft.setCursor(240, 20);
+    tft.print(voltage);
+    tft.print("V, ");
     // tft.print(currentVal);
     // tft.print("A");
 

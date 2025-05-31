@@ -1,4 +1,4 @@
-23751224923593728
+23754720782102128
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57890,6 +57890,13 @@ STPS5045SG-TR
 3
 3
 Imported_Footprints
+KEYSTONE_5102
+
+
+0
+2
+2
+Imported_Footprints
 LM393DT
 
 LM393DT 
@@ -57973,6 +57980,13 @@ MOSFET (N-Channel)
 0
 9
 9
+Imported_Footprints
+SULLINS_SBH11-PBPC-D10-ST-BK
+
+
+0
+20
+20
 Imported_Footprints
 SW_100SP1T1B4M2QE
 

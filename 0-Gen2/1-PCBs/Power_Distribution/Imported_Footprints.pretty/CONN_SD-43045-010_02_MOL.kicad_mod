@@ -65,6 +65,17 @@
 		)
 	)
 	(attr through_hole)
+	(fp_circle
+		(center 4.3434 0)
+		(end 4.7244 0)
+		(stroke
+			(width 0.508)
+			(type solid)
+		)
+		(fill none)
+		(layer "B.SilkS")
+		(uuid "3127e9d1-8e60-4d2c-9aee-723bbb8be918")
+	)
 	(fp_line
 		(start -3.7084 -6.427)
 		(end -3.7084 -4.438367)
@@ -124,6 +135,17 @@
 		)
 		(layer "F.SilkS")
 		(uuid "9c7d67e2-9988-49fb-9b7d-ae09ddf167f4")
+	)
+	(fp_circle
+		(center 4.3434 0)
+		(end 4.7244 0)
+		(stroke
+			(width 0.508)
+			(type solid)
+		)
+		(fill none)
+		(layer "F.SilkS")
+		(uuid "07a9787f-abd5-4622-86aa-0f171a782408")
 	)
 	(fp_line
 		(start -3.8354 -6.554)
@@ -259,17 +281,6 @@
 		(uuid "9d31218e-2c87-4a80-96d8-b9ff26075a33")
 	)
 	(model "${KIPRJMOD}/3D Models/430450228.stp"
-		(offset
-			(xyz 0 1.5 5)
-		)
-		(scale
-			(xyz 1 1 1)
-		)
-		(rotate
-			(xyz 0 0 0)
-		)
-	)
-	(model "/Users/Vassilis/Desktop/Robosub/poseidon/0-Gen2/1-PCBs/MLU_BreakoutV2/3D Models/430450228.stp"
 		(offset
 			(xyz 0 1.5 5)
 		)

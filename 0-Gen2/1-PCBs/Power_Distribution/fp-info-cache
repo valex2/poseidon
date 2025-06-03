@@ -1,4 +1,4 @@
-23717967376545831
+23728519741267411
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57834,12 +57834,47 @@ Integrated Circuit
 8
 8
 Imported_Footprints
+CONN_SD-43045-001_02_MOL
+
+430450201 
+0
+2
+2
+Imported_Footprints
+CONN_SD-43045-008_04_MOL
+
+430450422 
+0
+6
+6
+Imported_Footprints
+CONN_SD-43045-008_08_MOL
+
+430450821 
+0
+10
+10
+Imported_Footprints
+CONN_SD-43045-009_04_MOL
+
+430450426 
+0
+6
+6
+Imported_Footprints
 CONN_SD-43045-010_02_MOL
 
 430450228 
 0
 2
 2
+Imported_Footprints
+CONN_SD-43045-010_10_MOL
+
+430451027 
+0
+10
+10
 Imported_Footprints
 MCP3008
 
@@ -57875,6 +57910,13 @@ PHOENIX_1770393
 0
 8
 8
+Imported_Footprints
+RES_EXB2HV_1506x8
+
+EXB-2HV222JV 
+0
+16
+16
 Imported_Footprints
 SULLINS_SBH11-PBPC-D10-ST-BK
 

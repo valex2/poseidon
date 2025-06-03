@@ -6828,17 +6828,6 @@
 		)
 		(uuid "0b89beca-da50-478b-9ce1-c526dfd82afe")
 	)
-	(text "TODO: \nSmaller ribbon for Orin interface"
-		(exclude_from_sim no)
-		(at 116.586 93.218 0)
-		(effects
-			(font
-				(size 2.032 2.032)
-			)
-			(justify left)
-		)
-		(uuid "0cb82752-15d1-46c6-b04c-e45b10c0f266")
-	)
 	(text "Secondary \nI2C Bus"
 		(exclude_from_sim no)
 		(at 159.258 45.466 0)

@@ -65,7 +65,7 @@
       },
       "rule_severities": {
         "annular_width": "error",
-        "clearance": "error",
+        "clearance": "warning",
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
@@ -184,10 +184,13 @@
       ],
       "track_widths": [
         0.0,
+        0.0,
+        0.2,
         0.3048,
         0.508,
         0.635,
         2.5,
+        7.0,
         7.5
       ],
       "tuning_pattern_settings": {

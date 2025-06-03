@@ -36484,17 +36484,6 @@
 		)
 		(uuid "cc603efa-af3c-4edc-84f9-69699a3b6643")
 	)
-	(text "Todo:\nverify xt60 orientation"
-		(exclude_from_sim no)
-		(at -55.753 57.15 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "cff39464-7c41-4bc1-9aaa-57ec96d30861")
-	)
 	(text "https://learn.adafruit.com/adafruit-ads7830-8-channel-8-bit-adc/pinouts"
 		(exclude_from_sim no)
 		(at 133.477 166.497 0)
@@ -42086,7 +42075,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_AMASS:AMASS_XT60-M_1x02_P7.20mm_Vertical"
+		(property "Footprint" "Connector_AMASS:AMASS_XT60IPW-M_1x03_P7.20mm_Horizontal"
 			(at 24.257 59.563 0)
 			(effects
 				(font
@@ -51655,7 +51644,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_AMASS:AMASS_XT60-M_1x02_P7.20mm_Vertical"
+		(property "Footprint" "Connector_AMASS:AMASS_XT60IPW-M_1x03_P7.20mm_Horizontal"
 			(at 24.384 41.783 0)
 			(effects
 				(font

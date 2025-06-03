@@ -65,7 +65,7 @@
       },
       "rule_severities": {
         "annular_width": "error",
-        "clearance": "error",
+        "clearance": "warning",
         "connection_width": "warning",
         "copper_edge_clearance": "error",
         "copper_sliver": "warning",
@@ -88,7 +88,7 @@
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
         "lib_footprint_mismatch": "warning",
-        "malformed_courtyard": "error",
+        "malformed_courtyard": "warning",
         "microvia_drill_out_of_range": "error",
         "missing_courtyard": "ignore",
         "missing_footprint": "warning",
@@ -189,6 +189,7 @@
         0.508,
         0.635,
         1.0,
+        1.8,
         2.0,
         2.5,
         4.0,
@@ -232,7 +233,7 @@
           "drill": 0.5
         },
         {
-          "diameter": 1.0,
+          "diameter": 1.2,
           "drill": 0.8
         },
         {

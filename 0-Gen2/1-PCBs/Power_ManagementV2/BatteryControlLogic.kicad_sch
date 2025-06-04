@@ -11073,7 +11073,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Imported_Footprints:RES_EXB2HV_1506x8"
+		(property "Footprint" "Imported_Footprints:2506_8x_Resistor_Array"
 			(at 261.112 112.014 0)
 			(effects
 				(font
@@ -11083,7 +11083,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "EXB-2HV222JV"
+		(property "Datasheet" ""
 			(at 261.112 112.014 0)
 			(effects
 				(font
@@ -11120,7 +11120,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/EXB-2HV101JV/285307"
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/cts-resistor-products/742C163101JP/1124353"
 			(at 261.112 112.014 0)
 			(effects
 				(font
@@ -11129,7 +11129,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" "Y1101CT-ND"
+		(property "Supplier 1 S/N" "60-742C163101JPCT-ND"
 			(at 261.112 112.014 0)
 			(effects
 				(font

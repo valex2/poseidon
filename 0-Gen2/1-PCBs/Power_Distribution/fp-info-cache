@@ -1,4 +1,4 @@
-23728519741267411
+23730268749560918
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -57826,6 +57826,13 @@ Imported_Footprints
 0
 4
 4
+Imported_Footprints
+2506_8x_Resistor_Array
+
+742C163510JP 
+0
+16
+16
 Imported_Footprints
 ACS711ELCTR25ABT
  LC,8-pin SOIC

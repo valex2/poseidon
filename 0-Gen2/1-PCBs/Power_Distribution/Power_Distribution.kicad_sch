@@ -16646,7 +16646,7 @@
 		)
 		(uuid "07c1c922-021d-434e-8fda-cc66ffa94457")
 	)
-	(text "Convert 5V analog output logic to 3.3V\nMin resistance is 4.9k. Spec to 6.2k\nRdiv = 0.645 (5V --> 3.225V)"
+	(text "Convert 5V analog output logic to 3.3V\nMin resistance is 4.9k. Spec to 5.5k\nRdiv = 0.6 (5V --> 3V)"
 		(exclude_from_sim no)
 		(at 261.112 142.494 0)
 		(effects
@@ -21508,6 +21508,124 @@
 		)
 	)
 	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 201.676 47.752 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "22a13086-b2fb-4fcd-af3b-58848181455e")
+		(property "Reference" "H4"
+			(at 204.47 46.4819 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 204.47 49.0219 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" ""
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" ""
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" ""
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 201.676 47.752 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Power_Distribution"
+				(path "/1c59de6a-87fe-4223-8898-4b0383164a31"
+					(reference "H4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Imported:430450228")
 		(at 21.082 160.02 0)
 		(unit 1)
@@ -21629,6 +21747,124 @@
 			(project "Power_Distribution"
 				(path "/1c59de6a-87fe-4223-8898-4b0383164a31"
 					(reference "J12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 201.676 40.513 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "29a9fcb0-9c34-4a97-a7c9-4dd51b52d1f5")
+		(property "Reference" "H3"
+			(at 204.47 39.2429 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 204.47 41.7829 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" ""
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" ""
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" ""
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 201.676 40.513 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "Power_Distribution"
+				(path "/1c59de6a-87fe-4223-8898-4b0383164a31"
+					(reference "H3")
 					(unit 1)
 				)
 			)
@@ -26266,7 +26502,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Imported_Footprints:RES_EXB2HV_1506x8"
+		(property "Footprint" "Imported_Footprints:2506_8x_Resistor_Array"
 			(at 287.274 147.066 0)
 			(effects
 				(font
@@ -26295,7 +26531,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/EXB-2HV222JV/285323"
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/cts-resistor-products/742C163222JP/1124346"
 			(at 293.624 140.462 0)
 			(effects
 				(font
@@ -26304,7 +26540,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" "Y1222CT-ND"
+		(property "Supplier 1 S/N" "60-742C163222JPCT-ND"
 			(at 293.624 143.002 0)
 			(effects
 				(font
@@ -29588,6 +29824,124 @@
 			(project "Power_Distribution"
 				(path "/1c59de6a-87fe-4223-8898-4b0383164a31"
 					(reference "#PWR066")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Mechanical:MountingHole")
+		(at 201.676 33.782 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bc5a31cd-7af6-4822-8b74-eaa88b632c4a")
+		(property "Reference" "H2"
+			(at 204.47 32.5119 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MountingHole"
+			(at 204.47 35.0519 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Mounting Hole without connection"
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR" ""
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MFR S/N" ""
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1" ""
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 1 S/N" ""
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2" ""
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier 2 S/N" ""
+			(at 201.676 33.782 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project ""
+				(path "/1c59de6a-87fe-4223-8898-4b0383164a31"
+					(reference "H2")
 					(unit 1)
 				)
 			)
@@ -32978,7 +33332,7 @@
 				)
 			)
 		)
-		(property "Value" "3.9k Array"
+		(property "Value" "3.3k Array"
 			(at 325.628 143.002 0)
 			(effects
 				(font
@@ -32986,7 +33340,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Imported_Footprints:RES_EXB2HV_1506x8"
+		(property "Footprint" "Imported_Footprints:2506_8x_Resistor_Array"
 			(at 319.278 147.066 0)
 			(effects
 				(font
@@ -32996,7 +33350,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "EXB-2HV392JV"
+		(property "Datasheet" ""
 			(at 319.278 147.066 0)
 			(effects
 				(font
@@ -33006,7 +33360,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "3.9k x8 Resistive Array"
+		(property "Description" "3.3k x8 Resistive Array"
 			(at 319.278 147.066 0)
 			(effects
 				(font
@@ -33015,7 +33369,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1" "https://www.digikey.com/en/products/detail/panasonic-electronic-components/EXB-2HV392JV/285326"
+		(property "Supplier 1" "https://www.digikey.com/en/products/detail/cts-resistor-products/742C163332JP/1124341"
 			(at 325.628 140.462 0)
 			(effects
 				(font
@@ -33024,7 +33378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier 1 S/N" "Y1392CT-ND"
+		(property "Supplier 1 S/N" "60-742C163332JPCT-ND"
 			(at 325.628 143.002 0)
 			(effects
 				(font

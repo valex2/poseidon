@@ -560,10 +560,10 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "DNP",
           "name": "${DNP}",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -632,10 +632,10 @@
           "show": true
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "Supplier 1 P/N",
           "name": "Supplier 1 P/N",
-          "show": true
+          "show": false
         },
         {
           "group_by": true,

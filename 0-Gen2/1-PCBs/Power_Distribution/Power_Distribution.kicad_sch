@@ -16689,6 +16689,20 @@
 		)
 		(uuid "1a24938b-9058-4a5b-93b3-637a9920e4c6")
 	)
+	(text "To fix as of 6/23/25:\n-- Neo pads\n-- capacitors between neo pixels"
+		(exclude_from_sim no)
+		(at 236.347 31.623 0)
+		(effects
+			(font
+				(size 2.54 2.54)
+				(thickness 0.508)
+				(bold yes)
+				(color 132 0 0 1)
+			)
+			(justify left)
+		)
+		(uuid "46362e18-ad37-4c37-9227-43850c67aa95")
+	)
 	(text "I2C @ 0x1D\nformat: 0011(A2)(A1)(A0)"
 		(exclude_from_sim no)
 		(at 120.396 180.848 0)

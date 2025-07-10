@@ -1,116 +1,205 @@
 #include <Servo.h>
 #include <Wire.h>
-#include "MS5837.h"
-#include <Adafruit_NeoPixel.h>
 
-// Settings
-#define PIN            9          // Pin where NeoPixel strip is connected
-#define NUMPIXELS      150        // Total number of pixels
-#define DELAY_MS       10        // Delay between brightness steps (controls speed)
+// Servos
+Servo servos[8];   // Array to store servo objects
+// const int servoPins[8] = {2, 4, 3, 7, 0, 6, 5, 1};  // Update these pin numbers as needed
+const int servoPins[8] = {4, 3, 0, 2, 1, 6, 5, 7};
+int lastThrusterPWM[8] = {1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500};   
 
-// Create NeoPixel strip object
-Adafruit_NeoPixel strip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
-
-MS5837 sensor;
-int currentPin = 41;
-int voltagePin = 40;
-int currentVal = 0;
-int voltageVal = 0;
-
-Servo servo[8];
-byte servoPins[] = {0, 1, 2, 3, 4, 5, 6, 7};
+// Serial setup
 char inputBuffer[64]; // Buffer to store incoming serial data
 int bufferPosition = 0; // Position in the buffer
+const int DIGITS = 8;
 
-int DIGITS = 8;
+// Depth sensor
+#include "MS5837.h"
+MS5837 sensor;
 
-// Light Control
+// Battery sensor
+const int voltagePin = 40;
+const int currentPin = 41;
+
+// Indicators
+const int greenIndicatorLedPin = 37; // LED1
+// const int redIndicatorLedPin= 36;  // LED2
+const int killSwitchPin = 26;
+
+// External lumen lights
 Servo lightServo;
-int LumenPin = 8;
+int lumenPin = 8;
 int lightVal = 1100;
 
+// SD Card
+#include <SD.h>
+int sd_loop_counter = 0;
+const int chipSelect = BUILTIN_SDCARD;
+unsigned long loopIterationCounter = 0; // for perioidic SD logging
+int sdLoggingFrequency = 20000; // TODO: make this human readable
+
 void setup() {
-  Serial.begin(9600);
-  config_servo();
-  config_depth_sensor();
+    // Begin serial and I2C (via wire)
+    Serial.begin(9600);
+    Wire.begin();
+    
+    // Initialize all servos
+    config_servos();
 
-  // Attach the light servo
-  lightServo.attach(LumenPin);
-  lightServo.writeMicroseconds(1100); // turn off the light
+    // Initilize depth sensor
+    config_depth();
 
-  // Neopixel strips
-  strip.begin();
-  strip.show(); // Initialize all pixels to 'off'
+    // Initilize voltage/current sensor
+    config_battery();
 
-  int brightness = 100;
-  setBlueBreathing(brightness);
+    // Initilize indicator
+    config_indicator();
+
+    // Initilize SD card
+    config_sd_card();
+    
+    Serial.println("Initilize Complete");
 }
 
-void config_servo() {
-  for (int i = 0; i < 8; i++) {
-    servo[i].attach(servoPins[i]);
-    servo[i].writeMicroseconds(1500); // Default neutral position
-  }
+void config_servos() {
+    for (int i = 0; i < 8; i++) {
+        servos[i].attach(servoPins[i]);   // Attach servo
+        servos[i].writeMicroseconds(1500);  // Start at neutral
+    }
 }
 
-void config_depth_sensor() {
-  Wire.begin();
-  sensor.setModel(MS5837::MS5837_02BA); // model number for Bar02
-  sensor.init();
-  sensor.setFluidDensity(997); // kg/m^3 (997 freshwater, 1029 for seawater)
+void config_depth() {
+    sensor.setModel(MS5837::MS5837_02BA); // model number for Bar02
+    sensor.init();
+    sensor.setFluidDensity(997); // kg/m^3 (997 freshwater, 1029 for seawater)
+}
+
+void config_battery() {
+    pinMode(currentPin, INPUT);
+    pinMode(voltagePin, INPUT);
+}
+
+void config_indicator() {
+    pinMode(greenIndicatorLedPin, OUTPUT);
+    pinMode(killSwitchPin, INPUT);
+}
+
+void config_lumen() {
+  lightServo.attach(lumenPin);
+  lightServo.writeMicroseconds(1100); // Turn off the light
+}
+
+void config_sd_card() {
+  SD.begin(chipSelect);
+  write_data_sd("Configuring");
 }
 
 void loop() {
-  while (Serial.available() > 0) {
-    char inChar = (char)Serial.read();
-    if (inChar == '\n' || inChar == '\r') { // End of one command
-      inputBuffer[bufferPosition] = '\0'; // Null-terminate the string
-      process_input(inputBuffer);
-      bufferPosition = 0; // Reset buffer for the next command
-    } else {
-      if (bufferPosition < (int)sizeof(inputBuffer) - 1) { // Prevent buffer overflow
-        inputBuffer[bufferPosition++] = inChar;
-      }
+    //SD Card Logs
+    loopIterationCounter++;
+    if (loopIterationCounter % sdLoggingFrequency == 0) {
+        logPeriodicData();
     }
-  }
+
+    // Indicator (kill switch) logic
+    int killSwitch = digitalRead(killSwitchPin); // Read the value from the pin (0, loose = nominal or 1, tighten = kill)
+    if (killSwitch == 0) {
+        digitalWrite(greenIndicatorLedPin, HIGH);
+    } else if (killSwitch == 1) { // If KILLED, reset motors and blink red LED
+        Serial.println("KILLED");
+        config_servos();
+        digitalWrite(greenIndicatorLedPin, LOW);
+        return; // Skip further processing when killed
+    }
+
+    while (Serial.available() > 0) {
+        char inChar = (char)Serial.read();
+        if (inChar == '\n' || inChar == '\r') { // End of one command
+            inputBuffer[bufferPosition] = '\0'; // Null-terminate the string
+            process_input(inputBuffer);
+            bufferPosition = 0; // Reset buffer for the next command
+        } else {
+            if (bufferPosition < (int)sizeof(inputBuffer) - 1) { // Prevent buffer overflow
+                inputBuffer[bufferPosition++] = inChar;
+            }
+        }
+    }
 }
 
 void process_input(char *input) {
   int s0, s1, s2, s3, s4, s5, s6, s7;
   int servoNum, val;
-  if (sscanf(input, "%d %d %d %d %d %d %d %d", &s0, &s1, &s2, &s3, &s4, &s5, &s6, &s7) == 8) {
-    set_servo(0, s0);
-    set_servo(1, s1);
-    set_servo(2, s2);
-    set_servo(3, s3);
-    set_servo(4, s4);
-    set_servo(5, s5);
-    set_servo(6, s6);
-    set_servo(7, s7);
+
+  if (sscanf(input, "%d %d %d %d %d %d %d %d", &s0, &s1, &s2, &s3, &s4, &s5, &s6, &s7) == 8) {   // Setting servos
+    // Set servos
+    servos[0].writeMicroseconds(s0);
+    servos[1].writeMicroseconds(s1);
+    servos[2].writeMicroseconds(s2);
+    servos[3].writeMicroseconds(s3);
+    servos[4].writeMicroseconds(s4);
+    servos[5].writeMicroseconds(s5);
+    servos[6].writeMicroseconds(s6);
+    servos[7].writeMicroseconds(s7);
+
+    // Record last thruster value
+    lastThrusterPWM[0] = s0; 
+    lastThrusterPWM[1] = s1;
+    lastThrusterPWM[2] = s2;
+    lastThrusterPWM[3] = s3;
+    lastThrusterPWM[4] = s4;
+    lastThrusterPWM[5] = s5;
+    lastThrusterPWM[6] = s6;
+    lastThrusterPWM[7] = s7;
+
+    // THIS MUST BE KEPT THE SAME IN ORDER TO WORK WITH ORIN CODE
     float pressure, temperature, depth;
     handle_depth_command(pressure, temperature, depth);
     float current, voltage;
-    handle_voltage_command(current, voltage);
+    handle_battery_command(current, voltage);
+
+    // Print those data for orin
     Serial.println("> pressure:" + String(pressure, DIGITS) + " temperature:" + String(temperature, DIGITS) + " depth:" + String(depth, DIGITS) + " current:" + String(current, DIGITS) + " voltage:" + String(voltage, DIGITS));
-  } else if (strcmp(input, "batt") == 0) { // for debugging
+  
+  } else if (strcmp(input, "batt") == 0) {   // Debugging battery
+    Serial.println("TESTING BATTERY");
     float current, voltage;
-    handle_voltage_command(current, voltage);
+    handle_battery_command(current, voltage);
     Serial.println("Current:" + String(current, DIGITS) + " voltage:" + String(voltage, DIGITS));
-  } else if (sscanf(input, "%d %d", &servoNum, &val) == 2) { //for debugging without the VM
+
+  } else if (sscanf(input, "%d %d", &servoNum, &val) == 2) {   // Turn on single servo
+     Serial.println("TESTING SINGLE SERVO");
     if (val >= 1100 && val <= 1900 && servoNum >= 0 && servoNum <= 7) {
-      set_servo(servoNum, val);
+        servos[servoNum].writeMicroseconds(val);
     } else {
-      Serial.println("Invalid command");
+        Serial.println("Invalid command");
     }
-  } else if (sscanf(input, "light %d", &lightVal) == 1) {
+
+  } else if (strcmp(input, "depth") == 0) {   // Debugging depth sensor
+    Serial.println("TESTING DEPTH SENSOR");
+    float pressure, temperature, depth;
+    handle_depth_command(pressure, temperature, depth);
+    Serial.println("Pressure: " + String(pressure, DIGITS) + " mbar, Temperature: " + String(temperature, DIGITS) + " °C, Depth: " + String(depth, DIGITS) + " m");
+
+  } else if (strcmp(input, "test") == 0) {   // Debugging all servos
+    Serial.println("RUNNING SERVO TEST SCRIPT");
+    test_servos();
+
+  } else if (sscanf(input, "light %d", &lightVal) == 1) {   // Turn on lumen lights
     if (lightVal >= 1100 && lightVal <= 1900) {
       lightServo.writeMicroseconds(lightVal);
       Serial.println("Light set to " + String(lightVal));
     } else {
       Serial.println("Invalid light value. Please enter a value between 1100 and 1900.");
     }
+  
+  } else if (strcmp(input, "transfer") == 0) {   // SD Card Transfer
+    transfer_sd_log();
+
+  } else if (strcmp(input, "delete") == 0) {   // SD Card Delete
+    delete_sd_log();
+
   } else {
     Serial.println(input);
+
   }
 }
 
@@ -121,42 +210,126 @@ void handle_depth_command(float& pressure, float& temperature, float& depth) {
   depth = sensor.depth(); // m
 }
 
-void handle_voltage_command(float& current, float& voltage) {
-  currentVal = analogRead(currentPin);
-  voltageVal = analogRead(voltagePin);
-  current = (currentVal * 120.0) / 1024; // A
-  voltage = (voltageVal * 60.0) / 1024; // V
+void handle_battery_command(float& current, float& voltage) {
+  current = (analogRead(currentPin) * 120.0) / 1024; // A
+  voltage = (analogRead(voltagePin) * 60.0) / 1024; // V
 }
 
-void set_servo(int servoNum, int val) {
-    int remappedServo;
-    switch (servoNum) {
-      // Old
-        case 0: remappedServo = 5; break;
-        case 1: remappedServo = 0; break;
-        case 2: remappedServo = 7; break;
-        case 3: remappedServo = 6; break;
-        case 4: remappedServo = 3; break;
-        case 5: remappedServo = 1; break;
-        case 6: remappedServo = 4; break;
-        case 7: remappedServo = 2; break;
-        default: return;
-    }
-    if (remappedServo >= 0 && remappedServo <= 7 && val >= 1100 && val <= 1900) {
-        servo[remappedServo].writeMicroseconds(val);
-    }
-}
-
-void setBlueBreathing(uint8_t brightness) {
-  // Generate dynamic shades of blue
-  uint8_t blue = brightness;
-  uint8_t green = brightness / 4;   // Add a hint of green for cyan tones
-  uint8_t red = brightness / 8;    // Very slight purple tint at higher brightness
-
-  uint32_t color = strip.Color(red, green, blue);
-
-  for (int i = 0; i < NUMPIXELS; i++) {
-    strip.setPixelColor(i, color);
+void test_servos() {
+  for (int i = 0; i < 8; i++) {
+    // Set the current servo to 1550 microseconds
+    servos[i].writeMicroseconds(1550);
+    delay(2000);  // wait 500 ms for the servo to move
+    // Return the servo to its neutral position (1500 microseconds)
+    servos[i].writeMicroseconds(1500);
+    delay(500);  // wait 500 ms before moving to the next servo
   }
-  strip.show();
+}
+
+void logPeriodicData() {
+  float current, voltage;
+  handle_battery_command(current, voltage);
+
+  float pressure, temperature, depth;
+  handle_depth_command(pressure, temperature, depth);
+  
+  String dataString = "current:" + String(current, DIGITS) +
+                  " voltage:" + String(voltage, DIGITS) +
+                  " servo:"; 
+  for (int i = 0; i < 8; i++) {
+    dataString += "PWM:" + String(lastThrusterPWM[i]);
+    if (i < 7)
+      dataString += ",";
+  }
+  
+  dataString += " pressure:" + String(pressure, DIGITS) +
+                " temperature:" + String(temperature, DIGITS) +
+                " depth:" + String(depth, DIGITS);
+
+  dataString += " killSwitch:" + String(digitalRead(killSwitchPin));
+
+  write_data_sd(dataString);
+}
+
+void transfer_sd_log(){
+  if (SD.exists("datalog.txt")) {
+    Serial.println("Transfering datalog.txt ...");
+    // Open the file for reading
+    File dataFile = SD.open("datalog.txt", FILE_READ);
+    if (dataFile) {
+      // Read the file and send its content to the Serial port
+      while (dataFile.available()) {
+        Serial.write(dataFile.read());
+      }
+      dataFile.close();
+      Serial.println("\nFile transfer complete. Save the output on your local device as datalog.txt.");
+    } else {
+      Serial.println("Error opening datalog.txt for reading.");
+    }
+  } else {
+    Serial.println("datalog.txt does not exist.");
+  }
+}
+
+void delete_sd_log() {
+  if (SD.exists("datalog.txt")) {
+      // Remove the file
+      if (SD.remove("datalog.txt")) {
+        Serial.println("datalog.txt deleted.");
+      } else {
+        Serial.println("Error deleting datalog.txt.");
+      }
+      // Recreate the file
+      File dataFile = SD.open("datalog.txt", FILE_WRITE);
+      if (dataFile) {
+        dataFile.close();
+        Serial.println("datalog.txt recreated.");
+      } else {
+        Serial.println("Error recreating datalog.txt.");
+      }
+    } else {
+      Serial.println("datalog.txt does not exist.");
+    }
+}
+
+void write_data_sd(String dataString) {
+  // Get the timestamp
+  String timestamp = getTimestamp();
+  // open the file.
+  File dataFile = SD.open("datalog.txt", FILE_WRITE);
+  // if the file is available, write to it
+  if (dataFile) {
+    dataFile.println(timestamp + " -> " + dataString);
+    dataFile.close();
+    //Serial.println("logged data!!");
+    //Serial.println(timestamp + " -" + dataString);
+  } else {
+    // if the file isn't open, pop up an error:
+    Serial.println("error opening datalog.txt");
+  }
+}
+
+String getTimestamp() {
+  unsigned long milliseconds = millis();
+  unsigned long seconds = milliseconds / 1000;
+  unsigned long minutes = seconds / 60;
+  unsigned long hours = minutes / 60;
+
+  milliseconds %= 1000;
+  seconds %= 60;
+  minutes %= 60;
+
+  // Format the timestamp
+  String timestamp = "";
+  if (hours < 10) timestamp += "0"; // Add leading zero for hours
+  timestamp += String(hours) + ":";
+  if (minutes < 10) timestamp += "0"; // Add leading zero for minutes
+  timestamp += String(minutes) + ":";
+  if (seconds < 10) timestamp += "0"; // Add leading zero for seconds
+  timestamp += String(seconds) + ".";
+  if (milliseconds < 100) timestamp += "0"; // Add leading zeros for milliseconds
+  if (milliseconds < 10) timestamp += "0";
+  timestamp += String(milliseconds);
+
+  return timestamp;
 }

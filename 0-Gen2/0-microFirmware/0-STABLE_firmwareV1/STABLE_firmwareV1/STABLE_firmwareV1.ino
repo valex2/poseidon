@@ -29,6 +29,7 @@ const int killSwitchPin = 26;
 Servo lightServo;
 int lumenPin = 8;
 int lightVal = 1100;
+int lightCycles = 5;
 
 // SD Card
 #include <SD.h>
@@ -53,6 +54,9 @@ void setup() {
 
     // Initilize indicator
     config_indicator();
+
+    // Initilize lumen
+    config_lumen();
 
     // Initilize SD card
     config_sd_card();
@@ -169,6 +173,7 @@ void process_input(char *input) {
      Serial.println("TESTING SINGLE SERVO");
     if (val >= 1100 && val <= 1900 && servoNum >= 0 && servoNum <= 7) {
         servos[servoNum].writeMicroseconds(val);
+        lastThrusterPWM[servoNum] = val;
     } else {
         Serial.println("Invalid command");
     }
@@ -190,7 +195,11 @@ void process_input(char *input) {
     } else {
       Serial.println("Invalid light value. Please enter a value between 1100 and 1900.");
     }
-  
+
+  } else if (sscanf(input, "light gradient %d", &lightCycles) == 1) {   // Graient lumen lights
+    Serial.println("LIGHT GRADIENT SET");
+    gradient_lumen_light(lightCycles);
+
   } else if (strcmp(input, "transfer") == 0) {   // SD Card Transfer
     transfer_sd_log();
 
@@ -219,9 +228,11 @@ void test_servos() {
   for (int i = 0; i < 8; i++) {
     // Set the current servo to 1550 microseconds
     servos[i].writeMicroseconds(1550);
+    lastThrusterPWM[i] = 1550;
     delay(2000);  // wait 500 ms for the servo to move
     // Return the servo to its neutral position (1500 microseconds)
     servos[i].writeMicroseconds(1500);
+    lastThrusterPWM[i] = 1500;
     delay(500);  // wait 500 ms before moving to the next servo
   }
 }
@@ -306,6 +317,19 @@ void write_data_sd(String dataString) {
   } else {
     // if the file isn't open, pop up an error:
     Serial.println("error opening datalog.txt");
+  }
+}
+
+void gradient_lumen_light(int cycles) {
+  for (int i = 0; i < cycles; i++) {
+    for (int lightVal = 1100; lightVal <=1900; lightVal++) {
+      lightServo.writeMicroseconds(lightVal);
+      delay(1);
+    }
+    for (int lightVal = 1900; lightVal >=1100; lightVal--) {
+      lightServo.writeMicroseconds(lightVal);
+      delay(1);
+    }
   }
 }
 

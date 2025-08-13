@@ -109,7 +109,7 @@ void loop() {
     if (killSwitch == 0) {
         digitalWrite(greenIndicatorLedPin, HIGH);
     } else if (killSwitch == 1) { // If KILLED, reset motors and blink red LED
-        Serial.println("KILLED");
+        //Serial.println("KILLED");
         config_servos();
         digitalWrite(greenIndicatorLedPin, LOW);
         return; // Skip further processing when killed

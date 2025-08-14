@@ -1,4 +1,4 @@
-// Squirt Homebase — Timed batch command version with full UI and improved multi-line logs
+// Squirt Homebase — Multi-line mission capable, status UI, last 5 logs
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
@@ -7,11 +7,10 @@
 #include <WebSocketsServer.h>
 #include <ArduinoOTA.h>
 #include <queue>
-#include <Ticker.h>
 #include <vector>
 
 // ======= Reed Based Kill Switch =======
-constexpr int LED_PIN = 2;
+constexpr int LED_PIN = 2; // kill switch indicator
 bool isKilled = false;
 unsigned long lastBlink = 0;
 bool ledState = false;
@@ -19,11 +18,11 @@ bool ledState = false;
 // ======= Command Execution =======
 struct Cmd {
   String key;
-  int value;
-  int duration;
+  int value;      // % for thrusters or ° for servos
+  int duration;   // seconds
 };
 
-std::queue<String> rawLines;
+std::queue<String> rawLines; 
 bool executingQueue = false;
 
 // ======== AP credentials =========
@@ -49,55 +48,36 @@ constexpr int SERVO_MAX_US = 2000;
 WebServer http(80);
 WebSocketsServer ws(81);
 
+String logBuffer[5]; // store last 5 logs
+
 // ===== HTML UI =====
 const char INDEX_HTML[] PROGMEM = R"HTML(
 <!doctype html>
 <html>
 <head>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>ESP32 Thrusters & Servos</title>
+<title>ESP32 Mission Control</title>
 <style>
   body { font-family: system-ui, sans-serif; margin: 20px; max-width: 700px; }
   textarea { width: 100%; height: 150px; font-family: monospace; margin-top: 10px; }
-  pre { background: #eee; padding: 8px; border-radius: 8px; height: 150px; overflow-y: auto; font-size: 12px; white-space: pre-wrap; }
+  pre { background: #eee; padding: 8px; border-radius: 8px; height: 120px; overflow-y: auto; font-size: 12px; }
   .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
   .row { display: flex; gap: 12px; align-items: center; margin: 8px 0; }
-  input[type=range] { width: 100%; }
-  .val { min-width: 56px; text-align: right; font-variant-numeric: tabular-nums; }
-  .ok { color: #0a0; }
-  .bad { color: #a00; }
+  .status { font-weight: bold; padding: 4px 8px; border-radius: 6px; }
+  .ready { background: #0a0; color: white; }
+  .running { background: #a00; color: white; }
   button { padding: 8px 12px; border-radius: 8px; border: 1px solid #aaa; background: #f5f5f5; }
 </style>
 </head>
 <body>
-<h1>ESP32 Live Control</h1>
-<div id="status" style="font-weight:bold; margin-bottom:15px; font-size:18px;">
-  Program Status: <span id="statusText" style="color:green;">READY</span>
-</div>
-<div id=conn class=bad>WebSocket: connecting...</div>
+<h1>ESP32 Mission Control</h1>
+<div>Status: <span id=status class="status ready">READY</span></div>
+<div id=conn>WebSocket: connecting...</div>
 
 <div class=card>
-  <h3>Thrusters (-100 to 100%)</h3>
-  <div class=row><label style="width:120px">Thruster 1</label>
-    <input id=t1 type=range min=-100 max=100 step=1 value=0>
-    <div class=val><span id=t1v>0</span>%</div>
-  </div>
-  <div class=row><label style="width:120px">Thruster 2</label>
-    <input id=t2 type=range min=-100 max=100 step=1 value=0>
-    <div class=val><span id=t2v>0</span>%</div>
-  </div>
-</div>
-
-<div class=card>
-  <h3>Servos (-90 to +90)</h3>
-  <div class=row><label style="width:120px">Servo 1</label>
-    <input id=s1 type=range min=-90 max=90 step=1 value=0>
-    <div class=val><span id=s1v>0</span>°</div>
-  </div>
-  <div class=row><label style="width:120px">Servo 2</label>
-    <input id=s2 type=range min=-90 max=90 step=1 value=0>
-    <div class=val><span id=s2v>0</span>°</div>
-  </div>
+  <h3>Command Sequence</h3>
+  <textarea id=cmdseq placeholder="Paste mission here\nExample:\nT1:50:3;T2:50:3\nS1:20:2;S2:-20:2\nWAIT:2"></textarea>
+  <button id=runSeq>Run Mission</button>
 </div>
 
 <div class=card>
@@ -106,78 +86,53 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
 </div>
 
 <div class=card>
-  <h3>Command Sequence</h3>
-  <textarea id=cmdseq placeholder="Example:\nT1:50:5;T2:-50:5\nS1:30:3;S2:-30:3\nWAIT:2"></textarea>
-  <button id=runSeq>Execute</button>
-</div>
-
-<div class=card>
-  <h3>Live Logs <label style="font-weight:normal"><input id=logToggle type=checkbox checked> Show Logs</label></h3>
-  <pre id="log"></pre>
+  <h3>Last 5 Logs</h3>
+  <pre id=log></pre>
 </div>
 
 <script>
 const host = location.hostname || "192.168.4.1";
-let sock, alive = false, showLogs = true;
-let logBuffer = [];
-
-function renderLogs(){
-  const logEl = document.getElementById("log");
-  logEl.textContent = logBuffer.join("\\n");
-}
-
+let sock, alive = false;
 function send(cmd){ if(sock && alive){ sock.send(cmd); } }
-
 function connectWS(){
   sock = new WebSocket(`ws://${host}:81/`);
-  sock.onopen = () => { alive = true; conn.textContent = "WebSocket: connected"; conn.className = 'ok'; };
-  sock.onclose = () => { alive = false; conn.textContent = "WebSocket: disconnected"; conn.className = 'bad'; setTimeout(connectWS, 1000); };
+  sock.onopen = () => { alive = true; conn.textContent = "WebSocket: connected"; };
+  sock.onclose = () => { alive = false; conn.textContent = "WebSocket: disconnected"; setTimeout(connectWS, 1000); };
   sock.onmessage = (e) => {
-    const msg = e.data;
-
-    // Detect program status and update indicator
-    if (msg.includes("[SYSTEM] PROGRAM STATUS: RUNNING")) {
-      document.getElementById("statusText").textContent = "RUNNING";
-      document.getElementById("statusText").style.color = "red";
+    if(e.data.startsWith("[STATUS]")){
+      const state = e.data.split(" ")[1];
+      const statusEl = document.getElementById("status");
+      if(state === "RUNNING"){ statusEl.textContent = "RUNNING"; statusEl.className = "status running"; }
+      else { statusEl.textContent = "READY"; statusEl.className = "status ready"; }
+    } else {
+      const logEl = document.getElementById("log");
+      logEl.textContent += e.data + "\\n";
+      const lines = logEl.textContent.trim().split("\\n");
+      if(lines.length > 5) logEl.textContent = lines.slice(-5).join("\\n") + "\\n";
+      logEl.scrollTop = logEl.scrollHeight;
     }
-    else if (msg.includes("[SYSTEM] PROGRAM STATUS: READY")) {
-      document.getElementById("statusText").textContent = "READY";
-      document.getElementById("statusText").style.color = "green";
-    }
-
-    // Log handling
-    if(!showLogs) return;
-    logBuffer.push(msg);
-    if(logBuffer.length > 5) logBuffer.shift();
-    renderLogs();
   };
 }
 connectWS();
-
-function bindSlider(id, key){
-  const el = document.getElementById(id);
-  const vl = document.getElementById(id+"v");
-  const update = () => { vl.textContent = el.value; send(`${key}:${el.value}`); };
-  el.addEventListener('input', update);
-  el.addEventListener('change', update);
-}
-bindSlider('t1', 'T1');
-bindSlider('t2', 'T2');
-bindSlider('s1', 'S1');
-bindSlider('s2', 'S2');
-kill.onclick = () => send("KILL");
-resetKill.onclick = () => send("RESETKILL");
-logToggle.onchange = (e) => showLogs = e.target.checked;
 runSeq.onclick = () => {
   const lines = cmdseq.value.trim().split("\\n");
   for(const line of lines) send(line);
 };
+kill.onclick = () => send("KILL");
+resetKill.onclick = () => send("RESETKILL");
 </script>
 </body>
 </html>
 )HTML";
 
-// ===== Utility mappers =====
+// ===== Utility =====
+void addLog(String msg) {
+  for (int i = 0; i < 4; i++) logBuffer[i] = logBuffer[i+1];
+  logBuffer[4] = msg;
+  String out;
+  for (auto &l : logBuffer) if (l.length()) out += l + "\n";
+  ws.broadcastTXT(out);
+}
 int servoAngleToUs(int angleDeg) {
   angleDeg = constrain(angleDeg, -90, 90);
   return map(angleDeg, -90, 90, SERVO_MIN_US, SERVO_MAX_US);
@@ -187,33 +142,30 @@ int thrusterPctToUs(int pct) {
   if (pct >= 0)  return map(pct, 0, 100, THR_NEU_US, THR_MAX_US);
   else           return map(pct, -100, 0, THR_MIN_US, THR_NEU_US);
 }
-
-// ===== Apply outputs =====
 void setThruster1(int pct) {
-  int pulse_us = thrusterPctToUs(pct);
-  uint32_t duty = (pulse_us * 65536L) / 20000;
+  int us = thrusterPctToUs(pct);
+  uint32_t duty = (us * 65536L) / 20000;
   ledcWrite(THRUSTER1_PIN, duty);
-  ws.broadcastTXT("[ACTUATOR] T1 → " + String(pct) + "%\n");
+  addLog("T1 -> " + String(pct) + "%");
 }
 void setThruster2(int pct) {
-  int pulse_us = thrusterPctToUs(pct);
-  uint32_t duty = (pulse_us * 65536L) / 20000;
+  int us = thrusterPctToUs(pct);
+  uint32_t duty = (us * 65536L) / 20000;
   ledcWrite(THRUSTER2_PIN, duty);
-  ws.broadcastTXT("[ACTUATOR] T2 → " + String(pct) + "%\n");
+  addLog("T2 -> " + String(pct) + "%");
 }
 void setServo1(int ang) {
   int us = servoAngleToUs(ang);
   uint32_t duty = (us * 65536L) / 20000;
   ledcWrite(SERVO1_PIN, duty);
-  ws.broadcastTXT("[ACTUATOR] S1 → " + String(ang) + "°\n");
+  addLog("S1 -> " + String(ang) + "°");
 }
 void setServo2(int ang) {
   int us = servoAngleToUs(ang);
   uint32_t duty = (us * 65536L) / 20000;
   ledcWrite(SERVO2_PIN, duty);
-  ws.broadcastTXT("[ACTUATOR] S2 → " + String(ang) + "°\n");
+  addLog("S2 -> " + String(ang) + "°");
 }
-
 void safeStop() {
   uint32_t thruster_neutral = (THR_NEU_US * 65536L) / 20000;
   uint32_t servo_neutral = (SERVO_NEU_US * 65536L) / 20000;
@@ -221,10 +173,9 @@ void safeStop() {
   ledcWrite(THRUSTER2_PIN, thruster_neutral);
   ledcWrite(SERVO1_PIN, servo_neutral);
   ledcWrite(SERVO2_PIN, servo_neutral);
-  ws.broadcastTXT("[SYSTEM] Safe stop: all outputs neutral\n");
+  addLog("SAFE STOP: all outputs neutral");
   isKilled = true;
 }
-
 Cmd parseCommand(const String &part) {
   Cmd cmd = {"", 0, 0};
   int firstColon = part.indexOf(':');
@@ -241,28 +192,14 @@ Cmd parseCommand(const String &part) {
   }
   return cmd;
 }
-
 void executeQueue() {
   executingQueue = true;
-  ws.broadcastTXT("[SYSTEM] --- PROGRAM START ---\n");
-  ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: RUNNING\n");
-
-  int batchNum = 0;
-  int totalBatches = rawLines.size();
-
+  ws.broadcastTXT("[STATUS] RUNNING");
   while (!rawLines.empty()) {
-    String line = rawLines.front();
-    rawLines.pop();
-    batchNum++;
-    line.trim();
-    if (line.length() == 0) continue;
-
-    ws.broadcastTXT("[BATCH] Executing batch " + String(batchNum) + " of " + String(totalBatches) + "\n");
-    ws.broadcastTXT("[BATCH] Raw line: \"" + line + "\"\n");
-
+    String line = rawLines.front(); rawLines.pop();
+    line.trim(); if (!line.length()) continue;
     std::vector<Cmd> cmds;
     int maxDur = 0;
-
     int start = 0;
     while (start < line.length()) {
       int sep = line.indexOf(';', start);
@@ -272,70 +209,51 @@ void executeQueue() {
       if (part.length() > 0) {
         Cmd c = parseCommand(part);
         if (c.key == "WAIT") {
-          ws.broadcastTXT("[WAIT] Pausing for " + String(c.value) + "s\n");
+          addLog("WAIT " + String(c.value) + "s");
           delay(c.value * 1000);
         } else {
           cmds.push_back(c);
           if (c.duration > maxDur) maxDur = c.duration;
-          ws.broadcastTXT("[PARSED CMD] " + c.key + " → " + String(c.value) + 
-                          (c.duration > 0 ? " (duration " + String(c.duration) + "s)" : "") + "\n");
         }
       }
       start = sep + 1;
     }
-
     for (auto &c : cmds) {
+      addLog("CMD " + c.key + ":" + String(c.value) + 
+             (c.duration ? " for " + String(c.duration) + "s" : ""));
       if      (c.key == "T1") setThruster1(c.value);
       else if (c.key == "T2") setThruster2(c.value);
       else if (c.key == "S1") setServo1(c.value);
       else if (c.key == "S2") setServo2(c.value);
     }
-
     if (maxDur > 0) {
-      ws.broadcastTXT("[BATCH] Running for " + String(maxDur) + "s\n");
       delay(maxDur * 1000);
-      ws.broadcastTXT("[BATCH] Duration complete — resetting outputs\n");
       for (auto &c : cmds) {
         if      (c.key == "T1") setThruster1(0);
         else if (c.key == "T2") setThruster2(0);
         else if (c.key == "S1") setServo1(0);
         else if (c.key == "S2") setServo2(0);
       }
+      addLog("→ Reset to neutral after " + String(maxDur) + "s");
     }
   }
-
-  ws.broadcastTXT("[SYSTEM] --- PROGRAM COMPLETE ---\n");
-  ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
+  ws.broadcastTXT("[STATUS] READY");
   executingQueue = false;
 }
-
 void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
   if (type == WStype_TEXT) {
     String msg((char*)payload, len);
     msg.trim();
-    if (msg == "KILL") {
-      safeStop();
-      while (!rawLines.empty()) rawLines.pop();
-      ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
-      return;
-    }
-    if (msg == "RESETKILL") {
-      isKilled = false;
-      digitalWrite(LED_PIN, LOW);
-      ws.broadcastTXT("[KILL] Reset via UI\n");
-      ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
-      return;
-    }
+    if (msg == "KILL") { safeStop(); while (!rawLines.empty()) rawLines.pop(); return; }
+    if (msg == "RESETKILL") { isKilled = false; digitalWrite(LED_PIN, LOW); addLog("KILL Reset via UI"); return; }
     rawLines.push(msg);
     if (!executingQueue) executeQueue();
   }
 }
-
 void setupHttp() {
   http.on("/", []() { http.send_P(200, "text/html", INDEX_HTML); });
   http.begin();
 }
-
 void setupPwm() {
   ledcAttach(THRUSTER1_PIN, PWM_FREQ_HZ, 16);
   ledcAttach(THRUSTER2_PIN, PWM_FREQ_HZ, 16);
@@ -343,13 +261,11 @@ void setupPwm() {
   ledcAttach(SERVO2_PIN, PWM_FREQ_HZ, 16);
   safeStop();
 }
-
 void startAP() {
   WiFi.mode(WIFI_AP);
   WiFi.softAP(AP_SSID, AP_PASS);
   Serial.printf("AP IP: %s\n", WiFi.softAPIP().toString().c_str());
 }
-
 void setup() {
   Serial.begin(115200);
   setupPwm();
@@ -360,16 +276,14 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
   pinMode(19, INPUT_PULLDOWN);
 }
-
 void loop() {
   http.handleClient();
   ws.loop();
   if (digitalRead(19) == HIGH && !isKilled) {
-    ws.broadcastTXT("[KILL] Hardware kill triggered\n");
+    addLog("HARDWARE KILL triggered");
     safeStop();
     while (!rawLines.empty()) rawLines.pop();
     executingQueue = false;
-    ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
   }
   if (isKilled) {
     unsigned long now = millis();

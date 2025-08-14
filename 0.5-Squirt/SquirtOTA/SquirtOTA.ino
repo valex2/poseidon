@@ -1,7 +1,4 @@
-// ESP32 (DOIT DevKit V1) AP + Web UI + WebSocket live PWM control
-// Thrusters: GPIO32, GPIO33 ; Servos: GPIO25, GPIO26
-// Uses ESP32Servo library to avoid direct LEDC calls.
-
+// Squirt Homebase
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
@@ -9,14 +6,20 @@
 #include <WebServer.h>
 #include <WebSocketsServer.h>   // Install "arduinoWebSockets" (Markus Sattler)
 #include <ArduinoOTA.h>
-
-// ======= Command Execution =======
 #include <queue>
 #include <Ticker.h>
 
+// ======= Reed Based Kill Switch =======
+constexpr int LED_PIN = 2; // kill switch indicator
+bool isKilled = false;
+unsigned long lastBlink = 0;
+bool ledState = false;
+
+// ======= Command Execution =======
 struct Cmd {
   String key;
-  int value;  // or delay in ms for WAIT
+  int value;      // % for thrusters or ° for servos
+  int duration;   // in seconds, optional (0 = immediate)
 };
 
 std::queue<Cmd> cmdQueue;
@@ -28,15 +31,15 @@ const char *AP_SSID = "ESP32-Squirt";
 const char *AP_PASS = "squirtSwims!"; // >=8 chars
 
 // ------- Pin assignments -------
-constexpr uint8_t THRUSTER1_PIN = 32;
-constexpr uint8_t THRUSTER2_PIN = 33;
-constexpr uint8_t SERVO1_PIN    = 18;
-constexpr uint8_t SERVO2_PIN    = 19;
+constexpr uint8_t THRUSTER1_PIN = 25;
+constexpr uint8_t THRUSTER2_PIN = 26;
+constexpr uint8_t SERVO1_PIN    = 32;
+constexpr uint8_t SERVO2_PIN    = 33;
 
-// Servo/ESC timing
+// ------- Servo/ESC timing ------
 constexpr uint32_t PWM_FREQ_HZ = 50;     // 50 Hz for servos/ESCs
 
-// BlueRobotics-style ESC range
+// BlueRobotics ESC range
 constexpr int THR_MIN_US = 1100;
 constexpr int THR_NEU_US = 1500;
 constexpr int THR_MAX_US = 1900;
@@ -100,6 +103,7 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
 
   <div class=card>
     <button id=kill>Kill (safe stop)</button>
+    <button id=resetKill style="margin-left:10px">Reset Kill</button>
     <div style="font-size:12px;color:#666;margin-top:8px">
       Hint: keep this page focused while moving sliders for smooth updates.
     </div>
@@ -161,23 +165,15 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
     bindSlider('s2', '°', 'S2');
 
     document.getElementById('kill').onclick = () => { send("KILL"); };
+    document.getElementById('resetKill').onclick = () => { send("RESETKILL"); };
     document.getElementById('logToggle').onchange = (e) => {
       showLogs = e.target.checked;
     };
 
-    document.getElementById('runSeq').onclick = async () => {
+    document.getElementById('runSeq').onclick = () => {
       const lines = document.getElementById('cmdseq').value.trim().split("\n");
       for (const line of lines) {
-        const parts = line.split(';');
-        for (const p of parts) {
-          if (p.startsWith("WAIT:")) {
-            const ms = parseInt(p.slice(5));
-            await new Promise(r => setTimeout(r, ms));
-          } else {
-            send(p);
-            await new Promise(r => setTimeout(r, 20)); // small gap between cmds
-          }
-        }
+        send(line);  // let ESP32 do all timing via WAIT commands
       }
     };
   </script>
@@ -252,6 +248,8 @@ void safeStop() {
 
   Serial.println("Safe stop: all outputs to neutral");
   ws.broadcastTXT("Safe stop: all outputs to neutral");
+
+  isKilled = true;   // Enable LED blinking
 }
 
 // ===== WebSocket handler =====
@@ -264,11 +262,11 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
     }
     case WStype_DISCONNECTED:
       Serial.printf("[WS] Client %u disconnected\n", num);
-      if (ws.connectedClients() == 0) {
-        Serial.println("[WS] No clients -> safeStop()");
-        safeStop();
-      }
-      break;
+      // if (ws.connectedClients() == 0) {
+      //   Serial.println("[WS] No clients -> safeStop()");
+      //   safeStop();
+      // }
+      // break;
     case WStype_TEXT: {
       String msg((char*)payload, len);
       msg.trim();
@@ -305,6 +303,11 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
         if (msg == "KILL") {
           safeStop();
           while (!cmdQueue.empty()) cmdQueue.pop();
+        } else if (msg == "RESETKILL") {
+          isKilled = false;
+          digitalWrite(LED_PIN, LOW);
+          Serial.println("[KILL] Reset via UI");
+          ws.broadcastTXT("[KILL] Reset via UI");
         } else {
           int colon = msg.indexOf(':');
           if (colon > 0) {
@@ -348,21 +351,20 @@ void setupPwm() {
 }
 
 void handleCommand(const Cmd& cmd) {
+  String log = "[CMD] " + cmd.key + ":" + String(cmd.value);
+  ws.broadcastTXT(log);
+  Serial.println(log);
+
   if (cmd.key == "T1") setThruster1(cmd.value);
   else if (cmd.key == "T2") setThruster2(cmd.value);
   else if (cmd.key == "S1") setServo1(cmd.value);
   else if (cmd.key == "S2") setServo2(cmd.value);
-  else if (cmd.key == "WAIT") {
-    // just delay execution in the queue
-    // delay(cmd.value);
-    delay(cmd.value * 1000);  // seconds
-    Serial.printf("[SEQ] Waited %d ms\n", cmd.value);
-    ws.broadcastTXT(String("[SEQ] Waited ") + cmd.value + " ms");
-  }
 }
 
 void executeQueue() {
   executingQueue = true;
+
+  std::vector<Cmd> batch;
 
   while (!cmdQueue.empty()) {
     Cmd cmd = cmdQueue.front();
@@ -370,18 +372,32 @@ void executeQueue() {
 
     if (cmd.key == "KILL") {
       safeStop();
-      while (!cmdQueue.empty()) cmdQueue.pop(); // clear the rest
+      while (!cmdQueue.empty()) cmdQueue.pop(); // clear rest
       break;
     }
 
-    handleCommand(cmd);
+    if (cmd.key == "WAIT") {
+      // Execute all batched commands before waiting
+      for (const Cmd& c : batch) handleCommand(c);
+      batch.clear();
+
+      delay(cmd.value * 1000);
+      char buf[64];
+      snprintf(buf, sizeof(buf), "[SEQ] Waited %d seconds", cmd.value);
+      Serial.println(buf);
+      ws.broadcastTXT(buf);
+    } else {
+      batch.push_back(cmd);
+    }
   }
+
+  // Run any remaining commands if no WAIT after them
+  for (const Cmd& c : batch) handleCommand(c);
 
   executingQueue = false;
   Serial.println("[SEQ] Finished command sequence");
   ws.broadcastTXT("[SEQ] Finished command sequence");
 }
-
 
 // ===== AP + servers =====
 void startAP() {
@@ -413,6 +429,13 @@ void setup() {
   // ArduinoOTA.setHostname("esp32-ap-control");
   // ArduinoOTA.begin();
 
+  pinMode(18, OUTPUT); // switch sensing
+  digitalWrite(18, HIGH);
+  pinMode(19, INPUT_PULLDOWN);
+
+  pinMode(LED_PIN, OUTPUT); // blink detection
+  digitalWrite(LED_PIN, LOW);  // LED off at startup
+
   Serial.println("Ready. Connect to the AP and open http://192.168.4.1/");
 }
 
@@ -420,4 +443,26 @@ void loop() {
   http.handleClient();
   ws.loop();
   // ArduinoOTA.handle(); // if enabled
+
+  if (digitalRead(19) == HIGH) {
+    if (!isKilled) {
+      Serial.println("Reed Switch Triggered");
+      ws.broadcastTXT("[KILL] Hardware kill triggered");
+      isKilled = true;
+      safeStop();
+      while (!cmdQueue.empty()) cmdQueue.pop();
+      executingQueue = false;
+    }
+  }
+
+  if (isKilled) {
+    unsigned long now = millis();
+    if (now - lastBlink >= 500) {
+      ledState = !ledState;
+      digitalWrite(LED_PIN, ledState ? HIGH : LOW);
+      lastBlink = now;
+    }
+  } else {
+    digitalWrite(LED_PIN, LOW); // off when not killed
+  }
 }

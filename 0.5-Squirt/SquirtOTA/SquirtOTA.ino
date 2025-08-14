@@ -1,7 +1,6 @@
-// Squirt Homebase — Multi-line mission capable, status UI, last 5 logs
+// Squirt Homebase — Multi-line mission, manual controls, status UI, last 5 logs
 #include <Arduino.h>
 #include <WiFi.h>
-#include <WiFiUdp.h>
 #include <ESPmDNS.h>
 #include <WebServer.h>
 #include <WebSocketsServer.h>
@@ -9,33 +8,28 @@
 #include <queue>
 #include <vector>
 
-// ======= Reed Based Kill Switch =======
-constexpr int LED_PIN = 2; // kill switch indicator
+constexpr int LED_PIN = 2;
 bool isKilled = false;
 unsigned long lastBlink = 0;
 bool ledState = false;
 
-// ======= Command Execution =======
 struct Cmd {
   String key;
-  int value;      // % for thrusters or ° for servos
-  int duration;   // seconds
+  int value;
+  int duration;
 };
 
-std::queue<String> rawLines; 
+std::queue<String> rawLines;
 bool executingQueue = false;
 
-// ======== AP credentials =========
 const char *AP_SSID = "ESP32-Squirt";
 const char *AP_PASS = "squirtSwims!";
 
-// ------- Pin assignments -------
 constexpr uint8_t THRUSTER1_PIN = 25;
 constexpr uint8_t THRUSTER2_PIN = 26;
 constexpr uint8_t SERVO1_PIN    = 32;
 constexpr uint8_t SERVO2_PIN    = 33;
 
-// ------- Servo/ESC timing ------
 constexpr uint32_t PWM_FREQ_HZ = 50;
 constexpr int THR_MIN_US = 1100;
 constexpr int THR_NEU_US = 1500;
@@ -44,13 +38,11 @@ constexpr int SERVO_MIN_US = 1000;
 constexpr int SERVO_NEU_US = 1500;
 constexpr int SERVO_MAX_US = 2000;
 
-// ------- Networking ----------
 WebServer http(80);
 WebSocketsServer ws(81);
 
-String logBuffer[5]; // store last 5 logs
+String logBuffer[5];
 
-// ===== HTML UI =====
 const char INDEX_HTML[] PROGMEM = R"HTML(
 <!doctype html>
 <html>
@@ -58,15 +50,15 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>ESP32 Mission Control</title>
 <style>
-  body { font-family: system-ui, sans-serif; margin: 20px; max-width: 700px; }
-  textarea { width: 100%; height: 150px; font-family: monospace; margin-top: 10px; }
-  pre { background: #eee; padding: 8px; border-radius: 8px; height: 120px; overflow-y: auto; font-size: 12px; }
-  .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
-  .row { display: flex; gap: 12px; align-items: center; margin: 8px 0; }
-  .status { font-weight: bold; padding: 4px 8px; border-radius: 6px; }
-  .ready { background: #0a0; color: white; }
-  .running { background: #a00; color: white; }
-  button { padding: 8px 12px; border-radius: 8px; border: 1px solid #aaa; background: #f5f5f5; }
+body { font-family: system-ui, sans-serif; margin: 20px; max-width: 700px; }
+textarea { width: 100%; height: 150px; font-family: monospace; margin-top: 10px; }
+pre { background: #eee; padding: 8px; border-radius: 8px; height: 120px; overflow-y: auto; font-size: 12px; }
+.card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
+.status { font-weight: bold; padding: 4px 8px; border-radius: 6px; }
+.ready { background: #0a0; color: white; }
+.running { background: #a00; color: white; }
+button { padding: 8px 12px; border-radius: 8px; border: 1px solid #aaa; background: #f5f5f5; }
+input[type=number] { width: 60px; }
 </style>
 </head>
 <body>
@@ -76,8 +68,20 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
 
 <div class=card>
   <h3>Command Sequence</h3>
-  <textarea id=cmdseq placeholder="Paste mission here\nExample:\nT1:50:3;T2:50:3\nS1:20:2;S2:-20:2\nWAIT:2"></textarea>
+  <textarea id=cmdseq placeholder="Paste mission here..."></textarea>
   <button id=runSeq>Run Mission</button>
+</div>
+
+<div class=card>
+  <h3>Manual Control</h3>
+  Thruster 1 (%): <input id=t1 type=number> 
+  <button onclick="send('T1:'+t1.value)">Send</button><br><br>
+  Thruster 2 (%): <input id=t2 type=number> 
+  <button onclick="send('T2:'+t2.value)">Send</button><br><br>
+  Servo 1 (°): <input id=s1 type=number> 
+  <button onclick="send('S1:'+s1.value)">Send</button><br><br>
+  Servo 2 (°): <input id=s2 type=number> 
+  <button onclick="send('S2:'+s2.value)">Send</button>
 </div>
 
 <div class=card>
@@ -106,17 +110,17 @@ function connectWS(){
       else { statusEl.textContent = "READY"; statusEl.className = "status ready"; }
     } else {
       const logEl = document.getElementById("log");
-      logEl.textContent += e.data + "\\n";
-      const lines = logEl.textContent.trim().split("\\n");
-      if(lines.length > 5) logEl.textContent = lines.slice(-5).join("\\n") + "\\n";
+      logEl.textContent += e.data + "\n";
+      const lines = logEl.textContent.trim().split("\n");
+      if(lines.length > 5) logEl.textContent = lines.slice(-5).join("\n") + "\n";
       logEl.scrollTop = logEl.scrollHeight;
     }
   };
 }
 connectWS();
 runSeq.onclick = () => {
-  const lines = cmdseq.value.trim().split("\\n");
-  for(const line of lines) send(line);
+  const lines = cmdseq.value.trim();
+  if(lines) send(lines); // send full mission as one WS message
 };
 kill.onclick = () => send("KILL");
 resetKill.onclick = () => send("RESETKILL");
@@ -125,7 +129,6 @@ resetKill.onclick = () => send("RESETKILL");
 </html>
 )HTML";
 
-// ===== Utility =====
 void addLog(String msg) {
   for (int i = 0; i < 4; i++) logBuffer[i] = logBuffer[i+1];
   logBuffer[4] = msg;
@@ -143,26 +146,22 @@ int thrusterPctToUs(int pct) {
   else           return map(pct, -100, 0, THR_MIN_US, THR_NEU_US);
 }
 void setThruster1(int pct) {
-  int us = thrusterPctToUs(pct);
-  uint32_t duty = (us * 65536L) / 20000;
+  uint32_t duty = (thrusterPctToUs(pct) * 65536L) / 20000;
   ledcWrite(THRUSTER1_PIN, duty);
   addLog("T1 -> " + String(pct) + "%");
 }
 void setThruster2(int pct) {
-  int us = thrusterPctToUs(pct);
-  uint32_t duty = (us * 65536L) / 20000;
+  uint32_t duty = (thrusterPctToUs(pct) * 65536L) / 20000;
   ledcWrite(THRUSTER2_PIN, duty);
   addLog("T2 -> " + String(pct) + "%");
 }
 void setServo1(int ang) {
-  int us = servoAngleToUs(ang);
-  uint32_t duty = (us * 65536L) / 20000;
+  uint32_t duty = (servoAngleToUs(ang) * 65536L) / 20000;
   ledcWrite(SERVO1_PIN, duty);
   addLog("S1 -> " + String(ang) + "°");
 }
 void setServo2(int ang) {
-  int us = servoAngleToUs(ang);
-  uint32_t duty = (us * 65536L) / 20000;
+  uint32_t duty = (servoAngleToUs(ang) * 65536L) / 20000;
   ledcWrite(SERVO2_PIN, duty);
   addLog("S2 -> " + String(ang) + "°");
 }
@@ -246,7 +245,19 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
     msg.trim();
     if (msg == "KILL") { safeStop(); while (!rawLines.empty()) rawLines.pop(); return; }
     if (msg == "RESETKILL") { isKilled = false; digitalWrite(LED_PIN, LOW); addLog("KILL Reset via UI"); return; }
-    rawLines.push(msg);
+    if (msg.indexOf('\n') != -1) { // multi-line mission
+      int start = 0;
+      while (start < msg.length()) {
+        int sep = msg.indexOf('\n', start);
+        if (sep == -1) sep = msg.length();
+        String line = msg.substring(start, sep);
+        line.trim();
+        if (line.length()) rawLines.push(line);
+        start = sep + 1;
+      }
+    } else {
+      rawLines.push(msg);
+    }
     if (!executingQueue) executeQueue();
   }
 }

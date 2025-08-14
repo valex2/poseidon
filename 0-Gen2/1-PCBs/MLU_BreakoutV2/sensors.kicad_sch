@@ -1094,7 +1094,7 @@
 		)
 		(uuid ec21a5a4-a4c8-4bc9-915c-e7351e7e73d8)
 	)
-	(text "I2C @ 0x76 when SDO low\nI2C @ 0x77 when SDO high"
+	(text "I2C @ 0x76 when SDO low\n*I2C @ 0x77 when SDO high"
 		(exclude_from_sim no)
 		(at 125.476 54.102 0)
 		(effects

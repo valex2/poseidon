@@ -1,4 +1,4 @@
-// Squirt Homebase — Timed batch command version with full UI
+// Squirt Homebase — Timed batch command version with full UI and improved multi-line logs
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
@@ -11,7 +11,7 @@
 #include <vector>
 
 // ======= Reed Based Kill Switch =======
-constexpr int LED_PIN = 2; // kill switch indicator
+constexpr int LED_PIN = 2;
 bool isKilled = false;
 unsigned long lastBlink = 0;
 bool ledState = false;
@@ -19,11 +19,11 @@ bool ledState = false;
 // ======= Command Execution =======
 struct Cmd {
   String key;
-  int value;      // % for thrusters or ° for servos
-  int duration;   // in seconds (0 if none)
+  int value;
+  int duration;
 };
 
-std::queue<String> rawLines; // store incoming lines to execute
+std::queue<String> rawLines;
 bool executingQueue = false;
 
 // ======== AP credentials =========
@@ -59,7 +59,7 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
 <style>
   body { font-family: system-ui, sans-serif; margin: 20px; max-width: 700px; }
   textarea { width: 100%; height: 150px; font-family: monospace; margin-top: 10px; }
-  pre { background: #eee; padding: 8px; border-radius: 8px; max-height: 200px; overflow-y: auto; font-size: 12px; }
+  pre { background: #eee; padding: 8px; border-radius: 8px; height: 150px; overflow-y: auto; font-size: 12px; white-space: pre-wrap; }
   .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; box-shadow: 0 1px 6px rgba(0,0,0,.06); }
   .row { display: flex; gap: 12px; align-items: center; margin: 8px 0; }
   input[type=range] { width: 100%; }
@@ -71,10 +71,13 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
 </head>
 <body>
 <h1>ESP32 Live Control</h1>
+<div id="status" style="font-weight:bold; margin-bottom:15px; font-size:18px;">
+  Program Status: <span id="statusText" style="color:green;">READY</span>
+</div>
 <div id=conn class=bad>WebSocket: connecting...</div>
 
 <div class=card>
-  <h3>Thrusters (0 to 100%)</h3>
+  <h3>Thrusters (-100 to 100%)</h3>
   <div class=row><label style="width:120px">Thruster 1</label>
     <input id=t1 type=range min=-100 max=100 step=1 value=0>
     <div class=val><span id=t1v>0</span>%</div>
@@ -116,14 +119,41 @@ const char INDEX_HTML[] PROGMEM = R"HTML(
 <script>
 const host = location.hostname || "192.168.4.1";
 let sock, alive = false, showLogs = true;
+let logBuffer = [];
+
+function renderLogs(){
+  const logEl = document.getElementById("log");
+  logEl.textContent = logBuffer.join("\\n");
+}
+
 function send(cmd){ if(sock && alive){ sock.send(cmd); } }
+
 function connectWS(){
   sock = new WebSocket(`ws://${host}:81/`);
   sock.onopen = () => { alive = true; conn.textContent = "WebSocket: connected"; conn.className = 'ok'; };
   sock.onclose = () => { alive = false; conn.textContent = "WebSocket: disconnected"; conn.className = 'bad'; setTimeout(connectWS, 1000); };
-  sock.onmessage = (e) => { if(showLogs){ log.textContent += e.data + "\\n"; log.scrollTop = log.scrollHeight; } };
+  sock.onmessage = (e) => {
+    const msg = e.data;
+
+    // Detect program status and update indicator
+    if (msg.includes("[SYSTEM] PROGRAM STATUS: RUNNING")) {
+      document.getElementById("statusText").textContent = "RUNNING";
+      document.getElementById("statusText").style.color = "red";
+    }
+    else if (msg.includes("[SYSTEM] PROGRAM STATUS: READY")) {
+      document.getElementById("statusText").textContent = "READY";
+      document.getElementById("statusText").style.color = "green";
+    }
+
+    // Log handling
+    if(!showLogs) return;
+    logBuffer.push(msg);
+    if(logBuffer.length > 5) logBuffer.shift();
+    renderLogs();
+  };
 }
 connectWS();
+
 function bindSlider(id, key){
   const el = document.getElementById(id);
   const vl = document.getElementById(id+"v");
@@ -163,25 +193,25 @@ void setThruster1(int pct) {
   int pulse_us = thrusterPctToUs(pct);
   uint32_t duty = (pulse_us * 65536L) / 20000;
   ledcWrite(THRUSTER1_PIN, duty);
-  ws.broadcastTXT("T1: " + String(pct) + "%");
+  ws.broadcastTXT("[ACTUATOR] T1 → " + String(pct) + "%\n");
 }
 void setThruster2(int pct) {
   int pulse_us = thrusterPctToUs(pct);
   uint32_t duty = (pulse_us * 65536L) / 20000;
   ledcWrite(THRUSTER2_PIN, duty);
-  ws.broadcastTXT("T2: " + String(pct) + "%");
+  ws.broadcastTXT("[ACTUATOR] T2 → " + String(pct) + "%\n");
 }
 void setServo1(int ang) {
   int us = servoAngleToUs(ang);
   uint32_t duty = (us * 65536L) / 20000;
   ledcWrite(SERVO1_PIN, duty);
-  ws.broadcastTXT("S1: " + String(ang) + "°");
+  ws.broadcastTXT("[ACTUATOR] S1 → " + String(ang) + "°\n");
 }
 void setServo2(int ang) {
   int us = servoAngleToUs(ang);
   uint32_t duty = (us * 65536L) / 20000;
   ledcWrite(SERVO2_PIN, duty);
-  ws.broadcastTXT("S2: " + String(ang) + "°");
+  ws.broadcastTXT("[ACTUATOR] S2 → " + String(ang) + "°\n");
 }
 
 void safeStop() {
@@ -191,11 +221,10 @@ void safeStop() {
   ledcWrite(THRUSTER2_PIN, thruster_neutral);
   ledcWrite(SERVO1_PIN, servo_neutral);
   ledcWrite(SERVO2_PIN, servo_neutral);
-  ws.broadcastTXT("Safe stop: all outputs neutral");
+  ws.broadcastTXT("[SYSTEM] Safe stop: all outputs neutral\n");
   isKilled = true;
 }
 
-// ===== Parse ACT:VAL:DUR =====
 Cmd parseCommand(const String &part) {
   Cmd cmd = {"", 0, 0};
   int firstColon = part.indexOf(':');
@@ -213,14 +242,23 @@ Cmd parseCommand(const String &part) {
   return cmd;
 }
 
-// ===== Execute all lines =====
 void executeQueue() {
   executingQueue = true;
+  ws.broadcastTXT("[SYSTEM] --- PROGRAM START ---\n");
+  ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: RUNNING\n");
+
+  int batchNum = 0;
+  int totalBatches = rawLines.size();
+
   while (!rawLines.empty()) {
     String line = rawLines.front();
     rawLines.pop();
+    batchNum++;
     line.trim();
     if (line.length() == 0) continue;
+
+    ws.broadcastTXT("[BATCH] Executing batch " + String(batchNum) + " of " + String(totalBatches) + "\n");
+    ws.broadcastTXT("[BATCH] Raw line: \"" + line + "\"\n");
 
     std::vector<Cmd> cmds;
     int maxDur = 0;
@@ -234,19 +272,19 @@ void executeQueue() {
       if (part.length() > 0) {
         Cmd c = parseCommand(part);
         if (c.key == "WAIT") {
-          ws.broadcastTXT("[SEQ] WAIT " + String(c.value) + "s");
+          ws.broadcastTXT("[WAIT] Pausing for " + String(c.value) + "s\n");
           delay(c.value * 1000);
         } else {
           cmds.push_back(c);
           if (c.duration > maxDur) maxDur = c.duration;
+          ws.broadcastTXT("[PARSED CMD] " + c.key + " → " + String(c.value) + 
+                          (c.duration > 0 ? " (duration " + String(c.duration) + "s)" : "") + "\n");
         }
       }
       start = sep + 1;
     }
 
     for (auto &c : cmds) {
-      ws.broadcastTXT("[CMD] " + c.key + ":" + String(c.value) +
-                      (c.duration > 0 ? " for " + String(c.duration) + "s" : ""));
       if      (c.key == "T1") setThruster1(c.value);
       else if (c.key == "T2") setThruster2(c.value);
       else if (c.key == "S1") setServo1(c.value);
@@ -254,21 +292,23 @@ void executeQueue() {
     }
 
     if (maxDur > 0) {
+      ws.broadcastTXT("[BATCH] Running for " + String(maxDur) + "s\n");
       delay(maxDur * 1000);
+      ws.broadcastTXT("[BATCH] Duration complete — resetting outputs\n");
       for (auto &c : cmds) {
         if      (c.key == "T1") setThruster1(0);
         else if (c.key == "T2") setThruster2(0);
         else if (c.key == "S1") setServo1(0);
         else if (c.key == "S2") setServo2(0);
       }
-      ws.broadcastTXT("[SEQ] Duration " + String(maxDur) + "s ended → reset");
     }
   }
-  ws.broadcastTXT("[SEQ] Finished command sequence");
+
+  ws.broadcastTXT("[SYSTEM] --- PROGRAM COMPLETE ---\n");
+  ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
   executingQueue = false;
 }
 
-// ===== WebSocket =====
 void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
   if (type == WStype_TEXT) {
     String msg((char*)payload, len);
@@ -276,12 +316,14 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
     if (msg == "KILL") {
       safeStop();
       while (!rawLines.empty()) rawLines.pop();
+      ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
       return;
     }
     if (msg == "RESETKILL") {
       isKilled = false;
       digitalWrite(LED_PIN, LOW);
-      ws.broadcastTXT("[KILL] Reset via UI");
+      ws.broadcastTXT("[KILL] Reset via UI\n");
+      ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
       return;
     }
     rawLines.push(msg);
@@ -289,11 +331,11 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
   }
 }
 
-// ===== HTTP & PWM =====
 void setupHttp() {
   http.on("/", []() { http.send_P(200, "text/html", INDEX_HTML); });
   http.begin();
 }
+
 void setupPwm() {
   ledcAttach(THRUSTER1_PIN, PWM_FREQ_HZ, 16);
   ledcAttach(THRUSTER2_PIN, PWM_FREQ_HZ, 16);
@@ -302,7 +344,6 @@ void setupPwm() {
   safeStop();
 }
 
-// ===== AP =====
 void startAP() {
   WiFi.mode(WIFI_AP);
   WiFi.softAP(AP_SSID, AP_PASS);
@@ -317,17 +358,18 @@ void setup() {
   ws.begin();
   ws.onEvent(onWsEvent);
   pinMode(LED_PIN, OUTPUT);
-  pinMode(19, INPUT_PULLDOWN); // reed kill input
+  pinMode(19, INPUT_PULLDOWN);
 }
 
 void loop() {
   http.handleClient();
   ws.loop();
   if (digitalRead(19) == HIGH && !isKilled) {
-    ws.broadcastTXT("[KILL] Hardware kill triggered");
+    ws.broadcastTXT("[KILL] Hardware kill triggered\n");
     safeStop();
     while (!rawLines.empty()) rawLines.pop();
     executingQueue = false;
+    ws.broadcastTXT("[SYSTEM] PROGRAM STATUS: READY\n");
   }
   if (isKilled) {
     unsigned long now = millis();

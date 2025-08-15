@@ -1,19 +1,8 @@
-/// TODO, tried adding neopixel for voltage from stable but everytime I flash motors spin uncontrollably. Maybe the pin definition? Troubleshoot this.
-
 #include <Servo.h>
 #include <Wire.h>
 
-///////////////////////// NeoPixels //////////////////////////
-static int pixelUpdateCounter = 0;  // persists between calls
-#include <Adafruit_NeoPixel.h>
-#define PIN            38          // Pin where NeoPixel strip is connected
-#define NUMPIXELS      150        // Total number of pixels
-#define DELAY_MS       10        // Delay between brightness steps (controls speed)
-Adafruit_NeoPixel strip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
-
 // Servos
 Servo servos[8];   // Array to store servo objects
-// const int servoPins[8] = {2, 4, 3, 7, 0, 6, 5, 1};  // Update these pin numbers as needed
 const int servoPins[8] = {4, 3, 0, 2, 1, 6, 5, 7};
 int lastThrusterPWM[8] = {1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500};   
 
@@ -29,12 +18,9 @@ MS5837 sensor;
 // Battery sensor
 const int voltagePin = 40;
 const int currentPin = 41;
-int currentVal = 0;
-int voltageVal = 0;
 
 // Indicators
 const int greenIndicatorLedPin = 37; // LED1
-// const int redIndicatorLedPin= 36;  // LED2
 const int killSwitchPin = 26;
 
 // External lumen lights
@@ -48,7 +34,13 @@ int lightCycles = 5;
 int sd_loop_counter = 0;
 const int chipSelect = BUILTIN_SDCARD;
 unsigned long loopIterationCounter = 0; // for perioidic SD logging
-int sdLoggingFrequency = 20000; // TODO: make this human readable
+int sdLoggingFrequency = 20000; 
+
+// Torpedo
+Servo torpedo;
+const int torpedoPin = 10;  // TODO: choose pin
+const int initialTorpedoAngle = 84;
+const int torpedoDelay = 500; // Delay to make the torpedo go back to original position
 
 void setup() {
     // Begin serial and I2C (via wire)
@@ -73,8 +65,8 @@ void setup() {
     // Initilize SD card
     config_sd_card();
 
-    // neopixels
-    config_neopixels();
+    // Initilize torpedo
+    config_torpedo();
     
     Serial.println("Initilize Complete");
 }
@@ -112,11 +104,9 @@ void config_sd_card() {
   write_data_sd("Configuring");
 }
 
-void config_neopixels() {
-  strip.begin();
-  strip.show(); // Initialize all pixels to 'off'
-  int brightness = 40; // Set brightness level
-  setBlueBreathing(brightness); // Breathing animation for visual indicator
+void config_torpedo() {
+  torpedo.attach(torpedoPin);
+  torpedo.write(initialTorpedoAngle);
 }
 
 void loop() {
@@ -124,12 +114,6 @@ void loop() {
     loopIterationCounter++;
     if (loopIterationCounter % sdLoggingFrequency == 0) {
         logPeriodicData();
-    }
-
-    // Neo Updates
-    if (pixelUpdateCounter++ >= 500) {
-        setNeoPixelVoltageColor();
-        pixelUpdateCounter = 0;
     }
 
     // Indicator (kill switch) logic
@@ -228,6 +212,18 @@ void process_input(char *input) {
     Serial.println("LIGHT GRADIENT SET");
     gradient_lumen_light(lightCycles);
 
+  } else if (strcmp(input, "hiroshima") == 0) {   // Torpedo left
+    Serial.println("BOOM HIROSHIMA");
+    torpedo.write(initialTorpedoAngle + 27);
+    delay(torpedoDelay);
+    torpedo.write(initialTorpedoAngle);
+
+  } else if (strcmp(input, "nagasaki") == 0) {   // Torpedo right
+    Serial.println("BOOM NAGASAKI");
+    torpedo.write(initialTorpedoAngle - 27);
+    delay(torpedoDelay);
+    torpedo.write(initialTorpedoAngle);
+    
   } else if (strcmp(input, "transfer") == 0) {   // SD Card Transfer
     transfer_sd_log();
 
@@ -359,69 +355,6 @@ void gradient_lumen_light(int cycles) {
       delay(1);
     }
   }
-}
-
-void setNeoPixelVoltageColor() {
-  float current, voltage;
-  handle_voltage_command(current, voltage); // Get voltage reading
-
-  // Clamp voltage between 12.8 and 16.8
-  voltage = constrain(voltage, 12.8, 16.8);
-  float norm = (voltage - 12.8) / (16.8 - 12.8); // 0 to 1
-
-  uint8_t r, g, b;
-
-  if (norm < 0.5) {
-    // 12.8V → 14.8V: Red (255,0,0) → Yellow (255,255,0)
-    float t = norm / 0.5;
-    r = 255;
-    g = (uint8_t)(255 * t);
-    b = 0;
-  } else {
-    // 14.8V → 16.8V: Yellow (255,255,0) → Cyan (0,255,255)
-    float t = (norm - 0.5) / 0.5;
-    r = (uint8_t)(255 * (1.0 - t));
-    g = 255;
-    b = (uint8_t)(255 * t);
-  }
-
-  strip.setBrightness(25);  // ← use global variable
-  uint32_t color = strip.Color(r, g, b);
-  for (int i = 0; i < NUMPIXELS; i++) {
-    strip.setPixelColor(i, color);
-  }
-  strip.show();
-}
-
-void setBlueBreathing(uint8_t brightness) {
-  // Generate dynamic shades of blue
-  uint8_t blue = brightness;
-  uint8_t green = brightness / 4;   // Add a hint of green for cyan tones
-  uint8_t red = brightness / 8;    // Very slight purple tint at higher brightness
-
-  uint32_t color = strip.Color(red, green, blue);
-
-  for (int i = 0; i < NUMPIXELS; i++) {
-    strip.setPixelColor(i, color);
-  }
-  strip.show();
-}
-
-void handle_voltage_command(float& current, float& voltage) {
-  currentVal = analogRead(currentPin);
-  voltageVal = analogRead(voltagePin);
-
-  const float VOLTAGE_FULLSCALE = 3.3 * 18.182 + 1.4; // some calibration error
-  const float CURRENT_FULLSCALE = 120.0; // e.g. 120A produces 1023
-
-  const int VOLTAGE_MIN_ADC = 0;   // e.g. no offset, or set to actual min
-  const int CURRENT_MIN_ADC = 100; // e.g. 100 ADC reading = 0A baseline offset
-
-  voltage = (voltageVal - VOLTAGE_MIN_ADC) * VOLTAGE_FULLSCALE / (1024.0 - VOLTAGE_MIN_ADC);
-  current = (currentVal - CURRENT_MIN_ADC) * CURRENT_FULLSCALE / (1024.0 - CURRENT_MIN_ADC);
-
-  // voltage = voltageVal;
-  // current = currentVal;
 }
 
 String getTimestamp() {

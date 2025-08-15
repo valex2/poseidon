@@ -38,9 +38,8 @@ int sdLoggingFrequency = 20000;
 
 // Torpedo
 Servo torpedo;
-const int torpedoPin = 10;  // TODO: choose pin
-const int initialTorpedoAngle = 84;
-const int torpedoDelay = 500; // Delay to make the torpedo go back to original position
+const int torpedoPin = 20;  
+bool bombed = false;
 
 void setup() {
     // Begin serial and I2C (via wire)
@@ -64,9 +63,6 @@ void setup() {
 
     // Initilize SD card
     config_sd_card();
-
-    // Initilize torpedo
-    config_torpedo();
     
     Serial.println("Initilize Complete");
 }
@@ -102,11 +98,6 @@ void config_lumen() {
 void config_sd_card() {
   SD.begin(chipSelect);
   write_data_sd("Configuring");
-}
-
-void config_torpedo() {
-  torpedo.attach(torpedoPin);
-  torpedo.write(initialTorpedoAngle);
 }
 
 void loop() {
@@ -213,17 +204,21 @@ void process_input(char *input) {
     gradient_lumen_light(lightCycles);
 
   } else if (strcmp(input, "hiroshima") == 0) {   // Torpedo left
+    if (!bombed) {
+      torpedo.attach(torpedoPin);
+      bombed = true;
+    }
+    torpedo.write(0);
     Serial.println("BOOM HIROSHIMA");
-    torpedo.write(initialTorpedoAngle + 27);
-    delay(torpedoDelay);
-    torpedo.write(initialTorpedoAngle);
 
   } else if (strcmp(input, "nagasaki") == 0) {   // Torpedo right
+    if (!bombed) {
+      torpedo.attach(torpedoPin);
+      bombed = true;
+    }
+    torpedo.write(180);
     Serial.println("BOOM NAGASAKI");
-    torpedo.write(initialTorpedoAngle - 27);
-    delay(torpedoDelay);
-    torpedo.write(initialTorpedoAngle);
-    
+
   } else if (strcmp(input, "transfer") == 0) {   // SD Card Transfer
     transfer_sd_log();
 

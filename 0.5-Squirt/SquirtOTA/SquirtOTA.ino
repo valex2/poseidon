@@ -1,4 +1,4 @@
-// Squirt Homebase — Multi-line mission, manual controls, status UI, last 5 logs (servo manual persist)
+// Squirt Homebase — Multi-line mission, manual controls, status UI, last 5 logs (servo manual persist + fast reed kill)
 #include <Arduino.h>
 #include <WiFi.h>
 #include <ESPmDNS.h>
@@ -9,9 +9,14 @@
 #include <vector>
 
 constexpr int LED_PIN = 2;
+constexpr int KILL_PIN = 19;  // >>> KILL FIX: define reed GPIO
+
 bool isKilled = false;
 unsigned long lastBlink = 0;
 bool ledState = false;
+
+// >>> KILL FIX: ISR flag
+volatile bool killRequested = false;
 
 struct Cmd {
   String key;
@@ -41,9 +46,9 @@ constexpr int SERVO_MAX_US = 2000;
 WebServer http(80);
 WebSocketsServer ws(81);
 
-String logBuffer[5];
+String logBuffer[10];
 
-// ===== NEW: persistent manual baselines for servos =====
+// ===== persistent manual baselines for servos =====
 int baselineS1Deg = 0;  // last manual S1 angle
 int baselineS2Deg = 0;  // last manual S2 angle
 
@@ -223,7 +228,33 @@ void safeStop() {
   isKilled = true;
 }
 
-// ===== Parser =====
+// ===== KILL FIX: ISR + helpers =====
+void IRAM_ATTR onKillISR() {
+  killRequested = true;  // set flag immediately in interrupt context
+}
+
+void processKillIfNeeded() {
+  if (killRequested) {
+    killRequested = false;     // consume the flag
+    addLog("[KILL] Hardware kill triggered");
+    safeStop();
+    while (!rawLines.empty()) rawLines.pop();
+    executingQueue = false;
+    ws.broadcastTXT("[STATUS] READY");
+  }
+}
+
+// Small-slice wait that aborts quickly on kill
+// Returns true if kill was processed during the wait (caller should abort)
+bool waitMsRespectKill(uint32_t ms) {
+  uint32_t start = millis();
+  while ((millis() - start) < ms) {
+    if (killRequested) { processKillIfNeeded(); return true; }
+    delay(5); // yield often
+  }
+  return false;
+}
+
 Cmd parseCommand(const String &part) {
   Cmd cmd = {"", 0, 0};
   int firstColon = part.indexOf(':');
@@ -241,12 +272,14 @@ Cmd parseCommand(const String &part) {
   return cmd;
 }
 
-// ===== Mission executor (with servo baseline persistence) =====
+// ===== Mission executor (with servo baseline persistence + fast kill) =====
 void executeQueue() {
   executingQueue = true;
   ws.broadcastTXT("[STATUS] RUNNING");
 
   while (!rawLines.empty()) {
+    if (killRequested) { processKillIfNeeded(); if (isKilled) break; }
+
     String line = rawLines.front(); rawLines.pop();
     line.trim(); if (!line.length()) continue;
 
@@ -256,6 +289,7 @@ void executeQueue() {
     // Split a line by ';'
     int start = 0;
     while (start < line.length()) {
+      if (killRequested) { processKillIfNeeded(); if (isKilled) break; }
       int sep = line.indexOf(';', start);
       if (sep == -1) sep = line.length();
       String part = line.substring(start, sep);
@@ -265,7 +299,7 @@ void executeQueue() {
         Cmd c = parseCommand(part);
         if (c.key == "WAIT") {
           addLog("WAIT " + String(c.value) + "s");
-          delay(c.value * 1000);
+          if (waitMsRespectKill((uint32_t)c.value * 1000)) { if (isKilled) break; }
         } else {
           cmds.push_back(c);
           if (c.duration > maxDur) maxDur = c.duration;
@@ -273,41 +307,35 @@ void executeQueue() {
       }
       start = sep + 1;
     }
+    if (isKilled) break;
 
     // Execute batch immediately
     for (auto &c : cmds) {
+      if (killRequested) { processKillIfNeeded(); break; }
       addLog("CMD " + c.key + ":" + String(c.value) + (c.duration ? " for " + String(c.duration) + "s" : ""));
 
       if      (c.key == "T1") setThruster1(c.value);
       else if (c.key == "T2") setThruster2(c.value);
       else if (c.key == "S1") {
         setServo1(c.value);
-        // ===== NEW: update baseline when duration==0 (manual/sticky) =====
-        if (c.duration == 0) baselineS1Deg = c.value;
+        if (c.duration == 0) baselineS1Deg = c.value;  // manual persists
       }
       else if (c.key == "S2") {
         setServo2(c.value);
-        // ===== NEW: update baseline when duration==0 (manual/sticky) =====
-        if (c.duration == 0) baselineS2Deg = c.value;
+        if (c.duration == 0) baselineS2Deg = c.value;  // manual persists
       }
     }
+    if (isKilled) break;
 
     // If any duration present, wait once, then reset only used actuators
     if (maxDur > 0) {
-      delay(maxDur * 1000);
+      if (waitMsRespectKill((uint32_t)maxDur * 1000)) { if (isKilled) break; }
 
-      // ===== NEW: reset servos to their baselines (persistent), thrusters to 0% as before =====
       for (auto &c : cmds) {
         if      (c.key == "T1") setThruster1(0);
         else if (c.key == "T2") setThruster2(0);
-        else if (c.key == "S1") {
-          setServo1(baselineS1Deg);
-          addLog("→ S1 reset to baseline " + String(baselineS1Deg) + "°");
-        }
-        else if (c.key == "S2") {
-          setServo2(baselineS2Deg);
-          addLog("→ S2 reset to baseline " + String(baselineS2Deg) + "°");
-        }
+        else if (c.key == "S1") { setServo1(baselineS1Deg); addLog("→ S1 reset to baseline " + String(baselineS1Deg) + "°"); }
+        else if (c.key == "S2") { setServo2(baselineS2Deg); addLog("→ S2 reset to baseline " + String(baselineS2Deg) + "°"); }
       }
     }
   }
@@ -322,7 +350,14 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
     String msg((char*)payload, len);
     msg.trim();
 
-    if (msg == "KILL") { safeStop(); while (!rawLines.empty()) rawLines.pop(); return; }
+    if (msg == "KILL") { // software kill
+      addLog("[KILL] UI kill requested");
+      safeStop();
+      while (!rawLines.empty()) rawLines.pop();
+      executingQueue = false;
+      ws.broadcastTXT("[STATUS] READY");
+      return;
+    }
     if (msg == "RESETKILL") { isKilled = false; digitalWrite(LED_PIN, LOW); addLog("KILL Reset via UI"); return; }
 
     // Accept full multi-line mission in one message
@@ -376,6 +411,10 @@ void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
 
+  // >>> KILL FIX: configure reed input + interrupt
+  pinMode(KILL_PIN, INPUT_PULLDOWN);                // assumes reed brings pin HIGH when closed
+  attachInterrupt(digitalPinToInterrupt(KILL_PIN), onKillISR, RISING);
+
   setupPwm();
   startAP();
   setupHttp();
@@ -392,12 +431,8 @@ void loop() {
   ws.loop();
   // ArduinoOTA.handle();
 
-  if (digitalRead(19) == HIGH) {
-    addLog("HARDWARE KILL triggered");
-    safeStop();
-    while (!rawLines.empty()) rawLines.pop();
-    executingQueue = false;
-  }
+  // >>> KILL FIX: also process kill in loop (for non-executor time)
+  if (killRequested) processKillIfNeeded();
 
   if (isKilled) {
     unsigned long now = millis();

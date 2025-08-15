@@ -36,10 +36,13 @@ const int chipSelect = BUILTIN_SDCARD;
 unsigned long loopIterationCounter = 0; // for perioidic SD logging
 int sdLoggingFrequency = 20000; 
 
-// Torpedo
-Servo torpedo;
-const int torpedoPin = 20;  
-bool bombed = false;
+// dropper
+Servo dropper;
+const int dropperPin = 20;  
+const int dropperMinUS = 800;     // SER-201X spec
+const int dropperMaxUS = 2200;    // SER-201X spec
+float dropperHalfRangeDeg = 70.0f;   // default ±70° per datasheet (use 100.0f if reprogrammed)
+float deg = 0;
 
 void setup() {
     // Begin serial and I2C (via wire)
@@ -48,6 +51,8 @@ void setup() {
     
     // Initialize all servos
     config_servos();
+
+    config_dropper(); 
 
     // Initilize depth sensor
     config_depth();
@@ -72,6 +77,20 @@ void config_servos() {
         servos[i].attach(servoPins[i]);   // Attach servo
         servos[i].writeMicroseconds(1500);  // Start at neutral
     }
+}
+
+// Map degrees (-HALF_RANGE..+HALF_RANGE) to microseconds (dropperMinUS..dropperMaxUS)
+int degToUS(float deg) {
+  if (deg < -dropperHalfRangeDeg) deg = -dropperHalfRangeDeg;
+  if (deg > +dropperHalfRangeDeg) deg = +dropperHalfRangeDeg;
+  float t = (deg + dropperHalfRangeDeg) / (2.0f * dropperHalfRangeDeg); // 0..1
+  int us = (int)(dropperMinUS + t * (dropperMaxUS - dropperMinUS) + 0.5f);
+  return us;
+}
+
+void config_dropper() {
+  dropper.attach(dropperPin);
+  dropper.writeMicroseconds(degToUS(0));
 }
 
 void config_depth() {
@@ -203,31 +222,31 @@ void process_input(char *input) {
     Serial.println("LIGHT GRADIENT SET");
     gradient_lumen_light(lightCycles);
 
-  } else if (strcmp(input, "hiroshima") == 0) {   // Torpedo left
-    if (!bombed) {
-      torpedo.attach(torpedoPin);
-      bombed = true;
-    }
-    torpedo.write(0);
-    Serial.println("BOOM HIROSHIMA");
+  } else if (strcmp(input, "pearl-harbor") == 0) {   // dropper left
+    int us = degToUS(22);
+    dropper.writeMicroseconds(us);
+  } else if (strcmp(input, "iwo-jima") == 0) {   // dropper right
+    int us = degToUS(-22);
+    dropper.writeMicroseconds(us);
+  } else if (sscanf(input, "dropperPosition %f", &deg) == 1) {  // deg is a float
+    // Clamp for safety
+    if (deg < -dropperHalfRangeDeg) deg = -dropperHalfRangeDeg;
+    if (deg > +dropperHalfRangeDeg) deg = +dropperHalfRangeDeg;
 
-  } else if (strcmp(input, "nagasaki") == 0) {   // Torpedo right
-    if (!bombed) {
-      torpedo.attach(torpedoPin);
-      bombed = true;
-    }
-    torpedo.write(180);
-    Serial.println("BOOM NAGASAKI");
+    int us = degToUS(deg);
+    dropper.writeMicroseconds(us);
 
+    Serial.print("Commanded: ");
+    Serial.print(deg, 1);
+    Serial.print(" deg  ->  ");
+    Serial.print(us);
+    Serial.println(" us");
   } else if (strcmp(input, "transfer") == 0) {   // SD Card Transfer
     transfer_sd_log();
-
   } else if (strcmp(input, "delete") == 0) {   // SD Card Delete
     delete_sd_log();
-
   } else {
     Serial.println(input);
-
   }
 }
 

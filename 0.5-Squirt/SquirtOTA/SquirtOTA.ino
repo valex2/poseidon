@@ -1,5 +1,6 @@
 // Squirt Homebase — Multi-line mission, manual controls, status UI, last 5 logs
 // (servo manual persist + fast reed kill + websocket protection + servo ramp)
+// FIX: advance servo ramp during mission waits so S1/S2 actually move on timed commands
 #include <Arduino.h>
 #include <WiFi.h>
 #include <ESPmDNS.h>
@@ -220,6 +221,9 @@ inline void writeServoDegImmediate(uint8_t pin, int ang) {
   ledcWrite(pin, duty);
 }
 
+// Forward-declare ramp tick so waits can drive it:
+void updateServoRamps();
+
 // Public actuator APIs (thrusters immediate; servos now set targets)
 void setThruster1(int pct) { writeThrusterPct(THRUSTER1_PIN, pct); addLog("T1 -> " + String(pct) + "%"); }
 void setThruster2(int pct) { writeThrusterPct(THRUSTER2_PIN, pct); addLog("T2 -> " + String(pct) + "%"); }
@@ -274,6 +278,7 @@ bool waitMsRespectKill(uint32_t ms) {
     if (killRequested) { processKillIfNeeded(); return true; }
     http.handleClient();   // keep HTTP alive
     ws.loop();             // keep WS alive
+    updateServoRamps();    // <<< FIX: advance servo ramp while waiting
     delay(5);              // yield often
   }
   return false;
@@ -471,15 +476,12 @@ void updateServoRamps() {
   if (now - lastServoTick < SERVO_TICK_MS) return;
   lastServoTick = now;
 
-  bool changed = false;
-
   if (currentS1Deg != targetS1Deg) {
     int dir = (targetS1Deg > currentS1Deg) ? 1 : -1;
     int delta = abs(targetS1Deg - currentS1Deg);
     int step = min(SERVO_STEP_DEG, delta);
     currentS1Deg += dir * step;
     writeServoDegImmediate(SERVO1_PIN, currentS1Deg);
-    changed = true;
   }
   if (currentS2Deg != targetS2Deg) {
     int dir = (targetS2Deg > currentS2Deg) ? 1 : -1;
@@ -487,10 +489,7 @@ void updateServoRamps() {
     int step = min(SERVO_STEP_DEG, delta);
     currentS2Deg += dir * step;
     writeServoDegImmediate(SERVO2_PIN, currentS2Deg);
-    changed = true;
   }
-
-  // (Optional) you could add tiny deadband sleep here if no change to save CPU
 }
 
 void loop() {

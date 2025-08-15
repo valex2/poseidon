@@ -1,4 +1,5 @@
-// Squirt Homebase — Multi-line mission, manual controls, status UI, last 5 logs (servo manual persist + fast reed kill)
+// Squirt Homebase — Multi-line mission, manual controls, status UI, last 5 logs
+// (servo manual persist + fast reed kill + websocket protection + servo ramp)
 #include <Arduino.h>
 #include <WiFi.h>
 #include <ESPmDNS.h>
@@ -9,13 +10,13 @@
 #include <vector>
 
 constexpr int LED_PIN = 2;
-constexpr int KILL_PIN = 19;  // >>> KILL FIX: define reed GPIO
+constexpr int KILL_PIN = 19;  // reed GPIO
 
 bool isKilled = false;
 unsigned long lastBlink = 0;
 bool ledState = false;
 
-// >>> KILL FIX: ISR flag
+// ISR flag
 volatile bool killRequested = false;
 
 struct Cmd {
@@ -51,6 +52,19 @@ String logBuffer[10];
 // ===== persistent manual baselines for servos =====
 int baselineS1Deg = 0;  // last manual S1 angle
 int baselineS2Deg = 0;  // last manual S2 angle
+
+// ===== servo ramping (power-friendly) =====
+int currentS1Deg = 0;
+int currentS2Deg = 0;
+int targetS1Deg  = 0;
+int targetS2Deg  = 0;
+constexpr int SERVO_STEP_DEG = 1;          // degrees per tick
+constexpr uint32_t SERVO_TICK_MS = 25;     // ramp tick period
+uint32_t lastServoTick = 0;
+
+// ===== websocket keepalive =====
+uint32_t lastWsKeepalive = 0;
+constexpr uint32_t WS_KEEPALIVE_MS = 30000;
 
 const char INDEX_HTML[] PROGMEM = R"rawliteral(
 <!doctype html>
@@ -178,8 +192,8 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
 
 // ===== Utility / PWM helpers =====
 void addLog(String msg) {
-  for (int i = 0; i < 4; i++) logBuffer[i] = logBuffer[i+1];
-  logBuffer[4] = msg;
+  for (int i = 0; i < 9; i++) logBuffer[i] = logBuffer[i+1];
+  logBuffer[9] = msg;
   String out;
   for (auto &l : logBuffer) if (l.length()) out += l + "\n";
   ws.broadcastTXT(out);
@@ -196,39 +210,47 @@ int thrusterPctToUs(int pct) {
   else           return map(pct, -100, 0, THR_MIN_US, THR_NEU_US);
 }
 
-void setThruster1(int pct) {
+// ===== low-level writers =====
+inline void writeThrusterPct(uint8_t pin, int pct) {
   uint32_t duty = (thrusterPctToUs(pct) * 65536L) / 20000;
-  ledcWrite(THRUSTER1_PIN, duty);
-  addLog("T1 -> " + String(pct) + "%");
+  ledcWrite(pin, duty);
 }
-void setThruster2(int pct) {
-  uint32_t duty = (thrusterPctToUs(pct) * 65536L) / 20000;
-  ledcWrite(THRUSTER2_PIN, duty);
-  addLog("T2 -> " + String(pct) + "%");
-}
-void setServo1(int ang) {
+inline void writeServoDegImmediate(uint8_t pin, int ang) {
   uint32_t duty = (servoAngleToUs(ang) * 65536L) / 20000;
-  ledcWrite(SERVO1_PIN, duty);
-  addLog("S1 -> " + String(ang) + "°");
-}
-void setServo2(int ang) {
-  uint32_t duty = (servoAngleToUs(ang) * 65536L) / 20000;
-  ledcWrite(SERVO2_PIN, duty);
-  addLog("S2 -> " + String(ang) + "°");
+  ledcWrite(pin, duty);
 }
 
+// Public actuator APIs (thrusters immediate; servos now set targets)
+void setThruster1(int pct) { writeThrusterPct(THRUSTER1_PIN, pct); addLog("T1 -> " + String(pct) + "%"); }
+void setThruster2(int pct) { writeThrusterPct(THRUSTER2_PIN, pct); addLog("T2 -> " + String(pct) + "%"); }
+
+void setServo1(int ang) {  // set target (ramped)
+  targetS1Deg = constrain(ang, -90, 90);
+  addLog("S1 -> " + String(targetS1Deg) + "° (ramp)");
+}
+void setServo2(int ang) {  // set target (ramped)
+  targetS2Deg = constrain(ang, -90, 90);
+  addLog("S2 -> " + String(targetS2Deg) + "° (ramp)");
+}
+
+// ===== fast neutral for safety stop =====
 void safeStop() {
   uint32_t thruster_neutral = (THR_NEU_US * 65536L) / 20000;
-  uint32_t servo_neutral = (SERVO_NEU_US * 65536L) / 20000;
+  uint32_t servo_neutral    = (SERVO_NEU_US * 65536L) / 20000;
   ledcWrite(THRUSTER1_PIN, thruster_neutral);
   ledcWrite(THRUSTER2_PIN, thruster_neutral);
   ledcWrite(SERVO1_PIN, servo_neutral);
   ledcWrite(SERVO2_PIN, servo_neutral);
+
+  // Also snap ramp state to neutral to avoid fighting
+  currentS1Deg = targetS1Deg = 0;
+  currentS2Deg = targetS2Deg = 0;
+
   addLog("SAFE STOP: all outputs neutral");
   isKilled = true;
 }
 
-// ===== KILL FIX: ISR + helpers =====
+// ===== KILL: ISR + helpers =====
 void IRAM_ATTR onKillISR() {
   killRequested = true;  // set flag immediately in interrupt context
 }
@@ -244,13 +266,15 @@ void processKillIfNeeded() {
   }
 }
 
-// Small-slice wait that aborts quickly on kill
+// Small-slice wait that aborts quickly on kill and services stack
 // Returns true if kill was processed during the wait (caller should abort)
 bool waitMsRespectKill(uint32_t ms) {
   uint32_t start = millis();
   while ((millis() - start) < ms) {
     if (killRequested) { processKillIfNeeded(); return true; }
-    delay(5); // yield often
+    http.handleClient();   // keep HTTP alive
+    ws.loop();             // keep WS alive
+    delay(5);              // yield often
   }
   return false;
 }
@@ -346,36 +370,45 @@ void executeQueue() {
 
 // ===== WebSocket =====
 void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
-  if (type == WStype_TEXT) {
-    String msg((char*)payload, len);
-    msg.trim();
+  switch (type) {
+    case WStype_TEXT: {
+      String msg((char*)payload, len);
+      msg.trim();
 
-    if (msg == "KILL") { // software kill
-      addLog("[KILL] UI kill requested");
-      safeStop();
-      while (!rawLines.empty()) rawLines.pop();
-      executingQueue = false;
-      ws.broadcastTXT("[STATUS] READY");
-      return;
-    }
-    if (msg == "RESETKILL") { isKilled = false; digitalWrite(LED_PIN, LOW); addLog("KILL Reset via UI"); return; }
-
-    // Accept full multi-line mission in one message
-    if (msg.indexOf('\n') != -1) {
-      int start = 0;
-      while (start < msg.length()) {
-        int sep = msg.indexOf('\n', start);
-        if (sep == -1) sep = msg.length();
-        String line = msg.substring(start, sep);
-        line.trim();
-        if (line.length()) rawLines.push(line);
-        start = sep + 1;
+      if (msg == "KILL") { // software kill
+        addLog("[KILL] UI kill requested");
+        safeStop();
+        while (!rawLines.empty()) rawLines.pop();
+        executingQueue = false;
+        ws.broadcastTXT("[STATUS] READY");
+        return;
       }
-    } else {
-      rawLines.push(msg);
-    }
+      if (msg == "RESETKILL") { isKilled = false; digitalWrite(LED_PIN, LOW); addLog("KILL Reset via UI"); return; }
 
-    if (!executingQueue) executeQueue();
+      // Accept full multi-line mission in one message
+      if (msg.indexOf('\n') != -1) {
+        int start = 0;
+        while (start < msg.length()) {
+          int sep = msg.indexOf('\n', start);
+          if (sep == -1) sep = msg.length();
+          String line = msg.substring(start, sep);
+          line.trim();
+          if (line.length()) rawLines.push(line);
+          start = sep + 1;
+        }
+      } else {
+        rawLines.push(msg);
+      }
+      if (!executingQueue) executeQueue();
+      break;
+    }
+    case WStype_CONNECTED:
+      addLog("[WS] Client connected");
+      break;
+    case WStype_DISCONNECTED:
+      addLog("[WS] Client disconnected");
+      break;
+    default: break;
   }
 }
 
@@ -399,10 +432,15 @@ void setupPwm() {
   ledcWrite(THRUSTER2_PIN, thruster_neutral);
   ledcWrite(SERVO1_PIN, servo_neutral);
   ledcWrite(SERVO2_PIN, servo_neutral);
+
+  // Initialize ramp state at neutral
+  currentS1Deg = targetS1Deg = 0;
+  currentS2Deg = targetS2Deg = 0;
 }
 
 void startAP() {
   WiFi.mode(WIFI_AP);
+  WiFi.setSleep(false);                 // keep Wi-Fi radio awake (prevents idle drop)
   WiFi.softAP(AP_SSID, AP_PASS);
   Serial.printf("AP IP: %s\n", WiFi.softAPIP().toString().c_str());
 }
@@ -411,7 +449,7 @@ void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
 
-  // >>> KILL FIX: configure reed input + interrupt
+  // reed input + interrupt
   pinMode(KILL_PIN, INPUT_PULLDOWN);                // assumes reed brings pin HIGH when closed
   attachInterrupt(digitalPinToInterrupt(KILL_PIN), onKillISR, RISING);
 
@@ -420,10 +458,39 @@ void setup() {
   setupHttp();
 
   ws.begin();
+  ws.enableHeartbeat(15000, 3000, 2);  // ping every 15s, expect pong in 3s, 2 misses => drop
   ws.onEvent(onWsEvent);
 
   // ArduinoOTA optional
   // ArduinoOTA.begin();
+}
+
+// ===== periodic servo ramp update =====
+void updateServoRamps() {
+  uint32_t now = millis();
+  if (now - lastServoTick < SERVO_TICK_MS) return;
+  lastServoTick = now;
+
+  bool changed = false;
+
+  if (currentS1Deg != targetS1Deg) {
+    int dir = (targetS1Deg > currentS1Deg) ? 1 : -1;
+    int delta = abs(targetS1Deg - currentS1Deg);
+    int step = min(SERVO_STEP_DEG, delta);
+    currentS1Deg += dir * step;
+    writeServoDegImmediate(SERVO1_PIN, currentS1Deg);
+    changed = true;
+  }
+  if (currentS2Deg != targetS2Deg) {
+    int dir = (targetS2Deg > currentS2Deg) ? 1 : -1;
+    int delta = abs(targetS2Deg - currentS2Deg);
+    int step = min(SERVO_STEP_DEG, delta);
+    currentS2Deg += dir * step;
+    writeServoDegImmediate(SERVO2_PIN, currentS2Deg);
+    changed = true;
+  }
+
+  // (Optional) you could add tiny deadband sleep here if no change to save CPU
 }
 
 void loop() {
@@ -431,8 +498,17 @@ void loop() {
   ws.loop();
   // ArduinoOTA.handle();
 
-  // >>> KILL FIX: also process kill in loop (for non-executor time)
+  // keep WS alive even without traffic
+  if (millis() - lastWsKeepalive >= WS_KEEPALIVE_MS) {
+    ws.broadcastTXT("[KA]");
+    lastWsKeepalive = millis();
+  }
+
+  // process kill outside executor time
   if (killRequested) processKillIfNeeded();
+
+  // smooth servo ramps
+  updateServoRamps();
 
   if (isKilled) {
     unsigned long now = millis();

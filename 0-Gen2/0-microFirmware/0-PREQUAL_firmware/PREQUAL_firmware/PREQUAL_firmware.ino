@@ -3,7 +3,8 @@
 
 // Servos
 Servo servos[8];   // Array to store servo objects
-const int servoPins[8] = {4, 3, 0, 2, 1, 6, 5, 7};   // Update this as necessary
+// const int servoPins[8] = {2, 4, 3, 7, 0, 6, 5, 1};  // Update these pin numbers as needed
+const int servoPins[8] = {4, 3, 0, 2, 1, 6, 5, 7};
 int lastThrusterPWM[8] = {1500, 1500, 1500, 1500, 1500, 1500, 1500, 1500};   
 
 // Serial setup
@@ -21,7 +22,9 @@ const int currentPin = 41;
 
 // Indicators
 const int greenIndicatorLedPin = 37; // LED1
+// const int redIndicatorLedPin= 36;  // LED2
 const int killSwitchPin = 26;
+bool firstIteration = false;
 
 // External lumen lights
 Servo lightServo;
@@ -34,13 +37,7 @@ int lightCycles = 5;
 int sd_loop_counter = 0;
 const int chipSelect = BUILTIN_SDCARD;
 unsigned long loopIterationCounter = 0; // for perioidic SD logging
-int sdLoggingFrequency = 20000;
-
-// Torpedo
-Servo torpedo;
-const int torpedoPin = 10;  // TODO: choose pin
-const int initialTorpedoAngle = 84;
-const int torpedoDelay = 500; // Delay to make the torpedo go back to original position
+int sdLoggingFrequency = 20000; // TODO: make this human readable
 
 void setup() {
     // Begin serial and I2C (via wire)
@@ -64,9 +61,6 @@ void setup() {
 
     // Initilize SD card
     config_sd_card();
-
-    // Initilize torpedo
-    config_torpedo();
     
     Serial.println("Initilize Complete");
 }
@@ -92,6 +86,7 @@ void config_battery() {
 void config_indicator() {
     pinMode(greenIndicatorLedPin, OUTPUT);
     pinMode(killSwitchPin, INPUT);
+    digitalWrite(greenIndicatorLedPin, HIGH);
 }
 
 void config_lumen() {
@@ -104,11 +99,6 @@ void config_sd_card() {
   write_data_sd("Configuring");
 }
 
-void config_torpedo() {
-  torpedo.attach(torpedoPin);
-  torpedo.write(initialTorpedoAngle);
-}
-
 void loop() {
     //SD Card Logs
     loopIterationCounter++;
@@ -118,13 +108,27 @@ void loop() {
 
     // Indicator (kill switch) logic
     int killSwitch = digitalRead(killSwitchPin); // Read the value from the pin (0, loose = nominal or 1, tighten = kill)
-    if (killSwitch == 0) {
+    if (killSwitch == 0 && firstIteration) {
         digitalWrite(greenIndicatorLedPin, HIGH);
+
+        // Set servo to previous calues
+        servos[0].writeMicroseconds(lastThrusterPWM[0]);
+        servos[1].writeMicroseconds(lastThrusterPWM[1]);
+        servos[2].writeMicroseconds(lastThrusterPWM[2]);
+        servos[3].writeMicroseconds(lastThrusterPWM[3]);
+        servos[4].writeMicroseconds(lastThrusterPWM[4]);
+        servos[5].writeMicroseconds(lastThrusterPWM[5]);
+        servos[6].writeMicroseconds(lastThrusterPWM[6]);
+        servos[7].writeMicroseconds(lastThrusterPWM[7]);
+
+        firstIteration = false;
     } else if (killSwitch == 1) { // If KILLED, reset motors and blink red LED
+        //Serial.println("KILLED");
         config_servos();
         digitalWrite(greenIndicatorLedPin, LOW);
+        firstIteration = true;
         return; // Skip further processing when killed
-    }
+    } 
 
     while (Serial.available() > 0) {
         char inChar = (char)Serial.read();
@@ -210,18 +214,6 @@ void process_input(char *input) {
   } else if (sscanf(input, "light gradient %d", &lightCycles) == 1) {   // Graient lumen lights
     Serial.println("LIGHT GRADIENT SET");
     gradient_lumen_light(lightCycles);
-
-  } else if (strcmp(input, "hiroshima") == 0) {   // Torpedo left
-    Serial.println("BOOM HIROSHIMA");
-    torpedo.write(initialTorpedoAngle + 27);
-    delay(torpedoDelay);
-    torpedo.write(initialTorpedoAngle);
-
-  } else if (strcmp(input, "nagasaki") == 0) {   // Torpedo right
-    Serial.println("BOOM NAGASAKI");
-    torpedo.write(initialTorpedoAngle - 27);
-    delay(torpedoDelay);
-    torpedo.write(initialTorpedoAngle);
 
   } else if (strcmp(input, "transfer") == 0) {   // SD Card Transfer
     transfer_sd_log();

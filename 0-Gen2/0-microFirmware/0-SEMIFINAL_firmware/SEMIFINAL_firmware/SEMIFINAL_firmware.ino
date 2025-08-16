@@ -1,8 +1,6 @@
 #include <Servo.h>
 #include <Wire.h>
 
-// -9 14 37
-
 // Servos
 Servo servos[8];   // Array to store servo objects
 const int servoPins[8] = {4, 3, 0, 2, 1, 6, 5, 7};
@@ -25,6 +23,16 @@ const int currentPin = 41;
 const int greenIndicatorLedPin = 37; // LED1
 const int killSwitchPin = 26;
 
+// ===== Kill switch ISR state =====
+volatile bool isKilled = false;               // Latched when ISR fires
+constexpr int KILL_ASSERTED_LEVEL = HIGH; // killed when HIGH (flip if this changes)
+volatile unsigned long killISRMicros = 0;
+
+constexpr unsigned long KILL_ISR_DEBOUNCE_US = 3000; // ~3 ms
+volatile unsigned long _lastKillIsrUs = 0;
+
+bool killMsgPrinted = false;
+
 // External lumen lights
 Servo lightServo;
 int lumenPin = 8;
@@ -40,38 +48,39 @@ int sdLoggingFrequency = 20000;
 
 // dropper
 Servo dropper;
-const int dropperPin = 20;  
+const int dropperPin = 21;  // change this depending
 const int dropperMinUS = 800;     // SER-201X spec
 const int dropperMaxUS = 2200;    // SER-201X spec
 float dropperHalfRangeDeg = 70.0f;   // default ±70° per datasheet (use 100.0f if reprogrammed)
-float deg = 0;
+float dropperDeg = 0;
+
+// torpedo
+Servo torpedo;
+const int torpedoPin = 20;
+const int torpedoMinUS = 800;     // SER-201X spec
+const int torpedoMaxUS = 2200;    // SER-201X spec
+float torpedoHalfRangeDeg = 70.0f;   // default ±70° per datasheet (use 100.0f if reprogrammed)
+float torpedoDeg = 0;
+
+// ======= Forward declarations =======
+void applyNeutralAll();
+void killISR();
 
 void setup() {
     // Begin serial and I2C (via wire)
     Serial.begin(9600);
     Wire.begin();
     
-    // Initialize all servos
     config_servos();
-
     config_dropper(); 
-
-    // Initilize depth sensor
+    config_torpedo();
     config_depth();
-
-    // Initilize voltage/current sensor
     config_battery();
-
-    // Initilize indicator
-    config_indicator();
-
-    // Initilize lumen
+    config_indicator();   // sets up interrupt
     config_lumen();
-
-    // Initilize SD card
     config_sd_card();
     
-    Serial.println("Initilize Complete");
+    Serial.println("Initialize Complete");
 }
 
 void config_servos() {
@@ -82,17 +91,26 @@ void config_servos() {
 }
 
 // Map degrees (-HALF_RANGE..+HALF_RANGE) to microseconds (dropperMinUS..dropperMaxUS)
-int degToUS(float deg) {
-  if (deg < -dropperHalfRangeDeg) deg = -dropperHalfRangeDeg;
-  if (deg > +dropperHalfRangeDeg) deg = +dropperHalfRangeDeg;
-  float t = (deg + dropperHalfRangeDeg) / (2.0f * dropperHalfRangeDeg); // 0..1
-  int us = (int)(dropperMinUS + t * (dropperMaxUS - dropperMinUS) + 0.5f);
-  return us;
+int degToUS_generic(float deg, float halfRangeDeg, int usMin, int usMax) {
+  if (deg < -halfRangeDeg) deg = -halfRangeDeg;
+  if (deg > +halfRangeDeg) deg = +halfRangeDeg;
+  float t = (deg + halfRangeDeg) / (2.0f * halfRangeDeg); // 0..1
+  return (int)(usMin + t * (usMax - usMin) + 0.5f);
 }
 
+// Specific wrappers
+inline int dropperDegToUS(float d)  { return degToUS_generic(d,  dropperHalfRangeDeg,  dropperMinUS,  dropperMaxUS); }
+inline int torpedoDegToUS(float d)  { return degToUS_generic(d,  torpedoHalfRangeDeg,  torpedoMinUS,  torpedoMaxUS); }
+
+
 void config_dropper() {
-  dropper.attach(dropperPin);
-  dropper.writeMicroseconds(degToUS(0));
+  dropper.attach(dropperPin, dropperMinUS, dropperMaxUS);
+  dropper.writeMicroseconds(dropperDegToUS(0));
+}
+
+void config_torpedo() {
+  torpedo.attach(torpedoPin, torpedoMinUS, torpedoMaxUS);
+  torpedo.writeMicroseconds(torpedoDegToUS(0)); // neutral/safe
 }
 
 void config_depth() {
@@ -107,9 +125,17 @@ void config_battery() {
 }
 
 void config_indicator() {
-    pinMode(greenIndicatorLedPin, OUTPUT);
-    pinMode(killSwitchPin, INPUT);
+  pinMode(greenIndicatorLedPin, OUTPUT);
+  pinMode(killSwitchPin, INPUT); // use INPUT_PULLUP + invert logic if needed
+
+  // Seed state from live pin so LED matches reality at boot
+  int ks = digitalRead(killSwitchPin);
+  isKilled = (ks == KILL_ASSERTED_LEVEL);
+  digitalWrite(greenIndicatorLedPin, isKilled ? LOW : HIGH);
+
+  attachInterrupt(digitalPinToInterrupt(killSwitchPin), killISR, CHANGE);
 }
+
 
 void config_lumen() {
   lightServo.attach(lumenPin);
@@ -121,24 +147,78 @@ void config_sd_card() {
   write_data_sd("Configuring");
 }
 
+// ===== Interrupt Service Routine =====
+void killISR() {
+  unsigned long nowUs = micros();
+  if (nowUs - _lastKillIsrUs < KILL_ISR_DEBOUNCE_US) return;
+  _lastKillIsrUs = nowUs;
+
+  int ks = digitalRead(killSwitchPin);
+  bool asserted = (ks == KILL_ASSERTED_LEVEL);
+
+  isKilled = asserted;
+  killISRMicros = nowUs;
+
+  #ifdef digitalWriteFast
+    digitalWriteFast(greenIndicatorLedPin, asserted ? LOW : HIGH);
+  #else
+    digitalWrite(greenIndicatorLedPin, asserted ? LOW : HIGH);
+  #endif
+}
+
+// Apply neutral to all 8 outputs and remember values
+void applyNeutralAll() {
+  for (int i = 0; i < 8; i++) {
+    servos[i].writeMicroseconds(1500);
+    lastThrusterPWM[i] = 1500;
+  }
+  // Also neutralize these:
+  dropper.writeMicroseconds(dropperDegToUS(14));
+  torpedo.writeMicroseconds(torpedoDegToUS(0));
+}
+
 void loop() {
-    //SD Card Logs
+    digitalWrite(greenIndicatorLedPin, isKilled ? LOW : HIGH);
+    
+    if (isKilled) {
+      applyNeutralAll();
+
+      // Print once when entering killed state
+      if (!killMsgPrinted) {
+        Serial.println(String("[KILLED] ISR at us=") + killISRMicros + ". Outputs forced to 1500us.");
+        write_data_sd("KILL asserted -> neutralized all outputs");
+        killMsgPrinted = true;
+      }
+
+      // Periodic logging still active
+      loopIterationCounter++;
+      if (loopIterationCounter % sdLoggingFrequency == 0) {
+        logPeriodicData();
+      }
+
+      // Avoid serial buffer buildup (optional)
+      while (Serial.available() > 0) (void)Serial.read();
+      return;
+    } else {
+      // If we just left killed state, note it once
+      if (killMsgPrinted) {
+        write_data_sd("KILL cleared -> normal operation");
+        Serial.println("[READY] Kill cleared by switch.");
+        killMsgPrinted = false;
+      }
+    }
+
+    // ===== Normal operation (not killed) =====
+    // SD Card periodic logs
     loopIterationCounter++;
     if (loopIterationCounter % sdLoggingFrequency == 0) {
         logPeriodicData();
     }
 
-    // Indicator (kill switch) logic
-    int killSwitch = digitalRead(killSwitchPin); // Read the value from the pin (0, loose = nominal or 1, tighten = kill)
-    if (killSwitch == 0) {
-        digitalWrite(greenIndicatorLedPin, HIGH);
-    } else if (killSwitch == 1) { // If KILLED, reset motors and blink red LED
-        //Serial.println("KILLED");
-        config_servos();
-        digitalWrite(greenIndicatorLedPin, LOW);
-        return; // Skip further processing when killed
-    }
+    // Indicator LED reflects nominal (on)
+    digitalWrite(greenIndicatorLedPin, HIGH);
 
+    // Handle serial input
     while (Serial.available() > 0) {
         char inChar = (char)Serial.read();
         if (inChar == '\n' || inChar == '\r') { // End of one command
@@ -224,23 +304,45 @@ void process_input(char *input) {
     Serial.println("LIGHT GRADIENT SET");
     gradient_lumen_light(lightCycles);
 
+  // Droppers
   } else if (strcmp(input, "pearl-harbor") == 0) {   // dropper left
-    int us = degToUS(22);
+    int us = dropperDegToUS(22);
     dropper.writeMicroseconds(us);
   } else if (strcmp(input, "iwo-jima") == 0) {   // dropper right
-    int us = degToUS(-22);
+    int us = dropperDegToUS(-22);
     dropper.writeMicroseconds(us);
-  } else if (sscanf(input, "dropperPosition %f", &deg) == 1) {  // deg is a float
+  } else if (sscanf(input, "dropperPosition %f", &dropperDeg) == 1) {  // dropperDeg is a float
     // Clamp for safety
-    if (deg < -dropperHalfRangeDeg) deg = -dropperHalfRangeDeg;
-    if (deg > +dropperHalfRangeDeg) deg = +dropperHalfRangeDeg;
+    if (dropperDeg < -dropperHalfRangeDeg) dropperDeg = -dropperHalfRangeDeg;
+    if (dropperDeg > +dropperHalfRangeDeg) dropperDeg = +dropperHalfRangeDeg;
 
-    int us = degToUS(deg);
+    int us = dropperDegToUS(dropperDeg);
     dropper.writeMicroseconds(us);
 
     Serial.print("Commanded: ");
-    Serial.print(deg, 1);
-    Serial.print(" deg  ->  ");
+    Serial.print(dropperDeg, 1);
+    Serial.print(" dropperDeg  ->  ");
+    Serial.print(us);
+    Serial.println(" us");
+  
+  // Torpedos
+  } else if (strcmp(input, "hiroshima") == 0) {
+    int us = torpedoDegToUS(-9);
+    torpedo.writeMicroseconds(us);
+  } else if (strcmp(input, "nagasaki") == 0) {
+    int us = torpedoDegToUS(37);
+    torpedo.writeMicroseconds(us);
+  } else if (strcmp(input, "enola-gay") == 0) {
+    int us = torpedoDegToUS(14);
+    torpedo.writeMicroseconds(us);
+  } else if (sscanf(input, "torpedoPosition %f", &torpedoDeg) == 1) {
+    if (torpedoDeg < -torpedoHalfRangeDeg) torpedoDeg = -torpedoHalfRangeDeg;
+    if (torpedoDeg > +torpedoHalfRangeDeg) torpedoDeg = +torpedoHalfRangeDeg;
+    int us = torpedoDegToUS(torpedoDeg);
+    torpedo.writeMicroseconds(us);
+    Serial.print("Commanded: ");
+    Serial.print(torpedoDeg, 1);
+    Serial.print(" torpedoDeg  ->  ");
     Serial.print(us);
     Serial.println(" us");
   } else if (strcmp(input, "transfer") == 0) {   // SD Card Transfer
@@ -297,7 +399,8 @@ void logPeriodicData() {
                 " temperature:" + String(temperature, DIGITS) +
                 " depth:" + String(depth, DIGITS);
 
-  dataString += " killSwitch:" + String(digitalRead(killSwitchPin));
+  dataString += " killSwitchPin:" + String(digitalRead(killSwitchPin)) +
+                " isKilled:" + String(isKilled ? 1 : 0);
 
   write_data_sd(dataString);
 }
@@ -352,8 +455,6 @@ void write_data_sd(String dataString) {
   if (dataFile) {
     dataFile.println(timestamp + " -> " + dataString);
     dataFile.close();
-    //Serial.println("logged data!!");
-    //Serial.println(timestamp + " -" + dataString);
   } else {
     // if the file isn't open, pop up an error:
     Serial.println("error opening datalog.txt");

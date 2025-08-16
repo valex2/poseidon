@@ -23,7 +23,7 @@ bool isKilled = false;
 unsigned long lastBlink = 0;
 bool ledState = false;
 
-// ISR flag no longer used (we poll), but we keep for minimal refactor
+// ISR flag kept for minimal refactor (we now poll)
 volatile bool killRequested = false;
 
 struct Cmd {
@@ -86,6 +86,7 @@ uint8_t  lastRawSample = 0;
 void broadcastKillState();
 void broadcastKillTelemetry(bool force=false);
 void updateServoRamps();
+bool processKillNowIfLatched();   // <<< NEW
 
 const char INDEX_HTML[] PROGMEM = R"rawliteral(
 <!doctype html>
@@ -358,7 +359,36 @@ void safeStop() {
   broadcastKillState();
 }
 
-// ===== Mission executor =====
+// ===== Mission executor helpers =====
+
+// NEW: poll & immediately act on kill while inside executeQueue/waits
+bool processKillNowIfLatched() {
+  // poll once
+  uint32_t now = millis();
+  uint8_t raw = digitalRead(KILL_SENSE_PIN) ? 1 : 0;
+  killRawLevel = raw;
+  if (raw != lastRawSample) {
+    lastRawSample = raw;
+    killLastTransitionMs = now;
+    if (raw == 1) { killEdgeCount++; }
+    broadcastKillTelemetry(true);
+  }
+  if (raw == 1 && !killLatched) {
+    killLatched = true;
+    broadcastKillTelemetry(true);
+  }
+  // act if latched and not yet killed
+  if (killLatched && !isKilled) {
+    addLog("[KILL] Reed triggered (latched) — aborting mission");
+    safeStop();
+    while (!rawLines.empty()) rawLines.pop();
+    executingQueue = false;
+    ws.broadcastTXT("[STATUS] READY");
+    return true;
+  }
+  return false;
+}
+
 Cmd parseCommand(const String &part) {
   Cmd cmd = {"", 0, 0};
   int firstColon = part.indexOf(':');
@@ -379,13 +409,13 @@ Cmd parseCommand(const String &part) {
 bool waitMsRespectKill(uint32_t ms) {
   uint32_t start = millis();
   while ((millis() - start) < ms) {
-    if (killRequested) { // processed in loop()
-      return true;
-    }
+    // NEW: kill while waiting
+    if (processKillNowIfLatched()) return true;
+
     http.handleClient();
     ws.loop();
     updateServoRamps();
-    delay(5);
+    delay(2);
   }
   return false;
 }
@@ -395,7 +425,7 @@ void executeQueue() {
   ws.broadcastTXT("[STATUS] RUNNING");
 
   while (!rawLines.empty()) {
-    if (killRequested) { if (isKilled) break; }
+    if (processKillNowIfLatched()) return;   // NEW: immediate exit if killed
 
     String line = rawLines.front(); rawLines.pop();
     line.trim(); if (!line.length()) continue;
@@ -405,7 +435,7 @@ void executeQueue() {
 
     int start = 0;
     while (start < line.length()) {
-      if (killRequested) { if (isKilled) break; }
+      if (processKillNowIfLatched()) return; // NEW
       int sep = line.indexOf(';', start);
       if (sep == -1) sep = line.length();
       String part = line.substring(start, sep);
@@ -415,7 +445,7 @@ void executeQueue() {
         Cmd c = parseCommand(part);
         if (c.key == "WAIT") {
           addLog("WAIT " + String(c.value) + "s");
-          if (waitMsRespectKill((uint32_t)c.value * 1000)) { if (isKilled) break; }
+          if (waitMsRespectKill((uint32_t)c.value * 1000)) return; // NEW: abort if killed
         } else {
           cmds.push_back(c);
           if (c.duration > maxDur) maxDur = c.duration;
@@ -423,21 +453,24 @@ void executeQueue() {
       }
       start = sep + 1;
     }
-    if (isKilled) break;
+    if (isKilled) return; // safety
 
+    // Execute simultaneous commands
     for (auto &c : cmds) {
-      if (killRequested) break;
+      if (processKillNowIfLatched()) return; // NEW
       addLog("CMD " + c.key + ":" + String(c.value) + (c.duration ? " for " + String(c.duration) + "s" : ""));
       if      (c.key == "T1") setThruster1(c.value);
       else if (c.key == "T2") setThruster2(c.value);
       else if (c.key == "S1") { setServo1(c.value); if (c.duration == 0) baselineS1Deg = c.value; }
       else if (c.key == "S2") { setServo2(c.value); if (c.duration == 0) baselineS2Deg = c.value; }
     }
-    if (isKilled) break;
+    if (isKilled) return;
 
+    // Hold for the max duration (if any), respecting kill
     if (maxDur > 0) {
-      if (waitMsRespectKill((uint32_t)maxDur * 1000)) { if (isKilled) break; }
+      if (waitMsRespectKill((uint32_t)maxDur * 1000)) return; // NEW
       for (auto &c : cmds) {
+        if (processKillNowIfLatched()) return; // NEW
         if      (c.key == "T1") setThruster1(0);
         else if (c.key == "T2") setThruster2(0);
         else if (c.key == "S1") { setServo1(baselineS1Deg); addLog("→ S1 reset to baseline " + String(baselineS1Deg) + "°"); }
@@ -533,6 +566,30 @@ void startAP() {
   Serial.printf("AP IP: %s\n", WiFi.softAPIP().toString().c_str());
 }
 
+// ===== Kill poll & latch (main loop sampling) =====
+void pollKillAndLatch() {
+  uint32_t now = millis();
+  uint8_t raw = digitalRead(KILL_SENSE_PIN) ? 1 : 0;
+
+  killRawLevel = raw;
+  if (raw != lastRawSample) {
+    lastRawSample = raw;
+    killLastTransitionMs = now;
+    broadcastKillTelemetry(false); // push RAW + AGO quickly
+    if (raw == 1) {
+      killEdgeCount++;
+      broadcastKillTelemetry(true); // update edges immediately
+    }
+  }
+
+  // Latch behavior: any HIGH -> latch until RESETKILL
+  if (raw == 1 && !killLatched) {
+    killLatched = true;
+    killRequested = true; // legacy path used in loop()
+    broadcastKillTelemetry(true); // push DEB/latched change + badge
+  }
+}
+
 void setup() {
   Serial.begin(115200);
   pinMode(LED_PIN, OUTPUT);
@@ -579,35 +636,11 @@ void updateServoRamps() {
   }
 }
 
-// ===== Kill poll & latch =====
-void pollKillAndLatch() {
-  uint32_t now = millis();
-  uint8_t raw = digitalRead(KILL_SENSE_PIN) ? 1 : 0;
-
-  killRawLevel = raw;
-  if (raw != lastRawSample) {
-    lastRawSample = raw;
-    killLastTransitionMs = now;
-    broadcastKillTelemetry(false); // push RAW + AGO quickly
-    if (raw == 1) {
-      killEdgeCount++;
-      broadcastKillTelemetry(true); // update edges immediately
-    }
-  }
-
-  // Latch behavior: any HIGH -> latch until RESETKILL
-  if (raw == 1 && !killLatched) {
-    killLatched = true;
-    killRequested = true; // trigger processing path
-    broadcastKillTelemetry(true); // push DEB/latched change + badge
-  }
-}
-
 void loop() {
   http.handleClient();
   ws.loop();
 
-  // sample kill & latch
+  // sample kill & latch in the normal loop
   pollKillAndLatch();
 
   // keep WS alive
@@ -616,7 +649,7 @@ void loop() {
     lastWsKeepalive = millis();
   }
 
-  // process kill request (single place)
+  // legacy processing path: if loop detects kill, stop immediately
   if (killRequested) {
     killRequested = false;
     if (killLatched && !isKilled) {

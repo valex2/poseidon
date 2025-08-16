@@ -67,6 +67,9 @@ uint32_t lastServoTick = 0;
 uint32_t lastWsKeepalive = 0;
 constexpr uint32_t WS_KEEPALIVE_MS = 30000;
 
+// NEW: forward declaration
+void broadcastKillState();
+
 const char INDEX_HTML[] PROGMEM = R"rawliteral(
 <!doctype html>
 <html>
@@ -84,11 +87,20 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
     .ok { color: #0a0; font-weight: bold; }
     .bad { color: #a00; font-weight: bold; }
     button { padding: 8px 12px; border-radius: 8px; border: 1px solid #aaa; background: #f5f5f5; }
+
+    /* NEW: kill indicator styles */
+    .pill { display:inline-block; padding:6px 10px; border-radius:999px; font-weight:600; margin-left:8px; }
+    .pill.on  { background:#ffd9d9; color:#a00; border:1px solid #f3b4b4; }
+    .pill.off { background:#dff6df; color:#0a0; border:1px solid #bde7bd; }
   </style>
 </head>
 <body>
   <h1>ESP32 Live Control</h1>
-  <div id=conn class=bad>WebSocket: connecting...</div>
+  <div>
+    <span id=conn class=bad>WebSocket: connecting...</span>
+    <!-- NEW: kill status badge -->
+    <span id=killBadge class="pill off" title="Hardware/Software kill state">KILL: OFF</span>
+  </div>
   <div id=state class=bad>READY</div>
 
   <div class=card>
@@ -139,6 +151,13 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
     const host = location.hostname || "192.168.4.1";
     let sock, alive = false, showLogs = true;
 
+    // NEW: helper to set the pill from WS messages
+    function setKillBadge(on){
+      const b = document.getElementById('killBadge');
+      b.textContent = on ? "KILL: ON" : "KILL: OFF";
+      b.className = "pill " + (on ? "on" : "off");
+    }
+
     function send(cmd) { if (sock && alive) sock.send(cmd); }
 
     function connectWS(){
@@ -155,10 +174,27 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
         setTimeout(connectWS, 1000);
       };
       sock.onerror = () => { alive = false; };
+
       sock.onmessage = (e) => {
+        const text = e.data;
+
+        // NEW: always handle state messages regardless of log toggle
+        if (text.startsWith("KILL_STATE:")) {
+          const on = text.endsWith("ON");
+          setKillBadge(on);
+          return; // these are single-purpose frames
+        }
+        if (text.startsWith("[STATUS]")) {
+          const el = document.getElementById('state');
+          el.textContent = text.replace("[STATUS]","").trim();
+          el.className = /READY/i.test(text) ? 'ok' : 'bad';
+          // No return; also let it flow to log if enabled
+        }
+
+        // Existing log behavior
         if (!showLogs) return;
         const log = document.getElementById("log");
-        log.textContent += e.data + "\\n";
+        log.textContent += text + "\n";
         if (log.textContent.length > 5000) log.textContent = log.textContent.slice(-4000);
         log.scrollTop = log.scrollHeight;
       };
@@ -198,6 +234,11 @@ void addLog(String msg) {
   String out;
   for (auto &l : logBuffer) if (l.length()) out += l + "\n";
   ws.broadcastTXT(out);
+}
+
+// NEW: broadcast kill state as a lightweight control frame
+void broadcastKillState() {
+  ws.broadcastTXT(String("KILL_STATE:") + (isKilled ? "ON" : "OFF"));
 }
 
 int servoAngleToUs(int angleDeg) {
@@ -252,6 +293,7 @@ void safeStop() {
 
   addLog("SAFE STOP: all outputs neutral");
   isKilled = true;
+  broadcastKillState();              // NEW
 }
 
 // ===== KILL: ISR + helpers =====
@@ -388,7 +430,13 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
         ws.broadcastTXT("[STATUS] READY");
         return;
       }
-      if (msg == "RESETKILL") { isKilled = false; digitalWrite(LED_PIN, LOW); addLog("KILL Reset via UI"); return; }
+      if (msg == "RESETKILL") {
+        isKilled = false;
+        digitalWrite(LED_PIN, LOW);
+        addLog("KILL Reset via UI");
+        broadcastKillState();                // NEW
+        return;
+      }
 
       // Accept full multi-line mission in one message
       if (msg.indexOf('\n') != -1) {
@@ -409,6 +457,7 @@ void onWsEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t len) {
     }
     case WStype_CONNECTED:
       addLog("[WS] Client connected");
+      broadcastKillState();                  // NEW: push current state to new client
       break;
     case WStype_DISCONNECTED:
       addLog("[WS] Client disconnected");
@@ -468,6 +517,9 @@ void setup() {
 
   // ArduinoOTA optional
   // ArduinoOTA.begin();
+
+  // NEW: send initial state once network is up
+  broadcastKillState();
 }
 
 // ===== periodic servo ramp update =====

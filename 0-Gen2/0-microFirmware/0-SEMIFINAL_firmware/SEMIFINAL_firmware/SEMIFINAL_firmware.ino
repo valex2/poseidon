@@ -1,6 +1,8 @@
 #include <Servo.h>
 #include <Wire.h>
 
+// -9 14 37
+
 // Servos
 Servo servos[8];   // Array to store servo objects
 const int servoPins[8] = {4, 3, 0, 2, 1, 6, 5, 7};

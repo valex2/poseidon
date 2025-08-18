@@ -7012,7 +7012,7 @@
 		)
 		(uuid "a51613aa-4550-4dee-b3c9-cab4a7bc1703")
 	)
-	(text "To fix (as of 6/23/25)\n-- Neo pads\n-- recursive cap to ground for neopixels\n-- switch configuration"
+	(text "To fix (as of 8/16/25)\n-- Neo pads\n-- recursive cap to ground for neopixels\n-- switch configuration\n-- pin 38 needs to be changed (hard coded to SD card so no neos)"
 		(exclude_from_sim no)
 		(at 24.765 176.2125 0)
 		(effects

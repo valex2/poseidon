@@ -39,6 +39,13 @@ int lumenPin = 8;
 int lightVal = 1100;
 int lightCycles = 5;
 
+// Neopixels
+// static int pixelUpdateCounter = 0;  // persists between calls
+#include <Adafruit_NeoPixel.h>
+#define PIN            27          // Pin where NeoPixel strip is connected
+#define NUMPIXELS      200        // Total number of pixels
+Adafruit_NeoPixel strip(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
 // SD Card
 #include <SD.h>
 int sd_loop_counter = 0;
@@ -78,6 +85,7 @@ void setup() {
     config_battery();
     config_indicator();   // sets up interrupt
     config_lumen();
+    config_neopixels();
     config_sd_card();
     
     Serial.println("Initialize Complete");
@@ -88,6 +96,27 @@ void config_servos() {
         servos[i].attach(servoPins[i]);   // Attach servo
         servos[i].writeMicroseconds(1500);  // Start at neutral
     }
+}
+
+void config_neopixels() {
+  strip.begin();
+  strip.show(); // Initialize all pixels to 'off'
+  int brightness = 40; // Set brightness level
+  setBlueBreathing(brightness); // Breathing animation for visual indicator
+}
+
+void setBlueBreathing(uint8_t brightness) {
+  // Generate dynamic shades of blue
+  uint8_t blue = brightness;
+  uint8_t green = brightness / 4;   // Add a hint of green for cyan tones
+  uint8_t red = brightness / 8;    // Very slight purple tint at higher brightness
+
+  uint32_t color = strip.Color(red, green, blue);
+
+  for (int i = 0; i < NUMPIXELS; i++) {
+    strip.setPixelColor(i, color);
+  }
+  strip.show();
 }
 
 // Map degrees (-HALF_RANGE..+HALF_RANGE) to microseconds (dropperMinUS..dropperMaxUS)
